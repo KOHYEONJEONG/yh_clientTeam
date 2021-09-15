@@ -30,7 +30,7 @@ namespace Student_Ask
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_screenCopy = new System.Windows.Forms.Button();
             this.btn_select = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -44,7 +44,7 @@ namespace Student_Ask
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_screenCopy);
             this.groupBox1.Controls.Add(this.btn_select);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Location = new System.Drawing.Point(0, 6);
@@ -54,14 +54,15 @@ namespace Student_Ask
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "이미지";
             // 
-            // button1
+            // btn_screenCopy
             // 
-            this.button1.Location = new System.Drawing.Point(220, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "스크린샷";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_screenCopy.Location = new System.Drawing.Point(220, 274);
+            this.btn_screenCopy.Name = "btn_screenCopy";
+            this.btn_screenCopy.Size = new System.Drawing.Size(94, 29);
+            this.btn_screenCopy.TabIndex = 2;
+            this.btn_screenCopy.Text = "화면캡쳐";
+            this.btn_screenCopy.UseVisualStyleBackColor = true;
+            this.btn_screenCopy.Click += new System.EventHandler(this.btn_screenCopy_Click);
             // 
             // btn_select
             // 
@@ -82,6 +83,7 @@ namespace Student_Ask
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox2
             // 
@@ -144,6 +146,6 @@ namespace Student_Ask
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_screenCopy;
     }
 }
