@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Student_ask
+namespace Student_Ask
 {
-    public partial class student_QnA : Form
+    public partial class Form1 : Form
     {
-        public student_QnA()
+        public Form1()
         {
             InitializeComponent();
         }
-
     }
 }

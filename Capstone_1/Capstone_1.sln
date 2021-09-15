@@ -9,9 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student_main", "Student_mai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student_Ask", "Student_ask\Student_Ask.csproj", "{6FBE6925-A966-4ADB-B0C8-07B8335958DB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student_ok", "Student_ok\Student_ok.csproj", "{7424F1DB-6CF6-4A44-93E6-BF50CFB2A977}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Student_A", "Student_A\Student_A.csproj", "{EABC9C0C-91DB-49F7-97E4-38F564043995}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Student_Answer", "Student_A\Student_Answer.csproj", "{EABC9C0C-91DB-49F7-97E4-38F564043995}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +29,6 @@ Global
 		{6FBE6925-A966-4ADB-B0C8-07B8335958DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6FBE6925-A966-4ADB-B0C8-07B8335958DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6FBE6925-A966-4ADB-B0C8-07B8335958DB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7424F1DB-6CF6-4A44-93E6-BF50CFB2A977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7424F1DB-6CF6-4A44-93E6-BF50CFB2A977}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7424F1DB-6CF6-4A44-93E6-BF50CFB2A977}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7424F1DB-6CF6-4A44-93E6-BF50CFB2A977}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EABC9C0C-91DB-49F7-97E4-38F564043995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EABC9C0C-91DB-49F7-97E4-38F564043995}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EABC9C0C-91DB-49F7-97E4-38F564043995}.Release|Any CPU.ActiveCfg = Release|Any CPU

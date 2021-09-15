@@ -1,7 +1,7 @@
 ﻿
 namespace Student_A
 {
-    partial class Form1
+    partial class Student_answer
     {
         /// <summary>
         ///  Required designer variable.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Student_ask
+namespace Student_Ask
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace Student_ask
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new student_ask());
+            Application.Run(new Student_askf());
         }
     }
 }
