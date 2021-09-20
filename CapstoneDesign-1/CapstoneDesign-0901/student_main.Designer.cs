@@ -29,6 +29,7 @@ namespace CapstoneDesign_0901
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,13 +40,18 @@ namespace CapstoneDesign_0901
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_ask = new System.Windows.Forms.Button();
+            this.btn_absent = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
+            this.btn_quit = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.lbl_presenttime = new System.Windows.Forms.Label();
+            this.lbl_timer = new System.Windows.Forms.Label();
+            this.lbl_check = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -121,7 +127,6 @@ namespace CapstoneDesign_0901
             this.label8.Size = new System.Drawing.Size(46, 15);
             this.label8.TabIndex = 7;
             this.label8.Text = "14 : 32";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
@@ -142,54 +147,54 @@ namespace CapstoneDesign_0901
             this.label10.TabIndex = 7;
             this.label10.Text = "02 : 18";
             // 
-            // button2
+            // btn_ask
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(76, 181);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 94);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "질 문";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_ask.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_ask.FlatAppearance.BorderSize = 0;
+            this.btn_ask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ask.ForeColor = System.Drawing.Color.Black;
+            this.btn_ask.Location = new System.Drawing.Point(76, 181);
+            this.btn_ask.Name = "btn_ask";
+            this.btn_ask.Size = new System.Drawing.Size(96, 94);
+            this.btn_ask.TabIndex = 9;
+            this.btn_ask.Text = "질 문";
+            this.btn_ask.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btn_absent
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(215, 181);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(96, 94);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "결 석";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btn_absent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_absent.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btn_absent.FlatAppearance.BorderSize = 0;
+            this.btn_absent.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_absent.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.btn_absent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_absent.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_absent.ForeColor = System.Drawing.Color.Black;
+            this.btn_absent.Location = new System.Drawing.Point(215, 181);
+            this.btn_absent.Name = "btn_absent";
+            this.btn_absent.Size = new System.Drawing.Size(96, 94);
+            this.btn_absent.TabIndex = 11;
+            this.btn_absent.Text = "출 석";
+            this.btn_absent.UseVisualStyleBackColor = false;
+            this.btn_absent.Click += new System.EventHandler(this.btn_absent_Click);
             // 
-            // button5
+            // btn_logout
             // 
-            this.button5.Location = new System.Drawing.Point(256, 317);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(65, 22);
-            this.button5.TabIndex = 12;
-            this.button5.Text = "로그아웃";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_logout.Location = new System.Drawing.Point(256, 317);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(65, 22);
+            this.btn_logout.TabIndex = 12;
+            this.btn_logout.Text = "로그아웃";
+            this.btn_logout.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btn_quit
             // 
-            this.button6.Location = new System.Drawing.Point(327, 317);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(55, 22);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "종료";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_quit.Location = new System.Drawing.Point(327, 317);
+            this.btn_quit.Name = "btn_quit";
+            this.btn_quit.Size = new System.Drawing.Size(55, 22);
+            this.btn_quit.TabIndex = 13;
+            this.btn_quit.Text = "종료";
+            this.btn_quit.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -221,18 +226,65 @@ namespace CapstoneDesign_0901
             this.label13.TabIndex = 7;
             this.label13.Text = "02 : 18";
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 1000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(175, 317);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "예비버튼";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lbl_presenttime
+            // 
+            this.lbl_presenttime.AutoSize = true;
+            this.lbl_presenttime.Location = new System.Drawing.Point(317, 260);
+            this.lbl_presenttime.Name = "lbl_presenttime";
+            this.lbl_presenttime.Size = new System.Drawing.Size(0, 15);
+            this.lbl_presenttime.TabIndex = 18;
+            // 
+            // lbl_timer
+            // 
+            this.lbl_timer.AutoSize = true;
+            this.lbl_timer.Location = new System.Drawing.Point(12, 321);
+            this.lbl_timer.Name = "lbl_timer";
+            this.lbl_timer.Size = new System.Drawing.Size(78, 15);
+            this.lbl_timer.TabIndex = 19;
+            this.lbl_timer.Text = "출석 타이머 :";
+            // 
+            // lbl_check
+            // 
+            this.lbl_check.AutoSize = true;
+            this.lbl_check.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_check.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_check.Location = new System.Drawing.Point(215, 278);
+            this.lbl_check.Name = "lbl_check";
+            this.lbl_check.Size = new System.Drawing.Size(85, 13);
+            this.lbl_check.TabIndex = 20;
+            this.lbl_check.Text = "클릭 시각 14:00";
+            // 
             // student_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(398, 351);
+            this.ClientSize = new System.Drawing.Size(390, 350);
+            this.Controls.Add(this.lbl_check);
+            this.Controls.Add(this.lbl_timer);
+            this.Controls.Add(this.lbl_presenttime);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_quit);
+            this.Controls.Add(this.btn_logout);
+            this.Controls.Add(this.btn_absent);
+            this.Controls.Add(this.btn_ask);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
@@ -246,6 +298,7 @@ namespace CapstoneDesign_0901
             this.Controls.Add(this.label1);
             this.Name = "student_main";
             this.Text = "학생";
+            this.Load += new System.EventHandler(this.student_main_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,13 +316,18 @@ namespace CapstoneDesign_0901
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_ask;
+        private System.Windows.Forms.Button btn_absent;
+        private System.Windows.Forms.Button btn_logout;
+        private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lbl_presenttime;
+        private System.Windows.Forms.Label lbl_timer;
+        private System.Windows.Forms.Label lbl_check;
     }
 }
 
