@@ -263,11 +263,12 @@ namespace CapstoneDesign_0901
             this.lbl_check.AutoSize = true;
             this.lbl_check.BackColor = System.Drawing.Color.Transparent;
             this.lbl_check.Font = new System.Drawing.Font("맑은 고딕", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl_check.Location = new System.Drawing.Point(215, 278);
+            this.lbl_check.Location = new System.Drawing.Point(219, 278);
             this.lbl_check.Name = "lbl_check";
-            this.lbl_check.Size = new System.Drawing.Size(85, 13);
+            this.lbl_check.Size = new System.Drawing.Size(55, 13);
             this.lbl_check.TabIndex = 20;
-            this.lbl_check.Text = "클릭 시각 14:00";
+            this.lbl_check.Text = "클릭 시각";
+            this.lbl_check.Click += new System.EventHandler(this.lbl_check_Click);
             // 
             // student_main
             // 

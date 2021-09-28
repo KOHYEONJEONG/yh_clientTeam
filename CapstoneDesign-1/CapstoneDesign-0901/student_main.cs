@@ -37,17 +37,20 @@ namespace CapstoneDesign_0901
             string date = System.DateTime.Now.ToString("HH:mm:ss");
 
             this.Timer.Enabled = false;
-            if (10 < TNum)
+            if (10 <= TNum)
             { 
-                this.lbl_check.Text = "출석 시각 " + date;
+                this.lbl_check.Text = "출 석 " + date;
+                button1.Enabled = false;
             }
-            else if (5 < TNum)
+            else if (1 <= TNum)
             {
-                this.lbl_check.Text = "지각 시각 " + date;
+                this.lbl_check.Text = "지 각 " + date;
+                button1.Enabled = false;
             }
-            else
+            else if (0 == TNum)
             {
-                this.lbl_check.Text = "";
+                this.lbl_check.Text = "결 석 " + date;
+                button1.Enabled = false;
             }
 
 
@@ -59,6 +62,7 @@ namespace CapstoneDesign_0901
             this.Timer.Enabled = true;
             btn_absent.Enabled = true;
             this.btn_absent.BackColor = Color.FromArgb(128, 255, 128);
+            button1.Enabled = false;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -75,16 +79,21 @@ namespace CapstoneDesign_0901
                 this.btn_absent.BackColor = Color.FromArgb(128, 255, 128);
                 
             }
-            else if ( 0 <= TNum)
+            else if (1 <= TNum)
             {
                 this.btn_absent.BackColor = Color.FromArgb(255, 128, 0);
                 this.btn_absent.Text = "지 각";
             }
-            else
+            else if( 0 == TNum)
             {
                 this.btn_absent.BackColor = Color.FromArgb(239, 72, 72);
                 this.btn_absent.Text = "결 석";
             }
+        }
+
+        private void lbl_check_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
