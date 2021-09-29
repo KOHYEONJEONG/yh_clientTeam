@@ -3,19 +3,33 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>CapstoneDesign_0901</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <AssemblyName>CapstoneDesign-0901</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\yh_ClientTeam\Program\ProfessorMain\ProfessorMain.csproj" />
-    <ProjectReference Include="..\StudentMain\StudentMain.csproj" />
+    <ProjectReference Include="..\..\Program\LoginMain\LoginMain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="PctClick.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="StudentOX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Student_answer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Student_askf.cs">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapstoneDesign_0901;
+using CapstoneDesign_0901;//StudentMain in student_main(폼) 네임스페이스
 using ProfessorMain;
 
 
@@ -35,6 +35,7 @@ namespace LoginMain
                     MessageBox.Show("교수프로그램", "확인", MessageBoxButtons.OK);
                     ProfesserMain professerMain = new ProfesserMain();
                     professerMain.Show();
+                    
 
                 }
                 else
@@ -43,8 +44,12 @@ namespace LoginMain
                     {
                         
                         MessageBox.Show("학생프로그램", "확인", MessageBoxButtons.OK);
+
+                      
                         student_main student = new student_main();
                         student.Show();
+                        //this.Close();
+
                     }
                 }
 
