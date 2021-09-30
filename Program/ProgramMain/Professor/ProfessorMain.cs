@@ -164,7 +164,7 @@ namespace ProgramMain
             {
                 Image img = grid.Rows[curR].Cells[curC].Value as Image;
 
-                ImageForm img_form = new ImageForm(img.ToString(), Sstime, img);
+                ImageForm img_form = new ImageForm(img.ToString(), img);
                 img_form.ShowDialog();
             }
 

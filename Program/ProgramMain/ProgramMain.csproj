@@ -3,6 +3,12 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
@@ -12,21 +18,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Student\PctClick.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Student\StudentOX.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Student\Student_answer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Student\Student_askf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Student\student_main.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Update="Student\PctClick.cs" />
+    <Compile Update="Student\StudentOX.cs" />
+    <Compile Update="Student\Student_answer.cs" />
+    <Compile Update="Student\Student_askf.cs" />
+    <Compile Update="Student\student_main.cs" />
   </ItemGroup>
 
   <ItemGroup>
