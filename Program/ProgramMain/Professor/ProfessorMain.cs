@@ -38,9 +38,9 @@ namespace ProgramMain
             Image img2 = Properties.Resources.sky2;
             Image img3 = Properties.Resources.sky3;
             Image img4 = Properties.Resources.sky4;
+            int i = 0;
 
-
-            for (int i = 0; i < teststu.Length / 2; i++) //접속학생 리스트에 학생 추가
+            for (i = 0; i < teststu.Length / 2; i++) //접속학생 리스트에 학생 추가
                 {
                     studList.Rows.Add(false, teststu[i, 0] , teststu[i, 1], Properties.Resources._default, "","");
                 }
@@ -50,12 +50,19 @@ namespace ProgramMain
 
 
 
-            for (int i = 0; i < teststu.Length / 2; i++) //미접속학생 리스트에 학생 추가
+            for (int j = 0; j < teststu.Length / 2; j++) //리스트에 미접속 학생 추가
             {
-                ListViewItem lvi = new ListViewItem();
-                lvi.Text = teststu[i, 0];
-                lvi.SubItems.Add(teststu[i, 1]);
-                unconstu.Items.Add(lvi);
+                studList.Rows.Add(false, teststu[j, 0], teststu[j, 1], Properties.Resources.default1, "", "");
+                studList.Rows[i + j].ReadOnly = true;//선택 안되게
+                studList.Rows[i + j].Height = 20;//행 높이조절
+
+                studList.Rows[i + j].Cells[0].Style.BackColor = Color.Gray;//셀 회색으로 변경
+                studList.Rows[i + j].Cells[1].Style.BackColor = Color.Gray;
+                studList.Rows[i + j].Cells[2].Style.BackColor = Color.Gray;
+                studList.Rows[i + j].Cells[3].Style.BackColor = Color.Gray;
+                studList.Rows[i + j].Cells[4].Style.BackColor = Color.Gray;
+                studList.Rows[i + j].Cells[5].Style.BackColor = Color.Gray;
+
 
             }
 
@@ -240,6 +247,9 @@ namespace ProgramMain
             this.Close();
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
