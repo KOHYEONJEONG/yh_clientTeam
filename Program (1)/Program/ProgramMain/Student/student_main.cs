@@ -118,10 +118,10 @@ namespace ProgramMain
         {       
         }
        
-      //  private void 열기toolStripMenuItem1_Click(object sender, EventArgs e)
-      //  {
-      //      VisibleChange(true, false);
-     //   }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            VisibleChange(true, false);
+        }
         //tray에서 오른쪽 마우스 클릭으로 열기 메뉴 클릭시 메인 폼 보임
 
 
@@ -144,7 +144,9 @@ namespace ProgramMain
 
         }
 
-       
-
+        private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            VisibleChange(true, false);
+        }
     }
 }

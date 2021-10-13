@@ -57,9 +57,11 @@ namespace ProgramMain
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.cmsMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -324,10 +326,19 @@ namespace ProgramMain
             // cmsMenu
             // 
             this.cmsMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(61, 4);
+            this.cmsMenu.Size = new System.Drawing.Size(181, 48);
             this.cmsMenu.UseWaitCursor = true;
             this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenu_Opening);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "열기";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // student_main
             // 
@@ -366,6 +377,7 @@ namespace ProgramMain
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.cmsMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,6 +411,7 @@ namespace ProgramMain
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.NotifyIcon nfiTray;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
