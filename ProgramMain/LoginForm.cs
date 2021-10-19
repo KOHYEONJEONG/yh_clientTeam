@@ -12,18 +12,25 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : MetroFramework.Forms.MetroForm 
     {
         public LoginForm()
         {
             InitializeComponent();
         }
 
+        Boolean exit = true;
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //글자수 제한
             this.txt_id.MaxLength = 32;
             this.txt_pw.MaxLength = 32;
+
+            this.StyleManager = metroStyleManager1;
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
+            //chkRemember.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,22 +61,30 @@ namespace ProgramMain
 
                     if (txt_id.Text.Equals("p") && txt_pw.Text.Equals("1234"))
                     {
+                        exit = false;
+
                         MessageBox.Show("교수프로그램", "확인", MessageBoxButtons.OK);
-                        ProfesserMain professerMain = new ProfesserMain();
-                        professerMain.Show();
-
-
+                        //ProfesserMain professerMain = new ProfesserMain();
+                        //professerMain.Show();
+                        (new ProfesserMain()).Show();
+                        this.Close();
+                      
                     }
                     else
                     {
                         if (txt_id.Text.Equals("s") && txt_pw.Text.Equals("1234"))
                         {
+                            exit = false;
 
+                            this.Hide();
                             MessageBox.Show("학생프로그램", "확인", MessageBoxButtons.OK);
-                            student_main student = new student_main();
-                            student.Show();
+                            //student_main student = new student_main();
+                            //student.Show();
+                           
+                            (new student_main()).Show();
 
-
+                            this.Close();
+                            
                         }
                     }
                 }
@@ -81,22 +96,16 @@ namespace ProgramMain
                 }
 
             }
-         
-               
-            
-
-
-           
           
 
         }// 로그인 버튼
 
 
+        //유효성검사
         public bool CheckPassword()
         {
-            String text = @"^[a-zA-Z0-9!@]$";// 정규식
-
             string idChecker = Regex.Replace(txt_pw.Text, @"[^0-9a-zA-Z!@ ]{1,32}","", RegexOptions.Singleline);
+
 
             if (txt_pw.Text.Equals(idChecker) == false)
             {
@@ -118,5 +127,25 @@ namespace ProgramMain
 
         }//CheckPassword
 
+        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!exit)
+            {
+                return;
+            }
+          
+            else
+            {
+
+                if (MessageBox.Show("알림창", "학습 도우미 프로그램을 종료하시나요?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Application.Exit();
+                }
+            }
+           
+            //중요(스레드를 종료해야함)
+            //Application.Exit();
+            
+        }
     }
 }

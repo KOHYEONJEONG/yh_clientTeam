@@ -101,5 +101,10 @@ namespace ProgramMain
             Student_askf ask = new Student_askf();
             ask.Show();
         }
+
+        private void btn_quit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
