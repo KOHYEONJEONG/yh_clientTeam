@@ -19,7 +19,7 @@ namespace ProgramMain
 
 
         int CountOrgNum = 60; // 초기 카운터
-       
+        bool flag; //o,x 답 저장
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -42,15 +42,18 @@ namespace ProgramMain
             
         }
 
+        
+
         private void pn_yes_Click(object sender, EventArgs e)
         {
-
+            flag = true;
             Application.Exit();
            
         }
 
         private void pn_no_Click(object sender, EventArgs e)
         {
+            flag = false;
             Application.Exit();
         }
         /*

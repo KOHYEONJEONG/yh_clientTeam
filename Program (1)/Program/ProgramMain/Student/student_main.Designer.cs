@@ -33,21 +33,18 @@ namespace ProgramMain
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(student_main));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_day = new System.Windows.Forms.Label();
+            this.lbl_classhour = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_subject = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_clock = new System.Windows.Forms.Label();
             this.btn_ask = new System.Windows.Forms.Button();
             this.btn_absent = new System.Windows.Forms.Button();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_quit = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lbl_hak = new System.Windows.Forms.Label();
+            this.lbl_name = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_presenttime = new System.Windows.Forms.Label();
@@ -58,6 +55,9 @@ namespace ProgramMain
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_manager = new System.Windows.Forms.Button();
+            this.clock = new System.Windows.Forms.Timer(this.components);
+            this.lbl_period = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,80 +82,63 @@ namespace ProgramMain
             this.label2.TabIndex = 0;
             this.label2.Text = "이름 :";
             // 
-            // label3
+            // lbl_day
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(88, 282);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "수요일(5-6교시)";
+            this.lbl_day.AutoSize = true;
+            this.lbl_day.Font = new System.Drawing.Font("맑은 고딕 Semilight", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_day.Location = new System.Drawing.Point(95, 334);
+            this.lbl_day.Name = "lbl_day";
+            this.lbl_day.Size = new System.Drawing.Size(50, 17);
+            this.lbl_day.TabIndex = 2;
+            this.lbl_day.Text = "수요일";
             // 
-            // label4
+            // lbl_classhour
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(105, 304);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "14:00~16:50";
+            this.lbl_classhour.AutoSize = true;
+            this.lbl_classhour.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_classhour.Location = new System.Drawing.Point(112, 356);
+            this.lbl_classhour.Name = "lbl_classhour";
+            this.lbl_classhour.Size = new System.Drawing.Size(87, 17);
+            this.lbl_classhour.TabIndex = 3;
+            this.lbl_classhour.Text = "14:00~16:50";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 342);
+            this.label5.Location = new System.Drawing.Point(88, 290);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 15);
             this.label5.TabIndex = 4;
             this.label5.Text = "교과목 :";
             // 
-            // label6
+            // lbl_subject
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(126, 342);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 15);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "캡스톤 디자인";
+            this.lbl_subject.AutoSize = true;
+            this.lbl_subject.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_subject.Location = new System.Drawing.Point(142, 290);
+            this.lbl_subject.Name = "lbl_subject";
+            this.lbl_subject.Size = new System.Drawing.Size(83, 15);
+            this.lbl_subject.TabIndex = 5;
+            this.lbl_subject.Text = "캡스톤 디자인";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(265, 304);
+            this.label7.Location = new System.Drawing.Point(258, 290);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 15);
             this.label7.TabIndex = 6;
             this.label7.Text = "현재 시간";
             // 
-            // label8
+            // lbl_clock
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(336, 304);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(46, 15);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "14 : 32";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(265, 342);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(59, 15);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "남은 시간";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(336, 342);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 15);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "02 : 18";
+            this.lbl_clock.AutoSize = true;
+            this.lbl_clock.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_clock.Location = new System.Drawing.Point(329, 290);
+            this.lbl_clock.Name = "lbl_clock";
+            this.lbl_clock.Size = new System.Drawing.Size(46, 15);
+            this.lbl_clock.TabIndex = 7;
+            this.lbl_clock.Text = "14 : 32";
             // 
             // btn_ask
             // 
@@ -215,36 +198,27 @@ namespace ProgramMain
             this.btn_quit.TabIndex = 13;
             this.btn_quit.Text = "종료";
             this.btn_quit.UseVisualStyleBackColor = false;
+            this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
             // 
-            // label11
+            // lbl_hak
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(132, 237);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(90, 20);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "201907055";
+            this.lbl_hak.AutoSize = true;
+            this.lbl_hak.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_hak.Location = new System.Drawing.Point(132, 237);
+            this.lbl_hak.Name = "lbl_hak";
+            this.lbl_hak.Size = new System.Drawing.Size(90, 20);
+            this.lbl_hak.TabIndex = 14;
+            this.lbl_hak.Text = "201907055";
             // 
-            // label12
+            // lbl_name
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(301, 239);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(47, 17);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "김지민";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(337, 342);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 15);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "02 : 18";
+            this.lbl_name.AutoSize = true;
+            this.lbl_name.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_name.Location = new System.Drawing.Point(301, 239);
+            this.lbl_name.Name = "lbl_name";
+            this.lbl_name.Size = new System.Drawing.Size(47, 17);
+            this.lbl_name.TabIndex = 15;
+            this.lbl_name.Text = "김지민";
             // 
             // Timer
             // 
@@ -257,7 +231,7 @@ namespace ProgramMain
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(86, 433);
+            this.button1.Location = new System.Drawing.Point(12, 426);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 17;
@@ -276,11 +250,14 @@ namespace ProgramMain
             // lbl_timer
             // 
             this.lbl_timer.AutoSize = true;
-            this.lbl_timer.Location = new System.Drawing.Point(9, 437);
+            this.lbl_timer.BackColor = System.Drawing.Color.White;
+            this.lbl_timer.Font = new System.Drawing.Font("맑은 고딕", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_timer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(133)))));
+            this.lbl_timer.Location = new System.Drawing.Point(339, 130);
             this.lbl_timer.Name = "lbl_timer";
-            this.lbl_timer.Size = new System.Drawing.Size(71, 15);
+            this.lbl_timer.Size = new System.Drawing.Size(30, 12);
             this.lbl_timer.TabIndex = 19;
-            this.lbl_timer.Text = "출석 타이머";
+            this.lbl_timer.Text = "Timer";
             // 
             // pictureBox1
             // 
@@ -329,16 +306,45 @@ namespace ProgramMain
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(181, 48);
+            this.cmsMenu.Size = new System.Drawing.Size(99, 26);
             this.cmsMenu.UseWaitCursor = true;
             this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenu_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
             this.toolStripMenuItem1.Text = "열기";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
+            // 
+            // btn_manager
+            // 
+            this.btn_manager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(163)))), ((int)(((byte)(133)))));
+            this.btn_manager.FlatAppearance.BorderSize = 0;
+            this.btn_manager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_manager.ForeColor = System.Drawing.Color.White;
+            this.btn_manager.Location = new System.Drawing.Point(93, 426);
+            this.btn_manager.Name = "btn_manager";
+            this.btn_manager.Size = new System.Drawing.Size(75, 23);
+            this.btn_manager.TabIndex = 24;
+            this.btn_manager.Text = "정보관리";
+            this.btn_manager.UseVisualStyleBackColor = false;
+            this.btn_manager.Click += new System.EventHandler(this.btn_manager_Click);
+            // 
+            // clock
+            // 
+            this.clock.Interval = 1000;
+            this.clock.Tick += new System.EventHandler(this.clock_Tick);
+            // 
+            // lbl_period
+            // 
+            this.lbl_period.AutoSize = true;
+            this.lbl_period.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_period.Location = new System.Drawing.Point(142, 334);
+            this.lbl_period.Name = "lbl_period";
+            this.lbl_period.Size = new System.Drawing.Size(69, 17);
+            this.lbl_period.TabIndex = 25;
+            this.lbl_period.Text = "(5~6교시)";
             // 
             // student_main
             // 
@@ -346,29 +352,29 @@ namespace ProgramMain
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(484, 461);
+            this.Controls.Add(this.lbl_period);
+            this.Controls.Add(this.btn_manager);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_timer);
             this.Controls.Add(this.lbl_presenttime);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label11);
+            this.Controls.Add(this.lbl_name);
+            this.Controls.Add(this.lbl_hak);
             this.Controls.Add(this.btn_quit);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.btn_absent);
             this.Controls.Add(this.btn_ask);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lbl_clock);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_subject);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_classhour);
+            this.Controls.Add(this.lbl_day);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "student_main";
             this.Text = "학생";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.student_main_FormClosing);
@@ -387,21 +393,18 @@ namespace ProgramMain
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_day;
+        private System.Windows.Forms.Label lbl_classhour;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_subject;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbl_clock;
         private System.Windows.Forms.Button btn_ask;
         private System.Windows.Forms.Button btn_absent;
         private System.Windows.Forms.Button btn_logout;
         private System.Windows.Forms.Button btn_quit;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbl_hak;
+        private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_presenttime;
@@ -412,6 +415,9 @@ namespace ProgramMain
         private System.Windows.Forms.NotifyIcon nfiTray;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Button btn_manager;
+        private System.Windows.Forms.Timer clock;
+        private System.Windows.Forms.Label lbl_period;
     }
 }
 
