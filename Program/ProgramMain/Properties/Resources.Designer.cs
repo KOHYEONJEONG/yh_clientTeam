@@ -73,6 +73,16 @@ namespace ProgramMain.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap default1 {
+            get {
+                object obj = ResourceManager.GetObject("default1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap img_sbmark_large {
             get {
                 object obj = ResourceManager.GetObject("img_sbmark_large", resourceCulture);

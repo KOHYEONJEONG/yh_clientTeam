@@ -17,10 +17,7 @@ namespace ProgramMain
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginForm());
-            (new LoginForm()).Show();
-            Application.Run();
-            
+            Application.Run(new LoginForm());
         }
     }
 }

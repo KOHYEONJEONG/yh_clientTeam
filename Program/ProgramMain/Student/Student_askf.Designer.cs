@@ -47,21 +47,18 @@ namespace ProgramMain
             this.groupBox1.Controls.Add(this.btn_screenCopy);
             this.groupBox1.Controls.Add(this.btn_select);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Location = new System.Drawing.Point(0, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(340, 231);
+            this.groupBox1.Size = new System.Drawing.Size(437, 308);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "이미지";
             // 
             // btn_screenCopy
             // 
-            this.btn_screenCopy.Location = new System.Drawing.Point(171, 206);
-            this.btn_screenCopy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_screenCopy.Location = new System.Drawing.Point(220, 274);
             this.btn_screenCopy.Name = "btn_screenCopy";
-            this.btn_screenCopy.Size = new System.Drawing.Size(73, 22);
+            this.btn_screenCopy.Size = new System.Drawing.Size(94, 29);
             this.btn_screenCopy.TabIndex = 2;
             this.btn_screenCopy.Text = "화면캡쳐";
             this.btn_screenCopy.UseVisualStyleBackColor = true;
@@ -69,10 +66,9 @@ namespace ProgramMain
             // 
             // btn_select
             // 
-            this.btn_select.Location = new System.Drawing.Point(93, 206);
-            this.btn_select.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_select.Location = new System.Drawing.Point(120, 274);
             this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(73, 22);
+            this.btn_select.Size = new System.Drawing.Size(94, 29);
             this.btn_select.TabIndex = 1;
             this.btn_select.Text = "선택";
             this.btn_select.UseVisualStyleBackColor = true;
@@ -81,10 +77,9 @@ namespace ProgramMain
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 24);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(322, 184);
+            this.pictureBox1.Size = new System.Drawing.Size(414, 246);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -94,30 +89,26 @@ namespace ProgramMain
             // 
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(0, 240);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(0, 320);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(338, 226);
+            this.groupBox2.Size = new System.Drawing.Size(435, 301);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "질문";
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(5, 20);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Location = new System.Drawing.Point(6, 26);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(332, 176);
+            this.richTextBox1.Size = new System.Drawing.Size(426, 234);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(135, 200);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Location = new System.Drawing.Point(173, 266);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 21);
+            this.button2.Size = new System.Drawing.Size(94, 28);
             this.button2.TabIndex = 2;
             this.button2.Text = "전송";
             this.button2.UseVisualStyleBackColor = true;
@@ -132,13 +123,12 @@ namespace ProgramMain
             // 
             // Student_askf
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(341, 470);
+            this.ClientSize = new System.Drawing.Size(438, 626);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Student_askf";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
