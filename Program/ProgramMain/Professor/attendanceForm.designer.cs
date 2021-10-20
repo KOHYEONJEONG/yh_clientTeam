@@ -30,30 +30,43 @@ namespace ProgramMain
         private void InitializeComponent()
         {
             this.attendList = new System.Windows.Forms.ListView();
+            this.stuNum = new System.Windows.Forms.ColumnHeader();
+            this.stuName = new System.Windows.Forms.ColumnHeader();
             this.attendName = new System.Windows.Forms.Label();
             this.gradeLb = new System.Windows.Forms.Label();
-            this.stuNum = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.stuName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.attendstatus = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // attendList
             // 
             this.attendList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.stuNum,
-            this.stuName});
+            this.stuName,
+            this.attendstatus});
             this.attendList.HideSelection = false;
-            this.attendList.Location = new System.Drawing.Point(3, 58);
+            this.attendList.Location = new System.Drawing.Point(6, 74);
+            this.attendList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.attendList.Name = "attendList";
-            this.attendList.Size = new System.Drawing.Size(792, 391);
+            this.attendList.Size = new System.Drawing.Size(521, 363);
             this.attendList.TabIndex = 0;
             this.attendList.UseCompatibleStateImageBehavior = false;
             this.attendList.View = System.Windows.Forms.View.Details;
             // 
+            // stuNum
+            // 
+            this.stuNum.Text = "학번";
+            this.stuNum.Width = 190;
+            // 
+            // stuName
+            // 
+            this.stuName.Text = "이름";
+            this.stuName.Width = 160;
+            // 
             // attendName
             // 
             this.attendName.AutoSize = true;
-            this.attendName.Font = new System.Drawing.Font("굴림", 30F);
-            this.attendName.Location = new System.Drawing.Point(235, 9);
+            this.attendName.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.attendName.Location = new System.Drawing.Point(103, 9);
             this.attendName.Name = "attendName";
             this.attendName.Size = new System.Drawing.Size(310, 40);
             this.attendName.TabIndex = 1;
@@ -62,30 +75,27 @@ namespace ProgramMain
             // gradeLb
             // 
             this.gradeLb.AutoSize = true;
-            this.gradeLb.Font = new System.Drawing.Font("굴림", 12F);
-            this.gradeLb.Location = new System.Drawing.Point(726, 39);
+            this.gradeLb.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gradeLb.Location = new System.Drawing.Point(463, 52);
             this.gradeLb.Name = "gradeLb";
-            this.gradeLb.Size = new System.Drawing.Size(62, 16);
+            this.gradeLb.Size = new System.Drawing.Size(61, 16);
             this.gradeLb.TabIndex = 2;
             this.gradeLb.Text = "학년/반";
             // 
-            // stuNum
+            // attendstatus
             // 
-            this.stuNum.Text = "학번";
-            this.stuNum.Width = 80;
-            // 
-            // stuName
-            // 
-            this.stuName.Text = "이름";
+            this.attendstatus.Text = "출석";
+            this.attendstatus.Width = 160;
             // 
             // attendanceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(539, 463);
             this.Controls.Add(this.gradeLb);
             this.Controls.Add(this.attendName);
             this.Controls.Add(this.attendList);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "attendanceForm";
             this.Text = "attendanceForm";
             this.Load += new System.EventHandler(this.attendanceForm_Load);
@@ -101,5 +111,6 @@ namespace ProgramMain
         private System.Windows.Forms.ColumnHeader stuName;
         private System.Windows.Forms.Label attendName;
         private System.Windows.Forms.Label gradeLb;
+        private System.Windows.Forms.ColumnHeader attendstatus;
     }
 }

@@ -30,16 +30,11 @@ namespace ProgramMain
                 ListViewItem lvi = new ListViewItem();
                 lvi.Text = teststu[i, 0];
                 lvi.SubItems.Add(teststu[i, 1]);
+                lvi.SubItems.Add("출석");
                 attendList.Items.Add(lvi);
 
             }
-            attendList.Columns.Add("1주");//열 추가
-
-            for (int i = 0; i < teststu.Length / 2; i++) //출석여부 추가
-            {
-                attendList.Items[i].SubItems.Add("출석");
-
-            }
+            
 
             attendName.Text = "수업이름" + " 출석부";
             gradeLb.Text = "학년" + " / " + "반";
