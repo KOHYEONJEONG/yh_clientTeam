@@ -26,9 +26,14 @@ namespace ProgramMain
         private void Form1_Load(object sender, EventArgs e)
         {
             //폼이 로딩될때 Image와 크기 설정
+<<<<<<< HEAD
              pictureBox1.Image = img;
              pictureBox1.Size = img.Size;
            
+=======
+            pictureBox1.Image = img;
+            pictureBox1.Size = img.Size;
+>>>>>>> JM
 
         }
 

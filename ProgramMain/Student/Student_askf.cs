@@ -13,13 +13,18 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
+<<<<<<< HEAD
     public partial class Student_askf : MetroFramework.Forms.MetroForm
+=======
+    public partial class Student_askf : Form
+>>>>>>> JM
     {
         public Student_askf()
         {
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         /*    private void btn_select_Click(object sender, EventArgs e)
             {
                 try
@@ -38,6 +43,23 @@ namespace ProgramMain
 
 
         Bitmap bmp = null;
+=======
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                }
+
+            }catch(Exception ex)
+            {
+                //Filter속성에서 이미지를 걸러내기 때문에 안적어도 됨.
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+>>>>>>> JM
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -54,11 +76,16 @@ namespace ProgramMain
 
             //스크린샷 버튼
             Screen scr = Screen.PrimaryScreen;
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> JM
             //듀얼 모니터
             //Screen scr2 = Screen.AllScreens[1];
 
             //좌표
+<<<<<<< HEAD
             Rectangle rect = scr.Bounds;
 
             //확면을 복사해 이미지 저장
@@ -66,11 +93,19 @@ namespace ProgramMain
 
 
             //이미지를 변경하기 위해 Graphics객체를 가져옴.
+=======
+            Rectangle rect =  scr.Bounds;
+
+            //이미지 저장
+            Bitmap bmp = new Bitmap(rect.Width, rect.Height);
+
+>>>>>>> JM
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.CopyFromScreen(rect.Left, rect.Top, 0, 0, rect.Size);
             }
 
+<<<<<<< HEAD
            
                 pictureBox1.Image = (Image)bmp;
 
@@ -154,6 +189,33 @@ namespace ProgramMain
             /*this.StyleManager = metroStyleManager1;
             metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
             metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;*/
+=======
+            /*
+           //이미지로부터 그래픽스 객체 가져오기
+            Graphics g = Graphics.FromImage(bmp);//이미지를 변경하기 위해서
+
+            g.CopyFromScreen(rect.Left,rect.Top, 0, 0, rect.Size);
+
+            */
+
+            //폴더가 경로 있는지
+            if( (Directory.Exists(@"E:\Temp2")==false)){
+                Directory.CreateDirectory(@"E:\Temp2");
+            }
+            
+                //스크린샷 저장 경로
+                bmp.Save(@"E:\Temp2\scr.jpg", ImageFormat.Png);
+                bmp.Dispose();
+
+                //스크린샷 끝난후 폼 다시 보여주기.
+                this.Show();
+         
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+>>>>>>> JM
         }
     }
 }
