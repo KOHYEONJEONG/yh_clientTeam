@@ -9,7 +9,7 @@ namespace ProgramMain
     public partial class ProfesserMain : Form
     {
         private String Sstime = DateTime.Now.ToString("g");
-        String[,] teststu = {   {"000000001","가나다" },
+        String[,] teststu = {   {"000000001","가나다" }, // 서버에서 받아올 시 1열 추가 후 접속여부 저장
                                 {"000000002","라마바" },
                                 {"000000003","아자차" } };
 

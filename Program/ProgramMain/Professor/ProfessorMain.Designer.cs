@@ -38,7 +38,6 @@
             this.screenbtn = new System.Windows.Forms.Button();
             this.questionbtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.allscreenbtn = new System.Windows.Forms.Button();
             this.attendBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.endBtn = new System.Windows.Forms.Button();
@@ -110,17 +109,6 @@
             this.label2.TabIndex = 13;
             this.label2.Text = "학생 리스트";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // allscreenbtn
-            // 
-            this.allscreenbtn.Location = new System.Drawing.Point(172, 448);
-            this.allscreenbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.allscreenbtn.Name = "allscreenbtn";
-            this.allscreenbtn.Size = new System.Drawing.Size(130, 29);
-            this.allscreenbtn.TabIndex = 15;
-            this.allscreenbtn.Text = "전체 스크린샷 확인";
-            this.allscreenbtn.UseVisualStyleBackColor = true;
-            this.allscreenbtn.Click += new System.EventHandler(this.allscreenbtn_Click);
             // 
             // attendBtn
             // 
@@ -278,7 +266,7 @@
             // 
             // attenddanceBtn
             // 
-            this.attenddanceBtn.Location = new System.Drawing.Point(308, 448);
+            this.attenddanceBtn.Location = new System.Drawing.Point(172, 448);
             this.attenddanceBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.attenddanceBtn.Name = "attenddanceBtn";
             this.attenddanceBtn.Size = new System.Drawing.Size(87, 29);
@@ -329,7 +317,6 @@
             this.Controls.Add(this.studList);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.attendBtn);
-            this.Controls.Add(this.allscreenbtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.questionbtn);
             this.Controls.Add(this.screenbtn);
@@ -352,7 +339,6 @@
         private System.Windows.Forms.Button screenbtn;
         private System.Windows.Forms.Button questionbtn;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button allscreenbtn;
         private System.Windows.Forms.Button attendBtn;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button endBtn;
