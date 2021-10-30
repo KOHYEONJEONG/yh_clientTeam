@@ -94,7 +94,7 @@ namespace ProgramMain.Professor
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "StdAskCheckForm";
-            this.Text = "StdAskCheckForm";
+            this.Text = "학생 질문";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

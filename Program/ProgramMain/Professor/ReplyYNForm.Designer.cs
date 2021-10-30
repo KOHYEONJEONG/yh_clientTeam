@@ -42,10 +42,10 @@ namespace ProgramMain
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(368, 154);
+            this.btnOk.Location = new System.Drawing.Point(368, 192);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 26);
+            this.btnOk.Size = new System.Drawing.Size(75, 32);
             this.btnOk.TabIndex = 7;
             this.btnOk.Text = "확인";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -57,11 +57,11 @@ namespace ProgramMain
             this.grpAnswer.BackColor = System.Drawing.Color.White;
             this.grpAnswer.Controls.Add(this.radioYes);
             this.grpAnswer.Controls.Add(this.radioNo);
-            this.grpAnswer.Location = new System.Drawing.Point(36, 69);
+            this.grpAnswer.Location = new System.Drawing.Point(36, 86);
             this.grpAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAnswer.Name = "grpAnswer";
             this.grpAnswer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAnswer.Size = new System.Drawing.Size(407, 67);
+            this.grpAnswer.Size = new System.Drawing.Size(407, 84);
             this.grpAnswer.TabIndex = 5;
             this.grpAnswer.TabStop = false;
             this.grpAnswer.Text = "답변";
@@ -70,9 +70,10 @@ namespace ProgramMain
             // 
             this.radioYes.AutoSize = true;
             this.radioYes.Enabled = false;
-            this.radioYes.Location = new System.Drawing.Point(135, 28);
+            this.radioYes.Location = new System.Drawing.Point(135, 35);
+            this.radioYes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioYes.Name = "radioYes";
-            this.radioYes.Size = new System.Drawing.Size(45, 16);
+            this.radioYes.Size = new System.Drawing.Size(43, 19);
             this.radioYes.TabIndex = 8;
             this.radioYes.TabStop = true;
             this.radioYes.Text = "Yes";
@@ -82,9 +83,10 @@ namespace ProgramMain
             // 
             this.radioNo.AutoSize = true;
             this.radioNo.Enabled = false;
-            this.radioNo.Location = new System.Drawing.Point(244, 28);
+            this.radioNo.Location = new System.Drawing.Point(244, 35);
+            this.radioNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioNo.Name = "radioNo";
-            this.radioNo.Size = new System.Drawing.Size(39, 16);
+            this.radioNo.Size = new System.Drawing.Size(41, 19);
             this.radioNo.TabIndex = 9;
             this.radioNo.TabStop = true;
             this.radioNo.Text = "No";
@@ -95,41 +97,42 @@ namespace ProgramMain
             this.grpStd.BackColor = System.Drawing.Color.White;
             this.grpStd.Controls.Add(this.lblNum);
             this.grpStd.Controls.Add(this.lblName);
-            this.grpStd.Location = new System.Drawing.Point(36, 24);
+            this.grpStd.Location = new System.Drawing.Point(36, 30);
             this.grpStd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpStd.Name = "grpStd";
             this.grpStd.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpStd.Size = new System.Drawing.Size(407, 34);
+            this.grpStd.Size = new System.Drawing.Size(407, 42);
             this.grpStd.TabIndex = 6;
             this.grpStd.TabStop = false;
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(18, 16);
+            this.lblNum.Location = new System.Drawing.Point(18, 20);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(41, 12);
+            this.lblNum.Size = new System.Drawing.Size(42, 15);
             this.lblNum.TabIndex = 0;
             this.lblNum.Text = "학번 : ";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(173, 16);
+            this.lblName.Location = new System.Drawing.Point(173, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(41, 12);
+            this.lblName.Size = new System.Drawing.Size(42, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "이름 : ";
             // 
             // ReplyYNForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(470, 204);
+            this.ClientSize = new System.Drawing.Size(470, 255);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grpAnswer);
             this.Controls.Add(this.grpStd);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReplyYNForm";
             this.Text = "학생 응답";
             this.grpAnswer.ResumeLayout(false);

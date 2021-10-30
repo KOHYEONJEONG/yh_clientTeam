@@ -23,5 +23,6 @@ namespace ProgramMain.Professor
             ImageForm imageForm = new ImageForm();
             imageForm.ShowDialog();
         }
+
     }
 }
