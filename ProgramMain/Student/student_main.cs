@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class student_main : Form
+    public partial class student_main : MetroFramework.Forms.MetroForm // 상속 클래스 변경
     {
         public student_main()
         {
