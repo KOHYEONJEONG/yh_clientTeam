@@ -13,12 +13,21 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class Student_askf : Form
+    public partial class Student_askf : MetroFramework.Forms.MetroForm
     {
         public Student_askf()
         {
             InitializeComponent();
         }
+
+        private void Student_askf_Load(object sender, EventArgs e)
+        {
+            this.StyleManager = metroStyleManager1;
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
+        }
+
+        Bitmap bmp = null;
 
         private void btn_select_Click(object sender, EventArgs e)
         {
@@ -26,7 +35,7 @@ namespace ProgramMain
             {
                 if(openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                    pctBox.Image = Image.FromFile(openFileDialog1.FileName);
                 }
 
             }catch(Exception ex)
@@ -39,7 +48,11 @@ namespace ProgramMain
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             PctClick frm = new PctClick();
-            frm.img = pictureBox1.Image;
+            if (pctBox.Image == null)
+            {
+                return;
+            }
+            frm.img = pctBox.Image;
             frm.ShowDialog();
         }
 
@@ -51,46 +64,80 @@ namespace ProgramMain
 
             //스크린샷 버튼
             Screen scr = Screen.PrimaryScreen;
-            
+
             //듀얼 모니터
             //Screen scr2 = Screen.AllScreens[1];
 
             //좌표
-            Rectangle rect =  scr.Bounds;
+            Rectangle rect = scr.Bounds;
 
-            //이미지 저장
-            Bitmap bmp = new Bitmap(rect.Width, rect.Height);
+            //확면을 복사해 이미지 저장
+            bmp = new Bitmap(rect.Width, rect.Height);
 
+
+            //이미지를 변경하기 위해 Graphics객체를 가져옴.
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.CopyFromScreen(rect.Left, rect.Top, 0, 0, rect.Size);
             }
 
-            /*
-           //이미지로부터 그래픽스 객체 가져오기
-            Graphics g = Graphics.FromImage(bmp);//이미지를 변경하기 위해서
 
-            g.CopyFromScreen(rect.Left,rect.Top, 0, 0, rect.Size);
+            pctBox.Image = (Image)bmp;
 
-            */
+            //Image.FromFile(openFileDialog1.FileName);
 
-            //폴더가 경로 있는지
-            if( (Directory.Exists(@"E:\Temp2")==false)){
-                Directory.CreateDirectory(@"E:\Temp2");
+
+            this.Show();
+
+        }
+
+        public byte[] bitmapToByteArray(Bitmap bitmap)
+        {
+            byte[] result = null;
+            if (bitmap != null)
+            {
+                MemoryStream stream = new MemoryStream();
+                bitmap.Save(stream, bitmap.RawFormat);
+                result = stream.ToArray();
             }
-            
-                //스크린샷 저장 경로
-                bmp.Save(@"E:\Temp2\scr.jpg", ImageFormat.Png);
-                bmp.Dispose();
+            else
+            {
+                Console.WriteLine("Bitmap is null.");
+            }
+            return result;
 
-                //스크린샷 끝난후 폼 다시 보여주기.
-                this.Show();
-         
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+            byte[] imgByte = bitmapToByteArray(bmp);
+
+
+            if (chkImage.Checked && chkAsk.Checked)
+            {
+                MessageBox.Show("이미지,질문 전송완료");
+            }
+            else
+            {
+                if (chkImage.Checked)
+                {
+                    MessageBox.Show("이미지 전송완료");
+                }
+                else
+                {
+                    if (chkAsk.Checked)
+                    {
+                        MessageBox.Show("질문 전송완료");
+                    }
+                }
+            }
+        }
+
+     
     }
 }
