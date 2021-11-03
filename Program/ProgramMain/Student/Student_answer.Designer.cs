@@ -33,11 +33,13 @@ namespace ProgramMain
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_question = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.StyleManager = new MetroFramework.Components.MetroStyleManager(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -69,6 +71,16 @@ namespace ProgramMain
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "답변";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 23);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(500, 210);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(213, 361);
@@ -78,36 +90,36 @@ namespace ProgramMain
             this.button1.Text = "전송";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(6, 21);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(494, 209);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            // 
             // imageList1
             // 
             this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // Form1
+            // StyleManager
+            // 
+            this.StyleManager.Owner = null;
+            // 
+            // Student_answer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(544, 402);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "문제답변";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Student_answer";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.Student_answer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.StyleManager)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -118,8 +130,9 @@ namespace ProgramMain
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_question;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ImageList imageList1;
+        private MetroFramework.Components.MetroStyleManager StyleManager;
+        internal System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

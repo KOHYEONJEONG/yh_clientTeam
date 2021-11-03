@@ -161,9 +161,9 @@ namespace ProgramMain
             this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.prBtn.Location = new System.Drawing.Point(134, 12);
             this.prBtn.Name = "prBtn";
-            this.prBtn.Size = new System.Drawing.Size(61, 24);
+            this.prBtn.Size = new System.Drawing.Size(60, 24);
             this.prBtn.TabIndex = 1;
-            this.prBtn.Text = "Prof.";
+            this.prBtn.Text = "교수";
             this.prBtn.UseVisualStyleBackColor = true;
             // 
             // srBtn
@@ -173,10 +173,10 @@ namespace ProgramMain
             this.srBtn.ForeColor = System.Drawing.Color.Black;
             this.srBtn.Location = new System.Drawing.Point(55, 12);
             this.srBtn.Name = "srBtn";
-            this.srBtn.Size = new System.Drawing.Size(64, 24);
+            this.srBtn.Size = new System.Drawing.Size(60, 24);
             this.srBtn.TabIndex = 0;
             this.srBtn.TabStop = true;
-            this.srBtn.Text = "Stud.";
+            this.srBtn.Text = "학생";
             this.srBtn.UseVisualStyleBackColor = true;
             // 
             // LoginForm
@@ -197,8 +197,10 @@ namespace ProgramMain
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "Yuhan University";
+            this.Text = "유한대학교";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
