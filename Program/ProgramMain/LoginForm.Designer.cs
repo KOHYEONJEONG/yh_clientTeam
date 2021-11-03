@@ -40,8 +40,12 @@ namespace ProgramMain
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chkRemember = new MetroFramework.Controls.MetroCheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.srBtn = new System.Windows.Forms.RadioButton();
+            this.prBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +53,7 @@ namespace ProgramMain
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Location = new System.Drawing.Point(39, 261);
+            this.label1.Location = new System.Drawing.Point(37, 292);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 23);
             this.label1.TabIndex = 1;
@@ -60,16 +64,17 @@ namespace ProgramMain
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label2.Location = new System.Drawing.Point(39, 326);
+            this.label2.Location = new System.Drawing.Point(37, 357);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(39, 313);
+            this.panel2.Location = new System.Drawing.Point(37, 344);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 1);
             this.panel2.TabIndex = 3;
@@ -77,26 +82,29 @@ namespace ProgramMain
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Location = new System.Drawing.Point(39, 378);
+            this.panel3.Location = new System.Drawing.Point(37, 409);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 1);
             this.panel3.TabIndex = 4;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // txt_id
             // 
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Location = new System.Drawing.Point(39, 287);
+            this.txt_id.Location = new System.Drawing.Point(37, 318);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(125, 20);
             this.txt_id.TabIndex = 5;
+            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             // 
             // txt_pw
             // 
             this.txt_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_pw.Location = new System.Drawing.Point(39, 352);
+            this.txt_pw.Location = new System.Drawing.Point(37, 383);
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.Size = new System.Drawing.Size(125, 20);
             this.txt_pw.TabIndex = 6;
+            this.txt_pw.TextChanged += new System.EventHandler(this.txt_pw_TextChanged);
             // 
             // btnLogin
             // 
@@ -107,7 +115,7 @@ namespace ProgramMain
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(105, 424);
+            this.btnLogin.Location = new System.Drawing.Point(103, 455);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 41);
             this.btnLogin.TabIndex = 1;
@@ -134,12 +142,47 @@ namespace ProgramMain
             // chkRemember
             // 
             this.chkRemember.AutoSize = true;
-            this.chkRemember.Location = new System.Drawing.Point(39, 385);
+            this.chkRemember.Location = new System.Drawing.Point(37, 416);
             this.chkRemember.Name = "chkRemember";
             this.chkRemember.Size = new System.Drawing.Size(110, 17);
             this.chkRemember.TabIndex = 8;
             this.chkRemember.Text = "Remember me";
             this.chkRemember.UseSelectable = true;
+            this.chkRemember.CheckedChanged += new System.EventHandler(this.chkRemember_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.prBtn);
+            this.groupBox1.Controls.Add(this.srBtn);
+            this.groupBox1.Location = new System.Drawing.Point(32, 255);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(250, 41);
+            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabStop = false;
+            // 
+            // srBtn
+            // 
+            this.srBtn.AutoSize = true;
+            this.srBtn.Checked = true;
+            this.srBtn.ForeColor = System.Drawing.Color.Black;
+            this.srBtn.Location = new System.Drawing.Point(55, 12);
+            this.srBtn.Name = "srBtn";
+            this.srBtn.Size = new System.Drawing.Size(60, 24);
+            this.srBtn.TabIndex = 0;
+            this.srBtn.TabStop = true;
+            this.srBtn.Text = "학생";
+            this.srBtn.UseVisualStyleBackColor = true;
+            // 
+            // prBtn
+            // 
+            this.prBtn.AutoSize = true;
+            this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.prBtn.Location = new System.Drawing.Point(134, 12);
+            this.prBtn.Name = "prBtn";
+            this.prBtn.Size = new System.Drawing.Size(60, 24);
+            this.prBtn.TabIndex = 1;
+            this.prBtn.Text = "교수";
+            this.prBtn.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
@@ -147,7 +190,8 @@ namespace ProgramMain
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(305, 488);
+            this.ClientSize = new System.Drawing.Size(305, 512);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.chkRemember);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
@@ -159,12 +203,14 @@ namespace ProgramMain
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
             this.Name = "LoginForm";
-            this.Text = "유한대학교";
+            this.Text = "Yuhan University";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,6 +227,9 @@ namespace ProgramMain
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private MetroFramework.Controls.MetroCheckBox chkRemember;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton prBtn;
+        private System.Windows.Forms.RadioButton srBtn;
     }
 }
 

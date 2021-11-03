@@ -62,9 +62,7 @@ namespace ProgramMain
                     {
                         exit = false;
 
-                        //MessageBox.Show("교수프로그램", "확인", MessageBoxButtons.OK);
-                        //ProfesserMain professerMain = new ProfesserMain();
-                        //professerMain.Show();
+                       
                         (new ProfesserMain()).Show();
                         this.Close();
 
@@ -139,6 +137,31 @@ namespace ProgramMain
                     Application.ExitThread();
                 }
             }
+        }
+
+        private void chkRemember_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_pw_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_id_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

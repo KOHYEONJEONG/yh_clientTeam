@@ -1,4 +1,0 @@
-이부분이 추가되었어여(Program.cs)
- (new LoginForm()).Show();
-            Application.Run();
-
