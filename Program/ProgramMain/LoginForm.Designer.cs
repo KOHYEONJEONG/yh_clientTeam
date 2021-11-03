@@ -41,8 +41,8 @@ namespace ProgramMain
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.chkRemember = new MetroFramework.Controls.MetroCheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.srBtn = new System.Windows.Forms.RadioButton();
             this.prBtn = new System.Windows.Forms.RadioButton();
+            this.srBtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,7 +69,6 @@ namespace ProgramMain
             this.label2.Size = new System.Drawing.Size(88, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panel2
             // 
@@ -86,7 +85,6 @@ namespace ProgramMain
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(231, 1);
             this.panel3.TabIndex = 4;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // txt_id
             // 
@@ -95,7 +93,6 @@ namespace ProgramMain
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(125, 20);
             this.txt_id.TabIndex = 5;
-            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             // 
             // txt_pw
             // 
@@ -104,7 +101,6 @@ namespace ProgramMain
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.Size = new System.Drawing.Size(125, 20);
             this.txt_pw.TabIndex = 6;
-            this.txt_pw.TextChanged += new System.EventHandler(this.txt_pw_TextChanged);
             // 
             // btnLogin
             // 
@@ -144,11 +140,10 @@ namespace ProgramMain
             this.chkRemember.AutoSize = true;
             this.chkRemember.Location = new System.Drawing.Point(37, 416);
             this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(110, 17);
+            this.chkRemember.Size = new System.Drawing.Size(93, 17);
             this.chkRemember.TabIndex = 8;
-            this.chkRemember.Text = "Remember me";
+            this.chkRemember.Text = "아이디 저장";
             this.chkRemember.UseSelectable = true;
-            this.chkRemember.CheckedChanged += new System.EventHandler(this.chkRemember_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -160,6 +155,17 @@ namespace ProgramMain
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
+            // prBtn
+            // 
+            this.prBtn.AutoSize = true;
+            this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.prBtn.Location = new System.Drawing.Point(134, 12);
+            this.prBtn.Name = "prBtn";
+            this.prBtn.Size = new System.Drawing.Size(61, 24);
+            this.prBtn.TabIndex = 1;
+            this.prBtn.Text = "Prof.";
+            this.prBtn.UseVisualStyleBackColor = true;
+            // 
             // srBtn
             // 
             this.srBtn.AutoSize = true;
@@ -167,22 +173,11 @@ namespace ProgramMain
             this.srBtn.ForeColor = System.Drawing.Color.Black;
             this.srBtn.Location = new System.Drawing.Point(55, 12);
             this.srBtn.Name = "srBtn";
-            this.srBtn.Size = new System.Drawing.Size(60, 24);
+            this.srBtn.Size = new System.Drawing.Size(64, 24);
             this.srBtn.TabIndex = 0;
             this.srBtn.TabStop = true;
-            this.srBtn.Text = "학생";
+            this.srBtn.Text = "Stud.";
             this.srBtn.UseVisualStyleBackColor = true;
-            // 
-            // prBtn
-            // 
-            this.prBtn.AutoSize = true;
-            this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.prBtn.Location = new System.Drawing.Point(134, 12);
-            this.prBtn.Name = "prBtn";
-            this.prBtn.Size = new System.Drawing.Size(60, 24);
-            this.prBtn.TabIndex = 1;
-            this.prBtn.Text = "교수";
-            this.prBtn.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 
