@@ -1,5 +1,4 @@
-﻿using MetroFramework.Components;
-using ProgramMain.Student;
+﻿using ProgramMain.Student;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,8 +11,7 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class student_main : MetroFramework.Forms.MetroForm
-    //MetroFramework.Forms.MetroForm // 상속 클래스 변경
+    public partial class student_main : MetroFramework.Forms.MetroForm // 상속 클래스 변경
     {
         public student_main()
         {
@@ -29,10 +27,6 @@ namespace ProgramMain
             btn_quit.Enabled = false; //종료 버튼 비활성화 종료 가능 시간(수업시간 종료 10분 전)
             //현재시간 타이머
             clock.Start();
-            //this.StyleManager = MetroStyleManager1;
-            //MetroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
-            //MetroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
-            
         }
 
 
@@ -49,10 +43,7 @@ namespace ProgramMain
         }
 
         int TNum = 900; //타이머 진행 숫자(출석시간)
-
-        public MetroStyleManager MetroStyleManager1 { get; private set; }
-
-        // string OrgStr = "";
+                       // string OrgStr = "";
 
         //출석버튼 클릭했을 때 이벤트 코딩
         private void btn_absent_Click(object sender, EventArgs e)
