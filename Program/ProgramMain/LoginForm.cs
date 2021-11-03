@@ -62,9 +62,7 @@ namespace ProgramMain
                     {
                         exit = false;
 
-                        //MessageBox.Show("교수프로그램", "확인", MessageBoxButtons.OK);
-                        //ProfesserMain professerMain = new ProfesserMain();
-                        //professerMain.Show();
+                       
                         (new ProfesserMain()).Show();
                         this.Close();
 
@@ -140,5 +138,7 @@ namespace ProgramMain
                 }
             }
         }
+
+
     }
 }
