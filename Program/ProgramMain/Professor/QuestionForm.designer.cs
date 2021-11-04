@@ -274,9 +274,9 @@ namespace ProgramMain
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Padding = new System.Windows.Forms.Padding(4, 4, 0, 0);
-            this.label1.Size = new System.Drawing.Size(44, 23);
+            this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Quiz.";
+            this.label1.Text = "Quiz 입력";
             // 
             // tableLayoutPanel2
             // 
