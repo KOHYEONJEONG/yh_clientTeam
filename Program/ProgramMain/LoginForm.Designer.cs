@@ -121,8 +121,6 @@ namespace ProgramMain
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::ProgramMain.Properties.Resources.img_sbmark_large;
             this.pictureBox1.Location = new System.Drawing.Point(62, 63);
             this.pictureBox1.Name = "pictureBox1";
@@ -140,9 +138,9 @@ namespace ProgramMain
             this.chkRemember.AutoSize = true;
             this.chkRemember.Location = new System.Drawing.Point(37, 416);
             this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(93, 17);
+            this.chkRemember.Size = new System.Drawing.Size(123, 17);
             this.chkRemember.TabIndex = 8;
-            this.chkRemember.Text = "아이디 저장";
+            this.chkRemember.Text = "로그인 상태 유지";
             this.chkRemember.UseSelectable = true;
             // 
             // groupBox1

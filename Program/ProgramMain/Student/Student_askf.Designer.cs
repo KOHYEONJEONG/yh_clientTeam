@@ -52,7 +52,7 @@ namespace ProgramMain
             // 
             this.groupBox1.Controls.Add(this.btn_screenCopy);
             this.groupBox1.Controls.Add(this.pctBox);
-            this.groupBox1.Location = new System.Drawing.Point(1, 41);
+            this.groupBox1.Location = new System.Drawing.Point(7, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 308);
             this.groupBox1.TabIndex = 0;
@@ -83,7 +83,7 @@ namespace ProgramMain
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtBox);
-            this.groupBox2.Location = new System.Drawing.Point(1, 356);
+            this.groupBox2.Location = new System.Drawing.Point(7, 356);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 275);
             this.groupBox2.TabIndex = 1;
@@ -95,6 +95,7 @@ namespace ProgramMain
             this.txtBox.Location = new System.Drawing.Point(9, 26);
             this.txtBox.Multiline = true;
             this.txtBox.Name = "txtBox";
+            this.txtBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBox.Size = new System.Drawing.Size(411, 234);
             this.txtBox.TabIndex = 0;
             // 
@@ -114,7 +115,7 @@ namespace ProgramMain
             this.groupBox3.Controls.Add(this.chkAsk);
             this.groupBox3.Controls.Add(this.chkImage);
             this.groupBox3.Controls.Add(this.btnSend);
-            this.groupBox3.Location = new System.Drawing.Point(1, 637);
+            this.groupBox3.Location = new System.Drawing.Point(7, 637);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(437, 56);
             this.groupBox3.TabIndex = 3;
@@ -156,7 +157,7 @@ namespace ProgramMain
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(438, 698);
+            this.ClientSize = new System.Drawing.Size(450, 698);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -182,9 +183,9 @@ namespace ProgramMain
         private System.Windows.Forms.Button btn_screenCopy;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtBox;
         private System.Windows.Forms.CheckBox chkAsk;
         private System.Windows.Forms.CheckBox chkImage;
         private System.Windows.Forms.Button btnSend;
+        internal System.Windows.Forms.TextBox txtBox;
     }
 }

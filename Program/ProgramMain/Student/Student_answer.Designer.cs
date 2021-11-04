@@ -45,9 +45,9 @@ namespace ProgramMain
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lbl_question);
-            this.groupBox1.Location = new System.Drawing.Point(12, 26);
+            this.groupBox1.Location = new System.Drawing.Point(18, 26);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(506, 55);
+            this.groupBox1.Size = new System.Drawing.Size(508, 87);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "문제";
@@ -55,7 +55,7 @@ namespace ProgramMain
             // lbl_question
             // 
             this.lbl_question.AutoSize = true;
-            this.lbl_question.Location = new System.Drawing.Point(18, 23);
+            this.lbl_question.Location = new System.Drawing.Point(6, 23);
             this.lbl_question.Name = "lbl_question";
             this.lbl_question.Size = new System.Drawing.Size(49, 20);
             this.lbl_question.TabIndex = 3;
@@ -66,7 +66,7 @@ namespace ProgramMain
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Location = new System.Drawing.Point(15, 119);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(506, 236);
+            this.groupBox2.Size = new System.Drawing.Size(511, 236);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "답변";
@@ -77,7 +77,7 @@ namespace ProgramMain
             this.richTextBox1.Location = new System.Drawing.Point(3, 23);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(500, 210);
+            this.richTextBox1.Size = new System.Drawing.Size(505, 210);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
