@@ -40,7 +40,6 @@ namespace ProgramMain
             this.Timer.Enabled = true; 
             //예비버튼 비활성화
             button1.Enabled = false;
-            this.btn_manager.Enabled = false;
         }
 
         int TNum = 900; //타이머 진행 숫자(출석시간)
