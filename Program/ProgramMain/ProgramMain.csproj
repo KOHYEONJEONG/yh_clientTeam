@@ -23,8 +23,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Update="Student\PctClick.cs" />
+    <Compile Update="Student\StudentOX.cs" />
     <Compile Update="Student\Student_answer.cs" />
     <Compile Update="Student\Student_askf.cs" />
+    <Compile Update="Student\student_main.cs" />
   </ItemGroup>
 
   <ItemGroup>
