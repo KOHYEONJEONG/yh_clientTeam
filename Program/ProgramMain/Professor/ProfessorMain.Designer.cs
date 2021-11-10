@@ -55,9 +55,11 @@
             this.classTime = new System.Windows.Forms.Label();
             this.className = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // allcheck
@@ -73,36 +75,45 @@
             // 
             // attendBtn
             // 
-            this.attendBtn.Location = new System.Drawing.Point(593, 139);
+            this.attendBtn.BackColor = System.Drawing.Color.White;
+            this.attendBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attendBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.attendBtn.Location = new System.Drawing.Point(0, 0);
             this.attendBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.attendBtn.Name = "attendBtn";
-            this.attendBtn.Size = new System.Drawing.Size(101, 27);
+            this.attendBtn.Size = new System.Drawing.Size(189, 41);
             this.attendBtn.TabIndex = 16;
-            this.attendBtn.Text = "출석시작";
-            this.attendBtn.UseVisualStyleBackColor = true;
+            this.attendBtn.Text = "출석 시작";
+            this.attendBtn.UseVisualStyleBackColor = false;
             this.attendBtn.Visible = false;
             this.attendBtn.Click += new System.EventHandler(this.attendbtn_Click);
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(700, 137);
+            this.startBtn.BackColor = System.Drawing.Color.White;
+            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.startBtn.Location = new System.Drawing.Point(0, 0);
             this.startBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(80, 29);
+            this.startBtn.Size = new System.Drawing.Size(189, 41);
             this.startBtn.TabIndex = 17;
-            this.startBtn.Text = "수업시작";
-            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Text = "수업 시작";
+            this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // endBtn
             // 
-            this.endBtn.Location = new System.Drawing.Point(486, 139);
+            this.endBtn.BackColor = System.Drawing.Color.White;
+            this.endBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.endBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.endBtn.Location = new System.Drawing.Point(0, 0);
             this.endBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.endBtn.Name = "endBtn";
-            this.endBtn.Size = new System.Drawing.Size(101, 27);
+            this.endBtn.Size = new System.Drawing.Size(189, 41);
             this.endBtn.TabIndex = 18;
-            this.endBtn.Text = "수업종료";
-            this.endBtn.UseVisualStyleBackColor = true;
+            this.endBtn.Text = "수업 종료";
+            this.endBtn.UseVisualStyleBackColor = false;
             this.endBtn.Visible = false;
             this.endBtn.Click += new System.EventHandler(this.endBtn_Click);
             // 
@@ -358,6 +369,7 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.49405F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.50595F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.className, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.classTime, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.nowTime, 1, 1);
@@ -369,18 +381,26 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(636, 79);
             this.tableLayoutPanel2.TabIndex = 30;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.startBtn);
+            this.panel1.Controls.Add(this.endBtn);
+            this.panel1.Controls.Add(this.attendBtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(444, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 41);
+            this.panel1.TabIndex = 19;
+            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(798, 494);
-            this.Controls.Add(this.startBtn);
+            this.ClientSize = new System.Drawing.Size(798, 489);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.allcheck);
-            this.Controls.Add(this.attendBtn);
-            this.Controls.Add(this.endBtn);
             this.Controls.Add(this.studList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -392,6 +412,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,6 +442,7 @@
         private FontAwesome.Sharp.IconButton screenbtn;
         private FontAwesome.Sharp.IconButton attenddanceBtn;
         private System.Windows.Forms.Label lblProfname;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
