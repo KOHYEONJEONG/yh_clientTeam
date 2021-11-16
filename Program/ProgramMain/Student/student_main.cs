@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class student_main : MetroFramework.Forms.MetroForm // 상속 클래스 변경
+    public partial class student_main : Form // 상속 클래스 변경
     {
         public student_main()
         {
@@ -23,8 +23,9 @@ namespace ProgramMain
         {
              // this.lbl_timer.Text = OrgStr; //타이머 시간 확인용 라벨(후에 삭제)
             btn_absent.Enabled = false; //출석 버튼 비활성화, 교수님이 활성화하시면 눌리도록
-            btn_logout.Enabled = false; //로그아웃 버튼 비활성화 로그아웃 가능 시간(수업시간 종료 10분 전)
-            btn_quit.Enabled = false; //종료 버튼 비활성화 종료 가능 시간(수업시간 종료 10분 전)
+            //btn_logout.Enabled = false; //로그아웃 버튼 비활성화 로그아웃 가능 시간(수업시간 종료 10분 전)
+            //btn_quit.Enabled = false; //종료 버튼 비활성화 종료 가능 시간(수업시간 종료 10분 전)
+
             //현재시간 타이머
             clock.Start();
         }
@@ -34,7 +35,7 @@ namespace ProgramMain
                                                                //대신하는 예비용 버튼
         {
             //녹색으로 바꾸고 버튼 활성화
-            this.btn_absent.ForeColor = Color.FromArgb(255, 255, 255); this.btn_absent.BackColor = Color.FromArgb(0, 163, 133);
+            this.btn_absent.BackColor = Color.FromArgb(0, 163, 133);
             btn_absent.Enabled = true;
             //타이머 활성화
             this.Timer.Enabled = true; 
@@ -75,7 +76,7 @@ namespace ProgramMain
         //출석 시간에 대한 타이머 계산
         private void Timer_Tick(object sender, EventArgs e)
         {
-            this.lbl_timer.Text = "" + TNum; //예비용 타이머 시각 확인
+            //this.lbl_timer.Text = "" + TNum; //예비용 타이머 시각 확인
             TNum--; //0~5분 :출석  5분~15분 :지각   15분 이후 :결석 처리(900초)
            if(TNum < 0)
             {
@@ -106,7 +107,7 @@ namespace ProgramMain
             //string clock = System.DateTime.Now.ToString("HH : mm");
             //this.lbl_clock.Text = clock;
             DateTime datetime = DateTime.Now;
-            this.lbl_clock.Text = datetime.ToString("HH : mm");
+            //this.lbl_clock.Text = datetime.ToString("HH : mm");
         }
 
 
@@ -172,7 +173,7 @@ namespace ProgramMain
         //정보관리를 위한 이벤트 메소드
         public void EventMethod(string a, string b, string c, string d, string e, string f)
         {
-            lbl_hak.Text = a.ToString();
+            //lbl_hak.Text = a.ToString();
             lbl_name.Text = b.ToString();
             lbl_subject.Text = c.ToString();
             lbl_day.Text = d.ToString();
@@ -181,11 +182,7 @@ namespace ProgramMain
         }
 
 
-        //quit 버튼 클릭했을때 종료
-        private void btn_quit_Click(object sender, EventArgs e)
-        { 
-                Application.Exit();
-        }
+       
 
        
 
@@ -206,6 +203,26 @@ namespace ProgramMain
         }
         private void cmsMenu_Opening(object sender, CancelEventArgs e)
         {
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_classhour_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_period_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_day_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
