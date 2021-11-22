@@ -42,18 +42,18 @@ namespace ProgramMain
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(204, 16);
+            this.lblName.Location = new System.Drawing.Point(204, 20);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(41, 12);
+            this.lblName.Size = new System.Drawing.Size(42, 15);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "이름 : ";
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(11, 16);
+            this.lblNum.Location = new System.Drawing.Point(11, 20);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(41, 12);
+            this.lblNum.Size = new System.Drawing.Size(42, 15);
             this.lblNum.TabIndex = 0;
             this.lblNum.Text = "학번 : ";
             // 
@@ -61,12 +61,12 @@ namespace ProgramMain
             // 
             this.txtAnswer.BackColor = System.Drawing.Color.White;
             this.txtAnswer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAnswer.Location = new System.Drawing.Point(13, 28);
+            this.txtAnswer.Location = new System.Drawing.Point(13, 35);
             this.txtAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAnswer.Multiline = true;
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.ReadOnly = true;
-            this.txtAnswer.Size = new System.Drawing.Size(524, 84);
+            this.txtAnswer.Size = new System.Drawing.Size(524, 104);
             this.txtAnswer.TabIndex = 1;
             this.txtAnswer.TabStop = false;
             // 
@@ -75,11 +75,11 @@ namespace ProgramMain
             this.grpStd.BackColor = System.Drawing.Color.White;
             this.grpStd.Controls.Add(this.lblNum);
             this.grpStd.Controls.Add(this.lblName);
-            this.grpStd.Location = new System.Drawing.Point(43, 16);
+            this.grpStd.Location = new System.Drawing.Point(43, 20);
             this.grpStd.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpStd.Name = "grpStd";
             this.grpStd.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpStd.Size = new System.Drawing.Size(557, 34);
+            this.grpStd.Size = new System.Drawing.Size(557, 42);
             this.grpStd.TabIndex = 3;
             this.grpStd.TabStop = false;
             // 
@@ -88,21 +88,21 @@ namespace ProgramMain
             this.grpAnswer.AutoSize = true;
             this.grpAnswer.BackColor = System.Drawing.Color.White;
             this.grpAnswer.Controls.Add(this.txtAnswer);
-            this.grpAnswer.Location = new System.Drawing.Point(43, 61);
+            this.grpAnswer.Location = new System.Drawing.Point(43, 76);
             this.grpAnswer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpAnswer.Name = "grpAnswer";
             this.grpAnswer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpAnswer.Size = new System.Drawing.Size(557, 142);
+            this.grpAnswer.Size = new System.Drawing.Size(557, 178);
             this.grpAnswer.TabIndex = 3;
             this.grpAnswer.TabStop = false;
             this.grpAnswer.Text = "답변";
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(513, 209);
+            this.btnOk.Location = new System.Drawing.Point(513, 261);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 26);
+            this.btnOk.Size = new System.Drawing.Size(75, 32);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "확인";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -110,11 +110,11 @@ namespace ProgramMain
             // 
             // ReplyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(621, 246);
+            this.ClientSize = new System.Drawing.Size(621, 308);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.grpAnswer);
             this.Controls.Add(this.grpStd);
