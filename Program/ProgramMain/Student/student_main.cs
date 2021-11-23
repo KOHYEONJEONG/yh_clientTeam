@@ -25,7 +25,7 @@ namespace ProgramMain
             btn_absent.Enabled = false; //출석 버튼 비활성화, 교수님이 활성화하시면 눌리도록
             //btn_logout.Enabled = false; //로그아웃 버튼 비활성화 로그아웃 가능 시간(수업시간 종료 10분 전)
             //btn_quit.Enabled = false; //종료 버튼 비활성화 종료 가능 시간(수업시간 종료 10분 전)
-
+            //btn_manager삭제
             //현재시간 타이머
             clock.Start();
         }
@@ -44,11 +44,15 @@ namespace ProgramMain
         }
 
         int TNum = 900; //타이머 진행 숫자(출석시간)
-                       // string OrgStr = "";
+                        // string OrgStr = "";
+
+ 
+  
 
         //출석버튼 클릭했을 때 이벤트 코딩
         private void btn_absent_Click(object sender, EventArgs e)
         {
+            
             //System.DateTime.Now.ToString("yyyy");
             //출석 버튼 클릭했을때 클릭한 시간 나타내기
             string date = System.DateTime.Now.ToString("HH:mm:ss");

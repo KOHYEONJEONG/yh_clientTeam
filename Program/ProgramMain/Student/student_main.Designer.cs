@@ -43,7 +43,7 @@ namespace ProgramMain
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_manager = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.lbl_period = new System.Windows.Forms.Label();
             this.pan01 = new System.Windows.Forms.Panel();
@@ -191,20 +191,20 @@ namespace ProgramMain
             this.toolStripMenuItem1.Text = "열기";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
-            // btn_manager
+            // btn_reset
             // 
-            this.btn_manager.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.btn_manager.FlatAppearance.BorderSize = 0;
-            this.btn_manager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_manager.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_manager.ForeColor = System.Drawing.Color.White;
-            this.btn_manager.Location = new System.Drawing.Point(355, 124);
-            this.btn_manager.Name = "btn_manager";
-            this.btn_manager.Size = new System.Drawing.Size(133, 37);
-            this.btn_manager.TabIndex = 24;
-            this.btn_manager.Text = "새로고침";
-            this.btn_manager.UseVisualStyleBackColor = false;
-            this.btn_manager.Click += new System.EventHandler(this.btn_manager_Click);
+            this.btn_reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.btn_reset.FlatAppearance.BorderSize = 0;
+            this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reset.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_reset.ForeColor = System.Drawing.Color.White;
+            this.btn_reset.Location = new System.Drawing.Point(355, 124);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(133, 37);
+            this.btn_reset.TabIndex = 24;
+            this.btn_reset.Text = "새로고침";
+            this.btn_reset.UseVisualStyleBackColor = false;
+            this.btn_reset.Click += new System.EventHandler(this.btn_manager_Click);
             // 
             // clock
             // 
@@ -312,7 +312,7 @@ namespace ProgramMain
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pan02);
             this.Controls.Add(this.pan01);
-            this.Controls.Add(this.btn_manager);
+            this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.lbl_presenttime);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_absent);
@@ -349,7 +349,7 @@ namespace ProgramMain
         private System.Windows.Forms.NotifyIcon nfiTray;
         private System.Windows.Forms.ContextMenuStrip cmsMenu;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Button btn_manager;
+        private System.Windows.Forms.Button btn_reset;
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.Label lbl_period;
         private System.Windows.Forms.Panel pan01;
