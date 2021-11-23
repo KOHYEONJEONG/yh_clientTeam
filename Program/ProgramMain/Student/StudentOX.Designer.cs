@@ -45,7 +45,7 @@ namespace ProgramMain
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(103, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 21);
+            this.label1.Size = new System.Drawing.Size(437, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Q. 저번 주차에서 학습한 내용이 기억나시나요?\r\n";
             // 
@@ -86,7 +86,7 @@ namespace ProgramMain
             this.lbl_lefttime.ForeColor = System.Drawing.Color.Red;
             this.lbl_lefttime.Location = new System.Drawing.Point(13, 13);
             this.lbl_lefttime.Name = "lbl_lefttime";
-            this.lbl_lefttime.Size = new System.Drawing.Size(66, 15);
+            this.lbl_lefttime.Size = new System.Drawing.Size(83, 20);
             this.lbl_lefttime.TabIndex = 5;
             this.lbl_lefttime.Text = "남은 시간 :";
             // 
