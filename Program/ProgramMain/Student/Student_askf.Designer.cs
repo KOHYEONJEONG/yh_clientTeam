@@ -52,7 +52,9 @@ namespace ProgramMain
             // 
             this.groupBox1.Controls.Add(this.btn_screenCopy);
             this.groupBox1.Controls.Add(this.pctBox);
-            this.groupBox1.Location = new System.Drawing.Point(1, 41);
+            this.groupBox1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox1.Location = new System.Drawing.Point(7, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 308);
             this.groupBox1.TabIndex = 0;
@@ -61,17 +63,21 @@ namespace ProgramMain
             // 
             // btn_screenCopy
             // 
+            this.btn_screenCopy.BackColor = System.Drawing.Color.White;
+            this.btn_screenCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_screenCopy.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_screenCopy.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btn_screenCopy.Location = new System.Drawing.Point(174, 275);
             this.btn_screenCopy.Name = "btn_screenCopy";
             this.btn_screenCopy.Size = new System.Drawing.Size(94, 29);
             this.btn_screenCopy.TabIndex = 2;
             this.btn_screenCopy.Text = "화면캡쳐";
-            this.btn_screenCopy.UseVisualStyleBackColor = true;
+            this.btn_screenCopy.UseVisualStyleBackColor = false;
             this.btn_screenCopy.Click += new System.EventHandler(this.btn_screenCopy_Click);
             // 
             // pctBox
             // 
-            this.pctBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pctBox.BackColor = System.Drawing.Color.White;
             this.pctBox.Location = new System.Drawing.Point(9, 26);
             this.pctBox.Name = "pctBox";
             this.pctBox.Size = new System.Drawing.Size(414, 245);
@@ -83,7 +89,9 @@ namespace ProgramMain
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtBox);
-            this.groupBox2.Location = new System.Drawing.Point(1, 356);
+            this.groupBox2.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox2.Location = new System.Drawing.Point(7, 343);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(435, 275);
             this.groupBox2.TabIndex = 1;
@@ -92,9 +100,11 @@ namespace ProgramMain
             // 
             // txtBox
             // 
+            this.txtBox.BackColor = System.Drawing.Color.White;
             this.txtBox.Location = new System.Drawing.Point(9, 26);
             this.txtBox.Multiline = true;
             this.txtBox.Name = "txtBox";
+            this.txtBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtBox.Size = new System.Drawing.Size(411, 234);
             this.txtBox.TabIndex = 0;
             // 
@@ -114,7 +124,9 @@ namespace ProgramMain
             this.groupBox3.Controls.Add(this.chkAsk);
             this.groupBox3.Controls.Add(this.chkImage);
             this.groupBox3.Controls.Add(this.btnSend);
-            this.groupBox3.Location = new System.Drawing.Point(1, 637);
+            this.groupBox3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.groupBox3.Location = new System.Drawing.Point(7, 637);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(437, 56);
             this.groupBox3.TabIndex = 3;
@@ -143,24 +155,29 @@ namespace ProgramMain
             // 
             // btnSend
             // 
+            this.btnSend.BackColor = System.Drawing.Color.White;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSend.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSend.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnSend.Location = new System.Drawing.Point(273, 20);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(94, 29);
             this.btnSend.TabIndex = 3;
             this.btnSend.Text = "전송";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // Student_askf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(438, 698);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.ClientSize = new System.Drawing.Size(450, 698);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Student_askf";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Student_askf_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
@@ -182,9 +199,9 @@ namespace ProgramMain
         private System.Windows.Forms.Button btn_screenCopy;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtBox;
         private System.Windows.Forms.CheckBox chkAsk;
         private System.Windows.Forms.CheckBox chkImage;
         private System.Windows.Forms.Button btnSend;
+        internal System.Windows.Forms.TextBox txtBox;
     }
 }
