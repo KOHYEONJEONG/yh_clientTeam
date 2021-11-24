@@ -65,7 +65,7 @@ namespace ProgramMain
             this.lbl_day.AutoSize = true;
             this.lbl_day.Font = new System.Drawing.Font("맑은 고딕 Semilight", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_day.ForeColor = System.Drawing.Color.White;
-            this.lbl_day.Location = new System.Drawing.Point(285, 19);
+            this.lbl_day.Location = new System.Drawing.Point(268, 19);
             this.lbl_day.Name = "lbl_day";
             this.lbl_day.Size = new System.Drawing.Size(64, 23);
             this.lbl_day.TabIndex = 2;

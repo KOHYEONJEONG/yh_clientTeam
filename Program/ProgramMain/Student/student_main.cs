@@ -1,5 +1,4 @@
-﻿using ProgramMain.Student;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -159,14 +158,14 @@ namespace ProgramMain
         //정보관리 버튼 클릭 시 이벤트
         private void btn_manager_Click(object sender, EventArgs e)
         {
-            //자식폼(정보관리) 호출
+           /* //자식폼(정보관리) 호출
             student_manager smanager = new student_manager();
 
             //자식폼 이벤트 호출하기
             smanager.childFormEvent += EventMethod;
 
             //자식폼 show
-            smanager.ShowDialog();
+            smanager.ShowDialog();*/
         }
 
 

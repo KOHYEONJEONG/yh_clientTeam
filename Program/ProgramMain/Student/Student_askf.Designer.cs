@@ -29,14 +29,12 @@ namespace ProgramMain
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_screenCopy = new System.Windows.Forms.Button();
             this.pctBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtBox = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chkAsk = new System.Windows.Forms.CheckBox();
             this.chkImage = new System.Windows.Forms.CheckBox();
@@ -44,7 +42,6 @@ namespace ProgramMain
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -115,10 +112,6 @@ namespace ProgramMain
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.ValidateNames = false;
             // 
-            // metroStyleManager1
-            // 
-            this.metroStyleManager1.Owner = null;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.chkAsk);
@@ -183,7 +176,6 @@ namespace ProgramMain
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -197,7 +189,6 @@ namespace ProgramMain
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btn_screenCopy;
-        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chkAsk;
         private System.Windows.Forms.CheckBox chkImage;

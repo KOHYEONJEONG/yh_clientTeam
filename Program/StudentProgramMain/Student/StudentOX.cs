@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgramMain
+namespace StudentProgramMain.Student
 {
-    public partial class Student_answer : Form
+    public partial class StudentOX : Form
     {
-        public Student_answer()
+        public StudentOX()
         {
             InitializeComponent();
-        }
-
-        private void Student_answer_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

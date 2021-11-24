@@ -39,12 +39,9 @@ namespace ProgramMain
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.prBtn = new System.Windows.Forms.RadioButton();
-            this.srBtn = new System.Windows.Forms.RadioButton();
+            this.metroStyleExtender1 = new MetroFramework.Components.MetroStyleExtender(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -52,11 +49,11 @@ namespace ProgramMain
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label1.Location = new System.Drawing.Point(37, 292);
+            this.label1.Location = new System.Drawing.Point(37, 280);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 23);
+            this.label1.Size = new System.Drawing.Size(105, 23);
             this.label1.TabIndex = 1;
-            this.label1.Text = "UserID";
+            this.label1.Text = "ProfessorID";
             // 
             // label2
             // 
@@ -72,7 +69,7 @@ namespace ProgramMain
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Location = new System.Drawing.Point(37, 344);
+            this.panel2.Location = new System.Drawing.Point(37, 332);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 1);
             this.panel2.TabIndex = 3;
@@ -88,9 +85,9 @@ namespace ProgramMain
             // txt_id
             // 
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_id.Location = new System.Drawing.Point(37, 318);
+            this.txt_id.Location = new System.Drawing.Point(37, 306);
             this.txt_id.Name = "txt_id";
-            this.txt_id.Size = new System.Drawing.Size(125, 20);
+            this.txt_id.Size = new System.Drawing.Size(231, 20);
             this.txt_id.TabIndex = 5;
             this.txt_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_KeyDown);
             // 
@@ -99,7 +96,7 @@ namespace ProgramMain
             this.txt_pw.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_pw.Location = new System.Drawing.Point(37, 383);
             this.txt_pw.Name = "txt_pw";
-            this.txt_pw.Size = new System.Drawing.Size(125, 20);
+            this.txt_pw.Size = new System.Drawing.Size(231, 20);
             this.txt_pw.TabIndex = 6;
             this.txt_pw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_pw_KeyDown);
             // 
@@ -123,8 +120,10 @@ namespace ProgramMain
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::ProgramMain.Properties.Resources.img_sbmark_large;
-            this.pictureBox1.Location = new System.Drawing.Point(62, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(62, 74);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 187);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -135,40 +134,6 @@ namespace ProgramMain
             // 
             this.metroStyleManager1.Owner = null;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.prBtn);
-            this.groupBox1.Controls.Add(this.srBtn);
-            this.groupBox1.Location = new System.Drawing.Point(32, 255);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(250, 41);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            // 
-            // prBtn
-            // 
-            this.prBtn.AutoSize = true;
-            this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.prBtn.Location = new System.Drawing.Point(134, 12);
-            this.prBtn.Name = "prBtn";
-            this.prBtn.Size = new System.Drawing.Size(60, 24);
-            this.prBtn.TabIndex = 1;
-            this.prBtn.Text = "교수";
-            this.prBtn.UseVisualStyleBackColor = true;
-            // 
-            // srBtn
-            // 
-            this.srBtn.AutoSize = true;
-            this.srBtn.Checked = true;
-            this.srBtn.ForeColor = System.Drawing.Color.Black;
-            this.srBtn.Location = new System.Drawing.Point(55, 12);
-            this.srBtn.Name = "srBtn";
-            this.srBtn.Size = new System.Drawing.Size(60, 24);
-            this.srBtn.TabIndex = 0;
-            this.srBtn.TabStop = true;
-            this.srBtn.Text = "학생";
-            this.srBtn.UseVisualStyleBackColor = true;
-            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -176,7 +141,6 @@ namespace ProgramMain
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(305, 483);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txt_pw);
@@ -195,8 +159,6 @@ namespace ProgramMain
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,9 +174,7 @@ namespace ProgramMain
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton prBtn;
-        private System.Windows.Forms.RadioButton srBtn;
+        private MetroFramework.Components.MetroStyleExtender metroStyleExtender1;
     }
 }
 
