@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class Student_answer : MetroFramework.Forms.MetroForm
+    public partial class Student_answer : Form
     {
         public Student_answer()
         {

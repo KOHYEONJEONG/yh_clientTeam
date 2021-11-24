@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ProgramMain
 {
-    public partial class Student_askf : MetroFramework.Forms.MetroForm
+    public partial class Student_askf : Form
     {
         public Student_askf()
         {
@@ -22,9 +22,6 @@ namespace ProgramMain
 
         private void Student_askf_Load(object sender, EventArgs e)
         {
-            this.StyleManager = metroStyleManager1;
-            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
-            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
         }
 
         Bitmap bmp = null;
