@@ -57,7 +57,6 @@ namespace ProgramMain
             this.ClientSize = new System.Drawing.Size(320, 252);
             this.Controls.Add(this.pictureBox1);
             this.Name = "PctClick";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

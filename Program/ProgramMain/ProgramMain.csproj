@@ -14,14 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
->>>>>>> 9022fb97f6b9d9ef90ca8742b66e61d27fdb3f36
-=======
-    <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
->>>>>>> 2dc3c96a8d3715b33f5df9c16aca7304af83540b
     <PackageReference Include="MetroModernUI" Version="1.4.0" />
   </ItemGroup>
 

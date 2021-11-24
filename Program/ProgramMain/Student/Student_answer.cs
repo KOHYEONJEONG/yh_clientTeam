@@ -17,11 +17,5 @@ namespace ProgramMain
             InitializeComponent();
         }
 
-        private void Student_answer_Load(object sender, EventArgs e)
-        {
-            this.StyleManager = StyleManager;
-            StyleManager.Theme = MetroFramework.MetroThemeStyle.Light;
-            StyleManager.Style = MetroFramework.MetroColorStyle.Green;
-        }
     }
 }
