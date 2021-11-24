@@ -40,7 +40,8 @@ namespace ProgramMain.Professor
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(6, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 15);
             this.label1.TabIndex = 0;
@@ -48,7 +49,8 @@ namespace ProgramMain.Professor
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 27);
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(332, 184);
             this.pictureBox1.TabIndex = 1;
@@ -58,7 +60,8 @@ namespace ProgramMain.Professor
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 240);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(6, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 2;
@@ -66,7 +69,7 @@ namespace ProgramMain.Professor
             // 
             // rtbStdQuestion
             // 
-            this.rtbStdQuestion.Location = new System.Drawing.Point(6, 258);
+            this.rtbStdQuestion.Location = new System.Drawing.Point(6, 248);
             this.rtbStdQuestion.Name = "rtbStdQuestion";
             this.rtbStdQuestion.ReadOnly = true;
             this.rtbStdQuestion.Size = new System.Drawing.Size(332, 176);
@@ -75,18 +78,21 @@ namespace ProgramMain.Professor
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(139, 440);
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(135, 436);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 4;
             this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StdAskCheckForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(344, 471);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbStdQuestion);
@@ -94,7 +100,7 @@ namespace ProgramMain.Professor
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "StdAskCheckForm";
-            this.Text = "StdAskCheckForm";
+            this.Text = "학생 질문";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -42,8 +42,8 @@ namespace ProgramMain
             this.Location = new Point(screenWidth/5, screenHeight/3);
             //Picturebox 크기, 위치 조정
             this.PbScreenshot.Width = this.Width;
-            this.PbScreenshot.Height = this.Height - this.gbInfo.Height - this.btnOK.Height;
-            this.PbScreenshot.Top = this.gbInfo.Height;
+            this.PbScreenshot.Height = this.Height - this.tlpInfo.Height - this.btnOK.Height;
+            this.PbScreenshot.Top = this.tlpInfo.Height;
 
             //학생 정보 받아옴
             stdName = "고구마";
@@ -77,7 +77,7 @@ namespace ProgramMain
             {
                 this.WindowState = FormWindowState.Maximized;
                 this.PbScreenshot.Dock = DockStyle.Fill;
-                this.gbInfo.Visible = false;
+                this.tlpInfo.Visible = false;
                 this.btnOK.Visible = false;
             }
             else if (this.PbScreenshot.Dock == DockStyle.Fill)
@@ -85,7 +85,7 @@ namespace ProgramMain
                 this.WindowState = FormWindowState.Normal;
                 this.PbScreenshot.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
                 this.PbScreenshot.Dock = DockStyle.None;
-                this.gbInfo.Visible = true;
+                this.tlpInfo.Visible = true;
                 this.btnOK.Visible = true;
             }
         }
