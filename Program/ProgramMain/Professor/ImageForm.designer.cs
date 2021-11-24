@@ -34,9 +34,9 @@ namespace ProgramMain
             this.lblName = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.gbInfo = new System.Windows.Forms.GroupBox();
+            this.tlpInfo = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.PbScreenshot)).BeginInit();
-            this.gbInfo.SuspendLayout();
+            this.tlpInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // PbScreenshot
@@ -44,11 +44,11 @@ namespace ProgramMain
             this.PbScreenshot.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.PbScreenshot.BackColor = System.Drawing.Color.Azure;
-            this.PbScreenshot.Location = new System.Drawing.Point(6, 42);
+            this.PbScreenshot.BackColor = System.Drawing.Color.White;
+            this.PbScreenshot.Location = new System.Drawing.Point(0, 31);
             this.PbScreenshot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PbScreenshot.Name = "PbScreenshot";
-            this.PbScreenshot.Size = new System.Drawing.Size(515, 452);
+            this.PbScreenshot.Size = new System.Drawing.Size(683, 373);
             this.PbScreenshot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbScreenshot.TabIndex = 0;
             this.PbScreenshot.TabStop = false;
@@ -57,63 +57,82 @@ namespace ProgramMain
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.Location = new System.Drawing.Point(289, 15);
+            this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTime.ForeColor = System.Drawing.Color.White;
+            this.lblTime.Location = new System.Drawing.Point(377, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(66, 15);
+            this.lblTime.Size = new System.Drawing.Size(303, 29);
             this.lblTime.TabIndex = 1;
             this.lblTime.Text = "쵤영시간 : ";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(12, 15);
+            this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblName.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblName.ForeColor = System.Drawing.Color.White;
+            this.lblName.Location = new System.Drawing.Point(3, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(42, 15);
+            this.lblName.Size = new System.Drawing.Size(164, 29);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "이름 : ";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
-            this.lblNum.Location = new System.Drawing.Point(133, 15);
+            this.lblNum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblNum.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNum.ForeColor = System.Drawing.Color.White;
+            this.lblNum.Location = new System.Drawing.Point(173, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(42, 15);
+            this.lblNum.Size = new System.Drawing.Size(198, 29);
             this.lblNum.TabIndex = 2;
             this.lblNum.Text = "학번 : ";
+            this.lblNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnOK
             // 
             this.btnOK.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnOK.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnOK.Location = new System.Drawing.Point(0, 493);
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnOK.ForeColor = System.Drawing.Color.White;
+            this.btnOK.Location = new System.Drawing.Point(0, 403);
             this.btnOK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(527, 29);
+            this.btnOK.Size = new System.Drawing.Size(683, 29);
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "확인";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // gbInfo
+            // tlpInfo
             // 
-            this.gbInfo.Controls.Add(this.lblTime);
-            this.gbInfo.Controls.Add(this.lblName);
-            this.gbInfo.Controls.Add(this.lblNum);
-            this.gbInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gbInfo.Location = new System.Drawing.Point(0, 0);
-            this.gbInfo.Margin = new System.Windows.Forms.Padding(1);
-            this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(527, 39);
-            this.gbInfo.TabIndex = 0;
-            this.gbInfo.TabStop = false;
+            this.tlpInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(70)))), ((int)(((byte)(20)))));
+            this.tlpInfo.ColumnCount = 3;
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
+            this.tlpInfo.Controls.Add(this.lblTime, 2, 0);
+            this.tlpInfo.Controls.Add(this.lblName, 0, 0);
+            this.tlpInfo.Controls.Add(this.lblNum, 1, 0);
+            this.tlpInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tlpInfo.Location = new System.Drawing.Point(0, 0);
+            this.tlpInfo.Name = "tlpInfo";
+            this.tlpInfo.RowCount = 1;
+            this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpInfo.Size = new System.Drawing.Size(683, 29);
+            this.tlpInfo.TabIndex = 4;
             // 
             // ImageForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(527, 522);
-            this.Controls.Add(this.gbInfo);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.ClientSize = new System.Drawing.Size(683, 432);
+            this.Controls.Add(this.tlpInfo);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.PbScreenshot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -123,8 +142,8 @@ namespace ProgramMain
             this.Text = "고구마20210903의 스크린샷";
             this.Load += new System.EventHandler(this.ImageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PbScreenshot)).EndInit();
-            this.gbInfo.ResumeLayout(false);
-            this.gbInfo.PerformLayout();
+            this.tlpInfo.ResumeLayout(false);
+            this.tlpInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -136,6 +155,6 @@ namespace ProgramMain
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Button btnOK;
-        private System.Windows.Forms.GroupBox gbInfo;
+        private System.Windows.Forms.TableLayoutPanel tlpInfo;
     }
 }

@@ -29,99 +29,74 @@ namespace ProgramMain
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_screenCopy = new System.Windows.Forms.Button();
-            this.btn_select = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pctBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtBox = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkAsk = new System.Windows.Forms.CheckBox();
+            this.chkImage = new System.Windows.Forms.CheckBox();
+            this.btnSend = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_screenCopy);
-            this.groupBox1.Controls.Add(this.btn_select);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(0, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Controls.Add(this.pctBox);
+            this.groupBox1.Location = new System.Drawing.Point(1, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox1.Size = new System.Drawing.Size(340, 231);
+            this.groupBox1.Size = new System.Drawing.Size(435, 308);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "이미지";
             // 
             // btn_screenCopy
             // 
-            this.btn_screenCopy.Location = new System.Drawing.Point(171, 206);
-            this.btn_screenCopy.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_screenCopy.Location = new System.Drawing.Point(174, 275);
             this.btn_screenCopy.Name = "btn_screenCopy";
-            this.btn_screenCopy.Size = new System.Drawing.Size(73, 22);
+            this.btn_screenCopy.Size = new System.Drawing.Size(94, 29);
             this.btn_screenCopy.TabIndex = 2;
             this.btn_screenCopy.Text = "화면캡쳐";
             this.btn_screenCopy.UseVisualStyleBackColor = true;
             this.btn_screenCopy.Click += new System.EventHandler(this.btn_screenCopy_Click);
             // 
-            // btn_select
+            // pctBox
             // 
-            this.btn_select.Location = new System.Drawing.Point(93, 206);
-            this.btn_select.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(73, 22);
-            this.btn_select.TabIndex = 1;
-            this.btn_select.Text = "선택";
-            this.btn_select.UseVisualStyleBackColor = true;
-            this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(322, 184);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pctBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.pctBox.Location = new System.Drawing.Point(9, 26);
+            this.pctBox.Name = "pctBox";
+            this.pctBox.Size = new System.Drawing.Size(414, 245);
+            this.pctBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBox.TabIndex = 0;
+            this.pctBox.TabStop = false;
+            this.pctBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.richTextBox1);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Location = new System.Drawing.Point(0, 240);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Controls.Add(this.txtBox);
+            this.groupBox2.Location = new System.Drawing.Point(1, 356);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(338, 226);
+            this.groupBox2.Size = new System.Drawing.Size(435, 275);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "질문";
             // 
-            // richTextBox1
+            // txtBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(5, 20);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(332, 176);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(135, 200);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(73, 21);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "전송";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.txtBox.Location = new System.Drawing.Point(9, 26);
+            this.txtBox.Multiline = true;
+            this.txtBox.Name = "txtBox";
+            this.txtBox.Size = new System.Drawing.Size(411, 234);
+            this.txtBox.TabIndex = 0;
             // 
             // openFileDialog1
             // 
@@ -130,20 +105,70 @@ namespace ProgramMain
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.ValidateNames = false;
             // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.chkAsk);
+            this.groupBox3.Controls.Add(this.chkImage);
+            this.groupBox3.Controls.Add(this.btnSend);
+            this.groupBox3.Location = new System.Drawing.Point(1, 637);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(437, 56);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "전송대상";
+            // 
+            // chkAsk
+            // 
+            this.chkAsk.AutoSize = true;
+            this.chkAsk.Location = new System.Drawing.Point(186, 23);
+            this.chkAsk.Name = "chkAsk";
+            this.chkAsk.Size = new System.Drawing.Size(61, 24);
+            this.chkAsk.TabIndex = 5;
+            this.chkAsk.Text = "질문";
+            this.chkAsk.UseVisualStyleBackColor = true;
+            // 
+            // chkImage
+            // 
+            this.chkImage.AutoSize = true;
+            this.chkImage.Location = new System.Drawing.Point(93, 23);
+            this.chkImage.Name = "chkImage";
+            this.chkImage.Size = new System.Drawing.Size(76, 24);
+            this.chkImage.TabIndex = 4;
+            this.chkImage.Text = "이미지";
+            this.chkImage.UseVisualStyleBackColor = true;
+            // 
+            // btnSend
+            // 
+            this.btnSend.Location = new System.Drawing.Point(273, 20);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(94, 29);
+            this.btnSend.TabIndex = 3;
+            this.btnSend.Text = "전송";
+            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
             // Student_askf
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(341, 470);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(438, 698);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Student_askf";
-            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Student_askf_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -151,12 +176,15 @@ namespace ProgramMain
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btn_select;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctBox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button btn_screenCopy;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.TextBox txtBox;
+        private System.Windows.Forms.CheckBox chkAsk;
+        private System.Windows.Forms.CheckBox chkImage;
+        private System.Windows.Forms.Button btnSend;
     }
 }

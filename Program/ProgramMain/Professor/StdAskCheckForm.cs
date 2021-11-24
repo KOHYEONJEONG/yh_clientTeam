@@ -23,5 +23,10 @@ namespace ProgramMain.Professor
             ImageForm imageForm = new ImageForm();
             imageForm.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

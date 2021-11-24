@@ -10,9 +10,14 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon></ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <PackageReference Include="FontAwesome.Sharp" Version="5.15.3" />
+>>>>>>> 9022fb97f6b9d9ef90ca8742b66e61d27fdb3f36
     <PackageReference Include="MetroModernUI" Version="1.4.0" />
   </ItemGroup>
 

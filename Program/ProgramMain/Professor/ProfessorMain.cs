@@ -67,7 +67,7 @@ namespace ProgramMain
             }
 
             className.Text = "수업 이름";//수업이름 설정
-            classTime.Text = "00:00 ~ 00:00";//수업 시간 설정
+            classTime.Text = "수업 시간: " + "00:00 ~ 00:00";//수업 시간 설정
                                             //시간되면 자동 수업 시작하게 설정하기
 
         }
@@ -226,7 +226,7 @@ namespace ProgramMain
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            nowTime.Text = System.DateTime.Now.ToString("hh:mm:ss");//시계
+            nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("hh:mm:ss");//시계
             if(System.DateTime.Now.Second - start_t.Second >= 10 && startBtn.Visible == false)//수업 시작버튼 누르고 10초뒤 수업종료 버튼 활성화(테스트용)
             {                                                                                  //수업 시간 받아와서 종료시간에 활성화
                 endBtn.Visible = true;
@@ -251,5 +251,6 @@ namespace ProgramMain
         {
 
         }
+
     }
 }
