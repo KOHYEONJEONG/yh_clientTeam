@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -15,9 +16,13 @@ namespace StudentProgramMain
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
+        public static SessionManager sessionManager;
+        public static PacketManager packetManager;
         public LoginForm()
         {
             InitializeComponent();
+            sessionManager = new SessionManager();
+            packetManager = new PacketManager();
         }
         Boolean exit = true;
 
@@ -30,6 +35,11 @@ namespace StudentProgramMain
             this.StyleManager = metroStyleManager1;
             metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
             metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
+
+            IPAddress ip = IPAddress.Parse("49.247.149.125");
+            IPEndPoint endPoint = new IPEndPoint(ip, 7777);
+            Connector connector = new Connector();
+            connector.Connect(endPoint, () => { return sessionManager.Generate(); });
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
