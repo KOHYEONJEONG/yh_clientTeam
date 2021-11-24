@@ -61,24 +61,26 @@ namespace ProgramMain
             // 
             // lbl_day
             // 
+            this.lbl_day.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_day.AutoSize = true;
             this.lbl_day.Font = new System.Drawing.Font("맑은 고딕 Semilight", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_day.ForeColor = System.Drawing.Color.White;
             this.lbl_day.Location = new System.Drawing.Point(285, 19);
             this.lbl_day.Name = "lbl_day";
-            this.lbl_day.Size = new System.Drawing.Size(50, 17);
+            this.lbl_day.Size = new System.Drawing.Size(64, 23);
             this.lbl_day.TabIndex = 2;
             this.lbl_day.Text = "수요일";
             this.lbl_day.Click += new System.EventHandler(this.lbl_day_Click);
             // 
             // lbl_classhour
             // 
+            this.lbl_classhour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_classhour.AutoSize = true;
             this.lbl_classhour.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_classhour.ForeColor = System.Drawing.Color.White;
             this.lbl_classhour.Location = new System.Drawing.Point(304, 35);
             this.lbl_classhour.Name = "lbl_classhour";
-            this.lbl_classhour.Size = new System.Drawing.Size(87, 17);
+            this.lbl_classhour.Size = new System.Drawing.Size(110, 23);
             this.lbl_classhour.TabIndex = 3;
             this.lbl_classhour.Text = "14:00~16:50";
             this.lbl_classhour.Click += new System.EventHandler(this.lbl_classhour_Click);
@@ -90,7 +92,7 @@ namespace ProgramMain
             this.lbl_subject.ForeColor = System.Drawing.Color.White;
             this.lbl_subject.Location = new System.Drawing.Point(35, 15);
             this.lbl_subject.Name = "lbl_subject";
-            this.lbl_subject.Size = new System.Drawing.Size(166, 32);
+            this.lbl_subject.Size = new System.Drawing.Size(209, 41);
             this.lbl_subject.TabIndex = 5;
             this.lbl_subject.Text = "캡스톤 디자인";
             // 
@@ -132,9 +134,9 @@ namespace ProgramMain
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_name.ForeColor = System.Drawing.Color.Transparent;
-            this.lbl_name.Location = new System.Drawing.Point(36, 44);
+            this.lbl_name.Location = new System.Drawing.Point(29, 42);
             this.lbl_name.Name = "lbl_name";
-            this.lbl_name.Size = new System.Drawing.Size(47, 17);
+            this.lbl_name.Size = new System.Drawing.Size(61, 23);
             this.lbl_name.TabIndex = 15;
             this.lbl_name.Text = "홍길동";
             // 
@@ -163,7 +165,7 @@ namespace ProgramMain
             this.lbl_presenttime.AutoSize = true;
             this.lbl_presenttime.Location = new System.Drawing.Point(786, 308);
             this.lbl_presenttime.Name = "lbl_presenttime";
-            this.lbl_presenttime.Size = new System.Drawing.Size(0, 17);
+            this.lbl_presenttime.Size = new System.Drawing.Size(0, 23);
             this.lbl_presenttime.TabIndex = 18;
             // 
             // nfiTray
@@ -176,18 +178,19 @@ namespace ProgramMain
             // 
             // cmsMenu
             // 
+            this.cmsMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.cmsMenu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cmsMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
             this.cmsMenu.Name = "cmsMenu";
-            this.cmsMenu.Size = new System.Drawing.Size(99, 26);
+            this.cmsMenu.Size = new System.Drawing.Size(109, 28);
             this.cmsMenu.UseWaitCursor = true;
             this.cmsMenu.Opening += new System.ComponentModel.CancelEventHandler(this.cmsMenu_Opening);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(98, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(108, 24);
             this.toolStripMenuItem1.Text = "열기";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
@@ -213,12 +216,13 @@ namespace ProgramMain
             // 
             // lbl_period
             // 
+            this.lbl_period.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_period.AutoSize = true;
             this.lbl_period.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_period.ForeColor = System.Drawing.Color.White;
             this.lbl_period.Location = new System.Drawing.Point(338, 19);
             this.lbl_period.Name = "lbl_period";
-            this.lbl_period.Size = new System.Drawing.Size(69, 17);
+            this.lbl_period.Size = new System.Drawing.Size(88, 23);
             this.lbl_period.TabIndex = 25;
             this.lbl_period.Text = "(5~6교시)";
             this.lbl_period.Click += new System.EventHandler(this.lbl_period_Click);
@@ -251,9 +255,9 @@ namespace ProgramMain
             this.lblNo.AutoSize = true;
             this.lblNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNo.ForeColor = System.Drawing.Color.Transparent;
-            this.lblNo.Location = new System.Drawing.Point(14, 16);
+            this.lblNo.Location = new System.Drawing.Point(0, 14);
             this.lblNo.Name = "lblNo";
-            this.lblNo.Size = new System.Drawing.Size(91, 21);
+            this.lblNo.Size = new System.Drawing.Size(120, 28);
             this.lblNo.TabIndex = 27;
             this.lblNo.Text = "201827068";
             // 
@@ -304,7 +308,7 @@ namespace ProgramMain
             // 
             // student_main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(553, 264);

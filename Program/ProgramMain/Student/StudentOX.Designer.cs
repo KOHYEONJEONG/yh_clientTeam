@@ -43,7 +43,8 @@ namespace ProgramMain
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(103, 58);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(66, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(437, 28);
             this.label1.TabIndex = 0;
@@ -98,7 +99,7 @@ namespace ProgramMain
             // StudentOX
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(560, 393);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_lefttime);
