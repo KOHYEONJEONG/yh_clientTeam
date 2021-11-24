@@ -34,10 +34,16 @@ namespace ProgramMain
                 attendList.Items.Add(lvi);
 
             }
-            
 
-            attendName.Text = "수업이름" + " 출석부";
-            gradeLb.Text = "학년" + " / " + "반";
+
+            //subjectLb.Text = "수업이름" + " 출석부";
+            //classLb.Text = "학년" + " / " + "반";
         }
+
+        private void gradeLb_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -24,5 +24,9 @@ namespace ProgramMain.Professor
             imageForm.ShowDialog();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
