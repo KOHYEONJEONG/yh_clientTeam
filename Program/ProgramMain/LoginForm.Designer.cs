@@ -39,7 +39,6 @@ namespace ProgramMain
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.chkRemember = new MetroFramework.Controls.MetroCheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.prBtn = new System.Windows.Forms.RadioButton();
             this.srBtn = new System.Windows.Forms.RadioButton();
@@ -93,6 +92,7 @@ namespace ProgramMain
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(125, 20);
             this.txt_id.TabIndex = 5;
+            this.txt_id.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_id_KeyDown);
             // 
             // txt_pw
             // 
@@ -101,17 +101,19 @@ namespace ProgramMain
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.Size = new System.Drawing.Size(125, 20);
             this.txt_pw.TabIndex = 6;
+            this.txt_pw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_pw_KeyDown);
             // 
             // btnLogin
             // 
-            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnLogin.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLogin.AutoSize = true;
             this.btnLogin.BackColor = System.Drawing.Color.Green;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(103, 455);
+            this.btnLogin.Location = new System.Drawing.Point(107, 428);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(94, 41);
             this.btnLogin.TabIndex = 1;
@@ -132,16 +134,6 @@ namespace ProgramMain
             // metroStyleManager1
             // 
             this.metroStyleManager1.Owner = null;
-            // 
-            // chkRemember
-            // 
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.Location = new System.Drawing.Point(37, 416);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(123, 17);
-            this.chkRemember.TabIndex = 8;
-            this.chkRemember.Text = "로그인 상태 유지";
-            this.chkRemember.UseSelectable = true;
             // 
             // groupBox1
             // 
@@ -183,9 +175,8 @@ namespace ProgramMain
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
-            this.ClientSize = new System.Drawing.Size(305, 512);
+            this.ClientSize = new System.Drawing.Size(305, 483);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.chkRemember);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txt_pw);
@@ -221,7 +212,6 @@ namespace ProgramMain
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private MetroFramework.Controls.MetroCheckBox chkRemember;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton prBtn;
         private System.Windows.Forms.RadioButton srBtn;
