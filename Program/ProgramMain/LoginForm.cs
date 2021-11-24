@@ -88,7 +88,7 @@ namespace ProgramMain
                             //student_main student = new student_main();
                             //student.Show();
 
-                            (new student_main()).Show();
+                            //(new student_main()).Show();
 
                             this.Close();
 
