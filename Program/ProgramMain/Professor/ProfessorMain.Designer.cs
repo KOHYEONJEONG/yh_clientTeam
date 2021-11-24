@@ -33,11 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
             this.allcheck = new System.Windows.Forms.CheckBox();
-            this.screenbtn = new System.Windows.Forms.Button();
-            this.questionbtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.attendBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
             this.endBtn = new System.Windows.Forms.Button();
@@ -48,29 +44,28 @@
             this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
             this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label6 = new System.Windows.Forms.Label();
-            this.className = new System.Windows.Forms.Label();
-            this.classTime = new System.Windows.Forms.Label();
-            this.attenddanceBtn = new System.Windows.Forms.Button();
             this.nowTime = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.attenddanceBtn = new FontAwesome.Sharp.IconButton();
+            this.screenbtn = new FontAwesome.Sharp.IconButton();
+            this.questionbtn = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblProfname = new System.Windows.Forms.Label();
+            this.classTime = new System.Windows.Forms.Label();
+            this.className = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 15);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "선택";
             // 
             // allcheck
             // 
             this.allcheck.AutoSize = true;
-            this.allcheck.Location = new System.Drawing.Point(35, 114);
+            this.allcheck.Location = new System.Drawing.Point(171, 89);
             this.allcheck.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.allcheck.Name = "allcheck";
             this.allcheck.Size = new System.Drawing.Size(15, 14);
@@ -78,70 +73,47 @@
             this.allcheck.UseVisualStyleBackColor = true;
             this.allcheck.CheckedChanged += new System.EventHandler(this.allcheck_CheckedChanged);
             // 
-            // screenbtn
-            // 
-            this.screenbtn.Location = new System.Drawing.Point(97, 448);
-            this.screenbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.screenbtn.Name = "screenbtn";
-            this.screenbtn.Size = new System.Drawing.Size(69, 29);
-            this.screenbtn.TabIndex = 10;
-            this.screenbtn.Text = "스크린샷";
-            this.screenbtn.UseVisualStyleBackColor = true;
-            this.screenbtn.Click += new System.EventHandler(this.screenbtn_Click);
-            // 
-            // questionbtn
-            // 
-            this.questionbtn.Location = new System.Drawing.Point(28, 448);
-            this.questionbtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.questionbtn.Name = "questionbtn";
-            this.questionbtn.Size = new System.Drawing.Size(63, 29);
-            this.questionbtn.TabIndex = 10;
-            this.questionbtn.Text = "문제";
-            this.questionbtn.UseVisualStyleBackColor = true;
-            this.questionbtn.Click += new System.EventHandler(this.questionbtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(583, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 15);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "학생 리스트";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
             // attendBtn
             // 
-            this.attendBtn.Location = new System.Drawing.Point(578, 448);
+            this.attendBtn.BackColor = System.Drawing.Color.White;
+            this.attendBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attendBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.attendBtn.Location = new System.Drawing.Point(0, 0);
             this.attendBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.attendBtn.Name = "attendBtn";
-            this.attendBtn.Size = new System.Drawing.Size(80, 29);
+            this.attendBtn.Size = new System.Drawing.Size(189, 41);
             this.attendBtn.TabIndex = 16;
-            this.attendBtn.Text = "출석시작";
-            this.attendBtn.UseVisualStyleBackColor = true;
+            this.attendBtn.Text = "출석 시작";
+            this.attendBtn.UseVisualStyleBackColor = false;
             this.attendBtn.Visible = false;
             this.attendBtn.Click += new System.EventHandler(this.attendbtn_Click);
             // 
             // startBtn
             // 
-            this.startBtn.Location = new System.Drawing.Point(578, 448);
+            this.startBtn.BackColor = System.Drawing.Color.White;
+            this.startBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.startBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.startBtn.Location = new System.Drawing.Point(0, 0);
             this.startBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(80, 29);
+            this.startBtn.Size = new System.Drawing.Size(189, 41);
             this.startBtn.TabIndex = 17;
-            this.startBtn.Text = "수업시작";
-            this.startBtn.UseVisualStyleBackColor = true;
+            this.startBtn.Text = "수업 시작";
+            this.startBtn.UseVisualStyleBackColor = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // endBtn
             // 
-            this.endBtn.Location = new System.Drawing.Point(578, 448);
+            this.endBtn.BackColor = System.Drawing.Color.White;
+            this.endBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.endBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.endBtn.Location = new System.Drawing.Point(0, 0);
             this.endBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.endBtn.Name = "endBtn";
-            this.endBtn.Size = new System.Drawing.Size(80, 29);
+            this.endBtn.Size = new System.Drawing.Size(189, 41);
             this.endBtn.TabIndex = 18;
-            this.endBtn.Text = "수업종료";
-            this.endBtn.UseVisualStyleBackColor = true;
+            this.endBtn.Text = "수업 종료";
+            this.endBtn.UseVisualStyleBackColor = false;
             this.endBtn.Visible = false;
             this.endBtn.Click += new System.EventHandler(this.endBtn_Click);
             // 
@@ -173,7 +145,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studList.DefaultCellStyle = dataGridViewCellStyle3;
-            this.studList.Location = new System.Drawing.Point(28, 108);
+            this.studList.Location = new System.Drawing.Point(165, 83);
             this.studList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.studList.Name = "studList";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -186,7 +158,7 @@
             this.studList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.studList.RowHeadersVisible = false;
             this.studList.RowTemplate.Height = 75;
-            this.studList.Size = new System.Drawing.Size(626, 332);
+            this.studList.Size = new System.Drawing.Size(628, 404);
             this.studList.TabIndex = 19;
             this.studList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studList_CellDoubleClick);
             this.studList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.studList_CellMouseDoubleClick);
@@ -233,67 +205,18 @@
             this.stuattend.Name = "stuattend";
             this.stuattend.Width = 55;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(208, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 20);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "수업 시간 : ";
-            // 
-            // className
-            // 
-            this.className.AutoSize = true;
-            this.className.Font = new System.Drawing.Font("굴림", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.className.Location = new System.Drawing.Point(12, 14);
-            this.className.Name = "className";
-            this.className.Size = new System.Drawing.Size(190, 40);
-            this.className.TabIndex = 24;
-            this.className.Text = "수업 이름";
-            this.className.Click += new System.EventHandler(this.className_Click);
-            // 
-            // classTime
-            // 
-            this.classTime.AutoSize = true;
-            this.classTime.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.classTime.Location = new System.Drawing.Point(324, 36);
-            this.classTime.Name = "classTime";
-            this.classTime.Size = new System.Drawing.Size(48, 16);
-            this.classTime.TabIndex = 25;
-            this.classTime.Text = "label8";
-            // 
-            // attenddanceBtn
-            // 
-            this.attenddanceBtn.Location = new System.Drawing.Point(172, 448);
-            this.attenddanceBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.attenddanceBtn.Name = "attenddanceBtn";
-            this.attenddanceBtn.Size = new System.Drawing.Size(87, 29);
-            this.attenddanceBtn.TabIndex = 26;
-            this.attenddanceBtn.Text = "출석부 확인";
-            this.attenddanceBtn.UseVisualStyleBackColor = true;
-            this.attenddanceBtn.Click += new System.EventHandler(this.attenddanceBtn_Click);
-            // 
             // nowTime
             // 
             this.nowTime.AutoSize = true;
+            this.nowTime.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nowTime.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.nowTime.Location = new System.Drawing.Point(578, 38);
+            this.nowTime.ForeColor = System.Drawing.Color.White;
+            this.nowTime.Location = new System.Drawing.Point(444, 47);
             this.nowTime.Name = "nowTime";
-            this.nowTime.Size = new System.Drawing.Size(48, 16);
+            this.nowTime.Size = new System.Drawing.Size(189, 32);
             this.nowTime.TabIndex = 28;
-            this.nowTime.Text = "label8";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(463, 36);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 20);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "현재 시간 : ";
+            this.nowTime.Text = "현재 시간 : ";
+            this.nowTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Timer
             // 
@@ -301,52 +224,206 @@
             this.Timer.Interval = 1000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.attenddanceBtn, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.screenbtn, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.questionbtn, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblProfname, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 244F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 499);
+            this.tableLayoutPanel1.TabIndex = 29;
+            // 
+            // attenddanceBtn
+            // 
+            this.attenddanceBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.attenddanceBtn.FlatAppearance.BorderSize = 0;
+            this.attenddanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attenddanceBtn.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.attenddanceBtn.ForeColor = System.Drawing.Color.White;
+            this.attenddanceBtn.IconChar = FontAwesome.Sharp.IconChar.FeatherAlt;
+            this.attenddanceBtn.IconColor = System.Drawing.Color.White;
+            this.attenddanceBtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.attenddanceBtn.IconSize = 25;
+            this.attenddanceBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.attenddanceBtn.Location = new System.Drawing.Point(3, 193);
+            this.attenddanceBtn.Name = "attenddanceBtn";
+            this.attenddanceBtn.Size = new System.Drawing.Size(155, 49);
+            this.attenddanceBtn.TabIndex = 31;
+            this.attenddanceBtn.Text = "출석부";
+            this.attenddanceBtn.UseVisualStyleBackColor = true;
+            this.attenddanceBtn.Click += new System.EventHandler(this.attenddanceBtn_Click);
+            // 
+            // screenbtn
+            // 
+            this.screenbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.screenbtn.FlatAppearance.BorderSize = 0;
+            this.screenbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.screenbtn.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.screenbtn.ForeColor = System.Drawing.Color.White;
+            this.screenbtn.IconChar = FontAwesome.Sharp.IconChar.Clone;
+            this.screenbtn.IconColor = System.Drawing.Color.White;
+            this.screenbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.screenbtn.IconSize = 25;
+            this.screenbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.screenbtn.Location = new System.Drawing.Point(3, 138);
+            this.screenbtn.Name = "screenbtn";
+            this.screenbtn.Size = new System.Drawing.Size(155, 49);
+            this.screenbtn.TabIndex = 30;
+            this.screenbtn.Text = "스크린샷";
+            this.screenbtn.UseVisualStyleBackColor = true;
+            this.screenbtn.Click += new System.EventHandler(this.screenbtn_Click);
+            // 
+            // questionbtn
+            // 
+            this.questionbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.questionbtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.questionbtn.FlatAppearance.BorderSize = 0;
+            this.questionbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.questionbtn.Font = new System.Drawing.Font("맑은 고딕", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.questionbtn.ForeColor = System.Drawing.Color.White;
+            this.questionbtn.IconChar = FontAwesome.Sharp.IconChar.LocationArrow;
+            this.questionbtn.IconColor = System.Drawing.Color.White;
+            this.questionbtn.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.questionbtn.IconSize = 25;
+            this.questionbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.questionbtn.Location = new System.Drawing.Point(3, 83);
+            this.questionbtn.Name = "questionbtn";
+            this.questionbtn.Size = new System.Drawing.Size(155, 49);
+            this.questionbtn.TabIndex = 29;
+            this.questionbtn.Text = "문제 전송";
+            this.questionbtn.UseVisualStyleBackColor = true;
+            this.questionbtn.Click += new System.EventHandler(this.questionbtn_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 40);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.label1.Size = new System.Drawing.Size(155, 25);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "교수님";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblProfname
+            // 
+            this.lblProfname.AutoSize = true;
+            this.lblProfname.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblProfname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.lblProfname.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProfname.ForeColor = System.Drawing.Color.White;
+            this.lblProfname.Location = new System.Drawing.Point(3, 15);
+            this.lblProfname.Name = "lblProfname";
+            this.lblProfname.Size = new System.Drawing.Size(155, 25);
+            this.lblProfname.TabIndex = 32;
+            this.lblProfname.Text = "우체국";
+            this.lblProfname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // classTime
+            // 
+            this.classTime.AutoSize = true;
+            this.classTime.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.classTime.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.classTime.ForeColor = System.Drawing.Color.White;
+            this.classTime.Location = new System.Drawing.Point(3, 47);
+            this.classTime.Name = "classTime";
+            this.classTime.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.classTime.Size = new System.Drawing.Size(435, 32);
+            this.classTime.TabIndex = 25;
+            this.classTime.Text = "수업 시간 : ";
+            this.classTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // className
+            // 
+            this.className.AutoSize = true;
+            this.className.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.className.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.className.ForeColor = System.Drawing.Color.White;
+            this.className.Location = new System.Drawing.Point(3, 0);
+            this.className.Name = "className";
+            this.className.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.className.Size = new System.Drawing.Size(435, 47);
+            this.className.TabIndex = 24;
+            this.className.Text = "수업 이름";
+            this.className.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.className.Click += new System.EventHandler(this.className_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.49405F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.50595F));
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.className, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.classTime, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.nowTime, 1, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(162, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.30693F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 39.69307F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(636, 79);
+            this.tableLayoutPanel2.TabIndex = 30;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.startBtn);
+            this.panel1.Controls.Add(this.endBtn);
+            this.panel1.Controls.Add(this.attendBtn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(444, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(189, 41);
+            this.panel1.TabIndex = 19;
+            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(683, 495);
-            this.Controls.Add(this.nowTime);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.attenddanceBtn);
-            this.Controls.Add(this.classTime);
-            this.Controls.Add(this.className);
-            this.Controls.Add(this.label6);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.ClientSize = new System.Drawing.Size(798, 489);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.allcheck);
             this.Controls.Add(this.studList);
-            this.Controls.Add(this.startBtn);
-            this.Controls.Add(this.attendBtn);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.questionbtn);
-            this.Controls.Add(this.screenbtn);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.endBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProfesserMain";
             this.Text = "메인화면";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studList)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox allcheck;
-        private System.Windows.Forms.Button screenbtn;
-        private System.Windows.Forms.Button questionbtn;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button attendBtn;
         private System.Windows.Forms.Button startBtn;
         private System.Windows.Forms.Button endBtn;
         private System.Windows.Forms.DataGridView studList;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label className;
-        private System.Windows.Forms.Label classTime;
-        private System.Windows.Forms.Button attenddanceBtn;
         private System.Windows.Forms.Label nowTime;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer Timer;
@@ -356,6 +433,16 @@
         private System.Windows.Forms.DataGridViewImageColumn stuscreenshot;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuanswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuattend;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label classTime;
+        private System.Windows.Forms.Label className;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label1;
+        private FontAwesome.Sharp.IconButton questionbtn;
+        private FontAwesome.Sharp.IconButton screenbtn;
+        private FontAwesome.Sharp.IconButton attenddanceBtn;
+        private System.Windows.Forms.Label lblProfname;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -121,6 +121,8 @@ namespace ProgramMain
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::ProgramMain.Properties.Resources.img_sbmark_large;
             this.pictureBox1.Location = new System.Drawing.Point(62, 63);
             this.pictureBox1.Name = "pictureBox1";
@@ -138,9 +140,9 @@ namespace ProgramMain
             this.chkRemember.AutoSize = true;
             this.chkRemember.Location = new System.Drawing.Point(37, 416);
             this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(123, 17);
+            this.chkRemember.Size = new System.Drawing.Size(93, 17);
             this.chkRemember.TabIndex = 8;
-            this.chkRemember.Text = "로그인 상태 유지";
+            this.chkRemember.Text = "아이디 저장";
             this.chkRemember.UseSelectable = true;
             // 
             // groupBox1
@@ -159,9 +161,9 @@ namespace ProgramMain
             this.prBtn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.prBtn.Location = new System.Drawing.Point(134, 12);
             this.prBtn.Name = "prBtn";
-            this.prBtn.Size = new System.Drawing.Size(60, 24);
+            this.prBtn.Size = new System.Drawing.Size(61, 24);
             this.prBtn.TabIndex = 1;
-            this.prBtn.Text = "교수";
+            this.prBtn.Text = "Prof.";
             this.prBtn.UseVisualStyleBackColor = true;
             // 
             // srBtn
@@ -171,10 +173,10 @@ namespace ProgramMain
             this.srBtn.ForeColor = System.Drawing.Color.Black;
             this.srBtn.Location = new System.Drawing.Point(55, 12);
             this.srBtn.Name = "srBtn";
-            this.srBtn.Size = new System.Drawing.Size(60, 24);
+            this.srBtn.Size = new System.Drawing.Size(64, 24);
             this.srBtn.TabIndex = 0;
             this.srBtn.TabStop = true;
-            this.srBtn.Text = "학생";
+            this.srBtn.Text = "Stud.";
             this.srBtn.UseVisualStyleBackColor = true;
             // 
             // LoginForm
@@ -195,10 +197,8 @@ namespace ProgramMain
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "LoginForm";
-            this.Text = "유한대학교";
+            this.Text = "Yuhan University";
             this.TextAlign = MetroFramework.Forms.MetroFormTextAlign.Center;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
