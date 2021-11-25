@@ -1,4 +1,5 @@
 using StudentProgramMain;
+using StudentProgramMain.Student;
 using System;
 using System.Windows.Forms;
 
@@ -19,16 +20,14 @@ class PacketHandler
         // ServerSession serverSession = session as ServerSession;
 
         LoginForm.LoginResult = false;//실행(x)
-        LoginForm.message_box("아이디 및 비밀번호를 다시 확인해주세요.");//test
+        MessageBox.Show("로그인 실패");
 
     }
 
     public static void SS_LoginResultHandler(PacketSession session, IPacket packet)
     {
         SS_LoginResult.Lecture result = packet as SS_LoginResult.Lecture;//중첩클래스
-
         LoginForm.LoginResult = true;
-        LoginForm.message_box("접속 성공");
 
         //학생폼에 입력할 값 
         //result.
@@ -52,11 +51,13 @@ class PacketHandler
     }
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
+        SS_Quiz result = packet as SS_Quiz;
+        Student_answer.lblResult = result.quiz;
 
     }
     public static void SS_ImgSendFaildHandler(PacketSession session, IPacket packet)
     {
-
+      
     }
     public static void SS_ScreenRequestHandler(PacketSession session, IPacket packet)
     {
@@ -69,6 +70,12 @@ class PacketHandler
     public static void SS_EndOfClassHandler(PacketSession session, IPacket packet)
     {
 
+    }
+
+    public static void SS_QustionFaildHandler(PacketSession session, IPacket packet)
+    {
+        //교수한테 질문을 보냈는데 방에 없거나, 자리에 없을 시 실패
+        MessageBox.Show("교수님이 현재 질문을 받을 수 없는 상태입니다.");
     }
 
 }

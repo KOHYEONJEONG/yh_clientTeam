@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -75,22 +76,17 @@ namespace StudentProgramMain
 
                     //LoginResult은 이벤트핸들러에서 잘받와지는지 테스트
                     if (LoginResult)
-                        {
-                            exit = false;
+                     {
+                        exit = false;
+                        this.Hide();
+                        (new student_main()).Show();
+                        this.Close();
 
-                            this.Hide();
-                            //MessageBox.Show("학생프로그램", "확인", MessageBoxButtons.OK);
-                            //student_main student = new student_main();
-                            //student.Show();
 
-                            (new student_main()).Show();
-                            this.Close();
-
-                        }
+                    }
                     
-                }
-                else
-                {
+                }else{
+
                     //특수문자 중 !,@외 문자가 들어 있을 경우.
                     txt_pw.Text = "";
                     txt_pw.Focus();
@@ -146,7 +142,7 @@ namespace StudentProgramMain
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnLogin_Click(sender, e);
+                txt_pw.Focus();
             }
         }
 
@@ -158,11 +154,6 @@ namespace StudentProgramMain
             }
         }
 
-        public  static void message_box(string str)
-        {
-            //이벤트핸들러에서 값잘 받아와지는지 테스트중
-                MessageBox.Show(str);
-            
-        }
+      
     }
 }
