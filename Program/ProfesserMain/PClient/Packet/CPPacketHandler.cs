@@ -32,7 +32,7 @@ class PacketHandler
 
     public static void SP_StudentInfoHandler(PacketSession session, IPacket packet)
     {
-        SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
+        /*SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
         ServerSession serverSession = session as ServerSession;
         foreach (var s in sp_StudentInfo.students)
         {
@@ -51,7 +51,7 @@ class PacketHandler
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
                 }
             }
-        }
+        }*/
     }
 
     public static void SP_ScreenResultHandler(PacketSession session, IPacket packet)
@@ -136,10 +136,12 @@ class PacketHandler
     public static void SP_AddStudentHandler(PacketSession session, IPacket packet)
     {
         SP_AddStudent sP_AddStudent = packet as SP_AddStudent;
+
         for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
         {
             if (sP_AddStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
+
                 //¼¿ Èò»öÀ¸·Î º¯°æ = Á¢¼Ó
                 ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;

@@ -30,11 +30,11 @@ namespace ProgramMain.Professor
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbQuestionImg = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rtbStdQuestion = new System.Windows.Forms.RichTextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQuestionImg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -47,15 +47,15 @@ namespace ProgramMain.Professor
             this.label1.TabIndex = 0;
             this.label1.Text = "이미지";
             // 
-            // pictureBox1
+            // pbQuestionImg
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(332, 184);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pbQuestionImg.BackColor = System.Drawing.Color.White;
+            this.pbQuestionImg.Location = new System.Drawing.Point(6, 32);
+            this.pbQuestionImg.Name = "pbQuestionImg";
+            this.pbQuestionImg.Size = new System.Drawing.Size(332, 184);
+            this.pbQuestionImg.TabIndex = 1;
+            this.pbQuestionImg.TabStop = false;
+            this.pbQuestionImg.Click += new System.EventHandler(this.pbQuestionImg_Click);
             // 
             // label2
             // 
@@ -97,11 +97,11 @@ namespace ProgramMain.Professor
             this.Controls.Add(this.button1);
             this.Controls.Add(this.rtbStdQuestion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbQuestionImg);
             this.Controls.Add(this.label1);
             this.Name = "StdAskCheckForm";
             this.Text = "학생 질문";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbQuestionImg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,7 +110,7 @@ namespace ProgramMain.Professor
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbQuestionImg;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox rtbStdQuestion;
         private System.Windows.Forms.Button button1;

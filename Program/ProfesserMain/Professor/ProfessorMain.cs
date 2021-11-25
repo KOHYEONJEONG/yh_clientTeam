@@ -144,7 +144,6 @@ namespace ProgramMain
                 studList.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                 studList.Rows[i].Cells[4].Style.BackColor = Color.Gray;
                 studList.Rows[i].Cells[5].Style.BackColor = Color.Gray;
-                studList.Rows[i].Cells[6].Style.BackColor = Color.Gray;
 
 
             }
