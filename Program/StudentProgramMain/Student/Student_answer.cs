@@ -12,20 +12,30 @@ namespace StudentProgramMain.Student
 {
     public partial class Student_answer : Form
     {
+        //public static SessionManager sessionManager;
+        public static Student_answer studentAnswer;
+        SS_Quiz _ss_Quiz;
 
-        public static PacketManager packetManager;
+        public SS_Quiz ss_Quiz
+        {
+            get { return _ss_Quiz; }
+            set {_ss_Quiz = value; }
+        }
 
-        public static Boolean answerResult;// 핸들러클래스에서 결과값 받아오려고.
-        public static string lblResult = "";
+        
+
+
         public Student_answer()
         {
             InitializeComponent();
+            studentAnswer = this;
+
         }
 
         private void Student_answer_Load(object sender, EventArgs e)
         {
-            lbl_question.Text = lblResult;
-
+            //lbl_question.Text = lblResult;
+            lbl_question.Text = ss_Quiz.quiz;
         }
 
         private void button1_Click(object sender, EventArgs e)

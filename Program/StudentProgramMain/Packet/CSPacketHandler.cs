@@ -46,9 +46,8 @@ class PacketHandler
     }
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
-        SS_Quiz result = packet as SS_Quiz;
-        Student_answer.lblResult = result.quiz;
-
+        // LoginForm.loginForm.ss_LoginResult = packet as SS_LoginResult;
+        Student_answer.studentAnswer.ss_Quiz = packet as SS_Quiz;
     }
     public static void SS_ImgSendFaildHandler(PacketSession session, IPacket packet)
     {
