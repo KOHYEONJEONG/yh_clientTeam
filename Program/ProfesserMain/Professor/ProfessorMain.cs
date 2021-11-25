@@ -256,13 +256,13 @@ namespace ProgramMain
 
             if(type == typeof(DataGridViewImageCell))
             {
-                Image img = grid.Rows[curR].Cells[curC].Value as Image;
-
-                ImageForm img_form = new ImageForm(img.ToString(), img);
+                Bitmap img = (Bitmap)grid.Rows[curR].Cells[curC].Value;
+                /* ImageForm 확인 */
+                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[1].Value.ToString(), grid.Rows[curR].Cells[2].Value.ToString(), img);
                 img_form.ShowDialog();
             }
 
-            /* 응답 폼 확인 */
+            /* ReplyYNForm 확인 */
             if (curC == 4)
             {
                 String reply = grid.Rows[curR].Cells[curC].Value.ToString();

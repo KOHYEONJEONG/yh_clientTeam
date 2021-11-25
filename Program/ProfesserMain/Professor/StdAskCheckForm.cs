@@ -12,13 +12,27 @@ namespace ProgramMain.Professor
 {
     public partial class StdAskCheckForm : Form
     {
+        public static StdAskCheckForm stdAskCheckForm;
+        public RichTextBox _rtbStdQuestion
+        {
+            get { return rtbStdQuestion; }
+            set { _rtbStdQuestion = rtbStdQuestion; }
+        }
+        public PictureBox _pbQuestionImg
+        {
+            get { return pbQuestionImg; }
+            set { _pbQuestionImg = pbQuestionImg; }
+        }
+
+
         public StdAskCheckForm()
         {
             InitializeComponent();
-            this.rtbStdQuestion.Text = "rtbStdQuestionrtbStdQuestionrtbStdQuestionrtbStdQuestion";
+            stdAskCheckForm = this;
+
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pbQuestionImg_Click(object sender, EventArgs e)
         {
             ImageForm imageForm = new ImageForm();
             imageForm.ShowDialog();
@@ -26,7 +40,7 @@ namespace ProgramMain.Professor
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

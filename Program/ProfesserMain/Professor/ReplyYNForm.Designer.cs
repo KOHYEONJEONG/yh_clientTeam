@@ -35,14 +35,16 @@ namespace ProgramMain
             this.lblNum = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.Color.White;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOk.Location = new System.Drawing.Point(190, 130);
+            this.btnOk.Location = new System.Drawing.Point(190, 134);
             this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 32);
@@ -55,8 +57,8 @@ namespace ProgramMain
             // 
             this.radioYes.AutoSize = true;
             this.radioYes.Enabled = false;
-            this.radioYes.ForeColor = System.Drawing.Color.White;
-            this.radioYes.Location = new System.Drawing.Point(121, 74);
+            this.radioYes.ForeColor = System.Drawing.Color.Black;
+            this.radioYes.Location = new System.Drawing.Point(142, 25);
             this.radioYes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioYes.Name = "radioYes";
             this.radioYes.Size = new System.Drawing.Size(43, 19);
@@ -69,8 +71,8 @@ namespace ProgramMain
             // 
             this.radioNo.AutoSize = true;
             this.radioNo.Enabled = false;
-            this.radioNo.ForeColor = System.Drawing.Color.White;
-            this.radioNo.Location = new System.Drawing.Point(291, 74);
+            this.radioNo.ForeColor = System.Drawing.Color.Black;
+            this.radioNo.Location = new System.Drawing.Point(244, 27);
             this.radioNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioNo.Name = "radioNo";
             this.radioNo.Size = new System.Drawing.Size(41, 19);
@@ -86,7 +88,7 @@ namespace ProgramMain
             this.lblNum.ForeColor = System.Drawing.Color.White;
             this.lblNum.Location = new System.Drawing.Point(3, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(168, 34);
+            this.lblNum.Size = new System.Drawing.Size(167, 34);
             this.lblNum.TabIndex = 0;
             this.lblNum.Text = "학번 : ";
             this.lblNum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -96,9 +98,9 @@ namespace ProgramMain
             this.lblName.AutoSize = true;
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblName.ForeColor = System.Drawing.Color.White;
-            this.lblName.Location = new System.Drawing.Point(177, 0);
+            this.lblName.Location = new System.Drawing.Point(176, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(265, 34);
+            this.lblName.Size = new System.Drawing.Size(266, 34);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "이름 : ";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -117,23 +119,33 @@ namespace ProgramMain
             this.tableLayoutPanel1.Size = new System.Drawing.Size(445, 34);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.radioYes);
+            this.panel1.Controls.Add(this.radioNo);
+            this.panel1.Location = new System.Drawing.Point(16, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(439, 73);
+            this.panel1.TabIndex = 10;
+            // 
             // ReplyYNForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(476, 173);
-            this.Controls.Add(this.radioYes);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.radioNo);
             this.Controls.Add(this.btnOk);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReplyYNForm";
             this.Text = "학생 응답";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -145,5 +157,6 @@ namespace ProgramMain
         private System.Windows.Forms.RadioButton radioYes;
         private System.Windows.Forms.RadioButton radioNo;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

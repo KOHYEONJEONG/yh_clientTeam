@@ -15,12 +15,12 @@ namespace ProgramMain
     public partial class ImageForm : Form
     {
         //학생 정보
-        private String stdName;
-        private String stdNum;
+        private String stdName = null;
+        private String stdNum = null;
 
         //이미지
         /*수정필요*/
-        private Bitmap image = new Bitmap("C:\\Users\\lolol\\Desktop\\Image\\test.jpg");
+        private Bitmap image=null;
 
         //윈도우 해상도
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -31,7 +31,7 @@ namespace ProgramMain
             InitializeComponent();
         }
         
-        public ImageForm(string name, Image image)//이미지 받아옴
+        public ImageForm(string id, string name, Bitmap image)//이미지 받아옴
         {
             InitializeComponent();
 
@@ -46,9 +46,10 @@ namespace ProgramMain
             this.PbScreenshot.Top = this.tlpInfo.Height;
 
             //학생 정보 받아옴
-            stdName = "고구마";
-            stdNum = "20210915";
-            //this.image = (Bitmap)image;//받아온 이미지 저장
+            stdName = name;
+            stdNum = id;
+            //받아온 이미지 저장
+            this.image = image;
 
         }
 
