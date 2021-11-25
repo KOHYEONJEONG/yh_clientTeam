@@ -40,7 +40,7 @@ class PacketHandler
             {
                 if(s.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
                 {
-                    //셀 흰색으로 변경 = 접속 중?
+                    //셀 흰색으로 변경 = 접속 중
                     ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
                     ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;       
                     ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.White;
@@ -127,7 +127,6 @@ class PacketHandler
         {
             if (sp_QuizOXResult.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-                /*ProfesserMain > studList_CellDoubleClick : ReplyYNForm 확인 수정 필요*/
                 ProfesserMain.professerMain._studList.Rows[i].Cells[4].Value = sp_QuizOXResult.result.ToString();
                 break;
             }
@@ -140,7 +139,7 @@ class PacketHandler
         {
             if (sP_AddStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-                //셀 흰색으로 변경 = 접속 중?
+                //셀 흰색으로 변경 = 접속
                 ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.White;
@@ -159,13 +158,13 @@ class PacketHandler
         {
             if (sp_LeaveStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-                //셀 Silver 로 변경 = 미접속?
-                ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.Silver;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.Silver;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.Silver;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.Silver;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.Silver;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.Silver;
+                //셀 Gray 로 변경 = 미접속
+                ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.Gray;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.Gray;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.Gray;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.Gray;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.Gray;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.Gray;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
             }
         }

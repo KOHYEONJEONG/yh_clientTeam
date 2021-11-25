@@ -141,6 +141,7 @@ namespace ProgramMain
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReplyYNForm";
             this.Text = "학생 응답";
+            this.Load += new System.EventHandler(this.ReplyYNForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -10,7 +10,7 @@ namespace ProgramMain
     public partial class ProfesserMain : Form
     {
         public static ProfesserMain professerMain ;
-        
+
         /*
         List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
         public List<SP_StudentInfo.Student> infoStudent
@@ -19,48 +19,45 @@ namespace ProgramMain
             set { _infoStudent = value; }
         }*/
 
-        private String Sstime = DateTime.Now.ToString("g");
+        /*
         String[,] teststu = {   {"000000001","가나다" }, // 서버에서 받아올 시 1열 추가 후 접속여부 저장
                                 {"000000002","라마바" },
-                                {"000000003","아자차" } };
+                                {"000000003","아자차" } };*/
 
+        private String Sstime = DateTime.Now.ToString("g"); // 현재 시간
 
-        List<String> checkstu = new List<string>();
+        private SP_LoginResult.Lecture lecture; //강의 정보(Lecture)
+        private List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>(); // 학생정보(Student) 리스트
 
+        private List<String> checkstu = new List<string>(); // 체크박스 선택된 학생id 리스트
 
-        SP_LoginResult.Lecture lecture;
-        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>();
-
-        public DataGridView _studList
-        {
+        public DataGridView _studList 
+        {// 학생 목록 DataGridView
             get { return studList; }
             set { _studList = studList; }
         }
 
-        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
+        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students) //1.LoginForm에서 넘어옴
         {
             InitializeComponent();
             professerMain = this;
-            get_lecture_stdent(lectures,students);
+            get_lecture_stdent(lectures,students);//2.
         }
 
-
-
-        private void get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
+        private void get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students) //3.해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
-            //String day = getDay();
+            //String day = getDay(); //요일 찾기
             String nowtime = DateTime.Now.ToString("1205");
             String day = "수";
-            foreach (var l in lectures)
+            foreach (var l in lectures) //강의 
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
-                {
-                    
+                {   //시간 비교
                     if (l.weekday == day)
                     {
-                        
+                        //요일 비교
                         lecture = l;
                     }
                 }
@@ -71,10 +68,10 @@ namespace ProgramMain
                 return;
             }
 
-            foreach (var s in students)
-            {
+            foreach (var s in students) //학생
+            {   //학생 정보-강의- 비교
                 if(lecture.lecture_code == s.lectureCode)
-                {
+                {   //학생 리스트에 학생 추가
                     student.Add(s);
                 }
             } 
@@ -129,10 +126,10 @@ namespace ProgramMain
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            Image img1 = Properties.Resources.sky1;
-            Image img2 = Properties.Resources.sky2;
-            Image img3 = Properties.Resources.sky3;
-            Image img4 = Properties.Resources.sky4;
+            //Image img1 = Properties.Resources.sky1;
+            //Image img2 = Properties.Resources.sky2;
+            //Image img3 = Properties.Resources.sky3;
+            //Image img4 = Properties.Resources.sky4;
 
 
             for (int i = 0; i < student.Count; i++) //리스트에 미접속 학생 추가
@@ -253,34 +250,38 @@ namespace ProgramMain
             int curR = e.RowIndex;
             int curC = e.ColumnIndex;
 
+            //셀 타입
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
+            //학생 정보
+            String id = grid.Rows[curR].Cells[1].Value.ToString();
+            String name = grid.Rows[curR].Cells[2].Value.ToString();
+
+            //스크린샷 셀
             if(type == typeof(DataGridViewImageCell))
             {
                 Bitmap img = (Bitmap)grid.Rows[curR].Cells[curC].Value;
                 /* ImageForm 확인 */
-                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[1].Value.ToString(), grid.Rows[curR].Cells[2].Value.ToString(), img);
+                ImageForm img_form = new ImageForm(id, name, img);
                 img_form.ShowDialog();
             }
 
-            /* ReplyYNForm 확인 */
+            //응답 셀
             if (curC == 4)
             {
                 String reply = grid.Rows[curR].Cells[curC].Value.ToString();
-                reply = "O"; // 응답 여부 : Yes일 경우
-                if (reply == "O")
+                if (reply != "" && reply != null) //응답 있을 경우에만 
                 {
-                    int QType = 1; //질문유형 0:O/X 1:입력
-                    switch (QType)
+                    //질문유형
+                    if(reply== "True" || reply== "False")
                     {
-                        case 0:
-                            ReplyYNForm replyYNForm = new ReplyYNForm();
-                            replyYNForm.Show();
-                            break;
-                        case 1:
-                            ReplyForm replyForm = new ReplyForm();
-                            replyForm.Show();
-                            break;
+                        ReplyYNForm replyYNForm = new ReplyYNForm(id, name, reply);
+                        replyYNForm.Show();
+                    }
+                    else
+                    {
+                        ReplyForm replyForm = new ReplyForm(id, name, reply);
+                        replyForm.Show();
                     }
                 }
                 else
@@ -293,6 +294,7 @@ namespace ProgramMain
 
         private void attenddanceBtn_Click(object sender, EventArgs e)
         {
+            /* 출석부에 학생 리스트 전달 필요! */
             attendanceForm attendanceForm = new attendanceForm();
             attendanceForm.Show();
         }
