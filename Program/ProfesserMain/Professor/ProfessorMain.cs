@@ -38,17 +38,23 @@ namespace ProgramMain
         {
             InitializeComponent();
             professerMain = this;
-            get_lecture_stdent(lectures,students);
+
+            
+            if(!get_lecture_stdent(lectures, students)){
+                LoginForm.loginForm.loginCheck = 4;
+                this.Close();
+            }
         }
 
 
 
-        private void get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
+
+        private bool get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
             //String day = getDay();
-            String nowtime = DateTime.Now.ToString("1205");
+            String nowtime = DateTime.Now.ToString("1005");
             String day = "수";
             foreach (var l in lectures)
             {
@@ -62,10 +68,11 @@ namespace ProgramMain
                     }
                 }
             }
+
             if (lecture == null)
             {
-                MessageBox.Show("수업이 없습니다");
-                return;
+                
+                return false;
             }
 
             foreach (var s in students)
@@ -74,7 +81,12 @@ namespace ProgramMain
                 {
                     student.Add(s);
                 }
-            } 
+            }
+
+            Timer.Enabled = true;
+
+            return true;
+            
         }
 
         private string getDay()
@@ -211,6 +223,10 @@ namespace ProgramMain
             {
                 for (int i = studList.Rows.Count -1 ; i >= 0; i--)
                 {
+                    if (studList.Rows[i].Cells[0].ReadOnly)
+                    {
+                        continue;
+                    }
                     studList.Rows[i].Cells[0].Value = true;
                 }
             }
@@ -274,7 +290,7 @@ namespace ProgramMain
             {
                 Image img = grid.Rows[curR].Cells[curC].Value as Image;
 
-                ImageForm img_form = new ImageForm(img.ToString(), img);
+                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[2].Value.ToString(), grid.Rows[curR].Cells[1].Value.ToString(), img);
                 img_form.ShowDialog();
             }
 
@@ -330,6 +346,12 @@ namespace ProgramMain
             //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
 
+        int _stuin = 0;//readonly 해제를 위한 변수
+        public int stuin
+        {
+            get { return _stuin; }
+            set { _stuin = value; }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("hh:mm:ss");//시계
@@ -350,8 +372,21 @@ namespace ProgramMain
                 endBtn.Visible = true;
                 Timer.Enabled = false;
             }
+            
+            if (stuin == 0)//오류 방지
+            {
+                
+            }
+            else if(studList.Rows[_stuin - 1].ReadOnly)//readonly 변경
+            {
+                studList.Rows[_stuin - 1].ReadOnly = false;
+            }
+
 
         }
+
+        
+      
 
         private void endBtn_Click(object sender, EventArgs e)
         {

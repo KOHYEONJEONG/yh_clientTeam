@@ -162,7 +162,6 @@
             // 
             // Timer
             // 
-            this.Timer.Enabled = true;
             this.Timer.Interval = 1000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
@@ -337,6 +336,7 @@
             // 
             this.stucheck.HeaderText = "";
             this.stucheck.Name = "stucheck";
+            this.stucheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.stucheck.Width = 25;
             // 
             // stuid

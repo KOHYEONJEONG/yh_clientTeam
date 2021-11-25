@@ -20,7 +20,7 @@ namespace ProgramMain
 
         //이미지
         /*수정필요*/
-        private Bitmap image = new Bitmap("C:\\Users\\lolol\\Desktop\\Image\\test.jpg");
+        private Bitmap image ;
 
         //윈도우 해상도
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
@@ -31,7 +31,7 @@ namespace ProgramMain
             InitializeComponent();
         }
         
-        public ImageForm(string name, Image image)//이미지 받아옴
+        public ImageForm(string name,string num , Image image)//이미지 받아옴
         {
             InitializeComponent();
 
@@ -46,9 +46,9 @@ namespace ProgramMain
             this.PbScreenshot.Top = this.tlpInfo.Height;
 
             //학생 정보 받아옴
-            stdName = "고구마";
-            stdNum = "20210915";
-            //this.image = (Bitmap)image;//받아온 이미지 저장
+            stdName = name;
+            stdNum = num;
+            this.image = new Bitmap(image);//받아온 이미지 저장
 
         }
 

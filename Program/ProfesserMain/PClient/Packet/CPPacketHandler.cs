@@ -7,6 +7,7 @@ using ProgramMain.Professor;
 
 class PacketHandler
 {
+    
     public static void SP_ResultHandler(PacketSession session, IPacket packet)
     {
         SP_Result result = packet as SP_Result;
@@ -133,15 +134,18 @@ class PacketHandler
             }
         }
     }
+    static int stuin = 0;
     public static void SP_AddStudentHandler(PacketSession session, IPacket packet)
     {
+        stuin++;
+        ProfesserMain.professerMain.stuin = stuin;
         SP_AddStudent sP_AddStudent = packet as SP_AddStudent;
-
-        for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
+        DataGridViewRow dataGrid = new DataGridViewRow();
+        int i;
+        for (i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
         {
             if (sP_AddStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-
                 //셀 흰색으로 변경 = 접속
                 ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;
@@ -150,8 +154,117 @@ class PacketHandler
                 ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.White;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
+
+
+
+                break;
             }
         }
+
+        //정렬을 위한 임시 저장
+        bool c0 = (bool)ProfesserMain.professerMain._studList.Rows[i].Cells[0].Value;
+        string c1 = (string)ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value;
+        string c2 = (string)ProfesserMain.professerMain._studList.Rows[i].Cells[2].Value;
+        Bitmap c3 = (Bitmap)ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value;
+        string c4 = (string)ProfesserMain.professerMain._studList.Rows[i].Cells[4].Value;
+        string c5 = (string)ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value;
+        Color color = (Color)ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor;
+
+
+
+
+        for (int j = i; j > 0; j--)//뒤로 한칸씩 보내기
+        {
+           
+
+            ProfesserMain.professerMain._studList.Rows[j].Cells[0].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Style.BackColor;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[1].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Style.BackColor;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[2].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Style.BackColor;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[3].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Style.BackColor;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[4].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Style.BackColor;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[5].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Style.BackColor;
+
+            ProfesserMain.professerMain._studList.Rows[j].Cells[0].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Value;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[1].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Value;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[2].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Value;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[3].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Value;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[4].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Value;
+            ProfesserMain.professerMain._studList.Rows[j].Cells[5].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Value;
+
+        }
+
+        ProfesserMain.professerMain._studList.Rows[0].Cells[0].Style.BackColor = color;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[1].Style.BackColor = color;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[2].Style.BackColor = color;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[3].Style.BackColor = color;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[4].Style.BackColor = color;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[5].Style.BackColor = color;
+
+        ProfesserMain.professerMain._studList.Rows[0].Cells[0].Value = c0;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[1].Value = c1;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[2].Value = c2;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[3].Value = c3;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[4].Value = c4;
+        ProfesserMain.professerMain._studList.Rows[0].Cells[5].Value = c5;
+        
+
+
+
+       for (int j = 1; j < stuin; j++)
+        {
+            if (Convert.ToInt32(ProfesserMain.professerMain._studList.Rows[j].Cells[1].Value) <
+                                    Convert.ToInt32(ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Value))
+            {
+                //정렬을 위한 임시 저장
+                c0 = (bool)ProfesserMain.professerMain._studList.Rows[j].Cells[0].Value;
+                c1 = (string)ProfesserMain.professerMain._studList.Rows[j].Cells[1].Value;
+                c2 = (string)ProfesserMain.professerMain._studList.Rows[j].Cells[2].Value;
+                c3 = (Bitmap)ProfesserMain.professerMain._studList.Rows[j].Cells[3].Value;
+                c4 = (string)ProfesserMain.professerMain._studList.Rows[j].Cells[4].Value;
+                c5 = (string)ProfesserMain.professerMain._studList.Rows[j].Cells[5].Value;
+                color = (Color)ProfesserMain.professerMain._studList.Rows[j].Cells[0].Style.BackColor;
+ 
+
+                ProfesserMain.professerMain._studList.Rows[j].Cells[0].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Style.BackColor;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[1].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Style.BackColor;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[2].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Style.BackColor;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[3].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Style.BackColor;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[4].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Style.BackColor;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[5].Style.BackColor = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Style.BackColor;
+
+                ProfesserMain.professerMain._studList.Rows[j].Cells[0].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Value;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[1].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Value;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[2].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Value;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[3].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Value;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[4].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Value;
+                ProfesserMain.professerMain._studList.Rows[j].Cells[5].Value = ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Value;
+ 
+
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Style.BackColor = color;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Style.BackColor = color;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Style.BackColor = color;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Style.BackColor = color;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Style.BackColor = color;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Style.BackColor = color;
+
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[0].Value = c0;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[1].Value = c1;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[2].Value = c2;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[3].Value = c3;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[4].Value = c4;
+                ProfesserMain.professerMain._studList.Rows[j - 1].Cells[5].Value = c5;
+
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        
+        
+
+
     }
 
     public static void SP_LeaveStudentHandler(PacketSession session, IPacket packet)
@@ -168,7 +281,7 @@ class PacketHandler
                 ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.Gray;
                 ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.Gray;
-                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources.default1;
             }
         }
     }
