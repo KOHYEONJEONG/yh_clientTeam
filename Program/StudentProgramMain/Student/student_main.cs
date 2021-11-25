@@ -10,19 +10,40 @@ using System.Windows.Forms;
 
 namespace StudentProgramMain.Student
 {
+
     public partial class student_main : Form
     {
+        public static student_main studentMain;
+
         public student_main()
         {
             InitializeComponent();
         }
 
+        SS_LoginResult.Lecture lecture;
+        public string no { get; set; } //학생번호
+        public string name { get; set; } //학생이름
+        public string professorID { get; set; }//교수번호
+        public string subject { get; set; }//교과목
+        public string weekDay { get; set; }//요일
+        public string start { get; set; }//시작시간
+        public string end { get; set; }//끝나는 시간
+
         private void student_main_Load(object sender, EventArgs e)
         {
+
+            studentMain = this;
             btn_absent.Enabled = false;
-            //현재시간 타이머
-            clock.Start();
+           
+            clock.Start(); //현재시간 타이머
+            lbl_period.Text = professorID;
+            lbl_subject.Text = subject;
+            lbl_day.Text = weekDay;
+            lbl_start.Text = start;
+            lbl_end.Text = end;
+            
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {

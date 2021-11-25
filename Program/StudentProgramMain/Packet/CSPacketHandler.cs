@@ -1,6 +1,7 @@
 using StudentProgramMain;
 using StudentProgramMain.Student;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 class PacketHandler
@@ -26,11 +27,21 @@ class PacketHandler
 
     public static void SS_LoginResultHandler(PacketSession session, IPacket packet)
     {
+        List<SS_LoginResult> list = new List<SS_LoginResult>();
+        
         SS_LoginResult.Lecture result = packet as SS_LoginResult.Lecture;//중첩클래스
         LoginForm.LoginResult = true;
 
-        //학생폼에 입력할 값 
-        //result.
+        
+           // 학번을 매칭 시켜할 거 같은데...
+            MessageBox.Show("학생 값불러오는 중");
+            student_main.studentMain.professorID = result.professor_id;
+            student_main.studentMain.no = result.lecture_code;
+            
+            student_main.studentMain.subject = result.lecture_name;
+            student_main.studentMain.weekDay = result.weekday;
+            student_main.studentMain.start = result.strat_time;
+            student_main.studentMain.end =" ~ " + result.end_time;
 
     }
     public static void SS_EnterRoomHandler(PacketSession session, IPacket packet)

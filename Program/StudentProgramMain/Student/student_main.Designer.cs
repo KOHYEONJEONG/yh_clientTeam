@@ -37,7 +37,7 @@ namespace StudentProgramMain.Student
             this.lblNo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_subject = new System.Windows.Forms.Label();
-            this.lbl_classhour = new System.Windows.Forms.Label();
+            this.lbl_start = new System.Windows.Forms.Label();
             this.lbl_period = new System.Windows.Forms.Label();
             this.lbl_day = new System.Windows.Forms.Label();
             this.btn_ask = new System.Windows.Forms.Button();
@@ -51,6 +51,7 @@ namespace StudentProgramMain.Student
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lbl_end = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -104,7 +105,8 @@ namespace StudentProgramMain.Student
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
             this.panel2.Controls.Add(this.lbl_subject);
-            this.panel2.Controls.Add(this.lbl_classhour);
+            this.panel2.Controls.Add(this.lbl_end);
+            this.panel2.Controls.Add(this.lbl_start);
             this.panel2.Controls.Add(this.lbl_period);
             this.panel2.Controls.Add(this.lbl_day);
             this.panel2.Location = new System.Drawing.Point(122, 0);
@@ -123,16 +125,16 @@ namespace StudentProgramMain.Student
             this.lbl_subject.TabIndex = 5;
             this.lbl_subject.Text = "과목명";
             // 
-            // lbl_classhour
+            // lbl_start
             // 
-            this.lbl_classhour.AutoSize = true;
-            this.lbl_classhour.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_classhour.ForeColor = System.Drawing.Color.White;
-            this.lbl_classhour.Location = new System.Drawing.Point(325, 43);
-            this.lbl_classhour.Name = "lbl_classhour";
-            this.lbl_classhour.Size = new System.Drawing.Size(105, 20);
-            this.lbl_classhour.TabIndex = 5;
-            this.lbl_classhour.Text = "시작~끝(시간)";
+            this.lbl_start.AutoSize = true;
+            this.lbl_start.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_start.ForeColor = System.Drawing.Color.White;
+            this.lbl_start.Location = new System.Drawing.Point(295, 46);
+            this.lbl_start.Name = "lbl_start";
+            this.lbl_start.Size = new System.Drawing.Size(39, 20);
+            this.lbl_start.TabIndex = 5;
+            this.lbl_start.Text = "시작";
             // 
             // lbl_period
             // 
@@ -270,6 +272,17 @@ namespace StudentProgramMain.Student
             this.nfiTray.Visible = true;
             this.nfiTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.nfiTray_MouseDoubleClick);
             // 
+            // lbl_end
+            // 
+            this.lbl_end.AutoSize = true;
+            this.lbl_end.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_end.ForeColor = System.Drawing.Color.White;
+            this.lbl_end.Location = new System.Drawing.Point(368, 46);
+            this.lbl_end.Name = "lbl_end";
+            this.lbl_end.Size = new System.Drawing.Size(33, 20);
+            this.lbl_end.TabIndex = 5;
+            this.lbl_end.Text = ": 끝";
+            // 
             // student_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -311,7 +324,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_subject;
-        private System.Windows.Forms.Label lbl_classhour;
+        private System.Windows.Forms.Label lbl_start;
         private System.Windows.Forms.Label lbl_period;
         private System.Windows.Forms.Label lbl_day;
         private System.Windows.Forms.Timer Timer;
@@ -319,5 +332,6 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Timer clock;
         private System.Windows.Forms.NotifyIcon nfiTray;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.Label lbl_end;
     }
 }
