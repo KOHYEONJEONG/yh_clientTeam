@@ -54,7 +54,7 @@ namespace ProgramMain
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
             //String day = getDay();
-            String nowtime = DateTime.Now.ToString("1005");
+            String nowtime = DateTime.Now.ToString("1205");
             String day = "수";
             foreach (var l in lectures)
             {

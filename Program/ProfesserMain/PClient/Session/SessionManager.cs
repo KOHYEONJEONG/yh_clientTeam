@@ -49,14 +49,17 @@ namespace PClient
         {
             CP_QuizOX cp_QuizOX = new CP_QuizOX();
 
+            MessageBox.Show(checkstu[0]);
             foreach (var s in checkstu)
             {
+                
                 CP_QuizOX.Student student = new CP_QuizOX.Student();
                 student.studentId = s;
                 
                 cp_QuizOX.students.Add(student);
 
             }
+            
 
             cp_QuizOX.quiz = quiz;
             _sessions.Send(cp_QuizOX.Write());
