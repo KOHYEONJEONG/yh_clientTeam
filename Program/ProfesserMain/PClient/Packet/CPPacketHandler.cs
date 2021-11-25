@@ -19,15 +19,18 @@ class PacketHandler
     public static void SP_LoginFailedHandler(PacketSession session, IPacket packet)
     {
         MessageBox.Show("로그인 실패");
+        
+        LoginForm.loginForm.loginCheck = 2;
+        LoginForm.loginForm._loginCheckTimer.Enabled = true;
     }     
     public static void SP_LoginResultHandler(PacketSession session, IPacket packet)
     {
-        LoginForm.loginForm.loginCheck = true;
+        LoginForm.loginForm.loginCheck = 1;
         LoginForm.loginForm.sp_LoginResult = packet as SP_LoginResult;
     }     
     public static void SP_StudentInfoHandler(PacketSession session, IPacket packet)
     {
-        SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
+       /* SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
 
         foreach (var s in sp_StudentInfo.students) 
         {
@@ -46,7 +49,7 @@ class PacketHandler
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
                 }
             }
-        }
+        }*/
     }
 
     public static void SP_ScreenResultHandler(PacketSession session, IPacket packet)

@@ -19,9 +19,6 @@ namespace ProgramMain
         }*/
 
         private String Sstime = DateTime.Now.ToString("g");
-        String[,] teststu = {   {"000000001","가나다" }, // 서버에서 받아올 시 1열 추가 후 접속여부 저장
-                                {"000000002","라마바" },
-                                {"000000003","아자차" } };
 
 
         List<String> checkstu = new List<string>();
@@ -30,6 +27,7 @@ namespace ProgramMain
         SP_LoginResult.Lecture lecture;
         List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>();
 
+        
         public DataGridView _studList
         {
             get { return studList; }
@@ -146,6 +144,7 @@ namespace ProgramMain
                 studList.Rows[i].Cells[3].Style.BackColor = Color.Gray;
                 studList.Rows[i].Cells[4].Style.BackColor = Color.Gray;
                 studList.Rows[i].Cells[5].Style.BackColor = Color.Gray;
+                studList.Rows[i].Cells[6].Style.BackColor = Color.Gray;
 
 
             }
@@ -156,7 +155,7 @@ namespace ProgramMain
                 classTime.Text = "수업 시간: " + lecture.strat_time + "~" + lecture.end_time;//수업 시간 설정
                                                                                          //시간되면 자동 수업 시작하게 설정하기
             }
-            LoginForm.sessionManager.StudentListRequset();
+
         }
 
 
@@ -168,8 +167,13 @@ namespace ProgramMain
         // 스크린샷 버튼 이벤트
         private void screenbtn_Click(object sender, EventArgs e)
         {
-           
-         }
+            //체크 되어있는 학생의 학번을 리스트에 추가
+            checkStuAdd();
+
+            LoginForm.sessionManager.ScreenShotRequset(checkstu);
+
+            checkstu.Clear();//체크된 학생 리스트 비우기
+        }
         
         private void questionbtn_Click(object sender, EventArgs e)
         {
@@ -177,7 +181,22 @@ namespace ProgramMain
             checkStuAdd();
 
             QuestionForm questionForm = new QuestionForm(); // 질문 폼 띄우기
-            questionForm.Show();
+            questionForm.ShowDialog();
+
+            if (questionForm._radio_write.Checked)//학생입력
+            {
+                LoginForm.sessionManager.QuizRequset(questionForm.checklist, questionForm._tb_question.Text);
+            }
+            else if (questionForm._radio_yorn.Checked)//OX
+            {
+                LoginForm.sessionManager.QuizOXRequset(questionForm.checklist, questionForm._tb_question.Text);
+            }
+            else//취소
+            {
+                
+            }
+            
+
 
             checkstu.Clear();//체크된 학생 리스트 비우기
 
@@ -207,6 +226,8 @@ namespace ProgramMain
         
         private void checkStuAdd()
         {
+
+
             //체크 되어있는 학생의 학번을 리스트에 추가
             for (int i = studList.Rows.Count - 1; i >= 0; i--)
             {
@@ -233,11 +254,7 @@ namespace ProgramMain
             checkstu.Clear();//체크된 학생 리스트 비우기
         }
 
-        private void attendbtn_Click(object sender, EventArgs e)
-        {
-            attendBtn.Visible = false;
-                            //수업 시간 받고 교시마다 활성화 되게 해야 함
-        }
+     
 
         private void studList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -301,32 +318,40 @@ namespace ProgramMain
 
         }
 
-        DateTime start_t;
 
-        private void startBtn_Click(object sender, EventArgs e)
-        {//수업 시작 버튼
-            attendBtn.Visible = true;//출석버튼 보이게
-            startBtn.Visible = false;//시작버튼 숨기기
 
-            start_t = System.DateTime.Now;
+        int atndTime = 1;//교시
+        private void attendbtn_Click(object sender, EventArgs e)
+        {
+            String nowtime = DateTime.Now.ToString("HHmm");
+            
+
+            LoginForm.sessionManager.AtdRequest(atndTime, 1);//교시,주차
+            attendBtn.Visible = false;
+            //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("hh:mm:ss");//시계
-            if(System.DateTime.Now.Second - start_t.Second >= 10 && startBtn.Visible == false)//수업 시작버튼 누르고 10초뒤 수업종료 버튼 활성화(테스트용)
-            {                                                                                  //수업 시간 받아와서 종료시간에 활성화
+
+            if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 100).ToString() + "00")//2교시 출석체크 시작
+            {
+                atndTime = 2;
+                attendBtn.Visible = true;
+            }
+            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 200).ToString() + "00")//3교시 출석체크 시작
+            {
+                atndTime = 3;
+                attendBtn.Visible = true;
+            }
+            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.end_time) -15).ToString() + "00")//수업 종료 5분전
+            {
+                MessageBox.Show("수업종료 5분전 입니다");
                 endBtn.Visible = true;
+                Timer.Enabled = false;
             }
 
-            if(System.DateTime.Now.ToString("mm:ss") == "45:00")//수업 종료 5분전, 수업종료 알림 (수정)
-            {
-                MessageBox.Show("수업종료 5분전 입니다.");
-            }
-            else if(System.DateTime.Now.ToString("mm:ss") == "50:00")
-            {
-                MessageBox.Show("수업종료 시간 입니다");
-            }
         }
 
         private void endBtn_Click(object sender, EventArgs e)
