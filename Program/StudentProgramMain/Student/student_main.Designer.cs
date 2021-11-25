@@ -37,6 +37,7 @@ namespace StudentProgramMain.Student
             this.lblNo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl_subject = new System.Windows.Forms.Label();
+            this.lbl_end = new System.Windows.Forms.Label();
             this.lbl_start = new System.Windows.Forms.Label();
             this.lbl_period = new System.Windows.Forms.Label();
             this.lbl_day = new System.Windows.Forms.Label();
@@ -45,13 +46,12 @@ namespace StudentProgramMain.Student
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
-            this.lbl_end = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -95,7 +95,7 @@ namespace StudentProgramMain.Student
             this.lblNo.AutoSize = true;
             this.lblNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNo.ForeColor = System.Drawing.Color.White;
-            this.lblNo.Location = new System.Drawing.Point(31, 18);
+            this.lblNo.Location = new System.Drawing.Point(3, 10);
             this.lblNo.Name = "lblNo";
             this.lblNo.Size = new System.Drawing.Size(52, 28);
             this.lblNo.TabIndex = 5;
@@ -124,6 +124,17 @@ namespace StudentProgramMain.Student
             this.lbl_subject.Size = new System.Drawing.Size(108, 41);
             this.lbl_subject.TabIndex = 5;
             this.lbl_subject.Text = "과목명";
+            // 
+            // lbl_end
+            // 
+            this.lbl_end.AutoSize = true;
+            this.lbl_end.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_end.ForeColor = System.Drawing.Color.White;
+            this.lbl_end.Location = new System.Drawing.Point(368, 46);
+            this.lbl_end.Name = "lbl_end";
+            this.lbl_end.Size = new System.Drawing.Size(33, 20);
+            this.lbl_end.TabIndex = 5;
+            this.lbl_end.Text = ": 끝";
             // 
             // lbl_start
             // 
@@ -226,18 +237,19 @@ namespace StudentProgramMain.Student
             this.button1.Text = "로그아웃";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnExit
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(355, 215);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 37);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "종료";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Location = new System.Drawing.Point(355, 215);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(133, 37);
+            this.btnExit.TabIndex = 4;
+            this.btnExit.Text = "종료";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Timer
             // 
@@ -272,23 +284,12 @@ namespace StudentProgramMain.Student
             this.nfiTray.Visible = true;
             this.nfiTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.nfiTray_MouseDoubleClick);
             // 
-            // lbl_end
-            // 
-            this.lbl_end.AutoSize = true;
-            this.lbl_end.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_end.ForeColor = System.Drawing.Color.White;
-            this.lbl_end.Location = new System.Drawing.Point(368, 46);
-            this.lbl_end.Name = "lbl_end";
-            this.lbl_end.Size = new System.Drawing.Size(33, 20);
-            this.lbl_end.TabIndex = 5;
-            this.lbl_end.Text = ": 끝";
-            // 
             // student_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 264);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -319,7 +320,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblNo;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.PictureBox pictureBox1;

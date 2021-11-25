@@ -13,35 +13,52 @@ namespace StudentProgramMain.Student
 
     public partial class student_main : Form
     {
-        public static student_main studentMain;
+        public static student_main studentMain;//핸들러
 
-        public student_main()
+        //SS_LoginResult ss_LoginResult;
+        SS_LoginResult.Lecture lecture;
+        List<SS_LoginResult.Lecture> schedule = new List<SS_LoginResult.Lecture>();
+
+
+        //ss_LoginResult.studentID, ss_LoginResult.name, ss_LoginResult.result, ss_LoginResult.lectures
+        public student_main(string studentID, string name, int result, List<SS_LoginResult.Lecture> lectures)
         {
             InitializeComponent();
+            studentMain = this;
+            get_lecture_stdent(studentID, name, result, lectures);
         }
 
-        SS_LoginResult.Lecture lecture;
-        public string no { get; set; } //학생번호
-        public string name { get; set; } //학생이름
-        public string professorID { get; set; }//교수번호
-        public string subject { get; set; }//교과목
-        public string weekDay { get; set; }//요일
-        public string start { get; set; }//시작시간
-        public string end { get; set; }//끝나는 시간
-
-        private void student_main_Load(object sender, EventArgs e)
+        private void get_lecture_stdent(string studentID, string name, int result, List<SS_LoginResult.Lecture> lectures)
         {
-
             studentMain = this;
             btn_absent.Enabled = false;
-           
+
             clock.Start(); //현재시간 타이머
-            lbl_period.Text = professorID;
-            lbl_subject.Text = subject;
-            lbl_day.Text = weekDay;
-            lbl_start.Text = start;
-            lbl_end.Text = end;
+
+
+            lblNo.Text = studentID;
+            lbl_name.Text = name;
+
+            foreach (var l in lectures)
+            {
+                lbl_period.Text = l.professor_id;
+                lbl_subject.Text = l.lecture_name;
+                lbl_day.Text = l.weekday;
+                lbl_start.Text = l.strat_time;
+                lbl_end.Text = l.end_time;
+
+
+            }
+            if(lecture == null) //SS_LoginResult.Lecture lecture; (시간표)
+            {
+                MessageBox.Show("수업이 없습니다.");
+                return;
+            }
             
+
+        }
+        private void student_main_Load(object sender, EventArgs e)
+        {
         }
 
 
@@ -115,7 +132,7 @@ namespace StudentProgramMain.Student
         private void clock_Tick(object sender, EventArgs e)
         {
             //Student_askf ask = new Student_askf();
-           // ask.Show();
+            // ask.Show();
         }
         // string OrgStr = "";
 
@@ -144,8 +161,14 @@ namespace StudentProgramMain.Student
 
         private void btn_ask_Click(object sender, EventArgs e)
         {
-             Student_askf ask = new Student_askf();
-             ask.Show();
+            Student_askf ask = new Student_askf();
+            ask.Show();
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

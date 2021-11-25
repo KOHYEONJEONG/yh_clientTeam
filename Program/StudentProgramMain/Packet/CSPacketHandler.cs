@@ -17,9 +17,6 @@ class PacketHandler
     }
     public static void SS_LoginFailedHandler(PacketSession session, IPacket packet)
     {
-        //SS_LoginFailed result = packet as SS_LoginFailed;
-        // ServerSession serverSession = session as ServerSession;
-
         LoginForm.LoginResult = false;//실행(x)
         MessageBox.Show("로그인 실패");
 
@@ -27,21 +24,8 @@ class PacketHandler
 
     public static void SS_LoginResultHandler(PacketSession session, IPacket packet)
     {
-        List<SS_LoginResult> list = new List<SS_LoginResult>();
-        
-        SS_LoginResult.Lecture result = packet as SS_LoginResult.Lecture;//중첩클래스
         LoginForm.LoginResult = true;
-
-        
-           // 학번을 매칭 시켜할 거 같은데...
-            MessageBox.Show("학생 값불러오는 중");
-            student_main.studentMain.professorID = result.professor_id;
-            student_main.studentMain.no = result.lecture_code;
-            
-            student_main.studentMain.subject = result.lecture_name;
-            student_main.studentMain.weekDay = result.weekday;
-            student_main.studentMain.start = result.strat_time;
-            student_main.studentMain.end =" ~ " + result.end_time;
+        LoginForm.loginForm.ss_LoginResult = packet as SS_LoginResult;
 
     }
     public static void SS_EnterRoomHandler(PacketSession session, IPacket packet)

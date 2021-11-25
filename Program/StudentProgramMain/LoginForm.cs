@@ -19,11 +19,22 @@ namespace StudentProgramMain
     {
         public static SessionManager sessionManager;//보내는 용도, (가져올떄는 패킷명으로 ex 
         public static PacketManager packetManager;
+
+        public static LoginForm loginForm;
+        SS_LoginResult _ss_LoginResult;
+
+        public SS_LoginResult ss_LoginResult
+        {
+            get { return _ss_LoginResult; }
+            set { _ss_LoginResult = value; }
+        }
+
         public LoginForm()
         {
             InitializeComponent();
             sessionManager = new SessionManager();
             packetManager = new PacketManager();
+            loginForm = this;
         }
         Boolean exit = true;
 
@@ -79,7 +90,7 @@ namespace StudentProgramMain
                      {
                         exit = false;
                         this.Hide();
-                        (new student_main()).Show();
+                        (new student_main(ss_LoginResult.studentID, ss_LoginResult.name, ss_LoginResult.result, ss_LoginResult.lectures)).Show();
                         this.Close();
 
 
