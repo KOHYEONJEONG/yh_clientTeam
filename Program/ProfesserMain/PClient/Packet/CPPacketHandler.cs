@@ -26,6 +26,7 @@ class PacketHandler
     {
         LoginForm.loginForm.loginCheck = true;
         LoginForm.loginForm.sp_LoginResult = packet as SP_LoginResult;
+
     }
 
     public static void SP_StudentInfoHandler(PacketSession session, IPacket packet)
@@ -34,13 +35,13 @@ class PacketHandler
         ServerSession serverSession = session as ServerSession;
         foreach (var s in sp_StudentInfo.students) 
         {
-            MessageBox.Show("asdasd");
+            //MessageBox.Show("asdasd");
             for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
             {
                 if(s.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
                 {
-                    
-                    ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;//¼¿ Èò»öÀ¸·Î º¯°æ
+                    //¼¿ Èò»öÀ¸·Î º¯°æ = Á¢¼Ó Áß?
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
                     ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;       
                     ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.White;
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.White;
@@ -121,7 +122,6 @@ class PacketHandler
     }
     public static void SP_QuizOXResultHandler(PacketSession session, IPacket packet)
     {
-
         SP_QuizOXResult sp_QuizOXResult = packet as SP_QuizOXResult;
         for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
         {
@@ -135,14 +135,44 @@ class PacketHandler
     }
     public static void SP_AddStudentHandler(PacketSession session, IPacket packet)
     {
-
+        SP_AddStudent sP_AddStudent = packet as SP_AddStudent;
+        for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
+        {
+            if (sP_AddStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
+            {
+                //¼¿ Èò»öÀ¸·Î º¯°æ = Á¢¼Ó Áß?
+                ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.White;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
+            }
+        }
     }
+
     public static void SP_LeaveStudentHandler(PacketSession session, IPacket packet)
     {
-
+        SP_LeaveStudent sp_LeaveStudent = packet as SP_LeaveStudent;
+        for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
+        {
+            if (sp_LeaveStudent.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
+            {
+                //¼¿ Silver ·Î º¯°æ = ¹ÌÁ¢¼Ó?
+                ProfesserMain.professerMain._studList.Rows[i].Cells[0].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[1].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[2].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.Silver;
+                ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
+            }
+        }
     }
     public static void SP_AddAtdHandler(PacketSession session, IPacket packet)
     {
+        SP_AddAtd sp_AddAtd = packet as SP_AddAtd;
 
     }
     

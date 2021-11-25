@@ -11,7 +11,8 @@ namespace ProgramMain
     {
         public static ProfesserMain professerMain ;
         
-        /*List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
+        /*
+        List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
         public List<SP_StudentInfo.Student> infoStudent
         {
             get { return _infoStudent; }
