@@ -19,7 +19,7 @@ namespace ProgramMain
         public static SessionManager sessionManager;
         public static PacketManager packetManager;
         public static LoginForm loginForm;
-        public bool loginCheck
+        public int loginCheck
         {
             get; set;
         }
@@ -39,7 +39,7 @@ namespace ProgramMain
             sessionManager = new SessionManager();
             packetManager = new PacketManager();
             loginForm = this;
-            loginCheck = false;
+            loginCheck = 0;
         }
 
         Boolean exit = true;
@@ -148,17 +148,47 @@ namespace ProgramMain
             }
         }
 
+        public Timer _loginCheckTimer
+        {
+            get { return loginCheckTimer; }
+            set { loginCheckTimer = value; }
+        }
+
         private void loginCheckTimer_Tick(object sender, EventArgs e)
         {
-            if (loginCheck)
+            if (loginCheck == 1)//로그인 성공
             {
                 ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students);
                 loginCheckTimer.Enabled = false;
-                professerMain.ShowDialog();
+                try
+                {
+                    professerMain.ShowDialog();
+                }
+                catch
+                {
+
+                }
+                if (loginCheck == 4)//수업 없음
+                {
+                    MessageBox.Show("수업이 없습니다");
+                }
                 exit = false;
                 Application.ExitThread();
             }
+            else if (loginCheck == 2)//로그인 실패
+            {
+                LoginForm.loginForm.Show();
+                loginCheck = 0;
+            }
             
+        }
+
+        private void txt_pw_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin_Click(sender,e);
+            }
         }
     }
 }

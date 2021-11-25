@@ -104,6 +104,7 @@ namespace ProgramMain
             this.txt_pw.Name = "txt_pw";
             this.txt_pw.Size = new System.Drawing.Size(97, 16);
             this.txt_pw.TabIndex = 6;
+            this.txt_pw.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_pw_KeyDown);
             // 
             // btnLogin
             // 

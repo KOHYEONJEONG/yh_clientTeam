@@ -10,71 +10,83 @@ namespace ProgramMain
     public partial class ProfesserMain : Form
     {
         public static ProfesserMain professerMain ;
-
-        /*
-        List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
+        
+        /*List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
         public List<SP_StudentInfo.Student> infoStudent
         {
             get { return _infoStudent; }
             set { _infoStudent = value; }
         }*/
 
-        /*
-        String[,] teststu = {   {"000000001","가나다" }, // 서버에서 받아올 시 1열 추가 후 접속여부 저장
-                                {"000000002","라마바" },
-                                {"000000003","아자차" } };*/
+        private String Sstime = DateTime.Now.ToString("g");
 
-        private String Sstime = DateTime.Now.ToString("g"); // 현재 시간
 
-        private SP_LoginResult.Lecture lecture; //강의 정보(Lecture)
-        private List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>(); // 학생정보(Student) 리스트
+        List<String> checkstu = new List<string>();
 
-        private List<String> checkstu = new List<string>(); // 체크박스 선택된 학생id 리스트
 
-        public DataGridView _studList 
-        {// 학생 목록 DataGridView
+        SP_LoginResult.Lecture lecture;
+        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>();
+
+        
+        public DataGridView _studList
+        {
             get { return studList; }
             set { _studList = studList; }
         }
 
-        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students) //1.LoginForm에서 넘어옴
+        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
         {
             InitializeComponent();
             professerMain = this;
-            get_lecture_stdent(lectures,students);//2.
+
+            
+            if(!get_lecture_stdent(lectures, students)){
+                LoginForm.loginForm.loginCheck = 4;
+                this.Close();
+            }
         }
 
-        private void get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students) //3.해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
+
+
+
+        private bool get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
-            //String day = getDay(); //요일 찾기
-            String nowtime = DateTime.Now.ToString("1205");
+            //String day = getDay();
+            String nowtime = DateTime.Now.ToString("1005");
             String day = "수";
-            foreach (var l in lectures) //강의 
+            foreach (var l in lectures)
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
-                {   //시간 비교
+                {
+                    
                     if (l.weekday == day)
                     {
-                        //요일 비교
+                        
                         lecture = l;
                     }
                 }
             }
+
             if (lecture == null)
             {
-                MessageBox.Show("수업이 없습니다");
-                return;
+                
+                return false;
             }
 
-            foreach (var s in students) //학생
-            {   //학생 정보-강의- 비교
+            foreach (var s in students)
+            {
                 if(lecture.lecture_code == s.lectureCode)
-                {   //학생 리스트에 학생 추가
+                {
                     student.Add(s);
                 }
-            } 
+            }
+
+            Timer.Enabled = true;
+
+            return true;
+            
         }
 
         private string getDay()
@@ -126,10 +138,10 @@ namespace ProgramMain
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            //Image img1 = Properties.Resources.sky1;
-            //Image img2 = Properties.Resources.sky2;
-            //Image img3 = Properties.Resources.sky3;
-            //Image img4 = Properties.Resources.sky4;
+            Image img1 = Properties.Resources.sky1;
+            Image img2 = Properties.Resources.sky2;
+            Image img3 = Properties.Resources.sky3;
+            Image img4 = Properties.Resources.sky4;
 
 
             for (int i = 0; i < student.Count; i++) //리스트에 미접속 학생 추가
@@ -154,7 +166,7 @@ namespace ProgramMain
                 classTime.Text = "수업 시간: " + lecture.strat_time + "~" + lecture.end_time;//수업 시간 설정
                                                                                          //시간되면 자동 수업 시작하게 설정하기
             }
-            LoginForm.sessionManager.StudentListRequset();
+
         }
 
 
@@ -166,8 +178,13 @@ namespace ProgramMain
         // 스크린샷 버튼 이벤트
         private void screenbtn_Click(object sender, EventArgs e)
         {
-           
-         }
+            //체크 되어있는 학생의 학번을 리스트에 추가
+            checkStuAdd();
+
+            LoginForm.sessionManager.ScreenShotRequset(checkstu);
+
+            checkstu.Clear();//체크된 학생 리스트 비우기
+        }
         
         private void questionbtn_Click(object sender, EventArgs e)
         {
@@ -175,7 +192,22 @@ namespace ProgramMain
             checkStuAdd();
 
             QuestionForm questionForm = new QuestionForm(); // 질문 폼 띄우기
-            questionForm.Show();
+            questionForm.ShowDialog();
+
+            if (questionForm._radio_write.Checked)//학생입력
+            {
+                LoginForm.sessionManager.QuizRequset(questionForm.checklist, questionForm._tb_question.Text);
+            }
+            else if (questionForm._radio_yorn.Checked)//OX
+            {
+                LoginForm.sessionManager.QuizOXRequset(questionForm.checklist, questionForm._tb_question.Text);
+            }
+            else//취소
+            {
+                
+            }
+            
+
 
             checkstu.Clear();//체크된 학생 리스트 비우기
 
@@ -191,6 +223,10 @@ namespace ProgramMain
             {
                 for (int i = studList.Rows.Count -1 ; i >= 0; i--)
                 {
+                    if (studList.Rows[i].Cells[0].ReadOnly)
+                    {
+                        continue;
+                    }
                     studList.Rows[i].Cells[0].Value = true;
                 }
             }
@@ -205,6 +241,8 @@ namespace ProgramMain
         
         private void checkStuAdd()
         {
+
+
             //체크 되어있는 학생의 학번을 리스트에 추가
             for (int i = studList.Rows.Count - 1; i >= 0; i--)
             {
@@ -231,11 +269,7 @@ namespace ProgramMain
             checkstu.Clear();//체크된 학생 리스트 비우기
         }
 
-        private void attendbtn_Click(object sender, EventArgs e)
-        {
-            attendBtn.Visible = false;
-                            //수업 시간 받고 교시마다 활성화 되게 해야 함
-        }
+     
 
         private void studList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -250,38 +284,34 @@ namespace ProgramMain
             int curR = e.RowIndex;
             int curC = e.ColumnIndex;
 
-            //셀 타입
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
-            //학생 정보
-            String id = grid.Rows[curR].Cells[1].Value.ToString();
-            String name = grid.Rows[curR].Cells[2].Value.ToString();
-
-            //스크린샷 셀
             if(type == typeof(DataGridViewImageCell))
             {
-                Bitmap img = (Bitmap)grid.Rows[curR].Cells[curC].Value;
-                /* ImageForm 확인 */
-                ImageForm img_form = new ImageForm(id, name, img);
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+
+                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[2].Value.ToString(), grid.Rows[curR].Cells[1].Value.ToString(), img);
                 img_form.ShowDialog();
             }
 
-            //응답 셀
+            /* 응답 폼 확인 */
             if (curC == 4)
             {
                 String reply = grid.Rows[curR].Cells[curC].Value.ToString();
-                if (reply != "" && reply != null) //응답 있을 경우에만 
+                reply = "O"; // 응답 여부 : Yes일 경우
+                if (reply == "O")
                 {
-                    //질문유형
-                    if(reply== "True" || reply== "False")
+                    int QType = 1; //질문유형 0:O/X 1:입력
+                    switch (QType)
                     {
-                        ReplyYNForm replyYNForm = new ReplyYNForm(id, name, reply);
-                        replyYNForm.Show();
-                    }
-                    else
-                    {
-                        ReplyForm replyForm = new ReplyForm(id, name, reply);
-                        replyForm.Show();
+                        case 0:
+                            ReplyYNForm replyYNForm = new ReplyYNForm();
+                            replyYNForm.Show();
+                            break;
+                        case 1:
+                            ReplyForm replyForm = new ReplyForm();
+                            replyForm.Show();
+                            break;
                     }
                 }
                 else
@@ -294,7 +324,6 @@ namespace ProgramMain
 
         private void attenddanceBtn_Click(object sender, EventArgs e)
         {
-            /* 출석부에 학생 리스트 전달 필요! */
             attendanceForm attendanceForm = new attendanceForm();
             attendanceForm.Show();
         }
@@ -304,33 +333,60 @@ namespace ProgramMain
 
         }
 
-        DateTime start_t;
 
-        private void startBtn_Click(object sender, EventArgs e)
-        {//수업 시작 버튼
-            attendBtn.Visible = true;//출석버튼 보이게
-            startBtn.Visible = false;//시작버튼 숨기기
 
-            start_t = System.DateTime.Now;
+        int atndTime = 1;//교시
+        private void attendbtn_Click(object sender, EventArgs e)
+        {
+            String nowtime = DateTime.Now.ToString("HHmm");
+            
+
+            LoginForm.sessionManager.AtdRequest(atndTime, 1);//교시,주차
+            attendBtn.Visible = false;
+            //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
 
+        int _stuin = 0;//readonly 해제를 위한 변수
+        public int stuin
+        {
+            get { return _stuin; }
+            set { _stuin = value; }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("hh:mm:ss");//시계
-            if(System.DateTime.Now.Second - start_t.Second >= 10 && startBtn.Visible == false)//수업 시작버튼 누르고 10초뒤 수업종료 버튼 활성화(테스트용)
-            {                                                                                  //수업 시간 받아와서 종료시간에 활성화
+
+            if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 100).ToString() + "00")//2교시 출석체크 시작
+            {
+                atndTime = 2;
+                attendBtn.Visible = true;
+            }
+            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 200).ToString() + "00")//3교시 출석체크 시작
+            {
+                atndTime = 3;
+                attendBtn.Visible = true;
+            }
+            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.end_time) -15).ToString() + "00")//수업 종료 5분전
+            {
+                MessageBox.Show("수업종료 5분전 입니다");
                 endBtn.Visible = true;
+                Timer.Enabled = false;
+            }
+            
+            if (stuin == 0)//오류 방지
+            {
+                
+            }
+            else if(studList.Rows[_stuin - 1].ReadOnly)//readonly 변경
+            {
+                studList.Rows[_stuin - 1].ReadOnly = false;
             }
 
-            if(System.DateTime.Now.ToString("mm:ss") == "45:00")//수업 종료 5분전, 수업종료 알림 (수정)
-            {
-                MessageBox.Show("수업종료 5분전 입니다.");
-            }
-            else if(System.DateTime.Now.ToString("mm:ss") == "50:00")
-            {
-                MessageBox.Show("수업종료 시간 입니다");
-            }
+
         }
+
+        
+      
 
         private void endBtn_Click(object sender, EventArgs e)
         {

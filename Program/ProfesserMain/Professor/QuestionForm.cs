@@ -16,11 +16,35 @@ namespace ProgramMain
 
         private string Question; //교수님이 질문
         private string Q_Type; // 질문 타입
-        private List<string> checklist = new List<string>(); //선택된 학생 목록
+        private List<string> _checklist = new List<string>(); //선택된 학생 목록
+        public List<string> checklist
+        {
+            get { return _checklist; }
+            set { _checklist = checklist; }
+        }
+
+
+        public RadioButton _radio_write
+        {
+            get { return radio_write; }
+            set { radio_write = value; }
+        }
+        public RadioButton _radio_yorn
+        {
+            get { return radio_yorn; }
+            set { radio_yorn = value; }
+        }
+
+        public TextBox _tb_question
+        {
+            get { return tb_question; }
+            set { tb_question = value; }
+        }
 
         public QuestionForm()
         {
             InitializeComponent();
+            
         }
 
         
@@ -28,10 +52,12 @@ namespace ProgramMain
         {
             /* */
             //dataGridView1: 학생 리스트에 학생 정보 추가
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < ProfesserMain.professerMain._studList.Rows.Count ; i++)
             {
-                string stdname = "학생" + (i+1);
-                this.dataGridView1.Rows.Add(false, stdname, "2021090"+i);
+                if (!ProfesserMain.professerMain._studList.Rows[i].ReadOnly){//접속학생만 추가) 
+                    this.dataGridView1.Rows.Add(ProfesserMain.professerMain._studList.Rows[i].Cells[0].Value, ProfesserMain.professerMain._studList.Rows[i].Cells[2].Value,
+                        ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value);
+                }
             }
            
 
@@ -97,67 +123,71 @@ namespace ProgramMain
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+
             /*교수님 질문 & 타입 & 선택된 학생 정보 전송*/
             //1.교수님 질문
-            Question = this.tb_question.Text;
+            /* Question = this.tb_question.Text;
 
-            //2.타입 선택
-            if (this.radio_write.Checked == true)
-            {
-                Q_Type = this.radio_write.Text;
-            }
-            else if (this.radio_yorn.Checked == true)
-            {
-                Q_Type = this.radio_yorn.Text;
-            }
+             //2.타입 선택
+             if (this.radio_write.Checked == true)
+             {
+                 Q_Type = this.radio_write.Text;
+             }
+             else if (this.radio_yorn.Checked == true)
+             {
+                 Q_Type = this.radio_yorn.Text;
+             }
 
-            //3.선택된 학생
-            for (int i = 0; i < this.dataGridView1.Rows.Count; i++)
-            {
-                bool isChecked = Convert.ToBoolean(this.dataGridView1.Rows[i].Cells[0].Value);
-                if (isChecked)
-                {
-                    checklist.Add(Convert.ToString(this.dataGridView1.Rows[i].Cells[2].Value));
-                }
-            }
+             //3.선택된 학생
+             for (int i = 0; i < this.dataGridView1.Rows.Count; i++)
+             {
+                 bool isChecked = Convert.ToBoolean(this.dataGridView1.Rows[i].Cells[0].Value);
+                 if (isChecked)
+                 {
+                     checklist.Add(Convert.ToString(this.dataGridView1.Rows[i].Cells[2].Value));
+                 }
+             }
 
-            //4.확인
-            if (Question != "" && Q_Type != null && checklist.Count != 0)
-            {
-                String test = "질문 : " + Question + "\n타입 : " + Q_Type + "\n학생 목록\n";
-                for(int i=0; i< checklist.Count; i++)
-                {
-                    test += "학번 : " + checklist[i] + "\n";
-                }
+             //4.확인
+             if (Question != "" && Q_Type != null && checklist.Count != 0)
+             {
+                 String test = "질문 : " + Question + "\n타입 : " + Q_Type + "\n학생 목록\n";
+                 for(int i=0; i< checklist.Count; i++)
+                 {
+                     test += "학번 : " + checklist[i] + "\n";
+                 }
 
-                //MessageBox.Show(test, "확인", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
-                if (MessageBox.Show(test, "확인", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
-                {
-                    //폼 닫기
-                    this.Close();
-                }
-                else
-                {
-                    checklist.Clear();
-                }
-                
-            }
-            else
-            {
-                if(Question == "")
-                    MessageBox.Show("질문을 입력해주세요.");
-                else if (Q_Type == null)
-                    MessageBox.Show("타입을 선택해주세요.");
-                else if (checklist.Count == 0)
-                    MessageBox.Show("학생을 선택해주세요.");
-                checklist.Clear();
-            }
-          
+                 //MessageBox.Show(test, "확인", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk);
+                 if (MessageBox.Show(test, "확인", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                 {
+                     //폼 닫기
+                     this.Close();
+                 }
+                 else
+                 {
+                     checklist.Clear();
+                 }
+
+             }
+             else
+             {
+                 if(Question == "")
+                     MessageBox.Show("질문을 입력해주세요.");
+                 else if (Q_Type == null)
+                     MessageBox.Show("타입을 선택해주세요.");
+                 else if (checklist.Count == 0)
+                     MessageBox.Show("학생을 선택해주세요.");
+                 checklist.Clear();
+             }
+             */
+            this.Close();
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             //폼 닫기
+            radio_write.Checked = false;
+            radio_yorn.Checked = false;
             this.Close();
         }
 
