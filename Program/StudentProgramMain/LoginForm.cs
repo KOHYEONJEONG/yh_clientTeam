@@ -16,7 +16,7 @@ namespace StudentProgramMain
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
-        public static SessionManager sessionManager;
+        public static SessionManager sessionManager;//보내는 용도, (가져올떄는 패킷명으로 ex 
         public static PacketManager packetManager;
         public LoginForm()
         {
@@ -25,6 +25,8 @@ namespace StudentProgramMain
             packetManager = new PacketManager();
         }
         Boolean exit = true;
+
+        public static Boolean LoginResult;// 핸들러클래스에서 결과값 받아오려고.
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -67,7 +69,12 @@ namespace StudentProgramMain
                 if (CheckPassword())  //!
                 {
 
-                     if (txt_id.Text.Equals("s") && txt_pw.Text.Equals("1234"))
+                    // if (txt_id.Text.Equals("s") && txt_pw.Text.Equals("1234"))
+                    //PacketHandler. (x, class에서 작성하는 거임, 불러오는 거 아님.)
+                    sessionManager.LoginSend(txt_id.Text, txt_pw.Text);
+
+                    //LoginResult은 이벤트핸들러에서 잘받와지는지 테스트
+                    if (LoginResult)
                         {
                             exit = false;
 
@@ -77,7 +84,6 @@ namespace StudentProgramMain
                             //student.Show();
 
                             (new student_main()).Show();
-
                             this.Close();
 
                         }
@@ -150,6 +156,13 @@ namespace StudentProgramMain
             {
                 btnLogin_Click(sender, e);
             }
+        }
+
+        public  static void message_box(string str)
+        {
+            //이벤트핸들러에서 값잘 받아와지는지 테스트중
+                MessageBox.Show(str);
+            
         }
     }
 }

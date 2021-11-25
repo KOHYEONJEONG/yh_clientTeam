@@ -25,8 +25,23 @@ namespace StudentProgramMain
             }
 
         }
-        public void ImgSend(byte[] img )
+
+        public void LoginSend(string id, string pwd)
         {
+            lock (_lock)
+            {
+                CS_Login loging_packet = new CS_Login();
+
+                loging_packet.id = id;
+                loging_packet.pwd = pwd;
+                ArraySegment<byte> segment = loging_packet.Write();
+                _sessions.Send(segment);
+            }
+
+        }
+
+        public void ImgSend(byte[] img )
+        {//이미지 전송
             lock (_lock)
             {
                 CS_ScreenResult Img_packet = new CS_ScreenResult();
