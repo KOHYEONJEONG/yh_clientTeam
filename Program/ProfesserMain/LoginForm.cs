@@ -90,8 +90,7 @@ namespace ProgramMain
                 //  pw 유효성 검사 후 로그인 
                 if (CheckPassword())  //!
                 {
-                    sessionManager.LoginSend(txt_id.Text, txt_pw.Text);                    
-
+                    sessionManager.LoginSend(txt_id.Text, txt_pw.Text);
                     this.Hide();
                 }
                 else
@@ -102,6 +101,7 @@ namespace ProgramMain
                 }
 
             }
+
 
         }
 
@@ -158,10 +158,12 @@ namespace ProgramMain
         {
             if (loginCheck == 1)//로그인 성공
             {
-                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students);
                 loginCheckTimer.Enabled = false;
+                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students);
+                
                 try
                 {
+                    
                     professerMain.ShowDialog();
                 }
                 catch

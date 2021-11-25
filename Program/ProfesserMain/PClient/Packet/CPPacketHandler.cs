@@ -28,16 +28,16 @@ class PacketHandler
     {
         LoginForm.loginForm.loginCheck = 1;
         LoginForm.loginForm.sp_LoginResult = packet as SP_LoginResult;
-
     }
 
     public static void SP_StudentInfoHandler(PacketSession session, IPacket packet)
     {
-        /*SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
+        SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
         ServerSession serverSession = session as ServerSession;
+        MessageBox.Show(sp_StudentInfo.students.Count.ToString());
         foreach (var s in sp_StudentInfo.students)
         {
-            //MessageBox.Show("asdasd");
+            
             for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
             {
                 if (s.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
@@ -50,9 +50,12 @@ class PacketHandler
                     ProfesserMain.professerMain._studList.Rows[i].Cells[4].Style.BackColor = Color.White;
                     ProfesserMain.professerMain._studList.Rows[i].Cells[5].Style.BackColor = Color.White;
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
+                    stuin++;
                 }
             }
-        }*/
+        }
+
+        
     }
 
     public static void SP_ScreenResultHandler(PacketSession session, IPacket packet)

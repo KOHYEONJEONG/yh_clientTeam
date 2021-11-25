@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.allcheck = new System.Windows.Forms.CheckBox();
             this.attendBtn = new System.Windows.Forms.Button();
             this.endBtn = new System.Windows.Forms.Button();
             this.studList = new System.Windows.Forms.DataGridView();
+            this.stucheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.stuid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
+            this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nowTime = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,12 +55,6 @@
             this.className = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.stucheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.stuid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
-            this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -105,14 +105,14 @@
             // 
             this.studList.AllowUserToAddRows = false;
             this.studList.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.studList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.studList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stucheck,
@@ -121,31 +121,74 @@
             this.stuscreenshot,
             this.stuanswer,
             this.stuattend});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.studList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.studList.DefaultCellStyle = dataGridViewCellStyle7;
             this.studList.Location = new System.Drawing.Point(165, 83);
             this.studList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.studList.Name = "studList";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.studList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.studList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.studList.RowHeadersVisible = false;
             this.studList.RowTemplate.Height = 75;
             this.studList.Size = new System.Drawing.Size(628, 404);
             this.studList.TabIndex = 19;
             this.studList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studList_CellDoubleClick);
             this.studList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.studList_CellMouseDoubleClick);
+            // 
+            // stucheck
+            // 
+            this.stucheck.HeaderText = "";
+            this.stucheck.Name = "stucheck";
+            this.stucheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.stucheck.Width = 25;
+            // 
+            // stuid
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.stuid.DefaultCellStyle = dataGridViewCellStyle6;
+            this.stuid.HeaderText = "학번";
+            this.stuid.Name = "stuid";
+            this.stuid.Width = 120;
+            // 
+            // stuname
+            // 
+            this.stuname.HeaderText = "이름";
+            this.stuname.Name = "stuname";
+            this.stuname.Width = 95;
+            // 
+            // stuscreenshot
+            // 
+            this.stuscreenshot.HeaderText = "스크린샷 썸네일";
+            this.stuscreenshot.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.stuscreenshot.Name = "stuscreenshot";
+            this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.stuscreenshot.Width = 270;
+            // 
+            // stuanswer
+            // 
+            this.stuanswer.HeaderText = "응답";
+            this.stuanswer.Name = "stuanswer";
+            this.stuanswer.ReadOnly = true;
+            this.stuanswer.Width = 55;
+            // 
+            // stuattend
+            // 
+            this.stuattend.HeaderText = "출석";
+            this.stuattend.Name = "stuattend";
+            this.stuattend.Width = 55;
             // 
             // nowTime
             // 
@@ -332,49 +375,6 @@
             this.panel1.Size = new System.Drawing.Size(189, 41);
             this.panel1.TabIndex = 19;
             // 
-            // stucheck
-            // 
-            this.stucheck.HeaderText = "";
-            this.stucheck.Name = "stucheck";
-            this.stucheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stucheck.Width = 25;
-            // 
-            // stuid
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.stuid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.stuid.HeaderText = "학번";
-            this.stuid.Name = "stuid";
-            this.stuid.Width = 120;
-            // 
-            // stuname
-            // 
-            this.stuname.HeaderText = "이름";
-            this.stuname.Name = "stuname";
-            this.stuname.Width = 95;
-            // 
-            // stuscreenshot
-            // 
-            this.stuscreenshot.HeaderText = "스크린샷 썸네일";
-            this.stuscreenshot.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.stuscreenshot.Name = "stuscreenshot";
-            this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stuscreenshot.Width = 270;
-            // 
-            // stuanswer
-            // 
-            this.stuanswer.HeaderText = "응답";
-            this.stuanswer.Name = "stuanswer";
-            this.stuanswer.ReadOnly = true;
-            this.stuanswer.Width = 55;
-            // 
-            // stuattend
-            // 
-            this.stuattend.HeaderText = "출석";
-            this.stuattend.Name = "stuattend";
-            this.stuattend.Width = 55;
-            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -425,6 +425,7 @@
         private System.Windows.Forms.DataGridViewImageColumn stuscreenshot;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuanswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuattend;
+        private System.Windows.Forms.Button button1;
     }
 }
 

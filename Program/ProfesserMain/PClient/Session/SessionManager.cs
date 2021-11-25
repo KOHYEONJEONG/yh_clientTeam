@@ -26,6 +26,15 @@ namespace PClient
             }
 
         }
+        public void StudentListRequset()
+        {
+            lock (_lock)
+            {
+                CP_StudentList cp_StudentList = new CP_StudentList();
+                _sessions.Send(cp_StudentList.Write());
+            }
+        }
+
 
         public void ScreenShotRequset(List<String> checkstu)//스크린샷 요청
         {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Threading;
 using System.Windows.Forms;
 using PClient;
 
@@ -40,10 +41,12 @@ namespace ProgramMain
             professerMain = this;
 
             
-            if(!get_lecture_stdent(lectures, students)){
+            if (!get_lecture_stdent(lectures, students)){
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
             }
+            
+
         }
 
 
@@ -82,6 +85,8 @@ namespace ProgramMain
                     student.Add(s);
                 }
             }
+
+           
 
             Timer.Enabled = true;
 
@@ -398,5 +403,9 @@ namespace ProgramMain
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
