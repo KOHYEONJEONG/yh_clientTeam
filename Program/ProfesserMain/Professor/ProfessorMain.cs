@@ -286,11 +286,15 @@ namespace ProgramMain
 
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
-            if(type == typeof(DataGridViewImageCell))
-            {
-                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+            //학생 정보
+            String id = grid.Rows[curR].Cells[1].Value.ToString();
+            String name = grid.Rows[curR].Cells[2].Value.ToString();
 
-                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[2].Value.ToString(), grid.Rows[curR].Cells[1].Value.ToString(), img);
+            if (type == typeof(DataGridViewImageCell))
+            {
+                Bitmap img = (Bitmap)grid.Rows[curR].Cells[curC].Value;
+
+                ImageForm img_form = new ImageForm(id, name, img);
                 img_form.ShowDialog();
             }
 
@@ -298,26 +302,21 @@ namespace ProgramMain
             if (curC == 4)
             {
                 String reply = grid.Rows[curR].Cells[curC].Value.ToString();
-                reply = "O"; // 응답 여부 : Yes일 경우
-                if (reply == "O")
+                if (reply != "" && reply != null) //응답 있을 경우에만 
                 {
-                    int QType = 1; //질문유형 0:O/X 1:입력
-                    switch (QType)
+                    //질문유형
+                    if (reply == "True" || reply == "False")
                     {
-                        case 0:
-                            ReplyYNForm replyYNForm = new ReplyYNForm();
-                            replyYNForm.Show();
-                            break;
-                        case 1:
-                            ReplyForm replyForm = new ReplyForm();
-                            replyForm.Show();
-                            break;
+                        ReplyYNForm replyYNForm = new ReplyYNForm(id, name, reply);
+                        replyYNForm.Show();
+                    }
+                    else
+                    {
+                        ReplyForm replyForm = new ReplyForm(id, name, reply);
+                        replyForm.Show();
                     }
                 }
-                else
-                {
-
-                }
+                else { }
             }
 
         }
