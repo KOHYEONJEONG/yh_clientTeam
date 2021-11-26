@@ -43,7 +43,7 @@ namespace StudentProgramMain.Student
             this.lbl_day = new System.Windows.Forms.Label();
             this.btn_ask = new System.Windows.Forms.Button();
             this.btn_absent = new System.Windows.Forms.Button();
-            this.btn_schedule = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -209,20 +209,20 @@ namespace StudentProgramMain.Student
             this.btn_absent.UseVisualStyleBackColor = false;
             this.btn_absent.Click += new System.EventHandler(this.btn_absent_Click);
             // 
-            // btn_schedule
+            // button3
             // 
-            this.btn_schedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.btn_schedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_schedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_schedule.ForeColor = System.Drawing.Color.White;
-            this.btn_schedule.Location = new System.Drawing.Point(276, 58);
-            this.btn_schedule.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btn_schedule.Name = "btn_schedule";
-            this.btn_schedule.Size = new System.Drawing.Size(103, 28);
-            this.btn_schedule.TabIndex = 3;
-            this.btn_schedule.Text = "시간표";
-            this.btn_schedule.UseVisualStyleBackColor = false;
-            this.btn_schedule.Click += new System.EventHandler(this.button3_Click);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(276, 58);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 28);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "시간표";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -307,7 +307,7 @@ namespace StudentProgramMain.Student
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.btn_schedule);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.btn_absent);
             this.Controls.Add(this.btn_ask);
             this.Controls.Add(this.panel2);
@@ -333,7 +333,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_ask;
         private System.Windows.Forms.Button btn_absent;
-        private System.Windows.Forms.Button btn_schedule;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
