@@ -40,6 +40,8 @@ namespace ProgramMain
             packetManager = new PacketManager();
             loginForm = this;
             loginCheck = 0;
+
+            this.ActiveControl = txt_id;
         }
 
         Boolean exit = true;

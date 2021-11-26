@@ -289,6 +289,11 @@ namespace ProgramMain
             int curR = e.RowIndex;
             int curC = e.ColumnIndex;
 
+            if (curR < 0)//헤더 클릭 막기
+            {
+                return;
+            }
+
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
             if(type == typeof(DataGridViewImageCell))

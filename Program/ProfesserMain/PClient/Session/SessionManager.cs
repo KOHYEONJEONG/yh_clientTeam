@@ -45,7 +45,6 @@ namespace PClient
                 CP_ScreenRequest.Student student = new CP_ScreenRequest.Student();
                 student.studentId = s;
 
-                MessageBox.Show(s);
 
                 cp_ScreenRequest.students.Add(student);
 
@@ -58,7 +57,6 @@ namespace PClient
         {
             CP_QuizOX cp_QuizOX = new CP_QuizOX();
 
-            MessageBox.Show(checkstu[0]);
             foreach (var s in checkstu)
             {
                 
@@ -86,6 +84,7 @@ namespace PClient
 
                 cp_Quiz.students.Add(student);
 
+                MessageBox.Show(s);
             }
             cp_Quiz.quiz = quiz;
             _sessions.Send(cp_Quiz.Write());
