@@ -12,31 +12,23 @@ namespace ProgramMain
 {
     public partial class ReplyYNForm : Form
     {
-
-        private int answer;
+        private String answer;
         private String stdName;
         private String stdNum;
+
 
         public ReplyYNForm()
         {
             InitializeComponent();
+        }
 
-            //학생 정보 받아옴
-            answer = 0;
-            stdName = "고구마";
-            stdNum = "20210915";
+        public ReplyYNForm(String id, String name, String reply)
+        {
+            InitializeComponent();
 
-            this.lblName.Text += stdName;
-            this.lblNum.Text += stdNum;
-
-            if (answer == 0)
-            {
-                this.radioYes.Checked = true;
-            }
-            else
-            {
-                this.radioYes.Checked = false;
-            }
+            stdNum += id;
+            stdName += name;
+            answer = reply;
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -45,5 +37,18 @@ namespace ProgramMain
             this.Close();
         }
 
+        private void ReplyYNForm_Load(object sender, EventArgs e)
+        {
+            this.lblName.Text += stdNum;
+            this.lblNum.Text += stdName;
+            if (answer == "True")
+            {
+                this.radioYes.Checked = true;
+            }
+            else
+            {
+                this.radioYes.Checked = false;
+            }
+        }
     }
 }

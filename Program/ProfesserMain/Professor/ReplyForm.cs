@@ -19,12 +19,16 @@ namespace ProgramMain
         public ReplyForm()
         {
             InitializeComponent();
+        }
 
-            //학생 정보 받아옴
-            answer = "The US Federal Aviation Administration has grounded Virgin Galactic flights as it investigates how";
-            stdName = "고구마";
-            stdNum = "20210915";
-    }
+        public ReplyForm(String id, String name, String reply)
+        {
+            InitializeComponent();
+            stdNum += id;
+            stdName += name;
+            answer = reply;
+        }
+
 
         private void ReplyForm_Load(object sender, EventArgs e)
         {

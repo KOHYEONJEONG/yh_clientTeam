@@ -307,24 +307,22 @@ namespace ProgramMain
                 img_form.ShowDialog();
             }
 
-            /* 응답 폼 확인 */
+            //응답 셀
             if (curC == 4)
             {
                 String reply = grid.Rows[curR].Cells[curC].Value.ToString();
-                reply = "O"; // 응답 여부 : Yes일 경우
-                if (reply == "O")
+                if (reply != "" && reply != null) //응답 있을 경우에만 
                 {
-                    int QType = 1; //질문유형 0:O/X 1:입력
-                    switch (QType)
+                    //질문유형
+                    if (reply == "True" || reply == "False")
                     {
-                        case 0:
-                            ReplyYNForm replyYNForm = new ReplyYNForm();
-                            replyYNForm.Show();
-                            break;
-                        case 1:
-                            ReplyForm replyForm = new ReplyForm();
-                            replyForm.Show();
-                            break;
+                        ReplyYNForm replyYNForm = new ReplyYNForm(id, name, reply);
+                        replyYNForm.Show();
+                    }
+                    else
+                    {
+                        ReplyForm replyForm = new ReplyForm(id, name, reply);
+                        replyForm.Show();
                     }
                 }
                 else
