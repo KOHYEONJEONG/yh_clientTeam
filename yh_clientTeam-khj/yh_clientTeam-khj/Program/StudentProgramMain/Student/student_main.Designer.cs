@@ -209,6 +209,7 @@ namespace StudentProgramMain.Student
             this.btn_absent.UseVisualStyleBackColor = false;
             this.btn_absent.Click += new System.EventHandler(this.btn_absent_Click);
             // 
+<<<<<<< HEAD
             // btn_schedule
             // 
             this.btn_schedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
@@ -223,6 +224,22 @@ namespace StudentProgramMain.Student
             this.btn_schedule.Text = "시간표";
             this.btn_schedule.UseVisualStyleBackColor = false;
             this.btn_schedule.Click += new System.EventHandler(this.button3_Click);
+=======
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(276, 58);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(103, 28);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "시간표";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+>>>>>>> f50287d4599b65ff9af066eac25629b3c4bf45c6
             // 
             // button4
             // 

@@ -11,31 +11,39 @@ using System.Windows.Forms;
 namespace StudentProgramMain.Student
 {
 
+    
     public partial class student_main : Form
     {
         public static student_main studentMain;
-
-        public student_main()
+        public student_main(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)
         {
             InitializeComponent();
+            studentMain = this;
+            if(!get_lecture_stdent(lectures, studentId, studentName))
+            {
+                LoginForm.loginForm.loginCheck = 4;
+                this.Close();
+            }
+            
         }
 
         SS_LoginResult.Lecture lecture;
-        public string no { get; set; } //학생번호
+    
+        public string No { get; set; } //학생번호
         public string name { get; set; } //학생이름
         public string professorID { get; set; }//교수번호
         public string subject { get; set; }//교과목 
         public string weekDay { get; set; }//요일
         public string start { get; set; }//시작시간
         public string end { get; set; }//끝나는 시간
-
+        
         private void student_main_Load(object sender, EventArgs e)
         {
 
-            studentMain = this;
             btn_absent.Enabled = false;
            
             clock.Start(); //현재시간 타이머
+<<<<<<< HEAD
             lbl_period.Text = professorID;
             lbl_subject.Text = subject;
             lbl_day.Text = weekDay;
@@ -52,6 +60,51 @@ namespace StudentProgramMain.Student
            // this.Timer.Enabled = true;
             //예비버튼 비활성화
            // button1.Enabled = false;
+=======
+            lblNo.Text = No;
+            lbl_name.Text = name;
+            lbl_day.Text = lecture.weekday;
+            lbl_start.Text = lecture.strat_time;
+            lbl_end.Text = lecture.end_time;
+            lbl_subject.Text = lecture.lecture_name;
+            lbl_period.Text = lecture.professor_id;
+
+        }
+
+        private bool get_lecture_stdent(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
+        {
+            //수정 필 필
+            //String nowtime = DateTime.Now.ToString("HHmm");
+            //String day = getDay();
+            String nowtime = DateTime.Now.ToString("1205");
+            String day = "수";
+            No = studentId;
+            name = studentName;
+            foreach (var l in lectures)
+            {
+                if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
+                {
+
+                    if (l.weekday == day)
+                    {
+
+                        lecture = l;
+                    }
+                }
+            }
+            if (lecture == null)
+            {
+                return false;
+            }
+         
+
+            Timer.Enabled = true;
+
+            return true;
+
+        }
+      
+>>>>>>> f50287d4599b65ff9af066eac25629b3c4bf45c6
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -151,7 +204,45 @@ namespace StudentProgramMain.Student
              Student_askf ask = new Student_askf();
              ask.Show();
         }
+<<<<<<< HEAD
 
 
+=======
+        private string getDay()
+        {
+            DateTime now = DateTime.Now;
+            string day;
+
+            switch (now.DayOfWeek)
+            {
+                case DayOfWeek.Monday:
+                    day = "월";
+                    break;
+                case DayOfWeek.Tuesday:
+                    day = "화";
+                    break;
+                case DayOfWeek.Wednesday:
+                    day = "수";
+                    break;
+                case DayOfWeek.Thursday:
+                    day = "목";
+                    break;
+                case DayOfWeek.Friday:
+                    day = "금";
+                    break;
+                case DayOfWeek.Saturday:
+                    day = "토";
+                    break;
+                case DayOfWeek.Sunday:
+                    day = "일";
+                    break;
+                default:
+                    day = "일";
+                    break;
+            }
+
+            return day;
+        }
+>>>>>>> f50287d4599b65ff9af066eac25629b3c4bf45c6
     }
 }

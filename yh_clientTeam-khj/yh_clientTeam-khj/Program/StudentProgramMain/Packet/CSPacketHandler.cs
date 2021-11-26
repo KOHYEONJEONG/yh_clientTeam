@@ -20,13 +20,14 @@ class PacketHandler
         //SS_LoginFailed result = packet as SS_LoginFailed;
         // ServerSession serverSession = session as ServerSession;
 
-        LoginForm.LoginResult = false;//실행(x)
+        //LoginForm.LoginResult = false;//실행(x)
         MessageBox.Show("로그인 실패");
 
     }
 
     public static void SS_LoginResultHandler(PacketSession session, IPacket packet)
     {
+<<<<<<< HEAD
 
         SS_LoginResult loginResult_packet = packet as SS_LoginResult;
         // SS_LoginResult.Lecture result = packet as SS_LoginResult.Lecture;//중첩클래스
@@ -42,11 +43,20 @@ class PacketHandler
             student_main.studentMain.start = result.strat_time;
             student_main.studentMain.end = " ~ " + result.end_time;
         }
+=======
+        LoginForm.loginForm.loginCheck = 1;
+        LoginForm.loginForm.ss_LoginResult = packet as SS_LoginResult;
+
+
+>>>>>>> f50287d4599b65ff9af066eac25629b3c4bf45c6
 
         // 학번을 매칭 시켜할 거 같은데...
         MessageBox.Show("학생 값불러오는 중");
             
+<<<<<<< HEAD
            
+=======
+>>>>>>> f50287d4599b65ff9af066eac25629b3c4bf45c6
 
     }
     public static void SS_EnterRoomHandler(PacketSession session, IPacket packet)
