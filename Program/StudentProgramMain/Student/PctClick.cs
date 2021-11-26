@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace StudentProgramMain.Student
 {
-    public partial class PctClick : Form
+    public partial class PctClick : MetroFramework.Forms.MetroForm
     {
         public PctClick()
         {
@@ -25,6 +25,13 @@ namespace StudentProgramMain.Student
 
         private void PctClick_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD:Program/StudentProgramMain/Student/PctClick.cs
+=======
+            this.StyleManager = metroStyleManager1;
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
+
+>>>>>>> kjm:Program/ProgramMain/Student/PctClick.cs
             //폼이 로딩될때 Image와 크기 설정
             pictureBox1.Image = img;
             pictureBox1.Size = img.Size;

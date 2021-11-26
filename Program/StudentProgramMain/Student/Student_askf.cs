@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace StudentProgramMain.Student
 {
-    public partial class Student_askf : Form
+    public partial class Student_askf : MetroFramework.Forms.MetroForm
     {
 
        // public static SessionManager sessionManager;//로그인폼에서 가져와야함.
@@ -24,6 +24,16 @@ namespace StudentProgramMain.Student
             InitializeComponent();
         }
 
+<<<<<<< HEAD:Program/StudentProgramMain/Student/Student_askf.cs
+=======
+        private void Student_askf_Load(object sender, EventArgs e)
+        {
+            this.StyleManager = metroStyleManager1;
+            metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
+            metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
+        }
+
+>>>>>>> kjm:Program/ProgramMain/Student/Student_askf.cs
         Bitmap bmp = null;
 
         private void pctBox_Click(object sender, EventArgs e)
