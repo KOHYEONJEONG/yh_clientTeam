@@ -37,6 +37,27 @@ namespace ProgramMain
             StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_Qustion.studentId + " 의 질문\n" + sp_Qustion.qustion;
 
         }
+        
+        public StdAskCheckForm(SP_QustionImg sp_QustionImg) //학생 이미지
+        {
+            InitializeComponent();
+            stdAskCheckForm = this;
+
+            Byte[] bytes = sp_QustionImg.img;
+            System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(bytes);
+            Image image = Image.FromStream(memoryStream);
+            StdAskCheckForm.stdAskCheckForm._pbQuestionImg.Image = (Image)image.Clone();
+            StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_QustionImg.studentId + " 의 질문\n";
+
+        }
+
+        public StdAskCheckForm(SP_QustionText sp_QustionText) //학생 질문
+        {
+            InitializeComponent();
+            stdAskCheckForm = this;
+            StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_QustionText.studentId + " 의 질문\n" + sp_QustionText.qustion;
+
+        }
 
         private void pbQuestionImg_Click(object sender, EventArgs e)
         {

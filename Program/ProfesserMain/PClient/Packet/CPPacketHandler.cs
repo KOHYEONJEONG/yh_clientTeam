@@ -74,8 +74,8 @@ class PacketHandler
 
     public static void SP_QustionTextHandler(PacketSession session, IPacket packet)
     {
-        SP_QustionText sp_QustionText = packet as SP_QustionText;
-
+        ProfesserMain.professerMain.stdQustionCheck = 3;
+        ProfesserMain.professerMain.sp_QustionText = packet as SP_QustionText;
         /*
         //ServerSession serverSession = session as ServerSession;
         StdAskCheckForm.stdAskCheckForm.Show();
@@ -84,8 +84,8 @@ class PacketHandler
     }
     public static void SP_QustionImgHandler(PacketSession session, IPacket packet)
     {
-        SP_QustionImg sp_QustionImg = packet as SP_QustionImg;
-
+        ProfesserMain.professerMain.stdQustionCheck = 2;
+        ProfesserMain.professerMain.sp_QustionImg = packet as SP_QustionImg;
         /*
         Byte[] bytes = sp_QustionImg.img;
         System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(bytes);

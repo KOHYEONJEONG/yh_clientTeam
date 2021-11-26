@@ -34,14 +34,28 @@ namespace ProgramMain
         }
 
 
-        public int stdQustionCheck; //학생 질문 들어오는거 체크 : 0=nothing, 1=학생 질문&이미지 
-        SP_Qustion _sp_Qustion; //학생 질문&이미지 정보
+        public int stdQustionCheck; //학생 질문 들어오는거 체크 : 0=nothing, 1=학생 질문&이미지, 2=이미지, 3=텍스트
+
+        SP_Qustion _sp_Qustion; //학생 질문 텍스트&이미지 정보
         public SP_Qustion sp_Qustion
         {
             get { return _sp_Qustion; }
             set { _sp_Qustion = value; }
         }
 
+        SP_QustionImg _sp_QustionImg;//학생 질문 이미지 정보
+        public SP_QustionImg sp_QustionImg
+        {
+            get { return _sp_QustionImg; }
+            set { _sp_QustionImg = value; }
+        }
+
+        SP_QustionText _sp_QustionText;
+        public SP_QustionText sp_QustionText
+        {
+            get { return _sp_QustionText; }
+            set { _sp_QustionText = value; }
+        }
 
         public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
         {
@@ -64,7 +78,7 @@ namespace ProgramMain
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
             //String day = getDay();
-            String nowtime = DateTime.Now.ToString("1005");
+            String nowtime = DateTime.Now.ToString("1205");
             String day = "수";
             foreach (var l in lectures)
             {
@@ -395,6 +409,19 @@ namespace ProgramMain
             if(stdQustionCheck==1)
             {
                 StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_Qustion);
+                stdAskCheckForm.Show();
+                stdQustionCheck = 0;
+            }
+            if (stdQustionCheck == 2)
+            {
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_QustionImg);
+                stdAskCheckForm.Show();
+                stdQustionCheck = 0;
+            }
+            if (stdQustionCheck == 3)
+            {
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_QustionText);
+                stdAskCheckForm.Show();
                 stdQustionCheck = 0;
             }
         }
