@@ -3,7 +3,6 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using ProgramMain;
-using ProgramMain.Professor;
 
 class PacketHandler
 {
@@ -76,14 +75,18 @@ class PacketHandler
     public static void SP_QustionTextHandler(PacketSession session, IPacket packet)
     {
         SP_QustionText sp_QustionText = packet as SP_QustionText;
+
+        /*
         //ServerSession serverSession = session as ServerSession;
         StdAskCheckForm.stdAskCheckForm.Show();
         StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_QustionText.studentId + " 의 질문\n" + sp_QustionText.qustion;
+        */
     }
     public static void SP_QustionImgHandler(PacketSession session, IPacket packet)
     {
         SP_QustionImg sp_QustionImg = packet as SP_QustionImg;
 
+        /*
         Byte[] bytes = sp_QustionImg.img;
         System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(bytes);
         Image image = Image.FromStream(memoryStream);
@@ -92,9 +95,16 @@ class PacketHandler
         StdAskCheckForm.stdAskCheckForm._pbQuestionImg.Image = (Image)image.Clone();
 
         StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_QustionImg.studentId + " 의 질문\n";
+        */
     }
     public static void SP_QustionHandler(PacketSession session, IPacket packet)
     {
+
+        ProfesserMain.professerMain.stdQustionCheck = 1;
+        ProfesserMain.professerMain.sp_Qustion = packet as SP_Qustion;
+
+
+        /*
         SP_Qustion sp_Qustion = packet as SP_Qustion;
 
         Byte[] bytes = sp_Qustion.img;
@@ -104,7 +114,7 @@ class PacketHandler
         StdAskCheckForm.stdAskCheckForm.Show();
         StdAskCheckForm.stdAskCheckForm._pbQuestionImg.Image = (Image)image.Clone();
         StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_Qustion.studentId + " 의 질문\n" + sp_Qustion.qustion;
-
+        */
     }
     public static void SP_QuizResultHandler(PacketSession session, IPacket packet)
     {

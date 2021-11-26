@@ -21,26 +21,36 @@ namespace ProgramMain
         private String Sstime = DateTime.Now.ToString("g");
 
 
-        List<String> checkstu = new List<string>();
+        List<String> checkstu = new List<string>(); //체크박스 체크된 학생 리스트
 
 
-        SP_LoginResult.Lecture lecture;
-        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>();
+        SP_LoginResult.Lecture lecture; //강의정보
+        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>(); //학생 정보 리스트
 
-        
         public DataGridView _studList
         {
             get { return studList; }
             set { _studList = studList; }
         }
 
+
+        public int stdQustionCheck; //학생 질문 들어오는거 체크 : 0=nothing, 1=학생 질문&이미지 
+        SP_Qustion _sp_Qustion; //학생 질문&이미지 정보
+        public SP_Qustion sp_Qustion
+        {
+            get { return _sp_Qustion; }
+            set { _sp_Qustion = value; }
+        }
+
+
         public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
         {
             InitializeComponent();
             professerMain = this;
+            stdQustionCheck = 0;
 
-            
-            if(!get_lecture_stdent(lectures, students)){
+
+            if (!get_lecture_stdent(lectures, students)){
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
             }
@@ -381,7 +391,12 @@ namespace ProgramMain
                 studList.Rows[_stuin - 1].ReadOnly = false;
             }
 
-
+            //학생 질문&이미지 확인
+            if(stdQustionCheck==1)
+            {
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_Qustion);
+                stdQustionCheck = 0;
+            }
         }
 
         

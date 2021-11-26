@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgramMain.Professor
+namespace ProgramMain
 {
     public partial class StdAskCheckForm : Form
     {
@@ -25,10 +25,16 @@ namespace ProgramMain.Professor
         }
 
 
-        public StdAskCheckForm()
+        public StdAskCheckForm(SP_Qustion sp_Qustion) //학생 질문&이미지
         {
             InitializeComponent();
             stdAskCheckForm = this;
+
+            Byte[] bytes = sp_Qustion.img;
+            System.IO.MemoryStream memoryStream = new System.IO.MemoryStream(bytes);
+            Image image = Image.FromStream(memoryStream);
+            StdAskCheckForm.stdAskCheckForm._pbQuestionImg.Image = (Image)image.Clone();
+            StdAskCheckForm.stdAskCheckForm._rtbStdQuestion.Text = sp_Qustion.studentId + " 의 질문\n" + sp_Qustion.qustion;
 
         }
 

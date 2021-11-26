@@ -1,5 +1,5 @@
 ﻿
-namespace ProgramMain.Professor
+namespace ProgramMain
 {
     partial class StdAskCheckForm
     {
