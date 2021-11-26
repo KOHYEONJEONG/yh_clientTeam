@@ -8,7 +8,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,15 +18,30 @@ namespace StudentProgramMain
     {
         public static SessionManager sessionManager;//보내는 용도, (가져올떄는 패킷명으로 ex 
         public static PacketManager packetManager;
+        public static LoginForm loginForm;
+
+        public int loginCheck
+        {
+            get; set;
+        }
+
+        SS_LoginResult _ss_LoginResult;
+        public SS_LoginResult ss_LoginResult
+        {
+            get { return _ss_LoginResult; }
+            set { _ss_LoginResult = value; }
+        }
         public LoginForm()
         {
             InitializeComponent();
             sessionManager = new SessionManager();
             packetManager = new PacketManager();
+            loginForm = this;
+            loginCheck = 0;
         }
         Boolean exit = true;
 
-        public static Boolean LoginResult;// 핸들러클래스에서 결과값 받아오려고.
+        //public static Boolean LoginResult;// 핸들러클래스에서 결과값 받아오려고.
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -74,18 +88,12 @@ namespace StudentProgramMain
                     //PacketHandler. (x, class에서 작성하는 거임, 불러오는 거 아님.)
                     sessionManager.LoginSend(txt_id.Text, txt_pw.Text);
 
-                    //LoginResult은 이벤트핸들러에서 잘받와지는지 테스트
-                    if (LoginResult)
-                     {
-                        exit = false;
-                        this.Hide();
-                        (new student_main()).Show();
-                        this.Close();
-
-
-                    }
-                    
-                }else{
+                    //LoginResult은 이벤트핸들러에서 잘받와지는지 테스트                   
+                    exit = false;
+                    this.Hide();                    
+                }
+                else
+                {
 
                     //특수문자 중 !,@외 문자가 들어 있을 경우.
                     txt_pw.Text = "";
@@ -137,7 +145,43 @@ namespace StudentProgramMain
                 }
             }
         }
+        public Timer _loginCheckTimer
+        {
+            get { return loginCheckTimer; }
+            set { loginCheckTimer = value; }
+        }
 
+        private void loginCheckTimer_Tick(object sender, EventArgs e)
+        {
+            
+            if (loginCheck == 1)//로그인 성공
+            {
+                
+                loginCheckTimer.Enabled = false;
+                student_main studentMain = new student_main(ss_LoginResult.lectures, ss_LoginResult.studentID, ss_LoginResult.name);
+                try
+                {
+                    MessageBox.Show("로그인 성공");
+                    studentMain.ShowDialog();
+                }
+                catch
+                {
+
+                }
+                if (loginCheck == 4)//수업 없음
+                {
+                    MessageBox.Show("수업이 없습니다");
+                }
+                exit = false;
+                Application.ExitThread();
+            }
+            else if (loginCheck == 2)//로그인 실패
+            {
+                LoginForm.loginForm.Show();
+                loginCheck = 0;
+            }
+
+        }
         private void txt_id_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -154,6 +198,6 @@ namespace StudentProgramMain
             }
         }
 
-      
+        
     }
 }
