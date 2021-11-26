@@ -25,12 +25,7 @@ namespace ProgramMain
         //윈도우 해상도
         private int screenWidth = Screen.PrimaryScreen.Bounds.Width;
         private int screenHeight = Screen.PrimaryScreen.Bounds.Height;
-
-        public ImageForm()
-        {
-            InitializeComponent();
-        }
-        
+       
         public ImageForm(string name,string num , Image image)//이미지 받아옴
         {
             InitializeComponent();

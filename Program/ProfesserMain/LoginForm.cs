@@ -161,7 +161,7 @@ namespace ProgramMain
             if (loginCheck == 1)//로그인 성공
             {
                 loginCheckTimer.Enabled = false;
-                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students);
+                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students,sp_LoginResult.name);
                 
                 try
                 {

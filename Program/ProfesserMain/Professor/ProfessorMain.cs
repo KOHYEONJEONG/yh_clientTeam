@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.Threading;
 using System.Windows.Forms;
 using PClient;
@@ -35,12 +36,13 @@ namespace ProgramMain
             set { _studList = studList; }
         }
 
-        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
+        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students,String proname)
         {
             InitializeComponent();
             professerMain = this;
 
-            
+            lblProfname.Text = proname;
+
             if (!get_lecture_stdent(lectures, students)){
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
@@ -167,6 +169,7 @@ namespace ProgramMain
 
             if (lecture != null)
             {
+                lblProfname.Text = 
                 className.Text = lecture.lecture_name;//수업이름 설정
                 classTime.Text = "수업 시간: " + lecture.strat_time + "~" + lecture.end_time;//수업 시간 설정
                                                                                          //시간되면 자동 수업 시작하게 설정하기
@@ -331,7 +334,74 @@ namespace ProgramMain
             }
 
         }
+        private void studList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)//마우스 올려놓으면 
+        {
+            
 
+        }
+        private void studList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView grid = sender as DataGridView;
+
+            int curR = e.RowIndex;
+            int curC = e.ColumnIndex;
+
+            if (curR < 0)//헤더 클릭 막기
+            {
+                return;
+            }
+
+            Type type = grid.Rows[curR].Cells[curC].GetType();
+
+            if (type == typeof(DataGridViewImageCell))
+            {
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+
+
+
+                try
+                {
+                    Bitmap imgbitmap = new Bitmap(img);
+                    Image resizedImage = resizeImage(imgbitmap, 250, img.Size.Height / (img.Size.Width / 250));
+                    previewBox.Image = resizedImage;
+
+                    previewBox.Location = new Point(Control.MousePosition.X - this.Location.X, Control.MousePosition.Y - this.Location.Y - 30);
+
+                    previewBox.Visible = true;
+
+
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                previewBox.Visible = false;
+            }
+        }
+        private Image resizeImage(Image image, int width, int height)
+        {
+            var destinationRect = new Rectangle(0, 0, width, height);
+            var destinationImage = new Bitmap(width, height);
+
+            destinationImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destinationImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destinationRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return (Image)destinationImage;
+        }
         private void attenddanceBtn_Click(object sender, EventArgs e)
         {
             attendanceForm attendanceForm = new attendanceForm();
@@ -382,15 +452,13 @@ namespace ProgramMain
                 endBtn.Visible = true;
                 Timer.Enabled = false;
             }
-            
-            if (stuin == 0)//오류 방지
+
+
+            for (int i = 0; i < stuin; i++)
             {
-                
+                studList.Rows[i].ReadOnly = false;
             }
-            else if(studList.Rows[_stuin - 1].ReadOnly)//readonly 변경
-            {
-                studList.Rows[_stuin - 1].ReadOnly = false;
-            }
+
 
 
         }
@@ -412,5 +480,7 @@ namespace ProgramMain
         {
 
         }
+
+        
     }
 }

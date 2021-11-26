@@ -84,7 +84,6 @@ namespace PClient
 
                 cp_Quiz.students.Add(student);
 
-                MessageBox.Show(s);
             }
             cp_Quiz.quiz = quiz;
             _sessions.Send(cp_Quiz.Write());

@@ -34,8 +34,8 @@ namespace ProgramMain.Professor
 
         private void pbQuestionImg_Click(object sender, EventArgs e)
         {
-            ImageForm imageForm = new ImageForm();
-            imageForm.ShowDialog();
+            //ImageForm imageForm = new ImageForm();
+            //imageForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
