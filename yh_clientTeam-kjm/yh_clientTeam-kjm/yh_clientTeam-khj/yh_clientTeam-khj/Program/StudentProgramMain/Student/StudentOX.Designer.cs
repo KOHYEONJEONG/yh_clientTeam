@@ -29,62 +29,82 @@ namespace StudentProgramMain.Student
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentOX));
             this.lbl_lefttime = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.lbl_q = new System.Windows.Forms.Label();
+            this.btn_o = new System.Windows.Forms.Button();
+            this.btn_x = new System.Windows.Forms.Button();
+            this.lefttime = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lbl_lefttime
             // 
             this.lbl_lefttime.AutoSize = true;
             this.lbl_lefttime.ForeColor = System.Drawing.Color.Red;
-            this.lbl_lefttime.Location = new System.Drawing.Point(1, 4);
+            this.lbl_lefttime.Location = new System.Drawing.Point(1, 3);
+            this.lbl_lefttime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_lefttime.Name = "lbl_lefttime";
-            this.lbl_lefttime.Size = new System.Drawing.Size(87, 20);
+            this.lbl_lefttime.Size = new System.Drawing.Size(70, 15);
             this.lbl_lefttime.TabIndex = 0;
             this.lbl_lefttime.Text = "남은 시간 : ";
             // 
-            // label2
+            // lbl_q
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(71, 39);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Q) ";
+            this.lbl_q.AutoSize = true;
+            this.lbl_q.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_q.ForeColor = System.Drawing.Color.White;
+            this.lbl_q.Location = new System.Drawing.Point(41, 52);
+            this.lbl_q.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_q.Name = "lbl_q";
+            this.lbl_q.Size = new System.Drawing.Size(30, 19);
+            this.lbl_q.TabIndex = 1;
+            this.lbl_q.Text = "Q) ";
+            this.lbl_q.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button1
+            // btn_o
             // 
-            this.button1.Location = new System.Drawing.Point(172, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_o.FlatAppearance.BorderSize = 0;
+            this.btn_o.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_o.Image = ((System.Drawing.Image)(resources.GetObject("btn_o.Image")));
+            this.btn_o.Location = new System.Drawing.Point(1, 93);
+            this.btn_o.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_o.Name = "btn_o";
+            this.btn_o.Size = new System.Drawing.Size(258, 291);
+            this.btn_o.TabIndex = 2;
+            this.btn_o.UseVisualStyleBackColor = true;
+            this.btn_o.Click += new System.EventHandler(this.btn_o_Click);
             // 
-            // button2
+            // btn_x
             // 
-            this.button2.Location = new System.Drawing.Point(350, 199);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 29);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_x.FlatAppearance.BorderSize = 0;
+            this.btn_x.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_x.Image = ((System.Drawing.Image)(resources.GetObject("btn_x.Image")));
+            this.btn_x.Location = new System.Drawing.Point(263, 101);
+            this.btn_x.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_x.Name = "btn_x";
+            this.btn_x.Size = new System.Drawing.Size(253, 275);
+            this.btn_x.TabIndex = 3;
+            this.btn_x.UseVisualStyleBackColor = true;
+            this.btn_x.Click += new System.EventHandler(this.btn_x_Click);
+            // 
+            // lefttime
+            // 
+            this.lefttime.Interval = 1000;
+            this.lefttime.Tick += new System.EventHandler(this.lefttime_Tick);
             // 
             // StudentOX
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(578, 440);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(529, 386);
+            this.Controls.Add(this.btn_x);
+            this.Controls.Add(this.btn_o);
+            this.Controls.Add(this.lbl_q);
             this.Controls.Add(this.lbl_lefttime);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StudentOX";
             this.Text = "StudentOX";
             this.ResumeLayout(false);
@@ -95,8 +115,9 @@ namespace StudentProgramMain.Student
         #endregion
 
         private System.Windows.Forms.Label lbl_lefttime;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lbl_q;
+        private System.Windows.Forms.Button btn_o;
+        private System.Windows.Forms.Button btn_x;
+        private System.Windows.Forms.Timer lefttime;
     }
 }

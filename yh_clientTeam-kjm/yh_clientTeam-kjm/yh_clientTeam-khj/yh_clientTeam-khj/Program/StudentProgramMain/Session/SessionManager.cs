@@ -85,6 +85,9 @@ namespace StudentProgramMain
         }
         #endregion
 
+
+
+
         public ServerSession Generate()
         {
             lock (_lock)

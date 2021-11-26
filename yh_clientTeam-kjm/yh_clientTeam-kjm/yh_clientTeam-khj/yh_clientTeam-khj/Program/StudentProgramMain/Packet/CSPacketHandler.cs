@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
+
 class PacketHandler
 { //작성만 해주기( 클라이언트 코드에서는 불러서 작성하는 거 아님.)
   //LoginResult는 로그인 폼에서 결과값 받는 변수(static)
@@ -51,7 +52,7 @@ class PacketHandler
     }
     public static void SS_QuizOXHandler(PacketSession session, IPacket packet)
     {
-
+     
     }
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
