@@ -50,7 +50,7 @@ namespace ProgramMain
             set { _sp_QustionImg = value; }
         }
 
-        SP_QustionText _sp_QustionText;
+        SP_QustionText _sp_QustionText; //학생 질문 텍스트 정보
         public SP_QustionText sp_QustionText
         {
             get { return _sp_QustionText; }
