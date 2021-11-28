@@ -18,6 +18,12 @@ namespace StudentProgramMain.Student
         public static student_main studentMain;
         List<SS_LoginResult.Lecture> _lectures;
         
+        public Button _btn_absent
+        {
+            get { return btn_absent; }
+            set { btn_absent = value; }
+        }
+
         SS_LoginResult.Lecture lecture;
 
         public SS_AtdRequest atdRequest
@@ -102,10 +108,10 @@ namespace StudentProgramMain.Student
         private bool get_lecture_stdent(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
-            //String nowtime = DateTime.Now.ToString("HHmm");
-            //String day = getDay();
-            String nowtime = DateTime.Now.ToString("1205");
-            String day = "수";
+            String nowtime = DateTime.Now.ToString("HHmm");
+            String day = getDay();
+            //String nowtime = DateTime.Now.ToString("1205");
+            //String day = "수";
             No = studentId;
             name = studentName;
 

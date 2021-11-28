@@ -47,9 +47,13 @@ class PacketHandler
     {
 
     }
-    public static void SS_AtdRequestHandler(PacketSession session, IPacket packet)
-    {
+    public static void SS_AtdRequestHandler(PacketSession session, IPacket packet)    {
+        
         SS_AtdRequest ss_AtdRequest = packet as SS_AtdRequest;
+        MessageBox.Show(ss_AtdRequest.week + "주" + ss_AtdRequest.classTime + "교시 출석요청");
+        student_main.studentMain._btn_absent.Invoke((MethodInvoker)delegate {
+            student_main.studentMain._btn_absent.Enabled = true;
+        });
         student_main.studentMain.atdRequest = ss_AtdRequest;
     }
     public static void SS_QuizOXHandler(PacketSession session, IPacket packet)
