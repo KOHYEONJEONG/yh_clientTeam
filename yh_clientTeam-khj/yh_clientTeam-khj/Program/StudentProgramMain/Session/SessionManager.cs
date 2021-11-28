@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentProgramMain
 {
@@ -52,28 +53,29 @@ namespace StudentProgramMain
             {
                 Thread.Sleep(500);
                 byte[] img = ScreenCopy.Copy();
+                CS_ScreenResult Img_packet = new CS_ScreenResult();
+                Img_packet.img = img;
+                _sessions.Send(Img_packet.Write());//오류남    
+            }
+        }
+
+        public void ImgSendAsk(byte[] img )
+        {//이미지만 전송(askf폼)
+            lock (_lock)
+            {
+
                 CS_QustionImg Img_packet = new CS_QustionImg();
                 Img_packet.img = img;
                 _sessions.Send(Img_packet.Write());//오류남    
             }
         }
 
-        public void ImgSend(byte[] img )
-        {//이미지만 전송(askf폼)
-            lock (_lock)
-            {
-                Thread.Sleep(500);
-                CS_QustionImg Img_packet = new CS_QustionImg();
-                Img_packet.img = img;
-                _sessions.Send(Img_packet.Write());//오류남    
-            }
-        }
         public void TextSend(string s)
         {//질문만 전송(askf폼)
             lock (_lock)
-            {
+            {                
                 CS_QustionText Text_packet = new CS_QustionText();
-                Text_packet.qustion = s as string;
+                Text_packet.qustion = s;
                 _sessions.Send(Text_packet.Write());//오류남
             }
         }

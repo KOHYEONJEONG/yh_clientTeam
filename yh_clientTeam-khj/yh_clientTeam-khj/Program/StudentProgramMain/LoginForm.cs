@@ -183,7 +183,7 @@ namespace StudentProgramMain
             }
             else if (loginCheck == 2)//로그인 실패
             {
-                MessageBox.Show("아이디 및 비밀번호를 다시 확인해주세요.");
+                //MessageBox.Show("아이디 및 비밀번호를 다시 확인해주세요.");
                 LoginForm.loginForm.Show();
                 loginCheck = 0;
             }

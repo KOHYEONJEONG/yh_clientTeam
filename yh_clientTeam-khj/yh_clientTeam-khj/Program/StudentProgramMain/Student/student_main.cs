@@ -215,8 +215,10 @@ namespace StudentProgramMain.Student
 
         private void btn_ask_Click(object sender, EventArgs e)
         {
-             Student_askf ask = new Student_askf();
-             ask.Show();
+            this.Hide();
+            Student_askf ask = new Student_askf();
+            ask.ShowDialog();
+            this.Show();
         }
         private string getDay()
         {

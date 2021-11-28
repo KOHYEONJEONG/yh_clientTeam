@@ -17,7 +17,15 @@ class PacketHandler
     }
     public static void SS_LoginFailedHandler(PacketSession session, IPacket packet)
     {
-        
+        SS_LoginFailed pkt = packet as SS_LoginFailed;
+        if(pkt.result == 2)
+        {
+            MessageBox.Show("로그인 실패  : 아이디 또는 비밀번호가 틀렸습니다.");
+        }
+        else if (pkt.result == 3)
+        {
+            MessageBox.Show("로그인 실패  : 이미 같은 아이디로 접속한 학생이 있습니다. ");
+        }
 
         LoginForm.loginForm.loginCheck = 2;
 
