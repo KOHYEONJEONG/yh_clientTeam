@@ -51,6 +51,7 @@
             this.questionbtn = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblProfname = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.classTime = new System.Windows.Forms.Label();
             this.className = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -106,6 +107,7 @@
             // studList
             // 
             this.studList.AllowUserToAddRows = false;
+            this.studList.AllowUserToResizeRows = false;
             this.studList.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -115,7 +117,7 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.studList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.studList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.studList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stucheck,
             this.stuid,
@@ -143,6 +145,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.studList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.studList.RowHeadersVisible = false;
+            this.studList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.studList.RowTemplate.Height = 75;
             this.studList.Size = new System.Drawing.Size(628, 404);
             this.studList.TabIndex = 19;
@@ -179,7 +182,7 @@
             this.stuscreenshot.Name = "stuscreenshot";
             this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stuscreenshot.Width = 270;
+            this.stuscreenshot.Width = 250;
             // 
             // stuanswer
             // 
@@ -221,6 +224,7 @@
             this.tableLayoutPanel1.Controls.Add(this.questionbtn, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.lblProfname, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
@@ -313,7 +317,7 @@
             this.lblProfname.AutoSize = true;
             this.lblProfname.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblProfname.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.lblProfname.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblProfname.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblProfname.ForeColor = System.Drawing.Color.White;
             this.lblProfname.Location = new System.Drawing.Point(3, 15);
             this.lblProfname.Name = "lblProfname";
@@ -321,6 +325,21 @@
             this.lblProfname.TabIndex = 32;
             this.lblProfname.Text = "우체국";
             this.lblProfname.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(3, 248);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 62);
+            this.button2.TabIndex = 33;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // classTime
             // 
@@ -394,6 +413,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(798, 489);
+            this.ControlBox = false;
             this.Controls.Add(this.previewBox);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -402,7 +422,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProfesserMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "메인화면";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfesserMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studList)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -442,6 +464,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stuattend;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox previewBox;
+        private System.Windows.Forms.Button button2;
     }
 }
 

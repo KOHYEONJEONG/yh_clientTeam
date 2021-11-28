@@ -11,8 +11,8 @@ namespace ProgramMain
 {
     public partial class ProfesserMain : Form
     {
-        public static ProfesserMain professerMain ;
-        
+        public static ProfesserMain professerMain;
+
         /*List<SP_StudentInfo.Student> _infoStudent = new List<SP_StudentInfo.Student>();
         public List<SP_StudentInfo.Student> infoStudent
         {
@@ -20,34 +20,65 @@ namespace ProgramMain
             set { _infoStudent = value; }
         }*/
 
-        private String Sstime = DateTime.Now.ToString("g");
-
-
-        List<String> checkstu = new List<string>();
-
-
-        SP_LoginResult.Lecture lecture;
-        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>();
-
-        
         public DataGridView _studList
         {
             get { return studList; }
             set { _studList = studList; }
         }
 
-        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students,String proname)
+        private int _outIndex = -1;
+        public int outIndex
+        {
+            get { return _outIndex; }
+            set { _outIndex = value; }
+        }
+
+
+        private String Sstime = DateTime.Now.ToString("g");
+
+        List<String> checkstu = new List<string>(); //체크박스 체크된 학생 리스트
+
+        SP_LoginResult.Lecture lecture; //강의정보
+        List<SP_LoginResult.Student> student = new List<SP_LoginResult.Student>(); //학생 정보 리스트
+
+        public int stdQustionCheck; //학생 질문 들어오는거 체크 : 0=nothing, 1=학생 질문&이미지, 2=이미지, 3=텍스트
+
+        SP_Qustion _sp_Qustion; //학생 질문 텍스트&이미지 정보
+        public SP_Qustion sp_Qustion
+        {
+            get { return _sp_Qustion; }
+            set { _sp_Qustion = value; }
+        }
+
+        SP_QustionImg _sp_QustionImg;//학생 질문 이미지 정보
+        public SP_QustionImg sp_QustionImg
+        {
+            get { return _sp_QustionImg; }
+            set { _sp_QustionImg = value; }
+        }
+
+        SP_QustionText _sp_QustionText; //학생 질문 텍스트 정보
+        public SP_QustionText sp_QustionText
+        {
+            get { return _sp_QustionText; }
+            set { _sp_QustionText = value; }
+        }
+
+
+
+        public ProfesserMain(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students, String proname)
         {
             InitializeComponent();
-            professerMain = this;
+            professerMain = this;//현재 폼 static으로 저장
+            lblProfname.Text = proname;//교수이름 출력
 
-            lblProfname.Text = proname;
-
-            if (!get_lecture_stdent(lectures, students)){
-                LoginForm.loginForm.loginCheck = 4;
-                this.Close();
+            if (!get_lecture_stdent(lectures, students)) {//수업 학생 정보 출력 메서드 호출
+                LoginForm.loginForm.loginCheck = 4;//수업없음을 알림
+                this.Close();//창닫기
             }
-            
+            foreach (DataGridViewColumn item in studList.Columns) { item.SortMode = DataGridViewColumnSortMode.NotSortable; }
+
+
 
         }
 
@@ -58,79 +89,45 @@ namespace ProgramMain
         {
             //수정 필 필
             //String nowtime = DateTime.Now.ToString("HHmm");
-            //String day = getDay();
-            String nowtime = DateTime.Now.ToString("1205");
+            //String day = Tool.getDay();
+            String nowtime = DateTime.Now.ToString("1005");
             String day = "수";
-            foreach (var l in lectures)
+            foreach (var l in lectures)//수업정보 저장
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
                 {
-                    
+
                     if (l.weekday == day)
                     {
-                        
+
                         lecture = l;
                     }
                 }
             }
 
-            if (lecture == null)
+            if (lecture == null)//수업 없으면
             {
-                
+
                 return false;
             }
 
-            foreach (var s in students)
+            foreach (var s in students)//학생 정보 저장
             {
-                if(lecture.lecture_code == s.lectureCode)
+                if (lecture.lecture_code == s.lectureCode)
                 {
                     student.Add(s);
                 }
             }
 
-           
 
-            Timer.Enabled = true;
 
-            return true;
-            
+            Timer.Enabled = true;//동작 감지 타이머 킴
+
+            return true;//정상 실행
+
         }
 
-        private string getDay()
-        {
-            DateTime now = DateTime.Now;
-            string day;
 
-            switch (now.DayOfWeek)
-            {
-                case DayOfWeek.Monday:
-                    day = "월";
-                    break;
-                case DayOfWeek.Tuesday:
-                    day = "화";
-                    break;
-                case DayOfWeek.Wednesday:
-                    day = "수";
-                    break;
-                case DayOfWeek.Thursday:
-                    day = "목";
-                    break;
-                case DayOfWeek.Friday:
-                    day = "금";
-                    break;
-                case DayOfWeek.Saturday:
-                    day = "토";
-                    break;
-                case DayOfWeek.Sunday:
-                    day = "일";
-                    break;
-                default:
-                    day = "일";
-                    break;
-            }
-
-            return day;
-        }
 
         private void listView1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
@@ -145,11 +142,6 @@ namespace ProgramMain
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            Image img1 = Properties.Resources.sky1;
-            Image img2 = Properties.Resources.sky2;
-            Image img3 = Properties.Resources.sky3;
-            Image img4 = Properties.Resources.sky4;
-
 
             for (int i = 0; i < student.Count; i++) //리스트에 미접속 학생 추가
             {
@@ -167,9 +159,8 @@ namespace ProgramMain
 
             }
 
-            if (lecture != null)
+            if (lecture != null)//수업이 있으면
             {
-                lblProfname.Text = 
                 className.Text = lecture.lecture_name;//수업이름 설정
                 classTime.Text = "수업 시간: " + lecture.strat_time + "~" + lecture.end_time;//수업 시간 설정
                                                                                          //시간되면 자동 수업 시작하게 설정하기
@@ -182,19 +173,19 @@ namespace ProgramMain
         {
 
         }
-        
+
         // 스크린샷 버튼 이벤트
-        private void screenbtn_Click(object sender, EventArgs e)
+        private void screenbtn_Click(object sender, EventArgs e)//스크린샷 버튼 이벤트
         {
             //체크 되어있는 학생의 학번을 리스트에 추가
             checkStuAdd();
 
-            LoginForm.sessionManager.ScreenShotRequset(checkstu);
+            LoginForm.sessionManager.ScreenShotRequset(checkstu);//서버에 스크린샷 요청
 
             checkstu.Clear();//체크된 학생 리스트 비우기
         }
-        
-        private void questionbtn_Click(object sender, EventArgs e)
+
+        private void questionbtn_Click(object sender, EventArgs e)//질문버튼 이벤트
         {
             //체크 되어있는 학생의 학번을 리스트에 추가
             checkStuAdd();
@@ -212,9 +203,9 @@ namespace ProgramMain
             }
             else//취소
             {
-                
+
             }
-            
+
 
 
             checkstu.Clear();//체크된 학생 리스트 비우기
@@ -224,29 +215,29 @@ namespace ProgramMain
 
 
         private void allcheck_CheckedChanged(object sender, EventArgs e)//천체 체크
-        { 
+        {
             CheckBox cb = sender as CheckBox;
 
             if (cb.Checked)//체크되어 있으면
             {
-                for (int i = studList.Rows.Count -1 ; i >= 0; i--)
+                for (int i = 0 ; i < studList.Rows.Count ; i++)
                 {
-                    if (studList.Rows[i].Cells[0].ReadOnly)
+                    if (studList.Rows[i].ReadOnly)//접속하지 않은 학생 체크 X
                     {
-                        continue;
+                        break;
                     }
-                    studList.Rows[i].Cells[0].Value = true;
+                    studList.Rows[i].Cells[0].Value = true;//체크
                 }
             }
             else
             {
-                for (int i = studList.Rows.Count - 1; i >= 0; i--)
+                for (int i = studList.Rows.Count - 1; i >= 0; i--)//체크 해제
                 {
                     studList.Rows[i].Cells[0].Value = false;
                 }
             }
         }
-        
+
         private void checkStuAdd()
         {
 
@@ -254,7 +245,7 @@ namespace ProgramMain
             //체크 되어있는 학생의 학번을 리스트에 추가
             for (int i = studList.Rows.Count - 1; i >= 0; i--)
             {
-                
+
                 if ((bool)studList.Rows[i].Cells[0].Value)//체크여부 확인
                 {
                     checkstu.Add(studList.Rows[i].Cells[1].Value as String);//리스트에 추가
@@ -262,33 +253,19 @@ namespace ProgramMain
             }
         }
 
-        private void stuList_ItemChecked(object sender, ItemCheckedEventArgs e)
-        {
-        }
 
-        private void allscreenbtn_Click(object sender, EventArgs e)
-        {
-            //체크 되어있는 학생의 학번을 리스트에 추가
-            checkStuAdd();
-
-            ScreenshotsForm screenshotsForm = new ScreenshotsForm();
-            screenshotsForm.Show();
-
-            checkstu.Clear();//체크된 학생 리스트 비우기
-        }
-
-     
 
         private void studList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            
+
         }
 
 
-        private void studList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void studList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)//리스트 더블클릭
         {
-            DataGridView grid = sender as DataGridView;
-
+            //이미지셀 클릭 부분
+            DataGridView grid = sender as DataGridView;//이벤트 발생한 리스트 저장
+            //클릭한 셀 인덱스
             int curR = e.RowIndex;
             int curC = e.ColumnIndex;
 
@@ -297,23 +274,24 @@ namespace ProgramMain
                 return;
             }
 
-            Type type = grid.Rows[curR].Cells[curC].GetType();
+            Type type = grid.Rows[curR].Cells[curC].GetType();//셀 타입 저장
 
-            if(type == typeof(DataGridViewImageCell))
+            if (type == typeof(DataGridViewImageCell))//셀타입이 이미지 셀이면
             {
-                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;//이미지 저장
 
-                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[2].Value.ToString(), grid.Rows[curR].Cells[1].Value.ToString(), img);
+                ImageForm img_form = new ImageForm(grid.Rows[curR].Cells[2].Value.ToString(), grid.Rows[curR].Cells[1].Value.ToString(), img);//폼 띄움
                 img_form.ShowDialog();
             }
 
-            String id = grid.Rows[curR].Cells[1].Value.ToString();
-            String name = grid.Rows[curR].Cells[2].Value.ToString();
+            //응답 셀 클릭 부분
+            String id = grid.Rows[curR].Cells[1].Value.ToString();//학번 저장
+            String name = grid.Rows[curR].Cells[2].Value.ToString();//이름 저장
 
             //응답 셀
             if (curC == 4)
             {
-                String reply = grid.Rows[curR].Cells[curC].Value.ToString();
+                String reply = grid.Rows[curR].Cells[curC].Value.ToString();//내용 저장
                 if (reply != "" && reply != null) //응답 있을 경우에만 
                 {
                     //질문유형
@@ -335,13 +313,14 @@ namespace ProgramMain
             }
 
         }
-        private void studList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)//마우스 올려놓으면 
+        private void studList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
         {
-            
+
 
         }
-        private void studList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        private void studList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)//마우스 움직였을 때
         {
+            //이미지 셀에 마우스 가면 확대
             DataGridView grid = sender as DataGridView;
 
             int curR = e.RowIndex;
@@ -354,16 +333,16 @@ namespace ProgramMain
 
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
-            if (type == typeof(DataGridViewImageCell))
+            if (type == typeof(DataGridViewImageCell))//사진 확대
             {
-                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;//이미지 저장
 
 
 
                 try
                 {
                     Bitmap imgbitmap = new Bitmap(img);
-                    Image resizedImage = resizeImage(imgbitmap, 250, img.Size.Height / (img.Size.Width / 250));
+                    Image resizedImage = Tool.resizeImage(imgbitmap, 250, img.Size.Height / (img.Size.Width / 250));
                     previewBox.Image = resizedImage;
 
                     previewBox.Location = new Point(Control.MousePosition.X - this.Location.X, Control.MousePosition.Y - this.Location.Y - 30);
@@ -382,27 +361,7 @@ namespace ProgramMain
                 previewBox.Visible = false;
             }
         }
-        private Image resizeImage(Image image, int width, int height)
-        {
-            var destinationRect = new Rectangle(0, 0, width, height);
-            var destinationImage = new Bitmap(width, height);
 
-            destinationImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-
-            using (var graphics = Graphics.FromImage(destinationImage))
-            {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-
-                using (var wrapMode = new ImageAttributes())
-                {
-                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destinationRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-                }
-            }
-
-            return (Image)destinationImage;
-        }
         private void attenddanceBtn_Click(object sender, EventArgs e)
         {
             LoginForm.sessionManager.AtdListRequest();
@@ -420,10 +379,8 @@ namespace ProgramMain
         int atndTime = 1;//교시
         private void attendbtn_Click(object sender, EventArgs e)
         {
-            String nowtime = DateTime.Now.ToString("HHmm");
-            
-
-            LoginForm.sessionManager.AtdRequest(atndTime, 1);//교시,주차
+            //Tool.GetWeekNumber(System.DateTime.Now.Year, System.DateTime.Now.Month, System.DateTime.Now.Day, System.DateTime.Now.DayOfWeek)
+            LoginForm.sessionManager.AtdRequest(atndTime, 2);//교시,주차
             attendBtn.Visible = false;
             //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
@@ -448,41 +405,59 @@ namespace ProgramMain
                 atndTime = 3;
                 attendBtn.Visible = true;
             }
-            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.end_time) -15).ToString() + "00")//수업 종료 5분전
+            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.end_time) - 55).ToString() + "00")//수업 종료 5분전
             {
                 MessageBox.Show("수업종료 5분전 입니다");
                 endBtn.Visible = true;
-                Timer.Enabled = false;
+                
             }
 
 
-            for (int i = 0; i < stuin; i++)
+            //학생 질문&이미지 확인
+            if (stdQustionCheck == 1)
             {
-                studList.Rows[i].ReadOnly = false;
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_Qustion);
+                stdAskCheckForm.Show();
+                stdQustionCheck = 0;
             }
-
+            if (stdQustionCheck == 2)
+            {
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_QustionImg);
+                stdAskCheckForm.Show();
+                stdQustionCheck = 0;
+            }
+            if (stdQustionCheck == 3)
+            {
+                StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_QustionText);
+                stdAskCheckForm.Show();
+                stdQustionCheck = 0;
+            }
 
 
         }
 
-        
-      
 
+
+        bool closeIndex = false;
         private void endBtn_Click(object sender, EventArgs e)
         {
+            LoginForm.sessionManager.EndOfClassRequset();
+            closeIndex = true;
             this.Close();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void ProfesserMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-
+            if (closeIndex == false)//종료버튼이 아니면 안꺼지게
+            {
+                e.Cancel = true;
+            }
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-
+            closeIndex = true;
         }
-
-        
     }
 }

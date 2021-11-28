@@ -131,6 +131,15 @@ namespace PClient
             }
         }
 
+        public void EndOfClassRequset()
+        {
+            lock (_lock)
+            {
+                CP_EndOfClass cp_EndOfClass = new CP_EndOfClass();
+                _sessions.Send(cp_EndOfClass.Write());
+            }
+        }
+
         public ServerSession Generate()
         {
             lock (_lock)
