@@ -57,10 +57,11 @@ namespace ProgramMain
             set { _sp_QustionText = value; }
         }
 
-        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students)
+        public ProfesserMain(List<SP_LoginResult.Lecture> lectures , List<SP_LoginResult.Student> students, String proname)
         {
             InitializeComponent();
             professerMain = this;
+            lblProfname.Text = proname;
             stdQustionCheck = 0;
 
 
@@ -193,6 +194,75 @@ namespace ProgramMain
 
         }
 
+        private void studList_CellMouseEnter(object sender, DataGridViewCellEventArgs e)//마우스 올려놓으면 
+        {
+
+
+        }
+        private void studList_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridView grid = sender as DataGridView;
+
+            int curR = e.RowIndex;
+            int curC = e.ColumnIndex;
+
+            if (curR < 0)//헤더 클릭 막기
+            {
+                return;
+            }
+
+            Type type = grid.Rows[curR].Cells[curC].GetType();
+
+            if (type == typeof(DataGridViewImageCell))
+            {
+                Image img = grid.Rows[curR].Cells[curC].Value as Image;
+
+
+
+                try
+                {
+                    Bitmap imgbitmap = new Bitmap(img);
+                    Image resizedImage = resizeImage(imgbitmap, 250, img.Size.Height / (img.Size.Width / 250));
+                    previewBox.Image = resizedImage;
+
+                    previewBox.Location = new Point(Control.MousePosition.X - this.Location.X, Control.MousePosition.Y - this.Location.Y - 30);
+
+                    previewBox.Visible = true;
+
+
+                }
+                catch
+                {
+
+                }
+            }
+            else
+            {
+                previewBox.Visible = false;
+            }
+        }
+        private Image resizeImage(Image image, int width, int height)
+        {
+            var destinationRect = new Rectangle(0, 0, width, height);
+            var destinationImage = new Bitmap(width, height);
+
+            destinationImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destinationImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destinationRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return (Image)destinationImage;
+        }
+
 
         private void listView1_SelectedIndexChanged_2(object sender, System.EventArgs e)
         {
@@ -308,6 +378,11 @@ namespace ProgramMain
             int curR = e.RowIndex;
             int curC = e.ColumnIndex;
 
+            if (curR < 0)//헤더 클릭 막기
+            {
+                return;
+            }
+
             Type type = grid.Rows[curR].Cells[curC].GetType();
 
             //학생 정보
@@ -395,18 +470,14 @@ namespace ProgramMain
                 endBtn.Visible = true;
                 Timer.Enabled = false;
             }
-            
-            if (stuin == 0)//오류 방지
+
+            for (int i = 0; i < stuin; i++)
             {
-                
-            }
-            else if(studList.Rows[_stuin - 1].ReadOnly)//readonly 변경
-            {
-                studList.Rows[_stuin - 1].ReadOnly = false;
+                studList.Rows[i].ReadOnly = false;
             }
 
             //학생 질문&이미지 확인
-            if(stdQustionCheck==1)
+            if (stdQustionCheck==1)
             {
                 StdAskCheckForm stdAskCheckForm = new StdAskCheckForm(sp_Qustion);
                 stdAskCheckForm.Show();

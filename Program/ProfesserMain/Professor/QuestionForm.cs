@@ -123,6 +123,14 @@ namespace ProgramMain
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < this.dataGridView1.Rows.Count; i++)
+            {
+                bool isChecked = Convert.ToBoolean(this.dataGridView1.Rows[i].Cells[0].Value);
+                if (isChecked)
+                {
+                    checklist.Add(Convert.ToString(this.dataGridView1.Rows[i].Cells[2].Value));
+                }
+            }
 
             /*교수님 질문 & 타입 & 선택된 학생 정보 전송*/
             //1.교수님 질문

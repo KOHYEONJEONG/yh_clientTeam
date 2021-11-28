@@ -32,7 +32,7 @@ class PacketHandler
 
     public static void SP_StudentInfoHandler(PacketSession session, IPacket packet)
     {
-        /*SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
+        SP_StudentInfo sp_StudentInfo = packet as SP_StudentInfo;
         ServerSession serverSession = session as ServerSession;
         foreach (var s in sp_StudentInfo.students)
         {
@@ -51,7 +51,7 @@ class PacketHandler
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources._default;
                 }
             }
-        }*/
+        }
     }
 
     public static void SP_ScreenResultHandler(PacketSession session, IPacket packet)
@@ -139,7 +139,14 @@ class PacketHandler
         {
             if (sp_QuizOXResult.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-                ProfesserMain.professerMain._studList.Rows[i].Cells[4].Value = sp_QuizOXResult.result.ToString();
+                if (sp_QuizOXResult.result)
+                {
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[4].Value = "O";
+                }
+                else
+                {
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[4].Value = "X";
+                }
                 break;
             }
         }
@@ -294,11 +301,18 @@ class PacketHandler
                 ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value = ProgramMain.Properties.Resources.default1;
             }
         }
+        stuin--;
     }
     public static void SP_AddAtdHandler(PacketSession session, IPacket packet)
     {
         SP_AddAtd sp_AddAtd = packet as SP_AddAtd;
-
+        for (int i = 0; i < ProfesserMain.professerMain._studList.RowCount; i++)
+        {
+            if (sp_AddAtd.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
+            {
+                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value = sp_AddAtd.attr;
+            }
+        }
     }
 
 

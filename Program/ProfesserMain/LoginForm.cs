@@ -40,6 +40,8 @@ namespace ProgramMain
             packetManager = new PacketManager();
             loginForm = this;
             loginCheck = 0;
+
+            this.ActiveControl = txt_id;
         }
 
         Boolean exit = true;
@@ -158,8 +160,9 @@ namespace ProgramMain
         {
             if (loginCheck == 1)//로그인 성공
             {
-                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students);
                 loginCheckTimer.Enabled = false;
+                ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures, sp_LoginResult.students, sp_LoginResult.name);
+                
                 try
                 {
                     professerMain.ShowDialog();

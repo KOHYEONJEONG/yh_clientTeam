@@ -31,7 +31,7 @@ namespace ProgramMain
             InitializeComponent();
         }
         
-        public ImageForm(string id, string name, Bitmap image)//이미지 받아옴
+        public ImageForm(string name, string num, Image image)//이미지 받아옴
         {
             InitializeComponent();
 
@@ -47,9 +47,9 @@ namespace ProgramMain
 
             //학생 정보 받아옴
             stdName = name;
-            stdNum = id;
+            stdNum = name;
             //받아온 이미지 저장
-            this.image = image;
+            this.image = (Bitmap)image;
 
         }
 
