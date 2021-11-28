@@ -16,7 +16,9 @@ namespace StudentProgramMain.Student
     public partial class student_main : Form
     {
         public static student_main studentMain;
-
+        List<SS_LoginResult.Lecture> _lectures;
+        
+        SS_LoginResult.Lecture lecture;
 
         public student_main(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)
         {
@@ -27,9 +29,26 @@ namespace StudentProgramMain.Student
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
             }
-            
+            _lectures = lectures;
+            SetSize(lbl_subject);
         }
+        public void SetSize(Label label)
+        {
+            string text = label.Text;
+            if (text.Length > 7)
+            {
+                Font fs = new Font(lbl_subject.Font.Name, 10, FontStyle.Bold);
+                lbl_subject.Font = fs;
 
+            }
+            else
+            {
+                // Font fb = new Font(lbl.Font.Name, 20,FontStyle.Bold);
+                //Font fb = new Font(lbl.Font.Name, 20);
+                //lbl.Font = fb;
+            }
+        }
+        
 
         #region Student_answer.cs폼 열기위해서
         public int quizcheck;//Student_answer.cs폼 열기위한 신호 변수
@@ -39,9 +58,14 @@ namespace StudentProgramMain.Student
             get { return _ss_quiz; }
             set { _ss_quiz = value; }
         }
-        #endregion
-
-        SS_LoginResult.Lecture lecture;
+        SS_QuizOX _ss_quizOX;//StudentOX.cs폼 생성자에 값을 전달하기 위해서 
+        public SS_QuizOX ss_QuizOX
+        {
+            get { return _ss_quizOX; }
+            set { _ss_quizOX = value; }
+        }
+        #endregion       
+       
     
       public string No { get; set; } //학생번호
         public string name { get; set; } //학생이름
@@ -102,20 +126,16 @@ namespace StudentProgramMain.Student
             return true;
 
         }
-      
 
-
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSchedule_Click(object sender, EventArgs e)
         {
-
-            //녹색으로 바꾸고 버튼 활성화
-            this.btn_absent.BackColor = Color.FromArgb(0, 163, 133);
-            btn_absent.Enabled = true;
-            //타이머 활성화
-            this.Timer.Enabled = true;
-            //예비버튼 비활성화
-            button1.Enabled = false;
+            Student_Schedule schedule = new Student_Schedule(_lectures);
+            
+            schedule.Show();
+          
         }
+
+      
 
         int TNum = 900; //타이머 진행 숫자(출석시간)
 
@@ -124,7 +144,7 @@ namespace StudentProgramMain.Student
 
             //System.DateTime.Now.ToString("yyyy");
             //출석 버튼 클릭했을때 클릭한 시간 나타내기
-            string date = System.DateTime.Now.ToString("HH:mm:ss");
+            string date = DateTime.Now.ToString("HHmm");
             //타이머 비활성화
             this.Timer.Enabled = false;
 
@@ -133,6 +153,7 @@ namespace StudentProgramMain.Student
             {
                 btn_absent.Text = "출 석" + date;
                 button1.Enabled = false;
+
             }
             else if (0 < TNum && TNum < 600)
             {
@@ -175,10 +196,15 @@ namespace StudentProgramMain.Student
             // 교수님 질문오면( 이벤트핸들러 -> quizcheck신호 주고 -> 열기 )
             if (quizcheck == 1)
             {
-                MessageBox.Show("교수님 질문(Test)");
-                Student_answer sa = new Student_answer(ss_Quiz);
-                sa.Show();
                 quizcheck = 0;
+                Student_answer sa = new Student_answer(ss_Quiz);
+                sa.ShowDialog();                
+            }
+            else if(quizcheck == 2)
+            {
+                quizcheck = 0;
+                StudentOX sa = new StudentOX(ss_QuizOX);
+                sa.ShowDialog();                
             }
 
         }

@@ -31,7 +31,7 @@ namespace StudentProgramMain.Student
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lbl_question = new System.Windows.Forms.Label();
+            this.lbl_question = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.answer = new System.Windows.Forms.TextBox();
@@ -44,19 +44,25 @@ namespace StudentProgramMain.Student
             // 
             this.groupBox1.Controls.Add(this.lbl_question);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 14);
+            this.groupBox1.Location = new System.Drawing.Point(9, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(520, 89);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(404, 67);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "문제";
             // 
             // lbl_question
             // 
-            this.lbl_question.AutoSize = true;
-            this.lbl_question.Location = new System.Drawing.Point(3, 23);
+            this.lbl_question.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.lbl_question.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbl_question.ForeColor = System.Drawing.Color.White;
+            this.lbl_question.Location = new System.Drawing.Point(2, 14);
+            this.lbl_question.Multiline = true;
             this.lbl_question.Name = "lbl_question";
-            this.lbl_question.Size = new System.Drawing.Size(31, 20);
+            this.lbl_question.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.lbl_question.Size = new System.Drawing.Size(418, 48);
             this.lbl_question.TabIndex = 0;
             this.lbl_question.Text = "Q) ";
             // 
@@ -65,9 +71,11 @@ namespace StudentProgramMain.Student
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.answer);
             this.groupBox2.ForeColor = System.Drawing.Color.White;
-            this.groupBox2.Location = new System.Drawing.Point(12, 123);
+            this.groupBox2.Location = new System.Drawing.Point(9, 92);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(520, 274);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(404, 206);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "답변";
@@ -79,9 +87,10 @@ namespace StudentProgramMain.Student
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(217, 240);
+            this.button1.Location = new System.Drawing.Point(169, 180);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.Size = new System.Drawing.Size(73, 22);
             this.button1.TabIndex = 1;
             this.button1.Text = "전송";
             this.button1.UseVisualStyleBackColor = false;
@@ -89,10 +98,11 @@ namespace StudentProgramMain.Student
             // 
             // answer
             // 
-            this.answer.Location = new System.Drawing.Point(3, 23);
+            this.answer.Location = new System.Drawing.Point(2, 17);
+            this.answer.Margin = new System.Windows.Forms.Padding(2);
             this.answer.Multiline = true;
             this.answer.Name = "answer";
-            this.answer.Size = new System.Drawing.Size(517, 215);
+            this.answer.Size = new System.Drawing.Size(403, 162);
             this.answer.TabIndex = 0;
             // 
             // answerCheckTimer
@@ -101,13 +111,14 @@ namespace StudentProgramMain.Student
             // 
             // Student_answer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.ClientSize = new System.Drawing.Size(544, 402);
+            this.ClientSize = new System.Drawing.Size(423, 302);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Student_answer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student_answer";
@@ -125,7 +136,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox answer;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbl_question;
         private System.Windows.Forms.Timer answerCheckTimer;
+        private System.Windows.Forms.TextBox lbl_question;
     }
 }

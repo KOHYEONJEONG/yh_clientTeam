@@ -53,7 +53,8 @@ class PacketHandler
     }
     public static void SS_QuizOXHandler(PacketSession session, IPacket packet)
     {
-
+        student_main.studentMain.quizcheck = 2;//student_answerÆû ¿­¾îÁà¶ó!!
+        student_main.studentMain.ss_QuizOX = packet as SS_QuizOX;
     }
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
@@ -84,7 +85,10 @@ class PacketHandler
     }
     public static void SS_EndOfClassHandler(PacketSession session, IPacket packet)
     {
-
+        //MessageBox.Show("¼ö¾÷ Á¾·á");
+        student_main.studentMain.Invoke((MethodInvoker)delegate {
+            student_main.studentMain.Close();
+        });
     }
 
     public static void SS_QustionFaildHandler(PacketSession session, IPacket packet)

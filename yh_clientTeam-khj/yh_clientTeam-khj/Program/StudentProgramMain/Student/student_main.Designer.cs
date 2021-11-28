@@ -43,7 +43,7 @@ namespace StudentProgramMain.Student
             this.lbl_day = new System.Windows.Forms.Label();
             this.btn_ask = new System.Windows.Forms.Button();
             this.btn_absent = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSchedule = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@ namespace StudentProgramMain.Student
             this.panel1.Controls.Add(this.lbl_name);
             this.panel1.Controls.Add(this.lblNo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(95, 199);
             this.panel1.TabIndex = 0;
@@ -74,7 +74,7 @@ namespace StudentProgramMain.Student
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 110);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(97, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@ namespace StudentProgramMain.Student
             this.panel2.Controls.Add(this.lbl_period);
             this.panel2.Controls.Add(this.lbl_day);
             this.panel2.Location = new System.Drawing.Point(95, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(334, 50);
             this.panel2.TabIndex = 0;
@@ -186,7 +186,7 @@ namespace StudentProgramMain.Student
             this.btn_ask.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ask.ForeColor = System.Drawing.Color.White;
             this.btn_ask.Location = new System.Drawing.Point(142, 68);
-            this.btn_ask.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_ask.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ask.Name = "btn_ask";
             this.btn_ask.Size = new System.Drawing.Size(114, 46);
             this.btn_ask.TabIndex = 1;
@@ -201,7 +201,7 @@ namespace StudentProgramMain.Student
             this.btn_absent.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_absent.ForeColor = System.Drawing.Color.White;
             this.btn_absent.Location = new System.Drawing.Point(142, 138);
-            this.btn_absent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_absent.Margin = new System.Windows.Forms.Padding(2);
             this.btn_absent.Name = "btn_absent";
             this.btn_absent.Size = new System.Drawing.Size(114, 46);
             this.btn_absent.TabIndex = 2;
@@ -209,20 +209,20 @@ namespace StudentProgramMain.Student
             this.btn_absent.UseVisualStyleBackColor = false;
             this.btn_absent.Click += new System.EventHandler(this.btn_absent_Click);
             // 
-            // button3
+            // btnSchedule
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(276, 58);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(103, 28);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "시간표";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Location = new System.Drawing.Point(276, 58);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(103, 28);
+            this.btnSchedule.TabIndex = 3;
+            this.btnSchedule.Text = "시간표";
+            this.btnSchedule.UseVisualStyleBackColor = false;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // button4
             // 
@@ -231,7 +231,7 @@ namespace StudentProgramMain.Student
             this.button4.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Location = new System.Drawing.Point(276, 92);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 28);
             this.button4.TabIndex = 4;
@@ -245,7 +245,7 @@ namespace StudentProgramMain.Student
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(276, 129);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 28);
             this.button1.TabIndex = 4;
@@ -259,7 +259,7 @@ namespace StudentProgramMain.Student
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(276, 161);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 28);
             this.button2.TabIndex = 4;
@@ -307,12 +307,12 @@ namespace StudentProgramMain.Student
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSchedule);
             this.Controls.Add(this.btn_absent);
             this.Controls.Add(this.btn_ask);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "student_main";
             this.Text = "student_main";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.student_main_FormClosing);
@@ -333,7 +333,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_ask;
         private System.Windows.Forms.Button btn_absent;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSchedule;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

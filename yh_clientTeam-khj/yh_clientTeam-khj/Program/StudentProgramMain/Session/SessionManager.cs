@@ -101,6 +101,15 @@ namespace StudentProgramMain
         }
         #endregion
 
+        #region StudentOX 퀴즈 답변하기
+        public void QuizOXAnswer(bool flag)
+        {
+            CS_QuizOX quizOX_packet = new CS_QuizOX();
+            quizOX_packet.result = flag;
+            _sessions.Send(quizOX_packet.Write());
+        }
+        #endregion
+
         public ServerSession Generate()
         {
             lock (_lock)

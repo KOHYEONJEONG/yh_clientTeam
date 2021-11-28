@@ -84,10 +84,10 @@ namespace StudentProgramMain.Student
                 //imgByte = (byte[])imgconv.ConvertTo(bmp, typeof(byte[]));//이미지 자체를 바이트로 변환한 값.
                 //byte[] nbytes = BitConverter.GetBytes(imgByte.Length);//이미지에 길이를 바이트배열로 변환해서 넣음.
 
-                //MemoryStream ms = new MemoryStream(); 
-                //bmp.Save(ms, ImageFormat.Png); 
-                //buf = ms.ToArray();
-                buf = ScreenCopy.Copy();
+                MemoryStream ms = new MemoryStream();
+                bmp.Save(ms, ImageFormat.Png);
+                buf = ms.ToArray();
+                //buf = ScreenCopy.Copy();
 
             }
 
