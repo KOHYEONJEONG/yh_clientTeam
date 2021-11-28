@@ -110,6 +110,19 @@ namespace StudentProgramMain
         }
         #endregion
 
+
+        public void AtdSend(int week, int attr, int classTime)//출석체크
+        {
+            lock (_lock)
+            {
+                CS_AtdCheck atd_packet = new CS_AtdCheck();
+                atd_packet.attr = attr;
+                atd_packet.classTime = classTime;
+                atd_packet.week = week;
+                _sessions.Send(atd_packet.Write());
+            }
+        }
+
         public ServerSession Generate()
         {
             lock (_lock)

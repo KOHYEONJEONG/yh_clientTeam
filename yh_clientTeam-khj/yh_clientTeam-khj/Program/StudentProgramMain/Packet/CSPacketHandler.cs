@@ -49,7 +49,8 @@ class PacketHandler
     }
     public static void SS_AtdRequestHandler(PacketSession session, IPacket packet)
     {
-
+        SS_AtdRequest ss_AtdRequest = packet as SS_AtdRequest;
+        student_main.studentMain.atdRequest = ss_AtdRequest;
     }
     public static void SS_QuizOXHandler(PacketSession session, IPacket packet)
     {

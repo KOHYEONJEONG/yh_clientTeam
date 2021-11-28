@@ -20,10 +20,18 @@ namespace StudentProgramMain.Student
         
         SS_LoginResult.Lecture lecture;
 
+        public SS_AtdRequest atdRequest
+        {
+            get;
+            set;
+        }
+
+
         public student_main(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)
         {
             InitializeComponent();
             studentMain = this;
+            atdRequest = new SS_AtdRequest();
             if(!get_lecture_stdent(lectures, studentId, studentName))
             {
                 LoginForm.loginForm.loginCheck = 4;
@@ -148,23 +156,30 @@ namespace StudentProgramMain.Student
             //타이머 비활성화
             this.Timer.Enabled = false;
 
+            int atd = 0;
+
             // TNum(타이머 제한 시간)에 따라 출석, 지각, 결석 분류
             if (600 <= TNum)
             {
                 btn_absent.Text = "출 석" + date;
                 button1.Enabled = false;
-
+                atd = 1;
             }
             else if (0 < TNum && TNum < 600)
             {
                 btn_absent.Text = "지 각" + date;
                 button1.Enabled = false;
+                atd = 2;
             }
             else if (TNum == 0)
             {
                 btn_absent.Text = "결 석" + date;
                 button1.Enabled = false;
+                atd = 0;
             }
+
+            LoginForm.sessionManager.AtdSend(atdRequest.week,atd,atdRequest.classTime);
+
         }
 
         private void Timer_Tick(object sender, EventArgs e)
