@@ -243,5 +243,21 @@ namespace StudentProgramMain.Student
 
             return day;
         }
+
+
+        //시간표
+        //Student_Schedule sS = new Student_Schedule();
+        //sS.Show();
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            lblNo.Text = No;
+            lbl_name.Text = name;
+            lbl_day.Text = lecture.weekday;
+            lbl_start.Text = lecture.strat_time;
+            lbl_end.Text = lecture.end_time;
+            lbl_subject.Text = lecture.lecture_name;
+            lbl_period.Text = lecture.professor_id;
+        }
     }
 }
