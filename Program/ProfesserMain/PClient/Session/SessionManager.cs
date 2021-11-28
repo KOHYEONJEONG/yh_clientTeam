@@ -26,6 +26,15 @@ namespace PClient
             }
 
         }
+        public void StudentListRequset()
+        {
+            lock (_lock)
+            {
+                CP_StudentList cp_StudentList = new CP_StudentList();
+                _sessions.Send(cp_StudentList.Write());
+            }
+        }
+
 
         public void StudentListRequset()
         {
@@ -45,7 +54,6 @@ namespace PClient
                 CP_ScreenRequest.Student student = new CP_ScreenRequest.Student();
                 student.studentId = s;
 
-                MessageBox.Show(s);
 
                 cp_ScreenRequest.students.Add(student);
 
@@ -60,12 +68,14 @@ namespace PClient
 
             foreach (var s in checkstu)
             {
+                
                 CP_QuizOX.Student student = new CP_QuizOX.Student();
                 student.studentId = s;
                 
                 cp_QuizOX.students.Add(student);
 
             }
+            
 
             cp_QuizOX.quiz = quiz;
             _sessions.Send(cp_QuizOX.Write());

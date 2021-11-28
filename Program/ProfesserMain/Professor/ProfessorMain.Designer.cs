@@ -37,6 +37,12 @@
             this.attendBtn = new System.Windows.Forms.Button();
             this.endBtn = new System.Windows.Forms.Button();
             this.studList = new System.Windows.Forms.DataGridView();
+            this.stucheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.stuid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
+            this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nowTime = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -49,16 +55,12 @@
             this.className = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.stucheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.stuid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuscreenshot = new System.Windows.Forms.DataGridViewImageColumn();
-            this.stuanswer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stuattend = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.previewBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
             this.SuspendLayout();
             // 
             // allcheck
@@ -146,6 +148,51 @@
             this.studList.TabIndex = 19;
             this.studList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studList_CellDoubleClick);
             this.studList.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.studList_CellMouseDoubleClick);
+            this.studList.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.studList_CellMouseEnter);
+            this.studList.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.studList_CellMouseMove);
+            // 
+            // stucheck
+            // 
+            this.stucheck.HeaderText = "";
+            this.stucheck.Name = "stucheck";
+            this.stucheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.stucheck.Width = 25;
+            // 
+            // stuid
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.stuid.DefaultCellStyle = dataGridViewCellStyle2;
+            this.stuid.HeaderText = "학번";
+            this.stuid.Name = "stuid";
+            this.stuid.Width = 120;
+            // 
+            // stuname
+            // 
+            this.stuname.HeaderText = "이름";
+            this.stuname.Name = "stuname";
+            this.stuname.Width = 95;
+            // 
+            // stuscreenshot
+            // 
+            this.stuscreenshot.HeaderText = "스크린샷 썸네일";
+            this.stuscreenshot.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.stuscreenshot.Name = "stuscreenshot";
+            this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.stuscreenshot.Width = 270;
+            // 
+            // stuanswer
+            // 
+            this.stuanswer.HeaderText = "응답";
+            this.stuanswer.Name = "stuanswer";
+            this.stuanswer.ReadOnly = true;
+            this.stuanswer.Width = 55;
+            // 
+            // stuattend
+            // 
+            this.stuattend.HeaderText = "출석";
+            this.stuattend.Name = "stuattend";
+            this.stuattend.Width = 55;
             // 
             // nowTime
             // 
@@ -332,48 +379,14 @@
             this.panel1.Size = new System.Drawing.Size(189, 41);
             this.panel1.TabIndex = 19;
             // 
-            // stucheck
+            // previewBox
             // 
-            this.stucheck.HeaderText = "";
-            this.stucheck.Name = "stucheck";
-            this.stucheck.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stucheck.Width = 25;
-            // 
-            // stuid
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.stuid.DefaultCellStyle = dataGridViewCellStyle2;
-            this.stuid.HeaderText = "학번";
-            this.stuid.Name = "stuid";
-            this.stuid.Width = 120;
-            // 
-            // stuname
-            // 
-            this.stuname.HeaderText = "이름";
-            this.stuname.Name = "stuname";
-            this.stuname.Width = 95;
-            // 
-            // stuscreenshot
-            // 
-            this.stuscreenshot.HeaderText = "스크린샷 썸네일";
-            this.stuscreenshot.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.stuscreenshot.Name = "stuscreenshot";
-            this.stuscreenshot.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.stuscreenshot.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.stuscreenshot.Width = 270;
-            // 
-            // stuanswer
-            // 
-            this.stuanswer.HeaderText = "응답";
-            this.stuanswer.Name = "stuanswer";
-            this.stuanswer.ReadOnly = true;
-            this.stuanswer.Width = 55;
-            // 
-            // stuattend
-            // 
-            this.stuattend.HeaderText = "출석";
-            this.stuattend.Name = "stuattend";
-            this.stuattend.Width = 55;
+            this.previewBox.Location = new System.Drawing.Point(799, 219);
+            this.previewBox.Name = "previewBox";
+            this.previewBox.Size = new System.Drawing.Size(250, 95);
+            this.previewBox.TabIndex = 31;
+            this.previewBox.TabStop = false;
+            this.previewBox.Visible = false;
             // 
             // ProfesserMain
             // 
@@ -381,6 +394,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(798, 489);
+            this.Controls.Add(this.previewBox);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.allcheck);
@@ -396,6 +410,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +440,8 @@
         private System.Windows.Forms.DataGridViewImageColumn stuscreenshot;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuanswer;
         private System.Windows.Forms.DataGridViewTextBoxColumn stuattend;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox previewBox;
     }
 }
 
