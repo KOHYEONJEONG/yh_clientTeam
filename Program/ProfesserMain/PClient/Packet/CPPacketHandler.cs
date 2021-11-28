@@ -307,11 +307,53 @@ class PacketHandler
         {
             if (sp_AddAtd.studentId == ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value.ToString())
             {
-                ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value = sp_AddAtd.attr;
+                if (sp_AddAtd.attr == 0)//결석
+                {
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value = "결석";
+                }
+                else if (sp_AddAtd.attr == 1)//출석
+                {
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value = "출석";
+                }
+                else if(sp_AddAtd.attr == 2)//지각
+                {
+                    ProfesserMain.professerMain._studList.Rows[i].Cells[5].Value = "지각";
+
+                }
+                else
+                {
+
+                }
+
             }
         }
 
+
+
     }
+
+    public static void SP_AtdListHandler(PacketSession session, IPacket packet)//출석 응답
+    {
+        
+        SP_AtdList sp_AtdList = packet as SP_AtdList;
+        int weekTemp = 0;
+
+        foreach (var s in sp_AtdList.atdLists)
+        {
+            
+            if (s.week > weekTemp)
+            {
+                weekTemp = s.week;
+            }            
+        }
+
+        attendanceForm._attendanceForm.weekcount = weekTemp;
+        attendanceForm._attendanceForm.atdLists = sp_AtdList.atdLists;
+
+
+    }
+
+
 
 
 }

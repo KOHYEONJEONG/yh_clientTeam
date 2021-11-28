@@ -29,24 +29,21 @@ namespace ProgramMain
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.attendList = new System.Windows.Forms.ListView();
             this.stuNum = new System.Windows.Forms.ColumnHeader();
             this.stuName = new System.Windows.Forms.ColumnHeader();
-            this.attendstatus = new System.Windows.Forms.ColumnHeader();
             this.lbTitle = new System.Windows.Forms.Label();
-            this.classLb = new System.Windows.Forms.Label();
             this.subjectLb = new System.Windows.Forms.Label();
-            this.subjectName = new System.Windows.Forms.Label();
-            this.className = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // attendList
             // 
             this.attendList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.stuNum,
-            this.stuName,
-            this.attendstatus});
+            this.stuName});
             this.attendList.HideSelection = false;
             this.attendList.Location = new System.Drawing.Point(10, 106);
             this.attendList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -59,17 +56,12 @@ namespace ProgramMain
             // stuNum
             // 
             this.stuNum.Text = "학번";
-            this.stuNum.Width = 190;
+            this.stuNum.Width = 120;
             // 
             // stuName
             // 
             this.stuName.Text = "이름";
-            this.stuName.Width = 160;
-            // 
-            // attendstatus
-            // 
-            this.attendstatus.Text = "출석";
-            this.attendstatus.Width = 160;
+            this.stuName.Width = 95;
             // 
             // lbTitle
             // 
@@ -82,49 +74,17 @@ namespace ProgramMain
             this.lbTitle.TabIndex = 1;
             this.lbTitle.Text = "출석 현황";
             // 
-            // classLb
-            // 
-            this.classLb.AutoSize = true;
-            this.classLb.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.classLb.ForeColor = System.Drawing.Color.White;
-            this.classLb.Location = new System.Drawing.Point(12, 76);
-            this.classLb.Name = "classLb";
-            this.classLb.Size = new System.Drawing.Size(65, 16);
-            this.classLb.TabIndex = 2;
-            this.classLb.Text = "학년/반";
-            this.classLb.Click += new System.EventHandler(this.gradeLb_Click);
-            // 
             // subjectLb
             // 
             this.subjectLb.AutoSize = true;
             this.subjectLb.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.subjectLb.ForeColor = System.Drawing.Color.White;
-            this.subjectLb.Location = new System.Drawing.Point(12, 47);
+            this.subjectLb.Location = new System.Drawing.Point(12, 62);
             this.subjectLb.Name = "subjectLb";
             this.subjectLb.Size = new System.Drawing.Size(41, 16);
             this.subjectLb.TabIndex = 2;
             this.subjectLb.Text = "과목";
             this.subjectLb.Click += new System.EventHandler(this.gradeLb_Click);
-            // 
-            // subjectName
-            // 
-            this.subjectName.AutoSize = true;
-            this.subjectName.ForeColor = System.Drawing.Color.White;
-            this.subjectName.Location = new System.Drawing.Point(102, 47);
-            this.subjectName.Name = "subjectName";
-            this.subjectName.Size = new System.Drawing.Size(43, 15);
-            this.subjectName.TabIndex = 3;
-            this.subjectName.Text = "과목명";
-            // 
-            // className
-            // 
-            this.className.AutoSize = true;
-            this.className.ForeColor = System.Drawing.Color.White;
-            this.className.Location = new System.Drawing.Point(102, 76);
-            this.className.Name = "className";
-            this.className.Size = new System.Drawing.Size(48, 15);
-            this.className.TabIndex = 3;
-            this.className.Text = "학년/반";
             // 
             // closeBtn
             // 
@@ -137,6 +97,13 @@ namespace ProgramMain
             this.closeBtn.TabIndex = 4;
             this.closeBtn.Text = "닫기";
             this.closeBtn.UseVisualStyleBackColor = false;
+            this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // attendanceForm
             // 
@@ -145,12 +112,10 @@ namespace ProgramMain
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(539, 534);
             this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.className);
-            this.Controls.Add(this.subjectName);
             this.Controls.Add(this.subjectLb);
-            this.Controls.Add(this.classLb);
             this.Controls.Add(this.lbTitle);
             this.Controls.Add(this.attendList);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "attendanceForm";
             this.Text = "attendanceForm";
@@ -166,11 +131,8 @@ namespace ProgramMain
         private System.Windows.Forms.ColumnHeader stuNum;
         private System.Windows.Forms.ColumnHeader stuName;
         private System.Windows.Forms.Label lbTitle;
-        private System.Windows.Forms.Label classLb;
-        private System.Windows.Forms.ColumnHeader attendstatus;
         private System.Windows.Forms.Label subjectLb;
-        private System.Windows.Forms.Label subjectName;
-        private System.Windows.Forms.Label className;
         private System.Windows.Forms.Button closeBtn;
+        private System.Windows.Forms.Timer timer;
     }
 }

@@ -14,8 +14,6 @@ namespace ProgramMain
     {
         private int allStudent = 0; //button2 : 전체선택(0),삭제(1) 
 
-        private string Question; //교수님이 질문
-        private string Q_Type; // 질문 타입
         private List<string> _checklist = new List<string>(); //선택된 학생 목록
         public List<string> checklist
         {

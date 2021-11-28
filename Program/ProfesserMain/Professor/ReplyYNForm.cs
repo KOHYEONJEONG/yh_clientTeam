@@ -41,13 +41,13 @@ namespace ProgramMain
         {
             this.lblName.Text += stdNum;
             this.lblNum.Text += stdName;
-            if (answer == "True")
+            if (answer == "O")
             {
                 this.radioYes.Checked = true;
             }
             else
             {
-                this.radioYes.Checked = false;
+                this.radioNo.Checked = true;
             }
         }
     }

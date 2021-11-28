@@ -61,10 +61,10 @@ namespace ProgramMain
             this.radioYes.Location = new System.Drawing.Point(142, 25);
             this.radioYes.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioYes.Name = "radioYes";
-            this.radioYes.Size = new System.Drawing.Size(43, 19);
+            this.radioYes.Size = new System.Drawing.Size(34, 19);
             this.radioYes.TabIndex = 8;
             this.radioYes.TabStop = true;
-            this.radioYes.Text = "Yes";
+            this.radioYes.Text = "O";
             this.radioYes.UseVisualStyleBackColor = true;
             // 
             // radioNo
@@ -75,10 +75,10 @@ namespace ProgramMain
             this.radioNo.Location = new System.Drawing.Point(244, 27);
             this.radioNo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.radioNo.Name = "radioNo";
-            this.radioNo.Size = new System.Drawing.Size(41, 19);
+            this.radioNo.Size = new System.Drawing.Size(32, 19);
             this.radioNo.TabIndex = 9;
             this.radioNo.TabStop = true;
-            this.radioNo.Text = "No";
+            this.radioNo.Text = "X";
             this.radioNo.UseVisualStyleBackColor = true;
             // 
             // lblNum

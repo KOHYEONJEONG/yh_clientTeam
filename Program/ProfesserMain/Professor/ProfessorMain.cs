@@ -307,6 +307,9 @@ namespace ProgramMain
                 img_form.ShowDialog();
             }
 
+            String id = grid.Rows[curR].Cells[1].Value.ToString();
+            String name = grid.Rows[curR].Cells[2].Value.ToString();
+
             //응답 셀
             if (curC == 4)
             {
@@ -314,7 +317,7 @@ namespace ProgramMain
                 if (reply != "" && reply != null) //응답 있을 경우에만 
                 {
                     //질문유형
-                    if (reply == "True" || reply == "False")
+                    if (reply == "O" || reply == "X")
                     {
                         ReplyYNForm replyYNForm = new ReplyYNForm(id, name, reply);
                         replyYNForm.Show();
@@ -402,7 +405,8 @@ namespace ProgramMain
         }
         private void attenddanceBtn_Click(object sender, EventArgs e)
         {
-            attendanceForm attendanceForm = new attendanceForm();
+            LoginForm.sessionManager.AtdListRequest();
+            attendanceForm attendanceForm = new attendanceForm(lecture.lecture_name);
             attendanceForm.Show();
         }
 
