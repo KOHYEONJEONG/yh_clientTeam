@@ -34,7 +34,6 @@ namespace ProgramMain
         }
 
 
-        private String Sstime = DateTime.Now.ToString("g");
 
         List<String> checkstu = new List<string>(); //체크박스 체크된 학생 리스트
 
@@ -88,10 +87,10 @@ namespace ProgramMain
         private bool get_lecture_stdent(List<SP_LoginResult.Lecture> lectures, List<SP_LoginResult.Student> students)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
-            //String nowtime = DateTime.Now.ToString("HHmm");
-            //String day = Tool.getDay();
-            String nowtime = DateTime.Now.ToString("1005");
-            String day = "수";
+            String nowtime = DateTime.Now.ToString("HHmm");
+            String day = Tool.getDay();
+            //String nowtime = DateTime.Now.ToString("1005");
+            //String day = "수";
             foreach (var l in lectures)//수업정보 저장
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
@@ -379,8 +378,9 @@ namespace ProgramMain
         int atndTime = 1;//교시
         private void attendbtn_Click(object sender, EventArgs e)
         {
-            //Tool.GetWeekNumber(System.DateTime.Now.Year, System.DateTime.Now.Month, System.DateTime.Now.Day, System.DateTime.Now.DayOfWeek)
-            LoginForm.sessionManager.AtdRequest(atndTime, 2);//교시,주차
+            
+
+            LoginForm.sessionManager.AtdRequest(atndTime, Tool.GetWeekNumber(System.DateTime.Now.Year, System.DateTime.Now.Month, System.DateTime.Now.Day, System.DateTime.Now.DayOfWeek));//교시,주차
             attendBtn.Visible = false;
             //수업 시간 받고 교시마다 활성화 되게 해야 함
         }
