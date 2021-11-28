@@ -115,9 +115,6 @@ namespace StudentProgramMain.Student
             }
         }
 
-        private void Student_askf_FormClosing(object sender, FormClosingEventArgs e)
-        {
-           // Application.Exit();
-        }
+      
     }
 }

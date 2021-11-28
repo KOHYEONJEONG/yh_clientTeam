@@ -29,11 +29,13 @@ namespace StudentProgramMain.Student
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_question = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.answer = new System.Windows.Forms.TextBox();
+            this.answerCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +95,10 @@ namespace StudentProgramMain.Student
             this.answer.Size = new System.Drawing.Size(517, 215);
             this.answer.TabIndex = 0;
             // 
+            // answerCheckTimer
+            // 
+            this.answerCheckTimer.Enabled = true;
+            // 
             // Student_answer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -105,7 +111,6 @@ namespace StudentProgramMain.Student
             this.Name = "Student_answer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student_answer";
-            this.Load += new System.EventHandler(this.Student_answer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -121,5 +126,6 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.TextBox answer;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_question;
+        private System.Windows.Forms.Timer answerCheckTimer;
     }
 }

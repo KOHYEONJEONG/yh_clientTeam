@@ -163,7 +163,6 @@ namespace StudentProgramMain.Student
             this.Controls.Add(this.groupBox1);
             this.Name = "Student_askf";
             this.Text = "질문 보내기";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Student_askf_FormClosing);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.groupBox2.ResumeLayout(false);

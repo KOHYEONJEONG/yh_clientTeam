@@ -10,11 +10,14 @@ using System.Windows.Forms;
 
 namespace StudentProgramMain.Student
 {
-
+    // 여기 메인폼에서는 출석체크, 시간표보기, 질문 들어오면 받는 폼.
+    // 질문보내는것은 폼열어서 보내면 됨.
     
     public partial class student_main : Form
     {
         public static student_main studentMain;
+
+
         public student_main(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)
         {
             InitializeComponent();
@@ -27,9 +30,20 @@ namespace StudentProgramMain.Student
             
         }
 
+
+        #region Student_answer.cs폼 열기위해서
+        public int quizcheck;//Student_answer.cs폼 열기위한 신호 변수
+        SS_Quiz _ss_quiz;//Student_answer.cs폼 생성자에 값을 전달하기 위해서 
+        public SS_Quiz ss_Quiz
+        {
+            get { return _ss_quiz; }
+            set { _ss_quiz = value; }
+        }
+        #endregion
+
         SS_LoginResult.Lecture lecture;
     
-        public string No { get; set; } //학생번호
+      public string No { get; set; } //학생번호
         public string name { get; set; } //학생이름
         public string professorID { get; set; }//교수번호
         public string subject { get; set; }//교과목
@@ -62,6 +76,9 @@ namespace StudentProgramMain.Student
             String day = "수";
             No = studentId;
             name = studentName;
+
+            quizcheck = 0;//student_answer폼 신호
+
             foreach (var l in lectures)
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
@@ -153,6 +170,17 @@ namespace StudentProgramMain.Student
                 this.btn_absent.BackColor = Color.FromArgb(239, 72, 72);
                 this.btn_absent.Text = "결 석";
             }
+
+
+            // 교수님 질문오면( 이벤트핸들러 -> quizcheck신호 주고 -> 열기 )
+            if (quizcheck == 1)
+            {
+                MessageBox.Show("교수님 질문(Test)");
+                Student_answer sa = new Student_answer(ss_Quiz);
+                sa.Show();
+                quizcheck = 0;
+            }
+
         }
 
         private void clock_Tick(object sender, EventArgs e)

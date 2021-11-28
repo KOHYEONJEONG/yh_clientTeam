@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StudentProgramMain
@@ -45,10 +46,23 @@ namespace StudentProgramMain
 
 
         #region Student_askf폼 ( 이미지, 텍스트 전송 )
+        public void ImgSend()
+        {// 스크린샷 요청
+            lock (_lock)
+            {
+                Thread.Sleep(500);
+                byte[] img = ScreenCopy.Copy();
+                CS_QustionImg Img_packet = new CS_QustionImg();
+                Img_packet.img = img;
+                _sessions.Send(Img_packet.Write());//오류남    
+            }
+        }
+
         public void ImgSend(byte[] img )
         {//이미지만 전송(askf폼)
             lock (_lock)
             {
+                Thread.Sleep(500);
                 CS_QustionImg Img_packet = new CS_QustionImg();
                 Img_packet.img = img;
                 _sessions.Send(Img_packet.Write());//오류남    

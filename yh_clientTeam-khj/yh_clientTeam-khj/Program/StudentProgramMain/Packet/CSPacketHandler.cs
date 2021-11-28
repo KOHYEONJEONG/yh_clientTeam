@@ -17,11 +17,9 @@ class PacketHandler
     }
     public static void SS_LoginFailedHandler(PacketSession session, IPacket packet)
     {
-        //SS_LoginFailed result = packet as SS_LoginFailed;
-        // ServerSession serverSession = session as ServerSession;
+        
 
-        //LoginForm.LoginResult = false;//실행(x)
-        MessageBox.Show("로그인 실패");
+        LoginForm.loginForm.loginCheck = 2;
 
     }
 
@@ -30,11 +28,7 @@ class PacketHandler
         LoginForm.loginForm.loginCheck = 1;
         LoginForm.loginForm.ss_LoginResult = packet as SS_LoginResult;
 
-
-
-        // 학번을 매칭 시켜할 거 같은데...
-        MessageBox.Show("학생 값불러오는 중");
-            
+                  
 
     }
     public static void SS_EnterRoomHandler(PacketSession session, IPacket packet)
@@ -55,9 +49,17 @@ class PacketHandler
     }
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
-        SS_Quiz result = packet as SS_Quiz;
-        Student_answer.lblResult = result.quiz;
 
+        MessageBox.Show("교수님께서 질문전송.");
+        //Student_answer.studentAnswer.ss_Quiz = packet as SS_Quiz;
+        //Student_answer.studentAnswer.ss_Quiz = packet as SS_Quiz;
+        //Student_answer.studentAnswer.ss_Quiz 
+
+        student_main.studentMain.quizcheck = 1;//student_answer폼 열어줘라!!
+        student_main.studentMain.ss_Quiz = packet as SS_Quiz;
+
+
+        
     }
     public static void SS_ImgSendFaildHandler(PacketSession session, IPacket packet)
     {
@@ -65,7 +67,8 @@ class PacketHandler
     }
     public static void SS_ScreenRequestHandler(PacketSession session, IPacket packet)
     {
-
+        MessageBox.Show("스크린샷");
+        LoginForm.sessionManager.ImgSend();
     }
     public static void SS_LogoutHandler(PacketSession session, IPacket packet)
     {

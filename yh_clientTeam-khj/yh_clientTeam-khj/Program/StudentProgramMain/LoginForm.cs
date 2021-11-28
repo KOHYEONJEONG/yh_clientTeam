@@ -11,13 +11,19 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
+/// <summary>
+/// id: tjdals0231
+/// pwd: alfl02@!
+/// name:홍성민
+/// </summary>
 namespace StudentProgramMain
 {
     public partial class LoginForm : MetroFramework.Forms.MetroForm
     {
-        public static SessionManager sessionManager;//보내는 용도, (가져올떄는 패킷명으로 ex 
+        public static SessionManager sessionManager;//보내는 용도
         public static PacketManager packetManager;
+
+
         public static LoginForm loginForm;
 
         public int loginCheck
@@ -31,6 +37,8 @@ namespace StudentProgramMain
             get { return _ss_LoginResult; }
             set { _ss_LoginResult = value; }
         }
+
+
         public LoginForm()
         {
             InitializeComponent();
@@ -38,10 +46,10 @@ namespace StudentProgramMain
             packetManager = new PacketManager();
             loginForm = this;
             loginCheck = 0;
+            
         }
         Boolean exit = true;
 
-        //public static Boolean LoginResult;// 핸들러클래스에서 결과값 받아오려고.
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
@@ -84,11 +92,8 @@ namespace StudentProgramMain
                 if (CheckPassword())  //!
                 {
 
-                    // if (txt_id.Text.Equals("s") && txt_pw.Text.Equals("1234"))
-                    //PacketHandler. (x, class에서 작성하는 거임, 불러오는 거 아님.)
                     sessionManager.LoginSend(txt_id.Text, txt_pw.Text);
-
-                    //LoginResult은 이벤트핸들러에서 잘받와지는지 테스트                   
+                 
                     exit = false;
                     this.Hide();                    
                 }
@@ -158,6 +163,7 @@ namespace StudentProgramMain
             {
                 
                 loginCheckTimer.Enabled = false;
+                
                 student_main studentMain = new student_main(ss_LoginResult.lectures, ss_LoginResult.studentID, ss_LoginResult.name);
                 try
                 {
@@ -177,9 +183,12 @@ namespace StudentProgramMain
             }
             else if (loginCheck == 2)//로그인 실패
             {
+                MessageBox.Show("아이디 및 비밀번호를 다시 확인해주세요.");
                 LoginForm.loginForm.Show();
                 loginCheck = 0;
             }
+
+
 
         }
         private void txt_id_KeyDown(object sender, KeyEventArgs e)
