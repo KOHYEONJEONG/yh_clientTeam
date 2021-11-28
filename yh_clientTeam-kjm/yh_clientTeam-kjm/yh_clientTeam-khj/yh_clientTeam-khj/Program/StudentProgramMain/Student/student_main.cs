@@ -24,7 +24,7 @@ namespace StudentProgramMain.Student
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
             }
-            
+            SetSize(lbl_subject);
         }
 
         SS_LoginResult.Lecture lecture;
@@ -85,7 +85,25 @@ namespace StudentProgramMain.Student
             return true;
 
         }
-      
+
+        //글씨체 조정 함수
+        public void SetSize(Label label)
+        {
+            string text = label.Text;
+            if (text.Length > 7)
+            {
+                Font fs = new Font(lbl_subject.Font.Name, 10, FontStyle.Bold);
+                lbl_subject.Font = fs;
+
+            }
+            else
+            {
+                // Font fb = new Font(lbl.Font.Name, 20,FontStyle.Bold);
+                //Font fb = new Font(lbl.Font.Name, 20);
+                //lbl.Font = fb;
+            }
+        }
+
 
 
         private void button3_Click(object sender, EventArgs e)

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace StudentProgramMain.Student
 {
-    public partial class StudentSchedule : Form
+    public partial class Student_Schedule : Form
     {
-        public StudentSchedule()
+        public Student_Schedule()
         {
             InitializeComponent();
+
             DataTable table = new DataTable();
 
             // column을 추가
@@ -40,9 +41,10 @@ namespace StudentProgramMain.Student
             // 값들이 입력된 테이블을 DataGridView에 입력
             dataGridView1.DataSource = table;
 
-
         }
 
         
+
+
     }
 }
