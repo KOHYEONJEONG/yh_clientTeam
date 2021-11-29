@@ -410,7 +410,7 @@ namespace ProgramMain
                 atndTime = 3;
                 attendBtn.Visible = true;
             }
-            else if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.strat_time) + 245) * 100)//수업 종료 5분전
+            else if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.end_time) - 55) * 100)//수업 종료 5분전
             {
                 MessageBox.Show("수업종료 5분전 입니다");
                 endBtn.Visible = true;
