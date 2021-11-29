@@ -108,10 +108,10 @@ namespace StudentProgramMain.Student
         private bool get_lecture_stdent(List<SS_LoginResult.Lecture> lectures, string studentId, string studentName)//해당하는 수업 가져오고, 수업 듣는 학생 리스트 가져옴
         {
             //수정 필 필
-            String nowtime = DateTime.Now.ToString("HHmm");
-            String day = getDay();
-            //String nowtime = DateTime.Now.ToString("1205");
-            //String day = "수";
+            //String nowtime = DateTime.Now.ToString("HHmm");
+            //String day = getDay();
+            String nowtime = DateTime.Now.ToString("1205");
+            String day = "수";
             No = studentId;
             name = studentName;
 
@@ -301,6 +301,16 @@ namespace StudentProgramMain.Student
             }
 
             return day;
+        }
+
+        private void lbl_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_start_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

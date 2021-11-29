@@ -36,6 +36,7 @@ namespace StudentProgramMain.Student
             this.lbl_name = new System.Windows.Forms.Label();
             this.lblNo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbl_subject = new System.Windows.Forms.Label();
             this.lbl_end = new System.Windows.Forms.Label();
             this.lbl_start = new System.Windows.Forms.Label();
@@ -67,13 +68,13 @@ namespace StudentProgramMain.Student
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(95, 199);
+            this.panel1.Size = new System.Drawing.Size(116, 226);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 110);
+            this.pictureBox1.Location = new System.Drawing.Point(11, 124);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(97, 89);
@@ -86,19 +87,20 @@ namespace StudentProgramMain.Student
             this.lbl_name.AutoSize = true;
             this.lbl_name.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_name.Location = new System.Drawing.Point(28, 34);
+            this.lbl_name.Location = new System.Drawing.Point(36, 34);
             this.lbl_name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(31, 15);
             this.lbl_name.TabIndex = 5;
             this.lbl_name.Text = "이름";
+            this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
             // 
             // lblNo
             // 
             this.lblNo.AutoSize = true;
             this.lblNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblNo.ForeColor = System.Drawing.Color.White;
-            this.lblNo.Location = new System.Drawing.Point(24, 14);
+            this.lblNo.Location = new System.Drawing.Point(11, 13);
             this.lblNo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNo.Name = "lblNo";
             this.lblNo.Size = new System.Drawing.Size(42, 21);
@@ -108,16 +110,29 @@ namespace StudentProgramMain.Student
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lbl_subject);
             this.panel2.Controls.Add(this.lbl_end);
             this.panel2.Controls.Add(this.lbl_start);
             this.panel2.Controls.Add(this.lbl_period);
             this.panel2.Controls.Add(this.lbl_day);
-            this.panel2.Location = new System.Drawing.Point(95, 0);
+            this.panel2.Location = new System.Drawing.Point(115, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(334, 50);
+            this.panel2.Size = new System.Drawing.Size(376, 54);
             this.panel2.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(302, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(16, 15);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "~";
             // 
             // lbl_subject
             // 
@@ -136,7 +151,7 @@ namespace StudentProgramMain.Student
             this.lbl_end.AutoSize = true;
             this.lbl_end.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_end.ForeColor = System.Drawing.Color.White;
-            this.lbl_end.Location = new System.Drawing.Point(286, 34);
+            this.lbl_end.Location = new System.Drawing.Point(338, 34);
             this.lbl_end.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_end.Name = "lbl_end";
             this.lbl_end.Size = new System.Drawing.Size(26, 15);
@@ -148,19 +163,20 @@ namespace StudentProgramMain.Student
             this.lbl_start.AutoSize = true;
             this.lbl_start.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_start.ForeColor = System.Drawing.Color.White;
-            this.lbl_start.Location = new System.Drawing.Point(229, 34);
+            this.lbl_start.Location = new System.Drawing.Point(267, 34);
             this.lbl_start.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_start.Name = "lbl_start";
             this.lbl_start.Size = new System.Drawing.Size(31, 15);
             this.lbl_start.TabIndex = 5;
             this.lbl_start.Text = "시작";
+            this.lbl_start.Click += new System.EventHandler(this.lbl_start_Click);
             // 
             // lbl_period
             // 
             this.lbl_period.AutoSize = true;
             this.lbl_period.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_period.ForeColor = System.Drawing.Color.White;
-            this.lbl_period.Location = new System.Drawing.Point(264, 14);
+            this.lbl_period.Location = new System.Drawing.Point(312, 14);
             this.lbl_period.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_period.Name = "lbl_period";
             this.lbl_period.Size = new System.Drawing.Size(64, 15);
@@ -172,7 +188,7 @@ namespace StudentProgramMain.Student
             this.lbl_day.AutoSize = true;
             this.lbl_day.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_day.ForeColor = System.Drawing.Color.White;
-            this.lbl_day.Location = new System.Drawing.Point(229, 14);
+            this.lbl_day.Location = new System.Drawing.Point(267, 14);
             this.lbl_day.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_day.Name = "lbl_day";
             this.lbl_day.Size = new System.Drawing.Size(31, 15);
@@ -185,10 +201,10 @@ namespace StudentProgramMain.Student
             this.btn_ask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ask.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ask.ForeColor = System.Drawing.Color.White;
-            this.btn_ask.Location = new System.Drawing.Point(142, 68);
+            this.btn_ask.Location = new System.Drawing.Point(160, 73);
             this.btn_ask.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ask.Name = "btn_ask";
-            this.btn_ask.Size = new System.Drawing.Size(114, 46);
+            this.btn_ask.Size = new System.Drawing.Size(124, 50);
             this.btn_ask.TabIndex = 1;
             this.btn_ask.Text = "질 문";
             this.btn_ask.UseVisualStyleBackColor = false;
@@ -200,10 +216,10 @@ namespace StudentProgramMain.Student
             this.btn_absent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_absent.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_absent.ForeColor = System.Drawing.Color.White;
-            this.btn_absent.Location = new System.Drawing.Point(142, 138);
+            this.btn_absent.Location = new System.Drawing.Point(160, 144);
             this.btn_absent.Margin = new System.Windows.Forms.Padding(2);
             this.btn_absent.Name = "btn_absent";
-            this.btn_absent.Size = new System.Drawing.Size(114, 46);
+            this.btn_absent.Size = new System.Drawing.Size(124, 48);
             this.btn_absent.TabIndex = 2;
             this.btn_absent.Text = "출석";
             this.btn_absent.UseVisualStyleBackColor = false;
@@ -215,7 +231,7 @@ namespace StudentProgramMain.Student
             this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSchedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Location = new System.Drawing.Point(276, 58);
+            this.btnSchedule.Location = new System.Drawing.Point(336, 73);
             this.btnSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.btnSchedule.Name = "btnSchedule";
             this.btnSchedule.Size = new System.Drawing.Size(103, 28);
@@ -230,7 +246,7 @@ namespace StudentProgramMain.Student
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(276, 92);
+            this.button4.Location = new System.Drawing.Point(336, 107);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(103, 28);
@@ -244,7 +260,7 @@ namespace StudentProgramMain.Student
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(276, 129);
+            this.button1.Location = new System.Drawing.Point(336, 144);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 28);
@@ -258,7 +274,7 @@ namespace StudentProgramMain.Student
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(276, 161);
+            this.button2.Location = new System.Drawing.Point(336, 176);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 28);
@@ -303,7 +319,7 @@ namespace StudentProgramMain.Student
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 198);
+            this.ClientSize = new System.Drawing.Size(490, 224);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
@@ -350,5 +366,6 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.NotifyIcon nfiTray;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label lbl_end;
+        private System.Windows.Forms.Label label1;
     }
 }
