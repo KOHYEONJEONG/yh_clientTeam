@@ -242,7 +242,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 499);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 487);
             this.tableLayoutPanel1.TabIndex = 29;
             // 
             // attenddanceBtn
@@ -431,33 +431,33 @@
             this.AllScreenShot_CMS,
             this.ATD_CMS});
             this.ProCMS.Name = "ProCMS";
-            this.ProCMS.Size = new System.Drawing.Size(181, 114);
+            this.ProCMS.Size = new System.Drawing.Size(123, 92);
             // 
             // show_CMS
             // 
             this.show_CMS.Name = "show_CMS";
-            this.show_CMS.Size = new System.Drawing.Size(180, 22);
+            this.show_CMS.Size = new System.Drawing.Size(122, 22);
             this.show_CMS.Text = "창띄우기";
             this.show_CMS.Click += new System.EventHandler(this.show_CMS_Click);
             // 
             // Question_TSM
             // 
             this.Question_TSM.Name = "Question_TSM";
-            this.Question_TSM.Size = new System.Drawing.Size(180, 22);
+            this.Question_TSM.Size = new System.Drawing.Size(122, 22);
             this.Question_TSM.Text = "문제전송";
             this.Question_TSM.Click += new System.EventHandler(this.Question_TSM_Click);
             // 
             // AllScreenShot_CMS
             // 
             this.AllScreenShot_CMS.Name = "AllScreenShot_CMS";
-            this.AllScreenShot_CMS.Size = new System.Drawing.Size(180, 22);
+            this.AllScreenShot_CMS.Size = new System.Drawing.Size(122, 22);
             this.AllScreenShot_CMS.Text = "스크린샷";
             this.AllScreenShot_CMS.Click += new System.EventHandler(this.AllScreenShot_CMS_Click);
             // 
             // ATD_CMS
             // 
             this.ATD_CMS.Name = "ATD_CMS";
-            this.ATD_CMS.Size = new System.Drawing.Size(180, 22);
+            this.ATD_CMS.Size = new System.Drawing.Size(122, 22);
             this.ATD_CMS.Text = "출석부";
             this.ATD_CMS.Click += new System.EventHandler(this.ATD_CMS_Click);
             // 

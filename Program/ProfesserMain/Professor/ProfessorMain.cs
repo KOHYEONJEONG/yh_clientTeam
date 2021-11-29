@@ -377,13 +377,17 @@ namespace ProgramMain
 
 
         int atndTime = 1;//교시
-        private void attendbtn_Click(object sender, EventArgs e)
+        private void attendbtn_Click(object sender, EventArgs e)//출석시작 하는 버튼
         {
             
 
             LoginForm.sessionManager.AtdRequest(atndTime, Tool.GetWeekNumber(System.DateTime.Now.Year, System.DateTime.Now.Month, System.DateTime.Now.Day, System.DateTime.Now.DayOfWeek));//교시,주차
             attendBtn.Visible = false;
-            //수업 시간 받고 교시마다 활성화 되게 해야 함
+            for (int i = 0; i < studList.Rows.Count; i++)
+            {
+                studList.Rows[i].Cells[5].Value = "결석";
+            }
+            
         }
 
         int _stuin = 0;//readonly 해제를 위한 변수
@@ -394,23 +398,23 @@ namespace ProgramMain
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("hh:mm:ss");//시계
+            nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("HHmmss");//시계
 
-            if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 100).ToString() + "00")//2교시 출석체크 시작
+            if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.strat_time) + 100) * 100)//2교시 출석체크 시작
             {
                 atndTime = 2;
                 attendBtn.Visible = true;
             }
-            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.strat_time) + 200).ToString() + "00")//3교시 출석체크 시작
+            else if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.strat_time) + 200) * 100)//3교시 출석체크 시작
             {
                 atndTime = 3;
                 attendBtn.Visible = true;
             }
-            else if (System.DateTime.Now.ToString("hhmmss") == (Convert.ToInt32(lecture.end_time) - 55).ToString() + "00")//수업 종료 5분전
+            else if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.strat_time) + 245) * 100)//수업 종료 5분전
             {
                 MessageBox.Show("수업종료 5분전 입니다");
                 endBtn.Visible = true;
-                
+
             }
 
 
