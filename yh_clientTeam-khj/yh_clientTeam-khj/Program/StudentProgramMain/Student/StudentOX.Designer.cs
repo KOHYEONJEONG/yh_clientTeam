@@ -78,11 +78,12 @@ namespace StudentProgramMain.Student
             // lbl_lefttime
             // 
             this.lbl_lefttime.AutoSize = true;
-            this.lbl_lefttime.ForeColor = System.Drawing.Color.Red;
+            this.lbl_lefttime.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lbl_lefttime.ForeColor = System.Drawing.Color.White;
             this.lbl_lefttime.Location = new System.Drawing.Point(11, 9);
             this.lbl_lefttime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_lefttime.Name = "lbl_lefttime";
-            this.lbl_lefttime.Size = new System.Drawing.Size(51, 15);
+            this.lbl_lefttime.Size = new System.Drawing.Size(83, 25);
             this.lbl_lefttime.TabIndex = 0;
             this.lbl_lefttime.Text = "OX 퀴즈";
             // 

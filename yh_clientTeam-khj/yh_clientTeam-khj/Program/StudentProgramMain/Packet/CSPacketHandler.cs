@@ -3,6 +3,7 @@ using StudentProgramMain.Student;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 
 class PacketHandler
@@ -42,7 +43,11 @@ class PacketHandler
     }
     public static void SS_EnterRoomHandler(PacketSession session, IPacket packet)
     {
+        Thread.Sleep(500);
+        student_main.studentMain.viewBtn.Invoke((MethodInvoker)delegate {
+            student_main.studentMain.viewBtn.Text = "수업 중";
 
+        });
     }
     public static void SS_QResultHandler(PacketSession session, IPacket packet)
     {
@@ -56,6 +61,8 @@ class PacketHandler
         student_main.studentMain.atdRequest = ss_AtdRequest;
 
         student_main.studentMain._btn_absent.Invoke((MethodInvoker)delegate {
+            student_main.studentMain._btn_absent.Text = ss_AtdRequest.classTime + "교시 출석하세요 ";
+            student_main.studentMain._btn_absent.BackColor = Color.FromArgb(70, 110, 61);          
             student_main.studentMain._btn_absent.Enabled = true;
         });
         
@@ -95,11 +102,24 @@ class PacketHandler
     }
     public static void SS_EndOfClassHandler(PacketSession session, IPacket packet)
     {
-        //MessageBox.Show("수업 종료");
-        student_main.studentMain.Invoke((MethodInvoker)delegate {
-            student_main.studentMain.Close();
-            student_main.studentMain.isClosing = true;
-        });
+        SS_EndOfClass pkt = packet as SS_EndOfClass;
+
+        if(pkt.result == 1)
+        {
+            MessageBox.Show("수업 종료");
+            student_main.studentMain.Invoke((MethodInvoker)delegate {
+                student_main.studentMain.isClosing = true;
+                student_main.studentMain.Close();
+            });
+        }
+        else
+        {
+            Thread.Sleep(500);
+            student_main.studentMain.viewBtn.Invoke((MethodInvoker)delegate {
+                student_main.studentMain.viewBtn.Text = "수업 대기 중";
+            });
+        }
+       
     }
 
     public static void SS_QustionFaildHandler(PacketSession session, IPacket packet)

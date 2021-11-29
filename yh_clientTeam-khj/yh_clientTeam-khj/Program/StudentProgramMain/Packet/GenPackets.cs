@@ -1,8 +1,9 @@
+using StudentProgramMain;
 using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using StudentProgramMain;
+
 
 public enum PacketID
 {
@@ -2788,7 +2789,7 @@ public class SS_ImgSendFaild : IPacket
 
 public class SS_EndOfClass : IPacket
 {
-        
+    public int result;    
     // 프로토콜 구분   
     public ushort Protocol { get { return (ushort)PacketID.SS_EndOfClass; } }
 
@@ -2803,7 +2804,8 @@ public class SS_EndOfClass : IPacket
         // 배열 현재 위치 이동
         count += sizeof(ushort);
         
-        
+        this.result = BitConverter.ToInt32(segment.Array, segment.Offset + count);
+		count += sizeof(int);
        
 
     }
@@ -2821,7 +2823,8 @@ public class SS_EndOfClass : IPacket
        // 배열 현재 위치 이동
         count += sizeof(ushort);
 
-        
+        Array.Copy(BitConverter.GetBytes(result), 0, segment.Array, segment.Offset + count, sizeof(int));
+		count += sizeof(int);
         // 전체 데이터사이즈를 배열 처음부터 인트크기만큼 넣어준다.
         Array.Copy(BitConverter.GetBytes(count), 0, segment.Array, segment.Offset, sizeof(int));
 

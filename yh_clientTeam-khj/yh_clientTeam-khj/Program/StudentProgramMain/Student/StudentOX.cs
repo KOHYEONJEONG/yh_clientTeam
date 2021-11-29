@@ -15,8 +15,8 @@ namespace StudentProgramMain.Student
         public StudentOX(SS_QuizOX ss_QuizOX)
         {
             InitializeComponent();
-            lbl_lefttime.Text = "남은 시간 : ";
-            lbl_q.Text = "Q)  " + ss_QuizOX.quiz;
+            lbl_lefttime.Text = "OX 퀴즈 ";
+            lbl_q.Text = ss_QuizOX.quiz;
         } 
 
 

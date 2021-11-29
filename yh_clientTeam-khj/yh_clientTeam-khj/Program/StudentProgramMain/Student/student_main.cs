@@ -30,6 +30,7 @@ namespace StudentProgramMain.Student
 
         SS_LoginResult.Lecture lecture;
 
+         
         public SS_AtdRequest atdRequest
         {
             get;
@@ -331,19 +332,51 @@ namespace StudentProgramMain.Student
 
         }
 
-        int Click_Statck = 0; 
+        int Click_Statck = 0;
         private void button1_Click(object sender, EventArgs e)
         {
             Click_Statck++;
-            if (Click_Statck > 5)
+            if (Click_Statck > 6)
             {
-                WaterPic.Visible = true;
-            }
+                waterBtn.Visible = true;
+            }           
+        }
 
+        private void waterBtn_Click(object sender, EventArgs e)
+        {
+            waterBtn.Visible = false;
+            viewBtn.Enabled = true;
+            Click_Statck = 0;
+        }
+
+        private void viewBtn_Click(object sender, EventArgs e)
+        {
+            Click_Statck++;
+            if (Click_Statck > 7)
+            {
+                viewBtn.Text = "┣┿┿┿┿┿┿┿┿┿┿┿┿┿┿┿┿┤";
+                
+                this.isClosing = true;
+            }
             else
             {
-                WaterPic.Visible = false;
+                viewBtn.Text = "수업중";
             }
+        }
+
+        private void lblNo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -46,7 +46,6 @@ namespace StudentProgramMain.Student
                 else
                 {
                     LoginForm.sessionManager.QuizAnswer(answer.Text);
-                    MessageBox.Show("답변완료");
                     this.Close();
                 }
             

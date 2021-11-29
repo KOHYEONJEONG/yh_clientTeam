@@ -51,13 +51,12 @@ namespace StudentProgramMain.Student
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.WaterPic = new System.Windows.Forms.PictureBox();
+            this.viewBtn = new System.Windows.Forms.Button();
+            this.waterBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.cmsMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.WaterPic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -100,13 +99,14 @@ namespace StudentProgramMain.Student
             // btnSchedule
             // 
             this.btnSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.btnSchedule.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSchedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Location = new System.Drawing.Point(2, 58);
+            this.btnSchedule.Location = new System.Drawing.Point(-10, 53);
             this.btnSchedule.Margin = new System.Windows.Forms.Padding(2);
             this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(112, 46);
+            this.btnSchedule.Size = new System.Drawing.Size(135, 46);
             this.btnSchedule.TabIndex = 3;
             this.btnSchedule.Text = "시간표";
             this.btnSchedule.UseVisualStyleBackColor = false;
@@ -279,6 +279,8 @@ namespace StudentProgramMain.Student
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
             this.button1.Location = new System.Drawing.Point(293, 132);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(34, 34);
@@ -286,34 +288,40 @@ namespace StudentProgramMain.Student
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // viewBtn
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
-            this.button2.Location = new System.Drawing.Point(159, 175);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 47);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = false;
+            this.viewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.viewBtn.Enabled = false;
+            this.viewBtn.ForeColor = System.Drawing.Color.White;
+            this.viewBtn.Location = new System.Drawing.Point(159, 175);
+            this.viewBtn.Name = "viewBtn";
+            this.viewBtn.Size = new System.Drawing.Size(303, 47);
+            this.viewBtn.TabIndex = 4;
+            this.viewBtn.Text = "수업 대기중";
+            this.viewBtn.UseVisualStyleBackColor = false;
+            this.viewBtn.Click += new System.EventHandler(this.viewBtn_Click);
             // 
-            // WaterPic
+            // waterBtn
             // 
-            this.WaterPic.BackColor = System.Drawing.Color.Transparent;
-            this.WaterPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.WaterPic.Image = global::StudentProgramMain.Properties.Resources.물;
-            this.WaterPic.Location = new System.Drawing.Point(304, 164);
-            this.WaterPic.Name = "WaterPic";
-            this.WaterPic.Size = new System.Drawing.Size(34, 50);
-            this.WaterPic.TabIndex = 5;
-            this.WaterPic.TabStop = false;
-            this.WaterPic.Visible = false;
+            this.waterBtn.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.waterBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.waterBtn.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.waterBtn.Location = new System.Drawing.Point(316, 155);
+            this.waterBtn.Name = "waterBtn";
+            this.waterBtn.Size = new System.Drawing.Size(11, 37);
+            this.waterBtn.TabIndex = 5;
+            this.waterBtn.Text = "button3";
+            this.waterBtn.UseVisualStyleBackColor = false;
+            this.waterBtn.Visible = false;
+            this.waterBtn.Click += new System.EventHandler(this.waterBtn_Click);
             // 
             // student_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 224);
-            this.Controls.Add(this.WaterPic);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.waterBtn);
+            this.Controls.Add(this.viewBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_absent);
             this.Controls.Add(this.btn_ask);
@@ -333,7 +341,6 @@ namespace StudentProgramMain.Student
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.cmsMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.WaterPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,7 +367,7 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Label lbl_end;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox WaterPic;
+        private System.Windows.Forms.Button waterBtn;
+        public System.Windows.Forms.Button viewBtn;
     }
 }
