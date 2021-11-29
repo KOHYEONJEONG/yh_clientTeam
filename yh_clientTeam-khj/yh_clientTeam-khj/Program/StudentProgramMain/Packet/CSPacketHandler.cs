@@ -64,7 +64,7 @@ class PacketHandler
     public static void SS_QuizHandler(PacketSession session, IPacket packet)
     {
 
-        MessageBox.Show("교수님께서 질문전송.");
+        //MessageBox.Show("교수님께서 문제.");
         //Student_answer.studentAnswer.ss_Quiz = packet as SS_Quiz;
         //Student_answer.studentAnswer.ss_Quiz = packet as SS_Quiz;
         //Student_answer.studentAnswer.ss_Quiz 

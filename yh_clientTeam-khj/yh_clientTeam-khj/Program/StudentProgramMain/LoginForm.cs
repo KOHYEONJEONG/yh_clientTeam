@@ -167,7 +167,7 @@ namespace StudentProgramMain
                 student_main studentMain = new student_main(ss_LoginResult.lectures, ss_LoginResult.studentID, ss_LoginResult.name);
                 try
                 {
-                    MessageBox.Show("로그인 성공");
+                    //MessageBox.Show("로그인 성공");
                     studentMain.ShowDialog();
                 }
                 catch
