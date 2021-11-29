@@ -292,6 +292,8 @@ namespace StudentProgramMain.Student
             // 
             this.viewBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
             this.viewBtn.Enabled = false;
+            this.viewBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.viewBtn.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.viewBtn.ForeColor = System.Drawing.Color.White;
             this.viewBtn.Location = new System.Drawing.Point(159, 175);
             this.viewBtn.Name = "viewBtn";

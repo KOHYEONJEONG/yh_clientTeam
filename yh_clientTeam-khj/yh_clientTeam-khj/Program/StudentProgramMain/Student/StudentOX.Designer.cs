@@ -67,13 +67,14 @@ namespace StudentProgramMain.Student
             this.lbl_q.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.lbl_q.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lbl_q.ForeColor = System.Drawing.Color.White;
-            this.lbl_q.Location = new System.Drawing.Point(20, 29);
+            this.lbl_q.Location = new System.Drawing.Point(21, 46);
             this.lbl_q.Multiline = true;
             this.lbl_q.Name = "lbl_q";
             this.lbl_q.ReadOnly = true;
             this.lbl_q.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.lbl_q.Size = new System.Drawing.Size(479, 59);
             this.lbl_q.TabIndex = 4;
+            this.lbl_q.TextChanged += new System.EventHandler(this.lbl_q_TextChanged);
             // 
             // lbl_lefttime
             // 
@@ -86,6 +87,7 @@ namespace StudentProgramMain.Student
             this.lbl_lefttime.Size = new System.Drawing.Size(83, 25);
             this.lbl_lefttime.TabIndex = 0;
             this.lbl_lefttime.Text = "OX 퀴즈";
+            this.lbl_lefttime.Click += new System.EventHandler(this.lbl_lefttime_Click);
             // 
             // StudentOX
             // 

@@ -102,8 +102,9 @@ class PacketHandler
     }
     public static void SS_EndOfClassHandler(PacketSession session, IPacket packet)
     {
-        SS_EndOfClass pkt = packet as SS_EndOfClass;
 
+        SS_EndOfClass pkt = packet as SS_EndOfClass;
+        Thread.Sleep(500);
         if(pkt.result == 1)
         {
             MessageBox.Show("수업 종료");

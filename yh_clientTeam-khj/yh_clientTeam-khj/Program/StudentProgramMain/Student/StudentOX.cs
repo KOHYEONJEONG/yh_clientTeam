@@ -32,7 +32,14 @@ namespace StudentProgramMain.Student
             this.Close();
         }
 
+        private void lbl_lefttime_Click(object sender, EventArgs e)
+        {
 
-      
+        }
+
+        private void lbl_q_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
