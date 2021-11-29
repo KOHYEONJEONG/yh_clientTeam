@@ -235,6 +235,7 @@ namespace StudentProgramMain.Student
                 sa.ShowDialog();                
             }
 
+            Click_Statck = 0;
         }
 
         private void clock_Tick(object sender, EventArgs e)
@@ -328,6 +329,21 @@ namespace StudentProgramMain.Student
         private void lbl_start_Click(object sender, EventArgs e)
         {
 
+        }
+
+        int Click_Statck = 0; 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Click_Statck++;
+            if (Click_Statck > 5)
+            {
+                WaterPic.Visible = true;
+            }
+
+            else
+            {
+                WaterPic.Visible = false;
+            }
         }
     }
 }

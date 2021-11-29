@@ -34,6 +34,7 @@ namespace StudentProgramMain.Student
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_name = new System.Windows.Forms.Label();
+            this.btnSchedule = new System.Windows.Forms.Button();
             this.lblNo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,17 +45,19 @@ namespace StudentProgramMain.Student
             this.lbl_day = new System.Windows.Forms.Label();
             this.btn_ask = new System.Windows.Forms.Button();
             this.btn_absent = new System.Windows.Forms.Button();
-            this.btnSchedule = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.atdTimer = new System.Windows.Forms.Timer(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clock = new System.Windows.Forms.Timer(this.components);
             this.nfiTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.WaterPic = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.cmsMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.WaterPic)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,7 @@ namespace StudentProgramMain.Student
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.lbl_name);
+            this.panel1.Controls.Add(this.btnSchedule);
             this.panel1.Controls.Add(this.lblNo);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
@@ -92,6 +96,21 @@ namespace StudentProgramMain.Student
             this.lbl_name.TabIndex = 5;
             this.lbl_name.Text = "이름";
             this.lbl_name.Click += new System.EventHandler(this.lbl_name_Click);
+            // 
+            // btnSchedule
+            // 
+            this.btnSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSchedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSchedule.ForeColor = System.Drawing.Color.White;
+            this.btnSchedule.Location = new System.Drawing.Point(2, 58);
+            this.btnSchedule.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSchedule.Name = "btnSchedule";
+            this.btnSchedule.Size = new System.Drawing.Size(112, 46);
+            this.btnSchedule.TabIndex = 3;
+            this.btnSchedule.Text = "시간표";
+            this.btnSchedule.UseVisualStyleBackColor = false;
+            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
             // 
             // lblNo
             // 
@@ -199,10 +218,10 @@ namespace StudentProgramMain.Student
             this.btn_ask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ask.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_ask.ForeColor = System.Drawing.Color.White;
-            this.btn_ask.Location = new System.Drawing.Point(166, 74);
+            this.btn_ask.Location = new System.Drawing.Point(155, 58);
             this.btn_ask.Margin = new System.Windows.Forms.Padding(2);
             this.btn_ask.Name = "btn_ask";
-            this.btn_ask.Size = new System.Drawing.Size(124, 50);
+            this.btn_ask.Size = new System.Drawing.Size(112, 92);
             this.btn_ask.TabIndex = 1;
             this.btn_ask.Text = "질 문";
             this.btn_ask.UseVisualStyleBackColor = false;
@@ -214,43 +233,14 @@ namespace StudentProgramMain.Student
             this.btn_absent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_absent.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_absent.ForeColor = System.Drawing.Color.White;
-            this.btn_absent.Location = new System.Drawing.Point(166, 157);
+            this.btn_absent.Location = new System.Drawing.Point(350, 58);
             this.btn_absent.Margin = new System.Windows.Forms.Padding(2);
             this.btn_absent.Name = "btn_absent";
-            this.btn_absent.Size = new System.Drawing.Size(124, 48);
+            this.btn_absent.Size = new System.Drawing.Size(112, 92);
             this.btn_absent.TabIndex = 2;
             this.btn_absent.Text = "출석";
             this.btn_absent.UseVisualStyleBackColor = false;
             this.btn_absent.Click += new System.EventHandler(this.btn_absent_Click);
-            // 
-            // btnSchedule
-            // 
-            this.btnSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchedule.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSchedule.ForeColor = System.Drawing.Color.White;
-            this.btnSchedule.Location = new System.Drawing.Point(336, 74);
-            this.btnSchedule.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Size = new System.Drawing.Size(124, 48);
-            this.btnSchedule.TabIndex = 3;
-            this.btnSchedule.Text = "시간표";
-            this.btnSchedule.UseVisualStyleBackColor = false;
-            this.btnSchedule.Click += new System.EventHandler(this.btnSchedule_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("맑은 고딕", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(336, 157);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 48);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "새로고침";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // atdTimer
             // 
@@ -286,13 +276,45 @@ namespace StudentProgramMain.Student
             this.nfiTray.Visible = true;
             this.nfiTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.nfiTray_MouseDoubleClick);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.button1.Location = new System.Drawing.Point(293, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(34, 34);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(90)))), ((int)(((byte)(61)))));
+            this.button2.Location = new System.Drawing.Point(159, 175);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 47);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // WaterPic
+            // 
+            this.WaterPic.BackColor = System.Drawing.Color.Transparent;
+            this.WaterPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.WaterPic.Image = global::StudentProgramMain.Properties.Resources.물;
+            this.WaterPic.Location = new System.Drawing.Point(304, 164);
+            this.WaterPic.Name = "WaterPic";
+            this.WaterPic.Size = new System.Drawing.Size(34, 50);
+            this.WaterPic.TabIndex = 5;
+            this.WaterPic.TabStop = false;
+            this.WaterPic.Visible = false;
+            // 
             // student_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(506, 224);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.btnSchedule);
+            this.Controls.Add(this.WaterPic);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_absent);
             this.Controls.Add(this.btn_ask);
             this.Controls.Add(this.panel2);
@@ -311,6 +333,7 @@ namespace StudentProgramMain.Student
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.cmsMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.WaterPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -322,7 +345,6 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.Button btn_ask;
         private System.Windows.Forms.Button btn_absent;
         private System.Windows.Forms.Button btnSchedule;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label lblNo;
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -337,5 +359,8 @@ namespace StudentProgramMain.Student
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label lbl_end;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox WaterPic;
     }
 }
