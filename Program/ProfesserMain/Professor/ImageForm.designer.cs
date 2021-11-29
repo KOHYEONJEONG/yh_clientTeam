@@ -137,6 +137,8 @@ namespace ProgramMain
             this.Controls.Add(this.PbScreenshot);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ImageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "고구마20210903의 스크린샷";

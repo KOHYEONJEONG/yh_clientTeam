@@ -117,6 +117,7 @@ namespace ProgramMain
             this.Controls.Add(this.attendList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "attendanceForm";
             this.Text = "attendanceForm";
             this.Load += new System.EventHandler(this.attendanceForm_Load);

@@ -355,6 +355,8 @@ namespace ProgramMain
             this.Controls.Add(tableLayoutPanel1);
             this.Controls.Add(this.tb_question);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "QuestionForm";
             this.Text = "Question";
             this.Load += new System.EventHandler(this.Question_form_Load);

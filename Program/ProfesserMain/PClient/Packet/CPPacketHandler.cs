@@ -321,7 +321,7 @@ class PacketHandler
                 ProfesserMain.professerMain._studList.Invoke((MethodInvoker)delegate()
                 {
                     ProfesserMain.professerMain._studList.Rows.Add(//맨 뒤 행에 옮기기
-                    ProfesserMain.professerMain._studList.Rows[i].Cells[0].Value,
+                    false,
                     ProfesserMain.professerMain._studList.Rows[i].Cells[1].Value,
                     ProfesserMain.professerMain._studList.Rows[i].Cells[2].Value,
                     ProfesserMain.professerMain._studList.Rows[i].Cells[3].Value,

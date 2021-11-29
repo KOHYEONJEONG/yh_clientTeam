@@ -139,6 +139,8 @@ namespace ProgramMain
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btnOk);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ReplyYNForm";
             this.Text = "학생 응답";
             this.Load += new System.EventHandler(this.ReplyYNForm_Load);

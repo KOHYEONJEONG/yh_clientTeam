@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfesserMain));
             this.allcheck = new System.Windows.Forms.CheckBox();
             this.attendBtn = new System.Windows.Forms.Button();
             this.endBtn = new System.Windows.Forms.Button();
@@ -57,11 +58,18 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.previewBox = new System.Windows.Forms.PictureBox();
+            this.ProTray = new System.Windows.Forms.NotifyIcon(this.components);
+            this.ProCMS = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.show_CMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.Question_TSM = new System.Windows.Forms.ToolStripMenuItem();
+            this.AllScreenShot_CMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.ATD_CMS = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
+            this.ProCMS.SuspendLayout();
             this.SuspendLayout();
             // 
             // allcheck
@@ -407,13 +415,58 @@
             this.previewBox.TabStop = false;
             this.previewBox.Visible = false;
             // 
+            // ProTray
+            // 
+            this.ProTray.ContextMenuStrip = this.ProCMS;
+            this.ProTray.Icon = ((System.Drawing.Icon)(resources.GetObject("ProTray.Icon")));
+            this.ProTray.Text = "유한 등대";
+            this.ProTray.Visible = true;
+            this.ProTray.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ProTray_MouseDoubleClick);
+            // 
+            // ProCMS
+            // 
+            this.ProCMS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.show_CMS,
+            this.Question_TSM,
+            this.AllScreenShot_CMS,
+            this.ATD_CMS});
+            this.ProCMS.Name = "ProCMS";
+            this.ProCMS.Size = new System.Drawing.Size(181, 114);
+            // 
+            // show_CMS
+            // 
+            this.show_CMS.Name = "show_CMS";
+            this.show_CMS.Size = new System.Drawing.Size(180, 22);
+            this.show_CMS.Text = "창띄우기";
+            this.show_CMS.Click += new System.EventHandler(this.show_CMS_Click);
+            // 
+            // Question_TSM
+            // 
+            this.Question_TSM.Name = "Question_TSM";
+            this.Question_TSM.Size = new System.Drawing.Size(180, 22);
+            this.Question_TSM.Text = "문제전송";
+            this.Question_TSM.Click += new System.EventHandler(this.Question_TSM_Click);
+            // 
+            // AllScreenShot_CMS
+            // 
+            this.AllScreenShot_CMS.Name = "AllScreenShot_CMS";
+            this.AllScreenShot_CMS.Size = new System.Drawing.Size(180, 22);
+            this.AllScreenShot_CMS.Text = "스크린샷";
+            this.AllScreenShot_CMS.Click += new System.EventHandler(this.AllScreenShot_CMS_Click);
+            // 
+            // ATD_CMS
+            // 
+            this.ATD_CMS.Name = "ATD_CMS";
+            this.ATD_CMS.Size = new System.Drawing.Size(180, 22);
+            this.ATD_CMS.Text = "출석부";
+            this.ATD_CMS.Click += new System.EventHandler(this.ATD_CMS_Click);
+            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.ClientSize = new System.Drawing.Size(798, 489);
-            this.ControlBox = false;
             this.Controls.Add(this.previewBox);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -421,9 +474,11 @@
             this.Controls.Add(this.studList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProfesserMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "메인화면";
+            this.Text = "유한등대(교수)";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProfesserMain_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studList)).EndInit();
@@ -433,6 +488,7 @@
             this.tableLayoutPanel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();
+            this.ProCMS.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -465,6 +521,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox previewBox;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NotifyIcon ProTray;
+        private System.Windows.Forms.ContextMenuStrip ProCMS;
+        private System.Windows.Forms.ToolStripMenuItem Question_TSM;
+        private System.Windows.Forms.ToolStripMenuItem AllScreenShot_CMS;
+        private System.Windows.Forms.ToolStripMenuItem ATD_CMS;
+        private System.Windows.Forms.ToolStripMenuItem show_CMS;
     }
 }
 

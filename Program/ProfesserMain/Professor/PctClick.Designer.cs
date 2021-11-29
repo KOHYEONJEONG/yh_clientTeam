@@ -52,6 +52,8 @@ namespace ProgramMain
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PctClick";
             this.Text = "PctClick";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

@@ -89,13 +89,14 @@ namespace ProgramMain
             //수정 필 필
             String nowtime = DateTime.Now.ToString("HHmm");
             String day = Tool.getDay();
-            //String nowtime = DateTime.Now.ToString("1005");
-            //String day = "수";
+            //string nowtime = DateTime.Now.ToString("1005");
+            //string day = "수";
+
             foreach (var l in lectures)//수업정보 저장
             {
                 if (Convert.ToInt32(l.strat_time) <= Convert.ToInt32(nowtime) && Convert.ToInt32(l.end_time) >= Convert.ToInt32(nowtime))
                 {
-
+                    
                     if (l.weekday == day)
                     {
 
@@ -170,7 +171,7 @@ namespace ProgramMain
 
         private void listView1_SelectedIndexChanged_2(object sender, System.EventArgs e)
         {
-
+            
         }
 
         // 스크린샷 버튼 이벤트
@@ -451,13 +452,49 @@ namespace ProgramMain
             if (closeIndex == false)//종료버튼이 아니면 안꺼지게
             {
                 e.Cancel = true;
+                this.Hide();
             }
+            else{
+                LoginForm.loginForm.exit = 2;
+                LoginForm.loginForm.Close();
+            }
+
             
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             closeIndex = true;
+        }
+
+        private void ProTray_MouseDoubleClick(object sender, MouseEventArgs e)//트레이 아이콘 메인 창 띄우기
+        {
+            this.Show();
+        }
+
+        private void show_CMS_Click(object sender, EventArgs e)//트레이 아이콘 메인 창 띄우기
+        {
+            this.Show();
+        }
+
+        private void Question_TSM_Click(object sender, EventArgs e)//트레이 아이콘 문제 전송 창 띄우기
+        {
+            questionbtn_Click(sender,e);
+        }
+
+        private void AllScreenShot_CMS_Click(object sender, EventArgs e)//트레이 아이콘 전체 스크린샷 요청
+        {
+            List<String> list = new List<string>();
+            for (int i = 0; i < stuin; i++)
+            {
+                list.Add(studList.Rows[i].Cells[1].Value.ToString());
+            }
+            LoginForm.sessionManager.ScreenShotRequset(list);
+        }
+
+        private void ATD_CMS_Click(object sender, EventArgs e)//트레이 아이콘 출석부 보기
+        {
+            attenddanceBtn_Click(sender, e);
         }
     }
 }

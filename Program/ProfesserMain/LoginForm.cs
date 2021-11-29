@@ -44,7 +44,7 @@ namespace ProgramMain
             this.ActiveControl = txt_id;
         }
 
-        Boolean exit = true;
+        public int exit = 1;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -135,18 +135,21 @@ namespace ProgramMain
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!exit)
+            if (exit == 0)
             {
                 return;
             }
 
-            else
+            else if(exit == 1)
             {
 
                 if (MessageBox.Show("알림창", "학습 도우미 프로그램을 종료하시나요?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.ExitThread();
                 }
+            }
+            else {
+                Application.ExitThread();
             }
         }
 
@@ -160,7 +163,7 @@ namespace ProgramMain
         {
             if (loginCheck == 1)//로그인 성공
             {
-                loginCheckTimer.Enabled = false;
+                loginCheckTimer.Enabled = false;//타이머 종료
                 ProfesserMain professerMain = new ProfesserMain(sp_LoginResult.lectures,sp_LoginResult.students,sp_LoginResult.name);
                 
                 try
@@ -175,9 +178,10 @@ namespace ProgramMain
                 if (loginCheck == 4)//수업 없음
                 {
                     MessageBox.Show("수업이 없습니다");
+                    exit = 1;
                 }
-                exit = false;
-                Application.ExitThread();
+                //exit = false;
+                //Application.ExitThread();
             }
             else if (loginCheck == 2)//로그인 실패
             {
