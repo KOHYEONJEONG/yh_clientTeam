@@ -17,7 +17,11 @@ namespace StudentProgramMain.Student
     {
         public static student_main studentMain;
         List<SS_LoginResult.Lecture> _lectures;
-        
+        public Timer _atdTimer
+        {
+            get { return atdTimer; }
+            set { atdTimer = value; }
+        }
         public Button _btn_absent
         {
             get { return btn_absent; }
@@ -38,7 +42,8 @@ namespace StudentProgramMain.Student
             InitializeComponent();
             studentMain = this;
             atdRequest = new SS_AtdRequest();
-            if(!get_lecture_stdent(lectures, studentId, studentName))
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            if (!get_lecture_stdent(lectures, studentId, studentName))
             {
                 LoginForm.loginForm.loginCheck = 4;
                 this.Close();
@@ -98,7 +103,7 @@ namespace StudentProgramMain.Student
             lblNo.Text = No;
             lbl_name.Text = name;
             lbl_day.Text = lecture.weekday+"요일";
-            MessageBox.Show(lecture.strat_time.Length.ToString());
+            //MessageBox.Show(lecture.strat_time.Length.ToString());
             lbl_start.Text = lecture.strat_time.Substring(0, 2) + ":"+ lecture.strat_time.Substring(2, 2);
             lbl_end.Text = lecture.end_time.Substring(0, 2) +":"+ lecture.end_time.Substring(2,2);
             lbl_subject.Text = lecture.lecture_name;
@@ -135,10 +140,9 @@ namespace StudentProgramMain.Student
             if (lecture == null)
             {
                 return false;
-            }
-         
+            }         
 
-            Timer.Enabled = true;
+            
 
             return true;
 
@@ -154,21 +158,22 @@ namespace StudentProgramMain.Student
 
       
 
-        int TNum = 900; //타이머 진행 숫자(출석시간)
+        //int TNum = 900; //타이머 진행 숫자(출석시간)
 
         private void btn_absent_Click(object sender, EventArgs e)
         {
-
+            btn_absent.Enabled = false;
+            LoginForm.sessionManager.AtdSend(atdRequest.week, 1, atdRequest.classTime);            
             //System.DateTime.Now.ToString("yyyy");
             //출석 버튼 클릭했을때 클릭한 시간 나타내기
-            string date = DateTime.Now.ToString("HHmm");
+            //string date = DateTime.Now.ToString("HHmm");
             //타이머 비활성화
-            this.Timer.Enabled = false;
+            //this.atdTimer.Enabled = false;
 
-            int atd = 0;
+            //int atd = 0;
 
             // TNum(타이머 제한 시간)에 따라 출석, 지각, 결석 분류
-            if (600 <= TNum)
+            /*if (600 <= TNum)
             {
                 btn_absent.Text = "출 석" + date;
                 //button1.Enabled = false;
@@ -185,36 +190,35 @@ namespace StudentProgramMain.Student
                 btn_absent.Text = "결 석" + date;
                // button1.Enabled = false;
                 atd = 0;
-            }
+            }*/
 
-            LoginForm.sessionManager.AtdSend(atdRequest.week,atd,atdRequest.classTime);
+            
 
         }
-
         private void Timer_Tick(object sender, EventArgs e)
         {
             //this.lbl_timer.Text = "" + TNum; //예비용 타이머 시각 확인
-            TNum--; //0~5분 :출석  5분~15분 :지각   15분 이후 :결석 처리(900초)
-            if (TNum < 0)
-            {
-                this.Timer.Enabled = false;
-                return;
-            }
-            if (600 <= TNum)
-            {
-                this.btn_absent.BackColor = Color.FromArgb(0, 163, 133);
+            //TNum--; //0~5분 :출석  5분~15분 :지각   15분 이후 :결석 처리(900초)
+            //if (TNum < 0)
+            //{
+            //    this.atdTimer.Enabled = false;
+            //    return;
+            //}
+            //if (600 <= TNum)
+            //{
+            //    this.btn_absent.BackColor = Color.FromArgb(0, 163, 133);
 
-            }
-            else if (0 < TNum && TNum < 600)
-            {
-                this.btn_absent.BackColor = Color.FromArgb(255, 128, 0);
-                this.btn_absent.Text = "지 각";
-            }
-            else if (TNum == 0)
-            {
-                this.btn_absent.BackColor = Color.FromArgb(239, 72, 72);
-                this.btn_absent.Text = "결 석";
-            }
+            //}
+            //else if (0 < TNum && TNum < 600)
+            //{
+            //    this.btn_absent.BackColor = Color.FromArgb(255, 128, 0);
+            //    this.btn_absent.Text = "지 각";
+            //}
+            //else if (TNum == 0)
+            //{
+            //    this.btn_absent.BackColor = Color.FromArgb(239, 72, 72);
+            //    this.btn_absent.Text = "결 석";
+            //}
 
 
             // 교수님 질문오면( 핸들러 -> quizcheck신호 주고 -> 열기 )
@@ -257,10 +261,20 @@ namespace StudentProgramMain.Student
             VisibleChange(true, false);
         }
 
+        public bool isClosing = false;
         private void student_main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            VisibleChange(false, true);
+        {  
+            if (isClosing)
+            {
+                LoginForm.loginForm.exit = 2;
+                LoginForm.loginForm.Close();
+            }
+            else
+            {
+                e.Cancel = true;
+                VisibleChange(false, true);
+            }
+            
         }
 
         private void btn_ask_Click(object sender, EventArgs e)

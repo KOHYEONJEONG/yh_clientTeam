@@ -48,7 +48,7 @@ namespace StudentProgramMain
             loginCheck = 0;
             
         }
-        Boolean exit = true;
+        public int exit = 1;
 
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace StudentProgramMain
             //글자수 제한
             this.txt_id.MaxLength = 32;
             this.txt_pw.MaxLength = 32;
-
+            this.FormBorderStyle = FormBorderStyle.None;
             this.StyleManager = metroStyleManager1;
             metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Light;
             metroStyleManager1.Style = MetroFramework.MetroColorStyle.Green;
@@ -94,7 +94,7 @@ namespace StudentProgramMain
 
                     sessionManager.LoginSend(txt_id.Text, txt_pw.Text);
                  
-                    exit = false;
+                    exit = 0;
                     this.Hide();                    
                 }
                 else
@@ -136,18 +136,21 @@ namespace StudentProgramMain
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!exit)
+            if (exit == 0)
             {
                 return;
             }
 
-            else
+            else if(exit == 1)
             {
-
                 if (MessageBox.Show("알림창", "학습 도우미 프로그램을 종료하시나요?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     Application.ExitThread();
                 }
+            }
+            else
+            {
+                Application.ExitThread();
             }
         }
         public Timer _loginCheckTimer
@@ -177,9 +180,10 @@ namespace StudentProgramMain
                 if (loginCheck == 4)//수업 없음
                 {
                     MessageBox.Show("수업이 없습니다");
+                    Application.ExitThread();
                 }
-                exit = false;
-                Application.ExitThread();
+                exit = 0;
+                //Application.ExitThread();
             }
             else if (loginCheck == 2)//로그인 실패
             {
@@ -207,6 +211,14 @@ namespace StudentProgramMain
             }
         }
 
-        
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

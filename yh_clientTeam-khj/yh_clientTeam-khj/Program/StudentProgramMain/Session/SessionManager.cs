@@ -13,21 +13,8 @@ namespace StudentProgramMain
 
         ServerSession _sessions;
         object _lock = new object();
-
        
-        public void LoginSend()
-        {
-            lock (_lock)
-            {
-                CS_Login loging_packet = new CS_Login();
-                
-                    loging_packet.id = "test01010";
-                    loging_packet.pwd = "test03401";
-                    ArraySegment<byte> segment = loging_packet.Write();
-                    _sessions.Send(segment);
-            }
-
-        }
+       
 
         #region 로그인
         public void LoginSend(string id, string pwd)

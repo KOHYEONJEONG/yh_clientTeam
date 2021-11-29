@@ -2,6 +2,7 @@ using StudentProgramMain;
 using StudentProgramMain.Student;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Windows.Forms;
 
 class PacketHandler
@@ -50,11 +51,14 @@ class PacketHandler
     public static void SS_AtdRequestHandler(PacketSession session, IPacket packet)    {
         
         SS_AtdRequest ss_AtdRequest = packet as SS_AtdRequest;
+             
         MessageBox.Show(ss_AtdRequest.week + "주" + ss_AtdRequest.classTime + "교시 출석요청");
+        student_main.studentMain.atdRequest = ss_AtdRequest;
+
         student_main.studentMain._btn_absent.Invoke((MethodInvoker)delegate {
             student_main.studentMain._btn_absent.Enabled = true;
         });
-        student_main.studentMain.atdRequest = ss_AtdRequest;
+        
     }
     public static void SS_QuizOXHandler(PacketSession session, IPacket packet)
     {
@@ -79,10 +83,11 @@ class PacketHandler
     {
       
     }
+
     public static void SS_ScreenRequestHandler(PacketSession session, IPacket packet)
-    {
-        MessageBox.Show("스크린샷");
+    {        
         LoginForm.sessionManager.ImgSend();
+        //MessageBox.Show("스크린샷");
     }
     public static void SS_LogoutHandler(PacketSession session, IPacket packet)
     {
@@ -93,6 +98,7 @@ class PacketHandler
         //MessageBox.Show("수업 종료");
         student_main.studentMain.Invoke((MethodInvoker)delegate {
             student_main.studentMain.Close();
+            student_main.studentMain.isClosing = true;
         });
     }
 
@@ -101,5 +107,37 @@ class PacketHandler
         //교수한테 질문을 보냈는데 방에 없거나, 자리에 없을 시 실패
         MessageBox.Show("교수님이 현재 질문을 받을 수 없는 상태입니다.");
     }
+    
+    public static void SS_AtdResultHandler(PacketSession session, IPacket packet)
+    {
+        SS_AtdResult pkt = packet as SS_AtdResult;
+        string s = "";
+        int r, g, b = 0;
+        switch (pkt.result)
+        {
+            case 1:
+                s = "출석";
+                r = 0; g = 163; b = 133;
+                break;
+            case 2:
+                s = "지각";
+                r = 255; g = 128; b = 0;
+                break;
+            case 0:
+                s = "결석";
+                r = 239; g = 72; b = 72;
+                break;
+            default:
+                s = "결석";
+                r = 239; g = 72; b = 72;
+                break;
+        }
+        student_main.studentMain._btn_absent.Invoke((MethodInvoker)delegate {
+            student_main.studentMain._btn_absent.Text = pkt.classTime + "교시 : " + s;
+            student_main.studentMain._btn_absent.BackColor = Color.FromArgb(r, g, b);
+
+        });
+    }
+
 
 }
