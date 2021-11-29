@@ -83,11 +83,11 @@ namespace StudentProgramMain.Student
     
       public string No { get; set; } //학생번호
         public string name { get; set; } //학생이름
-        public string professorID { get; set; }//교수번호
+/*        public string professorID { get; set; }//교수번호
         public string subject { get; set; }//교과목
         public string weekDay { get; set; }//요일
         public string start { get; set; }//시작시간
-        public string end { get; set; }//끝나는 시간
+        public string end { get; set; }//끝나는 시간*/
         
         private void student_main_Load(object sender, EventArgs e)
         {
@@ -97,11 +97,12 @@ namespace StudentProgramMain.Student
             clock.Start(); //현재시간 타이머
             lblNo.Text = No;
             lbl_name.Text = name;
-            lbl_day.Text = lecture.weekday;
-            lbl_start.Text = lecture.strat_time;
-            lbl_end.Text = lecture.end_time;
+            lbl_day.Text = lecture.weekday+"요일";
+            MessageBox.Show(lecture.strat_time.Length.ToString());
+            lbl_start.Text = lecture.strat_time.Substring(0, 2) + ":"+ lecture.strat_time.Substring(2, 2);
+            lbl_end.Text = lecture.end_time.Substring(0, 2) +":"+ lecture.end_time.Substring(2,2);
             lbl_subject.Text = lecture.lecture_name;
-            lbl_period.Text = lecture.professor_id;
+            lbl_period.Text = lecture.professor_id+"교수님";//교수님 성함
 
         }
 
@@ -168,19 +169,19 @@ namespace StudentProgramMain.Student
             if (600 <= TNum)
             {
                 btn_absent.Text = "출 석" + date;
-                button1.Enabled = false;
+                //button1.Enabled = false;
                 atd = 1;
             }
             else if (0 < TNum && TNum < 600)
             {
                 btn_absent.Text = "지 각" + date;
-                button1.Enabled = false;
+               // button1.Enabled = false;
                 atd = 2;
             }
             else if (TNum == 0)
             {
                 btn_absent.Text = "결 석" + date;
-                button1.Enabled = false;
+               // button1.Enabled = false;
                 atd = 0;
             }
 
@@ -214,7 +215,7 @@ namespace StudentProgramMain.Student
             }
 
 
-            // 교수님 질문오면( 이벤트핸들러 -> quizcheck신호 주고 -> 열기 )
+            // 교수님 질문오면( 핸들러 -> quizcheck신호 주고 -> 열기 )
             if (quizcheck == 1)
             {
                 quizcheck = 0;
