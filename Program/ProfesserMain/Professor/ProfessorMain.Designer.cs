@@ -64,12 +64,14 @@
             this.Question_TSM = new System.Windows.Forms.ToolStripMenuItem();
             this.AllScreenShot_CMS = new System.Windows.Forms.ToolStripMenuItem();
             this.ATD_CMS = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.studList)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).BeginInit();
             this.ProCMS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // allcheck
@@ -85,9 +87,13 @@
             // 
             // attendBtn
             // 
-            this.attendBtn.BackColor = System.Drawing.Color.White;
+            this.attendBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(110)))), ((int)(((byte)(61)))));
             this.attendBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.attendBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.attendBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.attendBtn.FlatAppearance.BorderSize = 2;
+            this.attendBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.attendBtn.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.attendBtn.ForeColor = System.Drawing.Color.White;
             this.attendBtn.Location = new System.Drawing.Point(0, 0);
             this.attendBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.attendBtn.Name = "attendBtn";
@@ -99,9 +105,13 @@
             // 
             // endBtn
             // 
-            this.endBtn.BackColor = System.Drawing.Color.White;
+            this.endBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(110)))), ((int)(((byte)(61)))));
             this.endBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.endBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.endBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
+            this.endBtn.FlatAppearance.BorderSize = 2;
+            this.endBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.endBtn.Font = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.endBtn.ForeColor = System.Drawing.Color.White;
             this.endBtn.Location = new System.Drawing.Point(0, 0);
             this.endBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.endBtn.Name = "endBtn";
@@ -242,7 +252,10 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 244F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 487);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(161, 290);
             this.tableLayoutPanel1.TabIndex = 29;
             // 
             // attenddanceBtn
@@ -342,10 +355,14 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(48)))), ((int)(((byte)(22)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(3, 248);
+            this.button2.Font = new System.Drawing.Font("휴먼편지체", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(153)))), ((int)(((byte)(132)))));
+            this.button2.Location = new System.Drawing.Point(3, 255);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 62);
+            this.button2.Size = new System.Drawing.Size(155, 38);
             this.button2.TabIndex = 33;
+            this.button2.Text = "유한등대";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -371,7 +388,6 @@
             this.className.ForeColor = System.Drawing.Color.White;
             this.className.Location = new System.Drawing.Point(3, 0);
             this.className.Name = "className";
-            this.className.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.className.Size = new System.Drawing.Size(435, 47);
             this.className.TabIndex = 24;
             this.className.Text = "수업 이름";
@@ -461,6 +477,16 @@
             this.ATD_CMS.Text = "출석부";
             this.ATD_CMS.Click += new System.EventHandler(this.ATD_CMS_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProgramMain.Properties.Resources.img_sbmark_large;
+            this.pictureBox1.Location = new System.Drawing.Point(1, 262);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(161, 212);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            // 
             // ProfesserMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -472,6 +498,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.allcheck);
             this.Controls.Add(this.studList);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -490,6 +517,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.previewBox)).EndInit();
             this.ProCMS.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,6 +556,7 @@
         private System.Windows.Forms.ToolStripMenuItem AllScreenShot_CMS;
         private System.Windows.Forms.ToolStripMenuItem ATD_CMS;
         private System.Windows.Forms.ToolStripMenuItem show_CMS;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

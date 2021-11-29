@@ -398,7 +398,7 @@ namespace ProgramMain
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
-            nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("HHmmss");//시계
+            nowTime.Text = "현재 시간 : " + System.DateTime.Now.ToString("HH:mm:ss");//시계
 
             if (Convert.ToInt32(System.DateTime.Now.ToString("HHmmss")) == (Convert.ToInt32(lecture.strat_time) + 100) * 100)//2교시 출석체크 시작
             {
@@ -499,6 +499,26 @@ namespace ProgramMain
         private void ATD_CMS_Click(object sender, EventArgs e)//트레이 아이콘 출석부 보기
         {
             attenddanceBtn_Click(sender, e);
+        }
+
+        private void studList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

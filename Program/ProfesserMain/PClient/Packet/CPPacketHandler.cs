@@ -404,9 +404,15 @@ class PacketHandler
             }            
         }
 
-        attendanceForm._attendanceForm.weekcount = weekTemp;
-        attendanceForm._attendanceForm.atdLists = sp_AtdList.atdLists;
+        try
+        {
+            attendanceForm._attendanceForm.weekcount = weekTemp;
+            attendanceForm._attendanceForm.atdLists = sp_AtdList.atdLists;
+        }
+        catch
+        {
 
+        }
 
     }
 
