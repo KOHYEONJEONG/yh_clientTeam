@@ -30,7 +30,6 @@ namespace ProgramMain
         private void InitializeComponent()
         {
             this.PbScreenshot = new System.Windows.Forms.PictureBox();
-            this.lblTime = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
@@ -53,19 +52,6 @@ namespace ProgramMain
             this.PbScreenshot.TabIndex = 0;
             this.PbScreenshot.TabStop = false;
             this.PbScreenshot.DoubleClick += new System.EventHandler(this.PbScreenshot_DoubleClick);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTime.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTime.ForeColor = System.Drawing.Color.White;
-            this.lblTime.Location = new System.Drawing.Point(377, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(303, 29);
-            this.lblTime.TabIndex = 1;
-            this.lblTime.Text = "쵤영시간 : ";
-            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblName
             // 
@@ -116,7 +102,6 @@ namespace ProgramMain
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tlpInfo.Controls.Add(this.lblTime, 2, 0);
             this.tlpInfo.Controls.Add(this.lblName, 0, 0);
             this.tlpInfo.Controls.Add(this.lblNum, 1, 0);
             this.tlpInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -153,7 +138,6 @@ namespace ProgramMain
         #endregion
 
         private System.Windows.Forms.PictureBox PbScreenshot;
-        private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Button btnOK;

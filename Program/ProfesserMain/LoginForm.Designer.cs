@@ -39,7 +39,6 @@ namespace ProgramMain
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.chkRemember = new MetroFramework.Controls.MetroCheckBox();
             this.loginCheckTimer = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -143,17 +142,6 @@ namespace ProgramMain
             // 
             this.metroStyleManager1.Owner = null;
             // 
-            // chkRemember
-            // 
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.Location = new System.Drawing.Point(29, 312);
-            this.chkRemember.Margin = new System.Windows.Forms.Padding(1, 2, 1, 2);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(86, 15);
-            this.chkRemember.TabIndex = 8;
-            this.chkRemember.Text = "아이디 저장";
-            this.chkRemember.UseSelectable = true;
-            // 
             // loginCheckTimer
             // 
             this.loginCheckTimer.Enabled = true;
@@ -190,7 +178,6 @@ namespace ProgramMain
             this.BorderStyle = MetroFramework.Forms.MetroFormBorderStyle.FixedSingle;
             this.ClientSize = new System.Drawing.Size(247, 384);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.chkRemember);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txt_pw);
@@ -225,7 +212,6 @@ namespace ProgramMain
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Components.MetroStyleManager metroStyleManager1;
-        private MetroFramework.Controls.MetroCheckBox chkRemember;
         private System.Windows.Forms.Timer loginCheckTimer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
