@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using ProgramMain;
+using System.Threading;
 
 class PacketHandler
 {
@@ -391,7 +392,7 @@ class PacketHandler
 
     public static void SP_AtdListHandler(PacketSession session, IPacket packet)//출석 응답
     {
-        
+        Thread.Sleep(500);
         SP_AtdList sp_AtdList = packet as SP_AtdList;
         int weekTemp = 0;
 
