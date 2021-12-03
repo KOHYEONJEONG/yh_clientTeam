@@ -16,14 +16,14 @@
 학생을 선택하여 단답형 또는 ox퀴즈 문제를 보낼 수 있음. 
 <br/><img src="https://user-images.githubusercontent.com/90231631/144563644-a1fa8720-d814-4b50-8f88-3234b4d0eff6.png" width="450px" height="300px" title="문제전송 폼"></img><br/>
 //문제 전송 시 학생측에 뜨는 폼
-<br/><img src="https://user-images.githubusercontent.com/90231631/144563953-06625e76-0e5b-43e7-bd70-417b5637e0f1.png" width="600px" height="200px" title="문제전송 폼"></img><br/>
+<br/><img src="https://user-images.githubusercontent.com/90231631/144563953-06625e76-0e5b-43e7-bd70-417b5637e0f1.png" width="600px" height="200px"></img><br/>
 
 2.스크린샷 기능
 버튼을 누르면 선택 학생의 현재화면을 스크린샷 해서 가져옴
 스크린샷 썸네일 사진위에 마우스를 올려두면 썸네일 미리보기가 뜸
-![image](https://user-images.githubusercontent.com/90231631/144565489-0c43262a-8577-4d5a-ba45-d9a18dfe5c55.png)
+<br/><img src="https://user-images.githubusercontent.com/90231631/144565489-0c43262a-8577-4d5a-ba45-d9a18dfe5c55.png" width="300px" height="200px"></img></br>
 썸네일 더블클릭 시 뜨는 화면
-![image](https://user-images.githubusercontent.com/90231631/144565535-8033ddda-d643-40ab-b8ab-7dfb470a1ecb.png)
+<br/><img src="https://user-images.githubusercontent.com/90231631/144565489-0c43262a-8577-4d5a-ba45-d9a18dfe5c55.png" width="450px" height="300px"></img></br>
 
 3.출석부 기능
 학생들의 출석 기록을 확인
