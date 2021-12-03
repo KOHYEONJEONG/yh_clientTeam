@@ -8,6 +8,7 @@
 
 ### 주요 기능
 ![image](https://user-images.githubusercontent.com/90231631/144562641-94f8555b-d93e-49c0-94e1-665e0dd37419.png width="100px")
+<img src="https://user-images.githubusercontent.com/90231631/144562641-94f8555b-d93e-49c0-94e1-665e0dd37419.png" width="450px" height="300px"></img><br/>
 1. 문제전송 기능
  단답형 또는 ox퀴즈 문제를 보낼 수 있음. 
 
