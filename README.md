@@ -7,7 +7,6 @@
 ![image](https://user-images.githubusercontent.com/90231631/144562339-ce37a823-77e3-41bc-bacf-72728274d5d1.png)
 
 ### 주요 기능
-![image](https://user-images.githubusercontent.com/90231631/144562641-94f8555b-d93e-49c0-94e1-665e0dd37419.png width="100px")
 <img src="https://user-images.githubusercontent.com/90231631/144562641-94f8555b-d93e-49c0-94e1-665e0dd37419.png" width="450px" height="300px"></img><br/>
 1. 문제전송 기능
  단답형 또는 ox퀴즈 문제를 보낼 수 있음. 
@@ -17,7 +16,7 @@
 
 3. 출석부 기능
 학생들의 출석 기록을 확인
-![image](https://user-images.githubusercontent.com/90231631/144563038-593804b8-64af-4cff-a935-cc7e6b4aadf7.png)
+<img src="https://user-images.githubusercontent.com/90231631/144563038-593804b8-64af-4cff-a935-cc7e6b4aadf7.png" width="450px" height="300px"></img><br/>
 주마다 각 교시의 출결 상태를 보여준다.
 
 4. 출석시작(수업 종료) 버튼
