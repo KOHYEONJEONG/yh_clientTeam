@@ -7,7 +7,7 @@
 ![image](https://user-images.githubusercontent.com/90231631/144562339-ce37a823-77e3-41bc-bacf-72728274d5d1.png)
 
 ### 주요 기능
-<img src="https://user-images.githubusercontent.com/90231631/144562641-94f8555b-d93e-49c0-94e1-665e0dd37419.png" width="450px" height="300px"></img><br/>
+<img src="https://user-images.githubusercontent.com/90231631/144564205-05959b95-b263-4af8-8ae4-1520077fcdf4.png" width="450px" height="300px"></img><br/>
 1.문제전송 기능
 학생을 선택하여 단답형 또는 ox퀴즈 문제를 보낼 수 있음. 
 <br/><img src="https://user-images.githubusercontent.com/90231631/144563644-a1fa8720-d814-4b50-8f88-3234b4d0eff6.png" width="450px" height="300px" title="문제전송 폼"></img><br/>
