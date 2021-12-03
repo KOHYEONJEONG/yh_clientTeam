@@ -48,4 +48,4 @@
 //질문 시 뜨는폼 (이미지와 질문을 받을 수 )
 <br/><img src="https://user-images.githubusercontent.com/90231631/144566778-6d6ae659-76ff-4354-ad4b-332b97b3fba8.png" width="200px" height="350px"></img><br/>
 
-## 담당 부분 코드
+## 담당 부분 코드(교수 메인폼, 출석부, 서버에 요청보내기, 서버 요청 받기 )
