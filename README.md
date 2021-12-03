@@ -16,7 +16,7 @@
 
 3.출석부 기능
 학생들의 출석 기록을 확인
-<img src="https://user-images.githubusercontent.com/90231631/144563038-593804b8-64af-4cff-a935-cc7e6b4aadf7.png" width="450px" height="300px"></img><br/>
+<br/><img src="https://user-images.githubusercontent.com/90231631/144563038-593804b8-64af-4cff-a935-cc7e6b4aadf7.png" width="450px" height="300px"></img><br/>
 주마다 각 교시의 출결 상태를 보여준다.
 
 4.출석시작(수업 종료) 버튼
