@@ -26,7 +26,7 @@
 //썸네일 더블클릭 시 뜨는 화면
 <br/><img src="https://user-images.githubusercontent.com/90231631/144565834-f478420f-d3e8-4232-94f2-e3bd8cdb14bd.png" width="450px" height="300px"></img></br>
 
-//학생 응답시 리스트에 해당 학생 응답 셀에 응답 내용이 들어감
+//학생 응답시 리스트에 해당 학생 응답 셀에 응답 내용이 들어감</br>
 //응답 내용 더블클릭 시 뜨는 폼
 <br/><img src="https://user-images.githubusercontent.com/90231631/144566304-6360ed46-e69f-4752-b62d-78c80ba95eda.png" width="600px" height="200px"></img><br/>
 
