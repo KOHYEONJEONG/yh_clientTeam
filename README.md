@@ -11,6 +11,7 @@
 1.문제전송 기능
 학생을 선택하여 단답형 또는 ox퀴즈 문제를 보낼 수 있음. 
 <br/><img src="https://user-images.githubusercontent.com/90231631/144563644-a1fa8720-d814-4b50-8f88-3234b4d0eff6.png" width="450px" height="300px" title="문제전송 폼"></img><br/>
+//문제 전송 시 학생측에 뜨는 폼
 <br/><img src="https://user-images.githubusercontent.com/90231631/144563953-06625e76-0e5b-43e7-bd70-417b5637e0f1.png" width="600px" height="200px" title="문제전송 폼"></img><br/>
 
 2.스크린샷 기능
