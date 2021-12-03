@@ -22,8 +22,13 @@
 버튼을 누르면 선택 학생의 현재화면을 스크린샷 해서 가져옴
 스크린샷 썸네일 사진위에 마우스를 올려두면 썸네일 미리보기가 뜸
 <br/><img src="https://user-images.githubusercontent.com/90231631/144565489-0c43262a-8577-4d5a-ba45-d9a18dfe5c55.png" width="300px" height="200px"></img></br>
-썸네일 더블클릭 시 뜨는 화면
+
+//썸네일 더블클릭 시 뜨는 화면
 <br/><img src="https://user-images.githubusercontent.com/90231631/144565834-f478420f-d3e8-4232-94f2-e3bd8cdb14bd.png" width="450px" height="300px"></img></br>
+
+//학생 응답시 리스트에 해당 학생 응답 셀에 응답 내용이 들어감
+//응답 내용 더블클릭 시 뜨는 폼
+<br/><img src="https://user-images.githubusercontent.com/90231631/144566304-6360ed46-e69f-4752-b62d-78c80ba95eda.png" width="600px" height="200px"></img><br/>
 
 3.출석부 기능
 학생들의 출석 기록을 확인
