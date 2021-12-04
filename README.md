@@ -50,5 +50,5 @@
 
 ## 담당 부분 코드(서버에 요청보내기, 로그인 동작 부분, 교수 메인폼, 출석부, 서버 요청 받기 )
 프로젝트 형태
-<br/><img src="https://user-images.githubusercontent.com/90231631/144718611-411bb43a-3e7b-4da0-a31f-15b9866a21b3.png" width="200px" height="400px"></img></br>
+<br/><img src="https://user-images.githubusercontent.com/90231631/144718611-411bb43a-3e7b-4da0-a31f-15b9866a21b3.png" width="200px"></img></br>
 
