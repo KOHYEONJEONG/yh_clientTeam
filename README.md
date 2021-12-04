@@ -56,5 +56,5 @@
 <br/><img src="https://user-images.githubusercontent.com/90231631/144718738-725a4603-4829-4258-a5ec-9f4ef075788e.png" width="600px"></img><br/>
 .</br>
 .</br>
-.</br>
+.(폼 설명에 추가)</br>
 
