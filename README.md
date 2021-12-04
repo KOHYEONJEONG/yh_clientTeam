@@ -80,6 +80,19 @@
 <img src="https://user-images.githubusercontent.com/90231631/144719569-88cb81c1-2174-4ef7-9aa6-d06aea5816b5.png" width="600px"></img><br/>
 #### 로그인 버튼 클릭 시
 <img src="https://user-images.githubusercontent.com/90231631/144719673-d6c346cc-6c6b-4925-8774-f137e19a5bc0.png" width="500px"></img><br/>
-#### 
+SessionManager를 통해 서버에 로그인 정보를 보냄
+#### 로그인 결과 핸들이 넘어왔는지 감지
+<img src="https://user-images.githubusercontent.com/90231631/144720694-e91ae638-89db-43f0-8ec4-600900fa6b23.png" width="600px"></img><br/>
+확인 변수가 1이면 로그인 성공 2면 실패</br>
+성공일 경우 교수 메인폼을 띄워줌</br>
+메인폼에서 수업이 없을을 판단하면 4를 반환 프로그램 종료</br>
+실패일 경우 다시 로그인 창을 띄움
 
+#### 서버에서 로그인 시도 결과를 받음
+<img src="https://user-images.githubusercontent.com/90231631/144720610-79dc3831-60dc-49da-ae63-3bbc08b511d9.png" width="600px"></img><br/>
+로그인 실패 시 SP_LoginFailedHandler가 호출 </br>
+로그인 확인 변수의 값을 2로 변경</br>
+로그인 성공 시 SP_LoginResultHandler가 호출
+로그인 확인 변수의 값을 1로 변경
 
+### 4.교수 메인 폼(ProgessorMain.cs)
