@@ -96,3 +96,5 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 로그인 확인 변수의 값을 1로 변경
 
 ### 4.교수 메인 폼(ProgessorMain.cs)
+#### 디자인
+![image](https://user-images.githubusercontent.com/90231631/144720813-eeaf5a2c-6e85-4afc-b3c3-7d0cfad49b3e.png)
