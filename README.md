@@ -59,9 +59,9 @@
 .(폼 설명에 추가)</br>
 
 ### 2.로그인 동작 부분(LoginForm.cs)
-디자인
+#### 디자인
 </br>![image](https://user-images.githubusercontent.com/90231631/144718962-762847da-7663-46d3-b4a2-0308214afd0e.png)</br>
-변수 선언 및 초기화
+#### 변수 선언 및 초기화
 <br/><img src="https://user-images.githubusercontent.com/90231631/144719004-156adda7-e403-4b32-b2b6-fbcb54d1c72a.png" width="600px"></img><br/>
 
 
