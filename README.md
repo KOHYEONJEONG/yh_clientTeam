@@ -6,6 +6,7 @@
 
 ## 프로그램 설명
 ### 유한대학교 캡스톤 디자인 교수 프로그램(신희찬)
+### C# Winform 
 ![image](https://user-images.githubusercontent.com/90231631/144564773-8c1a7baf-6cad-44ba-a57f-7b787c0eed8e.png)
 비대면 실시간 강의 시 학습을 도와주는 프로그램. 
 비대면 학생들이 학교 통신망에 접근 불가능 하므로 외부 서버를 사용하여 통신
@@ -55,17 +56,22 @@
 <br/><img src="https://user-images.githubusercontent.com/90231631/144566778-6d6ae659-76ff-4354-ad4b-332b97b3fba8.png" width="200px" height="350px"></img><br/>
 
 ## 담당 부분 코드
-### 서버에 요청보내기, 로그인 동작 부분, 교수 메인폼, 출석부, 서버 요청 받기
+### 서버 요청 보내는 클래스 ,서버 요청 받는 클래스 일부분,  로그인 동작 부분, 교수 메인폼, 출석부
 #### 프로젝트 형태
 <br/><img src="https://user-images.githubusercontent.com/90231631/144718611-411bb43a-3e7b-4da0-a31f-15b9866a21b3.png" width="200px"></img></br>
 
-### 1.서버 요청 클래스(SessionManager.cs)
+### 1.서버 요청 보내는 클래스(SessionManager.cs)
 <br/><img src="https://user-images.githubusercontent.com/90231631/144718738-725a4603-4829-4258-a5ec-9f4ef075788e.png" width="600px"></img><br/>
 .</br>
 .</br>
 .(폼 설명에 추가)</br>
+### 2.서버 요청 받는 클래스 일부분(CPPacketHandler.cs)
+<br/><img src="https://user-images.githubusercontent.com/90231631/144720154-c07a7c9d-eaab-4ef2-a40c-606b8eec9f60.png" width="600px"></img><br/>
+.</br>
+.</br>
+.(폼 설명에 추가)</br>
 
-### 2.로그인 동작 부분(LoginForm.cs)
+### 3.로그인 동작 부분(LoginForm.cs)
 #### 디자인
 ![image](https://user-images.githubusercontent.com/90231631/144718962-762847da-7663-46d3-b4a2-0308214afd0e.png)</br>
 #### 변수 선언 및 초기화
@@ -74,6 +80,6 @@
 <img src="https://user-images.githubusercontent.com/90231631/144719569-88cb81c1-2174-4ef7-9aa6-d06aea5816b5.png" width="600px"></img><br/>
 #### 로그인 버튼 클릭 시
 <img src="https://user-images.githubusercontent.com/90231631/144719673-d6c346cc-6c6b-4925-8774-f137e19a5bc0.png" width="500px"></img><br/>
-
+#### 
 
 
