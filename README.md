@@ -52,7 +52,7 @@
 프로젝트 형태
 <br/><img src="https://user-images.githubusercontent.com/90231631/144718611-411bb43a-3e7b-4da0-a31f-15b9866a21b3.png" width="200px"></img></br>
 
-1.서버 요청 클래스()
-<br/><img src="https://user-images.githubusercontent.com/90231631/144718715-35927ae3-e43d-4891-a214-41ee7d0d095c.png" width="700px"></img><br/>
-![image](https://user-images.githubusercontent.com/90231631/144718715-35927ae3-e43d-4891-a214-41ee7d0d095c.png)
+1.서버 요청 클래스(SessionManager.cs)
+<br/><img src="![image](https://user-images.githubusercontent.com/90231631/144718738-725a4603-4829-4258-a5ec-9f4ef075788e.png)" width="700px"></img><br/>
+
 
