@@ -60,4 +60,4 @@
 
 ### 2.로그인 동작 부분(LoginForm.cs)
 디자인
-![image](https://user-images.githubusercontent.com/90231631/144718962-762847da-7663-46d3-b4a2-0308214afd0e.png)
+</br>![image](https://user-images.githubusercontent.com/90231631/144718962-762847da-7663-46d3-b4a2-0308214afd0e.png)</br>
