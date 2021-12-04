@@ -70,5 +70,10 @@
 </br>![image](https://user-images.githubusercontent.com/90231631/144718962-762847da-7663-46d3-b4a2-0308214afd0e.png)</br>
 #### 변수 선언 및 초기화
 <br/><img src="https://user-images.githubusercontent.com/90231631/144719004-156adda7-e403-4b32-b2b6-fbcb54d1c72a.png" width="600px"></img><br/>
+#### 서버 연결
+<br/><img src="https://user-images.githubusercontent.com/90231631/144719569-88cb81c1-2174-4ef7-9aa6-d06aea5816b5.png" width="600px"></img><br/>
+#### 로그인 버튼 클릭 시
+<br/><img src="https://user-images.githubusercontent.com/90231631/144719673-d6c346cc-6c6b-4925-8774-f137e19a5bc0.png" width="400px"></img><br/>
+
 
 
