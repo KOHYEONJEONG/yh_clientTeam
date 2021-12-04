@@ -98,3 +98,6 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 ### 4.교수 메인 폼(ProgessorMain.cs)
 #### 디자인
 ![image](https://user-images.githubusercontent.com/90231631/144720813-eeaf5a2c-6e85-4afc-b3c3-7d0cfad49b3e.png)
+#### 변수 선언 및 초기화
+<img src="https://user-images.githubusercontent.com/90231631/144721292-b0fb616b-57c0-40bb-ad11-4509c5d9774c.png" width="600px"></img><br/>
+
