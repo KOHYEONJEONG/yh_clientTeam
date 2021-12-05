@@ -12,6 +12,8 @@
 비대면 학생들이 학교 통신망에 접근 불가능 하므로 외부 서버를 사용하여 통신
 <br/><img src="https://user-images.githubusercontent.com/90231631/144564614-05a40292-bb27-4e0a-8c3a-17e005358dba.png" width="300px" height="200px"></img><br/>
 데이터의 저장은 Oracle DB 사용
+<br/>![image](https://user-images.githubusercontent.com/90231631/144752830-ae13d0ca-a5ba-4900-952a-1df41ee806aa.png)<br/>
+
 <br/><img src="https://user-images.githubusercontent.com/90231631/144565082-bea16a39-a8b3-4803-a245-0dc2fb052da2.png" width="300px" height="200px"></img><br/>
 
 학생은 대표적으로 출석기능과 모르는 부분은 바로 질문할 수 있는 기능있어 수업에 집중하기 편함.</br>
@@ -100,5 +102,12 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 ![image](https://user-images.githubusercontent.com/90231631/144720813-eeaf5a2c-6e85-4afc-b3c3-7d0cfad49b3e.png)
 #### 변수 선언 및 초기화
 <img src="https://user-images.githubusercontent.com/90231631/144721292-b0fb616b-57c0-40bb-ad11-4509c5d9774c.png" width="800px"></img><br/>
-#### 화면 리스트에 학생 리스트와 수업 정보 출력
-<img src="https://user-images.githubusercontent.com/90231631/144752440-2014eb45-5912-4d21-9c7e-2b334565739e.png" width="800px"></img><br/>
+#### 수업 정보와 학생 리스트를 저장하는 메서드
+<img src="https://user-images.githubusercontent.com/90231631/144752550-bc920eee-a7a0-4e2f-82db-2edceba9521c.png" width="800px"></img><br/>
+로그인 후 서버에서 받은 데이터에서 필요한 정보를 가져옴
+#### 폼 생성 시 화면에 정보 출력
+<img src="https://user-images.githubusercontent.com/90231631/144752630-654f48dc-aa85-43a5-a25a-d1b17718b1bb.png" width="800px"></img><br/>
+수강 학생과 수업 정보를 화면에 출력
+#### 선택되어 있는 학생을 리스트에 저장하는 메서드
+
+
