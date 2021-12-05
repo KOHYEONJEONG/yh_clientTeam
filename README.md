@@ -7,7 +7,7 @@
 ## 프로그램 설명
 ### 유한대학교 캡스톤 디자인 교수 프로그램(신희찬)
 ### C# Winform 사용
-![image](https://user-images.githubusercontent.com/90231631/144564773-8c1a7baf-6cad-44ba-a57f-7b787c0eed8e.png)
+![image](https://user-images.githubusercontent.com/90231631/144752830-ae13d0ca-a5ba-4900-952a-1df41ee806aa.png)<br/>
 ### 외부 서버와 Oracle DB 사용
 <br/><img src="https://user-images.githubusercontent.com/90231631/144565082-bea16a39-a8b3-4803-a245-0dc2fb052da2.png" width="300px" height="200px"></img><br/>
 비대면 실시간 강의 시 학습을 도와주는 프로그램. 
