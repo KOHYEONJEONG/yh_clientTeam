@@ -113,5 +113,6 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 <img src="https://user-images.githubusercontent.com/90231631/144752630-654f48dc-aa85-43a5-a25a-d1b17718b1bb.png" width="800px"></img><br/>
 수강 학생과 수업 정보를 화면에 출력
 #### 선택되어 있는 학생을 리스트에 저장하는 메서드
+![image](https://user-images.githubusercontent.com/90231631/144753254-8d348597-6622-4673-b214-f45e91a568d0.png)
 
 
