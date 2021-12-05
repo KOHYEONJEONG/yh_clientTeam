@@ -6,15 +6,17 @@
 
 ## 프로그램 설명
 ### 유한대학교 캡스톤 디자인 교수 프로그램(신희찬)
-### C# Winform 
+### C# Winform 사용
 ![image](https://user-images.githubusercontent.com/90231631/144564773-8c1a7baf-6cad-44ba-a57f-7b787c0eed8e.png)
+### 외부 서버와 Oracle DB 사용
+<br/><img src="https://user-images.githubusercontent.com/90231631/144565082-bea16a39-a8b3-4803-a245-0dc2fb052da2.png" width="300px" height="200px"></img><br/>
 비대면 실시간 강의 시 학습을 도와주는 프로그램. 
 비대면 학생들이 학교 통신망에 접근 불가능 하므로 외부 서버를 사용하여 통신
 <br/><img src="https://user-images.githubusercontent.com/90231631/144564614-05a40292-bb27-4e0a-8c3a-17e005358dba.png" width="300px" height="200px"></img><br/>
 데이터의 저장은 Oracle DB 사용
 <br/>![image](https://user-images.githubusercontent.com/90231631/144752830-ae13d0ca-a5ba-4900-952a-1df41ee806aa.png)<br/>
 
-<br/><img src="https://user-images.githubusercontent.com/90231631/144565082-bea16a39-a8b3-4803-a245-0dc2fb052da2.png" width="300px" height="200px"></img><br/>
+
 
 학생은 대표적으로 출석기능과 모르는 부분은 바로 질문할 수 있는 기능있어 수업에 집중하기 편함.</br>
 교수님은 대표적으로 스크린샷 요청하여 학생PC를 확인할 수 있고 수업을 이해했는지 문제를 낼 수 있어 관리하기 편함.
