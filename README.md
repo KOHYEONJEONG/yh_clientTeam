@@ -12,7 +12,7 @@
 ### 외부 서버와 Oracle DB 사용
 ![image](https://user-images.githubusercontent.com/90231631/144752830-ae13d0ca-a5ba-4900-952a-1df41ee806aa.png)<br/>
 
-비대면 실시간 강의 시 학습을 도와주는 프로그램. 
+비대면 실시간 강의 시 학습을 도와주는 프로그램. </br>
 비대면 학생들이 학교 통신망에 접근 불가능 하므로 외부 서버를 사용하여 통신
 <br/><img src="https://user-images.githubusercontent.com/90231631/144564614-05a40292-bb27-4e0a-8c3a-17e005358dba.png" width="300px" height="200px"></img><br/>
 데이터의 저장은 Oracle DB 사용
