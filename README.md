@@ -127,6 +127,11 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 <img src="https://user-images.githubusercontent.com/90231631/145073332-5df650ab-ae54-4f29-98f7-7998b5b311ec.png" width="600px"></br>
 메인폼에서 선택한 학생을 자동으로 체크됨</br>
 OX퀴즈, 서술형 퀴즈를 선택 할 수 있고 전송 버튼을 누르면 폼이 종료되고 메인 폼에서 문제를 전송함
+#### 문제와 학생 리스트를 서버에 전달하는 세션 메서드
+![image](https://user-images.githubusercontent.com/90231631/145076068-f24807ba-ad55-48ab-8720-a37e76882d32.png)
+위 OX퀴즈 요청</br>
+아래 서술형 퀴즈 요청
+
 #### 스크린샷과 문제응답 셀을 더블클릭 시 새폼에 띄우는 이벤트
 ![image](https://user-images.githubusercontent.com/90231631/145074452-76f632c6-6ba4-4bff-87d5-191fc1dc1d51.png)
 스크린샷 셀인지 문제응답 셀인지 구분하여 해당하는 폼을 띄워줌</br>
@@ -143,6 +148,8 @@ OX퀴즈, 서술형 퀴즈를 선택 할 수 있고 전송 버튼을 누르면 �
 서버에 출서부를 요청하고 폼을 띄움
 #### 출석부 폼 
 <img src="https://user-images.githubusercontent.com/90231631/144563038-593804b8-64af-4cff-a935-cc7e6b4aadf7.png" width="450px" height="300px"></img><br/>
+#### 서버에서 출석부를 받는 핸들 이벤트
+
 
 #### 전체 체크,해제하는 이벤트
 ![image](https://user-images.githubusercontent.com/90231631/145074092-1272750b-5f27-44be-879a-ab2ba86e2853.png)</br>
