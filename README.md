@@ -115,12 +115,26 @@ SessionManager를 통해 서버에 로그인 정보를 보냄
 #### 선택되어 있는 학생을 리스트에 저장하는 메서드
 ![image](https://user-images.githubusercontent.com/90231631/144753254-8d348597-6622-4673-b214-f45e91a568d0.png)
 #### 선택학생 스크린샷 버튼 이벤트
-![image](https://user-images.githubusercontent.com/90231631/145072384-8b5034f1-ff60-4b68-bf24-6228d1861ae3.png)
+![image](https://user-images.githubusercontent.com/90231631/145072384-8b5034f1-ff60-4b68-bf24-6228d1861ae3.png)</br>
 체크 되어있는 학생을 리스트에 추가하고 세션 메서드를 호출에 서버에 전달
 #### 스크린샷을 서버에 요청하는 세션 메서드
-![image](https://user-images.githubusercontent.com/90231631/145072630-30a51c1f-06a2-435e-9a4c-1a9d2627e175.png)
+![image](https://user-images.githubusercontent.com/90231631/145072630-30a51c1f-06a2-435e-9a4c-1a9d2627e175.png)</br>
 체크된 학생 리스트를 넘김
 #### 선택학생 문제전송 버튼 이벤트
-![image](https://user-images.githubusercontent.com/90231631/145072924-2784bfcb-f396-4b18-b6a0-abace3c2a2d9.png)
+![image](https://user-images.githubusercontent.com/90231631/145072924-2784bfcb-f396-4b18-b6a0-abace3c2a2d9.png)</br>
+폼을 모달 형식으로 띄우고 폼 종료 시 선택 학생에게 문제를 전송
 #### 문제 전송폼 
-<br/><img src="https://user-images.githubusercontent.com/90231631/145073332-5df650ab-ae54-4f29-98f7-7998b5b311ec.png" width="600px">
+<img src="https://user-images.githubusercontent.com/90231631/145073332-5df650ab-ae54-4f29-98f7-7998b5b311ec.png" width="600px"></br>
+메인폼에서 선택한 학생을 자동으로 체크됨</br>
+OX퀴즈, 서술형 퀴즈를 선택 할 수 있고 전송 버튼을 누르면 폼이 종료되고 메인 폼에서 문제를 전송함
+#### 스크린샷과 문제응답 셀을 더블클릭 시 새폼에 띄우는 이벤트
+![image](https://user-images.githubusercontent.com/90231631/145074452-76f632c6-6ba4-4bff-87d5-191fc1dc1d51.png)
+스크린샷 셀인지 문제응답 셀인지 구분하여 해당하는 폼을 띄워줌</br>
+##### 스크린샷 폼
+<img src="https://user-images.githubusercontent.com/90231631/145074690-976545b0-d782-4a93-9076-c8c061ece1e7.png" width="600px"></br>
+##### 문제응답 폼
+![image](https://user-images.githubusercontent.com/90231631/145074829-4f48db76-b719-403f-95e6-d3c02e1532db.png)
+
+#### 전체 체크,해제하는 이벤트
+![image](https://user-images.githubusercontent.com/90231631/145074092-1272750b-5f27-44be-879a-ab2ba86e2853.png)</br>
+학생 리스트의 체크박스를 전체 선택하거나 해제함
