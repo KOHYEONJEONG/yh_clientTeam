@@ -134,6 +134,10 @@ OX퀴즈, 서술형 퀴즈를 선택 할 수 있고 전송 버튼을 누르면 �
 <img src="https://user-images.githubusercontent.com/90231631/145074690-976545b0-d782-4a93-9076-c8c061ece1e7.png" width="600px"></br>
 ##### 문제응답 폼
 ![image](https://user-images.githubusercontent.com/90231631/145074829-4f48db76-b719-403f-95e6-d3c02e1532db.png)
+#### 스크린샷 셀에 마우스 올려두면 확대되는 이벤트
+![image](https://user-images.githubusercontent.com/90231631/145075285-116d4b1d-d022-4933-a6ff-ff8968a24193.png)
+##### 
+<br/><img src="https://user-images.githubusercontent.com/90231631/144565489-0c43262a-8577-4d5a-ba45-d9a18dfe5c55.png" width="300px" height="200px"></img></br>
 
 #### 전체 체크,해제하는 이벤트
 ![image](https://user-images.githubusercontent.com/90231631/145074092-1272750b-5f27-44be-879a-ab2ba86e2853.png)</br>
